@@ -4,6 +4,8 @@ A noncommercial browser driving game forked from [pmndrs/racing-game](https://gi
 
 ## Play
 
+[Open the game](https://tesla-roadster-drive.blushwren10.chatgpt.site)
+
 Free driving, ramps, two follow cameras, pause, reset, sound and graphics settings. No account or multiplayer backend. Touch controls support simultaneous steering and acceleration; turn your phone landscape.
 
 Desktop: WASD/arrows drive, B brakes, Space handbrake, R reset, C camera, Esc pause.
