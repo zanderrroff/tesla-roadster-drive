@@ -18,9 +18,9 @@ interface State {
 export const useStore=create<State>(set=>({spawn:SPAWN,started:false,paused:false,loaded:false,camera:0,sound:saved.sound??true,
  quality:saved.quality==='high'?'high':'mobile',reset:0,about:false,gear:'D',handbrake:false,
  steeringMode:saved.steeringMode==='arrows'?'arrows':'wheel',hint:'',set:patch=>set(s=>({...s,...patch}))}))
-export const telemetry={speed:0,signedSpeed:0,distance:0,position:[0,0,0],fps:0,dpr:1,heading:0,lateralSpeed:0,height:0,groundClearance:0,wheelRotation:0,wheelQuaternions:[] as number[][]}
+export const telemetry={speed:0,signedSpeed:0,distance:0,position:[0,0,0],fps:0,dpr:1,heading:0,lateralSpeed:0,height:0,groundClearance:0,wheelRotation:0,steeringAngle:0,renderPosition:[0,0,0],cameraPosition:[0,0,0],cameraQuaternion:[0,0,0,1],wheelQuaternions:[] as number[][]}
 export function pause(){clearInput();useStore.getState().set({paused:true})}
-export function resetView(){orbit.yaw=0;orbit.pitch=useStore.getState().camera? .95:.38;orbit.distance=useStore.getState().camera?15:7.8;orbit.manual=false}
+export function resetView(){orbit.yaw=0;orbit.pitch=useStore.getState().camera===1? .95:.38;orbit.distance=useStore.getState().camera===1?15:7.8;orbit.manual=false}
 export function resetCar(){clearInput();resetView();useStore.getState().set({reset:useStore.getState().reset+1,gear:'D',handbrake:false,hint:''})}
 export function selectGear(gear:Gear){const s=useStore.getState();if(!canSelectGear(s.gear,gear,telemetry.speed)){s.set({hint:'Остановитесь, чтобы переключить направление'});return false}input.forward.clear();s.set({gear,hint:gear==='R'?'Задний ход: удерживайте педаль газа':gear==='N'?'Нейтральная передача':''});return true}
 export function toggleHandbrake(){const s=useStore.getState();s.set({handbrake:!s.handbrake,hint:s.handbrake?'Ручник отпущен':'Ручник включён — нажмите ещё раз, чтобы отпустить'})}

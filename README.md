@@ -48,3 +48,7 @@ Game code retains the upstream MIT license. **The Tesla model is separately lice
 ## v1.2 handling fixes
 
 The visible ground and collision surface share y=0, with a thick continuous box underneath. Ramp render and collision transforms share one configuration. Wheel rotation follows road speed instead of a nearly-zero custom sliding speed. Service/parking brake impulses are scaled for the 120 Hz physics step to prevent braking flips; rear grip allows controlled oversteer. Text selection, dragging and long-press callouts are disabled throughout the game. High quality keeps render density at least 1; automatic mode can lower it to favor smoothness.
+
+## v1.3: smoother presentation and cabin
+
+Visual chassis/wheels are separated from worker physics updates and damped independently of frame rate. Camera follows the same filtered anchor; pause freezes all visual poses. Suspension damping was retuned. C cycles chase, overview and cockpit views. A lightweight original cabin adds seats, dashboard, live speed display, steering wheel and a seated generic driver. The interior is an artistic reconstruction, not a licensed Tesla interior scan. Soft shadows use a simplified caster in automatic mode and the detailed car in high mode, with texel-aligned tracking.

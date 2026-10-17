@@ -33,3 +33,11 @@ Limits: physical iOS/Android devices and WebKit were not available for verificat
 - CSS disables user selection, WebKit callouts and dragging across the game; context menu is prevented. Chromium reported user-select:none and empty selection. Physical iOS long-press and multi-touch remain unverified.
 - Mobile-sized QA: 844×390. High detail no longer silently lowers render density below 1. Auto mode may go down to .75. A short automatic-mode sample before static batching measured 16.6 FPS with several old game tabs open on this Intel Mac; this is not a phone benchmark or a stable-FPS guarantee. Static decoration batching and paused/hidden render suspension were then added.
 - Geometry validation and drivetrain regressions remain passing. Detailed and mobile models keep the existing respective triangle budgets.
+
+## v1.3 — Motion and interior, 2026-10-17
+
+- Visual pose now uses frame-independent damping, separate from asynchronous worker physics. Unit regression confirms exact pause freeze, equivalent settling at 30/120 Hz, immediate reset, and alternating position jitter reduced to 19.7% of input amplitude in the synthetic test.
+- Chromium development browser: drove in cockpit view, paused at 74 km/h; sampled visual position and camera position/quaternion remained exactly unchanged over 30 animation callbacks. No application console errors observed. External and cockpit views inspected at 1280×720 and 844×390, including automatic and detailed model settings.
+- Added an original lightweight procedural cabin, dashboard with live speed, seats, door cards, steering wheel, and generic seated driver; head hidden in cockpit to prevent camera intersections. This is not an exact scanned Tesla interior.
+- Suspension damping increased. Soft shadow filtering and texel-aligned shadow tracking added; automatic mode uses simple shadow casters instead of rendering the full model in the shadow pass.
+- Build, model, controls, motion and Cannon physics regression suites pass. Physical-phone FPS, WebKit and real multitouch remain unverified; visual detail and procedural characters do not constitute photorealism.

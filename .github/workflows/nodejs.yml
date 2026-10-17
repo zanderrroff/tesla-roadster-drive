@@ -14,3 +14,4 @@ jobs:
       - run: node scripts/check-model.mjs
       - run: node --experimental-strip-types scripts/check-controls.mjs
       - run: node --experimental-strip-types scripts/check-physics.mjs
+      - run: node --experimental-strip-types scripts/check-motion.mjs
