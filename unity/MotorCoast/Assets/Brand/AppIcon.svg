@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#152e34"/><stop offset="1" stop-color="#081215"/></linearGradient><linearGradient id="body" x2="0" y2="1"><stop stop-color="#f1f5e9"/><stop offset="1" stop-color="#8babae"/></linearGradient></defs>
+<path fill="url(#bg)" d="M0 0h1024v1024H0z"/>
+<circle cx="718" cy="260" r="100" fill="#d0e8a0"/>
+<path d="M0 780 1024 580v444H0" fill="#243b3e"/>
+<path d="m0 900 1024-194" stroke="#cee7a0" stroke-width="9"/>
+<path d="M186 648c14-82 42-124 114-142l76-119c18-26 42-37 79-37h168c30 0 51 10 70 39l75 116c56 20 77 60 80 113l-3 93H187z" fill="url(#body)"/>
+<path d="m351 497 57-94h205l61 94z" fill="#11272e"/>
+<path d="M209 573h142l38 44H226zm588-3H664l-39 44h158" fill="#f5f8ea"/>
+<path d="M291 669h451l-24 42H321z" fill="#13262b"/>
+<path d="M207 688h66v90h-66zm546-2h67v90h-67z" fill="#080f12"/>
+<path d="M412 546h212" stroke="#537779" stroke-width="6"/>
+</svg>

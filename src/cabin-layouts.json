@@ -1,0 +1,178 @@
+{
+  "roadster": {
+    "shellOffset": [
+      0,
+      0,
+      0
+    ],
+    "driver": {
+      "position": [
+        0.34,
+        -0.19,
+        -0.265
+      ],
+      "scale": 0.74,
+      "torsoLean": 0
+    },
+    "wheel": {
+      "center": [
+        0.34,
+        0.11,
+        0.06
+      ],
+      "rotation": [
+        0.22,
+        0,
+        0
+      ],
+      "radius": 0.125
+    },
+    "floorY": -0.37,
+    "roofY": 0.54,
+    "seatTopY": -0.285
+  },
+  "bmw-m3-e30": {
+    "shellOffset": [
+      0,
+      0.07,
+      0.1
+    ],
+    "driver": {
+      "position": [
+        0.34,
+        -0.12,
+        -0.165
+      ],
+      "scale": 0.74,
+      "torsoLean": 0
+    },
+    "wheel": {
+      "center": [
+        0.34,
+        0.18,
+        0.16
+      ],
+      "rotation": [
+        0.22,
+        0,
+        0
+      ],
+      "radius": 0.125
+    },
+    "floorY": -0.3,
+    "roofY": 0.79,
+    "seatTopY": -0.215
+  },
+  "nissan-skyline-gt-r": {
+    "shellOffset": [
+      0,
+      0.08,
+      0.1
+    ],
+    "driver": {
+      "position": [
+        -0.34,
+        -0.11,
+        -0.165
+      ],
+      "scale": 0.74,
+      "torsoLean": 0
+    },
+    "wheel": {
+      "center": [
+        -0.34,
+        0.19,
+        0.16
+      ],
+      "rotation": [
+        0.22,
+        0,
+        0
+      ],
+      "radius": 0.125
+    },
+    "floorY": -0.29,
+    "roofY": 0.85,
+    "seatTopY": -0.205
+  },
+  "porsche-911-carrera": {
+    "shellOffset": [
+      0,
+      0.07,
+      0.05
+    ],
+    "driver": {
+      "position": [
+        0.34,
+        -0.12,
+        -0.215
+      ],
+      "scale": 0.74,
+      "torsoLean": 0
+    },
+    "wheel": {
+      "center": [
+        0.34,
+        0.18,
+        0.11
+      ],
+      "rotation": [
+        0.22,
+        0,
+        0
+      ],
+      "radius": 0.125
+    },
+    "floorY": -0.3,
+    "roofY": 0.66,
+    "seatTopY": -0.215
+  },
+  "mercedes-benz-amg-gt": {
+    "driver": {
+      "position": [
+        0.435,
+        -0.196,
+        -0.4
+      ],
+      "scale": 0.82,
+      "torsoLean": 0.22,
+      "floorY": -0.39,
+      "pedalZ": 0.22
+    },
+    "floorY": -0.39,
+    "roofY": 0.61,
+    "seatTopY": -0.294
+  },
+  "mercedes-benz-190e-evo": {
+    "driver": {
+      "position": [
+        0.333,
+        -0.049,
+        0.1
+      ],
+      "scale": 0.795,
+      "torsoLean": 0.22,
+      "floorY": -0.346,
+      "pedalZ": 0.64
+    },
+    "floorY": -0.346,
+    "roofY": 0.7,
+    "seatTopY": -0.147
+  },
+  "ferrari-458": {
+    "driver": {
+      "position": [
+        0.35,
+        -0.19,
+        0.035
+      ],
+      "scale": 0.82,
+      "torsoLean": 0.22,
+      "floorY": -0.352,
+      "pedalZ": 0.6
+    },
+    "floorY": -0.352,
+    "roofY": 0.62,
+    "seatTopY": -0.288
+  }
+}

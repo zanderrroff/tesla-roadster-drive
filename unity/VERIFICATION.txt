@@ -1,0 +1,40 @@
+MOTOR COAST NATIVE PORT — 2026-10-18
+
+Host: Intel MacBook Air, macOS 14.8.7.
+Local Xcode: /Applications/Xcode-15.4.0.app (15.4).
+Requested Unity: 6000.3.26f1 LTS; not installed / not activated.
+Free storage at check: approximately 1.3 GiB.
+
+PASSED
+- DriveCore C++17 tests under AddressSanitizer and UndefinedBehaviorSanitizer:
+  60/120 Hz input smoothing consistency; brake priority; rear-only handbrake;
+  shift-to-reverse braking; pause (dt=0); speed/steer bounds; invalid floats.
+- Universal x86_64 + arm64 macOS plugin compiled.
+- iOS ARM64 DriveCore object compiled with Xcode 15.4 / iOS SDK.
+- C# grammar parsed (tree-sitter 0.26.0 / c-sharp 0.23.5).
+  This is NOT a Unity compilation or semantic API check.
+- Khronos glTF Validator 2.0.0-dev.3.10: 9 exports, zero errors.
+  Character retains three standard non-root skin hierarchy warnings; Unity-specific
+  skin/bounds checks are a mandatory gate, not yet executed.
+- Native material splitting preserves skinned vertex positions exactly (0 delta)
+  against the source in all seven seated poses and three steering angles.
+- Source asset preflight: 7 cars, 9 models, hashes, four wheel pivots per car,
+  driver bone names, local resource paths, JSON and plist.
+- Original Three/glTF geometry checks: all seven seated characters above floor
+  and below roof; hand grip error < 0.000001 m; no steering/pose accumulation.
+  These checks are NOT a Unity renderer test.
+- Shader/API setup reviewed against official Unity 6.3 Graphics/UnityCsReference.
+- App Store Connect read-only authentication succeeded; existing Xcode Cloud
+  product/provider visible. No changes to Aloe or Mivori.
+
+BLOCKED / NOT RUN
+- export-ios.sh: exit 2, Unity 6000.3.26f1 not installed.
+- Unity C# compilation, asset import and EditMode tests have NOT run.
+- No Unity scene rendering, Metal screenshot, device FPS, touch or thermal test.
+- No generated Xcode project, archive, signed IPA, new Cloud workflow or TestFlight build.
+- No claim of GTA-level graphics, measured 30/60 FPS, or completed native release.
+
+NEXT REQUIRED GATE
+Activate Unity via Hub, install the pinned editor + iOS Build Support on a Mac
+with approximately 20–25 GB free (or use an authorized Unity build host), then
+run unity/Tools/export-ios.sh. Only a passing Unity run can start the Apple stage.

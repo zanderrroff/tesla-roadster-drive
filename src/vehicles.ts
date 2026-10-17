@@ -1,6 +1,6 @@
 import fleet from '../public/models/fleet/manifest.json'
 import roadsterDimensions from './vehicle-dimensions.json'
-export interface VehicleSpec {id:string;name:string;brand:string;className:string;file:string;centers:number[][];radius:number;size:[number,number,number];power:number;electric:boolean;color:string;description:string;cockpitEye?:number[];hasInterior?:boolean}
+export interface VehicleSpec {id:string;name:string;brand:string;className:string;file:string;centers:number[][];radius:number;size:[number,number,number];power:number;electric:boolean;color:string;description:string;cockpitEye?:number[];hasInterior?:boolean;steeringWheel?:{center:number[];quaternion:number[];radius:number}}
 const presets:Record<string,Partial<VehicleSpec>>={
  "bmw-m3-e30":{brand:"BMW",name:"M3 E30",className:"Спортивное купе",power:.85,color:"#b32d38",description:"Классика 80-х · лёгкое купе"},
  "mercedes-benz-amg-gt":{brand:"MERCEDES-BENZ",name:"AMG GT",className:"Гран-туризмо",power:1.1,color:"#28718d",description:"Мощное купе · длинный капот"},

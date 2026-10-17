@@ -26,14 +26,14 @@ export function Car(){
  useEffect(()=>{camera.fov=cameraMode===2?70:55;camera.near=cameraMode===2?.025:.1;camera.updateProjectionMatrix()},[camera,cameraMode])
  const {scene}=useModel(spec.id==='roadster'?'/models/roadster-'+(quality==='mobile'?'mobile':'high')+'.glb':spec.file)
  const brakeMaterials=useRef<MeshStandardMaterial[]>([])
- const models=useMemo(()=>{brakeMaterials.current=[];const clone=scene.clone(true);clone.traverse(o=>{if(!(o instanceof Mesh))return;o.castShadow=quality!=='mobile';o.receiveShadow=false;const original=o.material as MeshStandardMaterial;let m=original.clone();
+ const models=useMemo(()=>{brakeMaterials.current=[];const clone=scene.clone(true);clone.traverse(o=>{if(!(o instanceof Mesh))return;o.castShadow=quality!=='mobile';o.receiveShadow=quality!=='mobile';const original=o.material as MeshStandardMaterial;let m=original.clone();
   if(o.name==='Body_Material.001_0'){m=new MeshPhysicalMaterial({color:original.color,metalness:.65,roughness:.23,clearcoat:1,clearcoatRoughness:.22,envMapIntensity:1.25})}
   if(/^(Disc|Maxs)/.test(o.name)){m.color.set('#aeb8c1');m.metalness=.82;m.roughness=.28}
   if(o.name.startsWith('Tires')){m.roughness=.95;m.metalness=.05}
   if(o.name.startsWith('Glass')){m.color.set('#829d9f');m.transparent=true;m.opacity=o.name.includes('.015')?.4:.2;m.depthWrite=false;m.roughness=.13;m.metalness=.08;m.envMapIntensity=.8}
   if(o.name.includes('side Light_Material.016')){m.emissive.set('#ff1810');m.emissiveIntensity=.35;brakeMaterials.current.push(m)}
   if(o.name.includes('Headlight_Material.004')){m.emissive.set('#fff6d8');m.emissiveIntensity=.8}
-  if(m.transparent)m.depthWrite=false;
+  if(m.transparent){m.depthWrite=false;o.castShadow=false;}
   o.material=m;
  });return [clone.getObjectByName('Chassis')!,...Array.from({length:4},(_,i)=>clone.getObjectByName('Wheel_'+i)!)] as Group[]},[scene,quality])
  const [body,bodyApi]=useBox(()=>({mass:CHASSIS.mass,args:spec.size,position:start,rotation,allowSleep:false,onCollide:e=>{if(e.contact.impactVelocity>2)telemetry.impact=performance.now()},linearDamping:CHASSIS.linearDamping,angularDamping:CHASSIS.angularDamping}),useRef<Group>(null))
@@ -42,7 +42,7 @@ export function Car(){
  const velocity=useRef([0,0,0]),steer=useRef(0),previous=useRef(new Vector3(...start)),fresh=useRef(true),shadow=useRef<Mesh>(null),ray=useRef(new Raycaster()),rayTime=useRef(0),cameraLimit=useRef(30)
  const visual=useRef<Group>(null),visualWheels=useMemo(()=>Array.from({length:4},()=>createRef<Group>()),[])
  const followOffset=useRef(new Vector3()),invQ=useRef(new Quaternion()),wheelQ=useRef(new Quaternion()),wheelP=useRef(new Vector3())
- const lastMode=useRef(-1),lastPreview=useRef(false)
+ const lastMode=useRef(-1),lastPreview=useRef(false),cockpitEye=useRef(new Vector3(.34,.38,-.31))
  const overturned=useRef(0),stoppedFor=useRef(0),throttle=useRef(0),yawVelocity=useRef([0,0,0])
  const groundY=useRef(0)
  const blob=useMemo(shadowTexture,[])
@@ -87,7 +87,7 @@ export function Car(){
   }
   if(shadow.current){shadow.current.position.set(displayPos.x,groundY.current,displayPos.z);shadow.current.rotation.set(-Math.PI/2,0,-heading)}
   if(s.camera===2){
-   camera.position.copy(wheelP.current.fromArray(spec.hasInterior?(spec.cockpitEye||[.34,.4,-.3]):[.34,.37,-.4]).applyQuaternion(displayQ).add(displayPos))
+   camera.position.copy(wheelP.current.copy(cockpitEye.current).applyQuaternion(displayQ).add(displayPos))
    const yaw=Math.max(-1.3,Math.min(1.3,orbit.yaw));rayDirection.set(Math.sin(yaw),(.38-orbit.pitch)*.7-.035,Math.cos(yaw)).normalize().applyQuaternion(displayQ)
    camera.up.set(0,1,0);camera.lookAt(target.copy(camera.position).add(rayDirection))
   }else{
@@ -101,6 +101,6 @@ export function Car(){
 
  })
  return <><group ref={body}/>{wheels.map((w,i)=><Wheel key={i} body={w} radius={dimensions.radius}/>)}
- <group ref={visual}><primitive object={models[0]}/><Cabin shell={!spec.hasInterior} vehicleId={id}/>{quality==='mobile'&&<group><mesh castShadow position={[0,-.06,0]}><boxGeometry args={[1.65,.38,3.85]}/><meshBasicMaterial colorWrite={false} depthWrite={false}/></mesh><mesh castShadow position={[0,.29,-.15]}><boxGeometry args={[1.15,.35,1.3]}/><meshBasicMaterial colorWrite={false} depthWrite={false}/></mesh></group>}{visualWheels.map((w,i)=><group key={i} ref={w}><primitive object={models[i+1]}/></group>)}</group>
+ <group ref={visual}><primitive object={models[0]}/><Cabin vehicleId={id} chassis={models[0]} eye={cockpitEye}/>{quality==='mobile'&&<group><mesh castShadow position={[0,-.06,0]}><boxGeometry args={[1.65,.38,3.85]}/><meshBasicMaterial colorWrite={false} depthWrite={false}/></mesh><mesh castShadow position={[0,.29,-.15]}><boxGeometry args={[1.15,.35,1.3]}/><meshBasicMaterial colorWrite={false} depthWrite={false}/></mesh></group>}{visualWheels.map((w,i)=><group key={i} ref={w}><primitive object={models[i+1]}/></group>)}</group>
  <mesh ref={shadow} rotation={[-Math.PI/2,0,0]} renderOrder={1}><planeGeometry args={[3.5,5.6]}/><meshBasicMaterial map={blob} transparent depthWrite={false} polygonOffset polygonOffsetFactor={-2}/></mesh></>
 }

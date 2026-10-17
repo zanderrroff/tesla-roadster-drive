@@ -4,6 +4,7 @@ import {Mesh,Group,MeshStandardMaterial,MeshBasicMaterial,Float32BufferAttribute
 import {mergeBufferGeometries} from 'three/examples/jsm/utils/BufferGeometryUtils'
 import type {BoxProps} from '@react-three/cannon'
 import {Coast} from './Coast'
+import {useRoadMaterial} from './RoadMaterial'
 import {BUILDINGS,STREETS,RAMPS,PARKING} from './playground-layout'
 export const worldSurfaces:Object3D[]=[]
 function surfaceTexture(kind:'asphalt'|'concrete'|'windows') {
@@ -23,10 +24,10 @@ function RoadMarks(){const transforms=useMemo(()=>{const rows:{x:number;z:number
 export function World(){
  const staticRoot=useRef<Group>(null)
  useStaticBatch(staticRoot)
- const ground=useRef<Mesh>(null),asphalt=useMemo(()=>{const t=surfaceTexture('asphalt');t.repeat.set(85,85);return t},[]),concrete=useMemo(()=>{const t=surfaceTexture('concrete');t.repeat.set(100,100);return t},[])
+ const ground=useRef<Mesh>(null),roadMaterial=useRoadMaterial()
  const facades=useMemo(()=>BUILDINGS.map(b=>{const t=surfaceTexture('windows');t.repeat.set(Math.max(1,b.w/12),b.h/12);return t}),[])
- useEffect(()=>{const owned=ground.current;if(owned)worldSurfaces.push(owned);return()=>{const index=worldSurfaces.indexOf(owned!);if(index>=0)worldSurfaces.splice(index,1);asphalt.dispose();concrete.dispose();facades.forEach(t=>t.dispose())}},[asphalt,concrete,facades])
- return <><Coast/><group ref={staticRoot}><mesh ref={ground} rotation={[-Math.PI/2,0,0]} receiveShadow><planeGeometry args={[346,346]}/><meshStandardMaterial map={asphalt} color="#a8b4b3" roughness={.95}/></mesh>
+ useEffect(()=>{const owned=ground.current;if(owned)worldSurfaces.push(owned);return()=>{const index=worldSurfaces.indexOf(owned!);if(index>=0)worldSurfaces.splice(index,1);facades.forEach(t=>t.dispose())}},[facades])
+ return <><Coast/><group ref={staticRoot}><mesh ref={ground} rotation={[-Math.PI/2,0,0]} receiveShadow><planeGeometry args={[346,346]} onUpdate={g=>g.setAttribute('uv2',g.getAttribute('uv').clone())}/><primitive object={roadMaterial} attach="material"/></mesh>
  <mesh rotation={[-Math.PI/2,0,0]} position={[0,-.02,0]}><planeGeometry args={[2000,2000]}/><meshStandardMaterial color="#899b82" roughness={1}/></mesh><PlaygroundMarks/><ZoneSigns/>
  <RoadMarks/>
  {BUILDINGS.map((b,i)=><group key={i}><mesh position={[b.x,b.h/2,b.z]} receiveShadow><boxGeometry args={[b.w+.02,b.h,b.d+.02]}/><meshStandardMaterial map={facades[i]} color={b.color} roughness={.5} metalness={.12}/></mesh><mesh position={[b.x,b.h+.3,b.z]}><boxGeometry args={[b.w+1,.6,b.d+1]}/><meshStandardMaterial color="#bdc5c6"/></mesh><mesh position={[b.x,1.2,b.z]}><boxGeometry args={[b.w+.15,2.4,b.d+.15]}/><meshStandardMaterial color="#68737a"/></mesh></group>)}

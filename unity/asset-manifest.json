@@ -1,0 +1,469 @@
+[
+  {
+    "source": "public/models/roadster-mobile.glb",
+    "file": "Vehicles/roadster.gltf",
+    "bytes": 3172258,
+    "triangles": 133574,
+    "files": [
+      {
+        "file": "Vehicles/roadster.gltf",
+        "bytes": 55542,
+        "sha256": "8512a1beb7487f7634f619415486119dc08ca732e888b043d71765840a281a3c"
+      },
+      {
+        "file": "Vehicles/roadster-data-0.bin",
+        "bytes": 3116716,
+        "sha256": "aa281e4fce41c29bb1584c653905372b2d1c6718bcbb3810c54fe9f82c919528"
+      }
+    ]
+  },
+  {
+    "source": "public/models/roadster-high.glb",
+    "file": "Vehicles/roadster-high.gltf",
+    "bytes": 7197332,
+    "triangles": 344098,
+    "files": [
+      {
+        "file": "Vehicles/roadster-high.gltf",
+        "bytes": 55672,
+        "sha256": "85d52afa47b85e79274515a400388b365b352a147eaf13bec74336563bd4030a"
+      },
+      {
+        "file": "Vehicles/roadster-high-data-0.bin",
+        "bytes": 7141660,
+        "sha256": "388288a9f20e45100046be5e6b3ebe39bf94f9bbe0805437188f6aa2f8372fdb"
+      }
+    ]
+  },
+  {
+    "source": "public/models/fleet/bmw-m3-e30.glb",
+    "file": "Vehicles/bmw-m3-e30.gltf",
+    "bytes": 15615088,
+    "triangles": 52728,
+    "files": [
+      {
+        "file": "Vehicles/bmw-m3-e30.gltf",
+        "bytes": 48683,
+        "sha256": "97a0a25c9e5187e67aa04a433d06d0c3ab7a6469c7ac0dafebc1eb1d2aa14431"
+      },
+      {
+        "file": "Vehicles/bmw-m3-e30-data-0.bin",
+        "bytes": 2256168,
+        "sha256": "ca0d389c7f738e0bca15140b98770dca06a0f6f09a38a44b194f60dc4179079e"
+      },
+      {
+        "file": "Vehicles/bmw-m3-e30-linear-0.png",
+        "bytes": 359675,
+        "sha256": "448b85638e5d235326d5b006d072a64abd7db3a56099a17ca1ade29ed2b8fd5b"
+      },
+      {
+        "file": "Vehicles/bmw-m3-e30-color-1.png",
+        "bytes": 92888,
+        "sha256": "59c96def690fc6ae79672496ceb0552a4c80943dba80c3990c893d80f29728cb"
+      },
+      {
+        "file": "Vehicles/bmw-m3-e30-color-2.png",
+        "bytes": 206923,
+        "sha256": "58cb29a9396f30a1427d519f5eae35017ea0a688601ae3a63b9c2da1294e1fc5"
+      },
+      {
+        "file": "Vehicles/bmw-m3-e30-linear-3.png",
+        "bytes": 260813,
+        "sha256": "d658be73ddda32b1af1da2056d47f800c577fb0c37002d9e170a3c5eec9f2430"
+      },
+      {
+        "file": "Vehicles/bmw-m3-e30-color-4.png",
+        "bytes": 236515,
+        "sha256": "ed853675a19325b48864ab104c79f082106afda4dcb340260619ef198770cec7"
+      },
+      {
+        "file": "Vehicles/bmw-m3-e30-normal-5.png",
+        "bytes": 2241131,
+        "sha256": "a2f1bf009539e3586257dfe9250ba12fc9bd082b5aa7171044d31565936b2def"
+      },
+      {
+        "file": "Vehicles/bmw-m3-e30-color-6.png",
+        "bytes": 297529,
+        "sha256": "40939e50161b36b871a781cb548f25e5aaa60df242196d1e0ab08cb559f191cb"
+      },
+      {
+        "file": "Vehicles/bmw-m3-e30-linear-7.png",
+        "bytes": 1017928,
+        "sha256": "fb6ae1f775af4f8921eac44e43f31ffa00650012e297fd00f7941f99361b90f1"
+      },
+      {
+        "file": "Vehicles/bmw-m3-e30-normal-8.png",
+        "bytes": 1176738,
+        "sha256": "6a3eab3b6baaadec7cc12221ca7d4006f25b3e288d4e0226d8b587be7f0c0fb6"
+      },
+      {
+        "file": "Vehicles/bmw-m3-e30-color-9.png",
+        "bytes": 168169,
+        "sha256": "f7836317701abc7e16eb871ef55cb7996ebcd209ff93a02e7eacb3d24518e733"
+      },
+      {
+        "file": "Vehicles/bmw-m3-e30-linear-10.png",
+        "bytes": 1246963,
+        "sha256": "491cfc20aa3f054fc546989d4b5b1bccb3e6f72cf9157135fa369ffddbe94b39"
+      },
+      {
+        "file": "Vehicles/bmw-m3-e30-normal-11.png",
+        "bytes": 1189948,
+        "sha256": "bb4855b3514f2086f80d7e93f498585bace650f5e03d7457fca85435d7a7be62"
+      },
+      {
+        "file": "Vehicles/bmw-m3-e30-color-12.png",
+        "bytes": 278033,
+        "sha256": "1389c19c12c423ca1166a7e7c29fd490011674c755681654a38d6ae54d2c7735"
+      },
+      {
+        "file": "Vehicles/bmw-m3-e30-linear-13.png",
+        "bytes": 475046,
+        "sha256": "16de3deebb835d056191bf7f783f33b89d85c09026901b063c7455903edde19e"
+      },
+      {
+        "file": "Vehicles/bmw-m3-e30-normal-14.png",
+        "bytes": 595033,
+        "sha256": "c476e6c624d1d0be0d7df69f752d9042eb081407b9806e38d39dda649e3698e4"
+      },
+      {
+        "file": "Vehicles/bmw-m3-e30-color-15.png",
+        "bytes": 570771,
+        "sha256": "3948394badc51536d9993640284104f55b43b722c75262365f49d5939e60ca0a"
+      },
+      {
+        "file": "Vehicles/bmw-m3-e30-linear-16.png",
+        "bytes": 1804879,
+        "sha256": "f80b7ba30870e3157ec495cc918b14d25b9aa6b7975410117ffdbc7bc603caa2"
+      },
+      {
+        "file": "Vehicles/bmw-m3-e30-normal-17.png",
+        "bytes": 1091255,
+        "sha256": "392238711bd2b6f610ea3c2c9e155aca169bb56e5722cac28cc7055c132d5dfe"
+      }
+    ]
+  },
+  {
+    "source": "public/models/fleet/mercedes-benz-amg-gt.glb",
+    "file": "Vehicles/mercedes-benz-amg-gt.gltf",
+    "bytes": 5424684,
+    "triangles": 142742,
+    "files": [
+      {
+        "file": "Vehicles/mercedes-benz-amg-gt.gltf",
+        "bytes": 51980,
+        "sha256": "5732bdca843386f9aebc598a0148d8758cb748a502530fc74b2ae4a501059378"
+      },
+      {
+        "file": "Vehicles/mercedes-benz-amg-gt-data-0.bin",
+        "bytes": 5372704,
+        "sha256": "463cb7ed9b1da845c02cfaf917c81cfb3ce822a7aa50b773e5d4edb794ae20f4"
+      }
+    ]
+  },
+  {
+    "source": "public/models/fleet/mercedes-benz-190e-evo.glb",
+    "file": "Vehicles/mercedes-benz-190e-evo.gltf",
+    "bytes": 3618097,
+    "triangles": 93596,
+    "files": [
+      {
+        "file": "Vehicles/mercedes-benz-190e-evo.gltf",
+        "bytes": 66395,
+        "sha256": "e9501713b0cfd354f0f54bdab7902466b754cebce41f8292119e3ef23348b04c"
+      },
+      {
+        "file": "Vehicles/mercedes-benz-190e-evo-data-0.bin",
+        "bytes": 3167056,
+        "sha256": "80eb662f10d9fcc2dfa1b7fcdb28bdfff92f8343581f27d2af3942ad9141e1e6"
+      },
+      {
+        "file": "Vehicles/mercedes-benz-190e-evo-color-1.png",
+        "bytes": 209808,
+        "sha256": "85a3dad1b4d044f5c6e8215eda66a78438d20944975497661482bc56c41a4996"
+      },
+      {
+        "file": "Vehicles/mercedes-benz-190e-evo-color-2.png",
+        "bytes": 5424,
+        "sha256": "bb7c0559af6d6f76eefdde05703772d4acf0230226510cdfc424efcc50f55c9b"
+      },
+      {
+        "file": "Vehicles/mercedes-benz-190e-evo-color-3.png",
+        "bytes": 107206,
+        "sha256": "8323dd345de3c8b2aacc7e59439f084df4dab30f11b1d42dae47adb86daf8978"
+      },
+      {
+        "file": "Vehicles/mercedes-benz-190e-evo-color-4.png",
+        "bytes": 24950,
+        "sha256": "a7324519e1176f430e8e35553e91b2a46dfbdf61c07048e135e46cebe4b3cefe"
+      },
+      {
+        "file": "Vehicles/mercedes-benz-190e-evo-color-6.png",
+        "bytes": 11536,
+        "sha256": "b72ab6dd3f0de0328f53f126bc98d459c08be8e58d13f0567ca8aaa8b7c0704f"
+      },
+      {
+        "file": "Vehicles/mercedes-benz-190e-evo-color-7.png",
+        "bytes": 25722,
+        "sha256": "bbea3cbf6b043855673e3bdd60db42c8ce7f5a2a34185109d1c532b0c2778b84"
+      }
+    ]
+  },
+  {
+    "source": "public/models/fleet/nissan-skyline-gt-r.glb",
+    "file": "Vehicles/nissan-skyline-gt-r.gltf",
+    "bytes": 10208053,
+    "triangles": 101587,
+    "files": [
+      {
+        "file": "Vehicles/nissan-skyline-gt-r.gltf",
+        "bytes": 46326,
+        "sha256": "ebfcc8028f23abb6ac4716f9ca0704e8ed1b0a6d7be41922cd6eb3b4c89cf185"
+      },
+      {
+        "file": "Vehicles/nissan-skyline-gt-r-data-0.bin",
+        "bytes": 3114348,
+        "sha256": "86898d1b12474db7fabd3f1ea7059241389b081295cdade38e18f616126626f5"
+      },
+      {
+        "file": "Vehicles/nissan-skyline-gt-r-color-0.png",
+        "bytes": 167590,
+        "sha256": "d73768752bcb335dfa073ba9641b4b39287f055cd925fd4b6a52a7f1479f2ffd"
+      },
+      {
+        "file": "Vehicles/nissan-skyline-gt-r-linear-1.png",
+        "bytes": 252957,
+        "sha256": "8e7d88ee079d976f45e54effa0c73a7d4a1262f064486ecee4ce6c2b776afa40"
+      },
+      {
+        "file": "Vehicles/nissan-skyline-gt-r-normal-2.png",
+        "bytes": 649704,
+        "sha256": "7a44eecbfae0145e7971b82dcf61028e3d2e85c25e03ac74de524e8ed0313757"
+      },
+      {
+        "file": "Vehicles/nissan-skyline-gt-r-color-3.png",
+        "bytes": 83693,
+        "sha256": "91bd6564710f36552fd3d1ab3b01f8fd3bfd24d4da40bab2b1e93296f5ac3b92"
+      },
+      {
+        "file": "Vehicles/nissan-skyline-gt-r-linear-4.png",
+        "bytes": 90526,
+        "sha256": "dec46ca75e600fdc0e616b7073a85d5e005e7ddf4d4adc8eb28ff472d0d4c2cf"
+      },
+      {
+        "file": "Vehicles/nissan-skyline-gt-r-color-5.png",
+        "bytes": 30802,
+        "sha256": "6cb5a6ffee682e3fadd8df09f490b4776286476e28d532c7eb896d566a8c38bc"
+      },
+      {
+        "file": "Vehicles/nissan-skyline-gt-r-normal-6.png",
+        "bytes": 67686,
+        "sha256": "96729a3c2a8201eec03460d9fcafbedd8e8ff934914a7bad2316158c13cb034a"
+      },
+      {
+        "file": "Vehicles/nissan-skyline-gt-r-color-7.png",
+        "bytes": 70495,
+        "sha256": "f2913cf32ebae85fff49ad59803ccc2af9888974441532f907c1c72b2d2ffad7"
+      },
+      {
+        "file": "Vehicles/nissan-skyline-gt-r-linear-8.png",
+        "bytes": 95939,
+        "sha256": "c74780af33070d8911967b42382a2ca1bd7962b403acba3dd84b50796ef56d99"
+      },
+      {
+        "file": "Vehicles/nissan-skyline-gt-r-color-9.png",
+        "bytes": 29531,
+        "sha256": "64b107b0d0e12e3c617397b1da61f4fd85f655de593a2c71f638fbc198af00c8"
+      },
+      {
+        "file": "Vehicles/nissan-skyline-gt-r-linear-10.png",
+        "bytes": 60786,
+        "sha256": "71ea82520d65ee3bfeed0a6f6e3b7fc39b940804cb5555c1edc956972c32e2f3"
+      },
+      {
+        "file": "Vehicles/nissan-skyline-gt-r-normal-11.png",
+        "bytes": 12099,
+        "sha256": "1df56fd2cad719e9704d2cd1818c8c06b5fa696c1b0bc553f03403c007fc1cfa"
+      },
+      {
+        "file": "Vehicles/nissan-skyline-gt-r-color-12.png",
+        "bytes": 590529,
+        "sha256": "bbe9f6028021768fee0cf0e10dbca5cdbddd0eb0074f3bb5399640b13db1ced1"
+      },
+      {
+        "file": "Vehicles/nissan-skyline-gt-r-normal-13.png",
+        "bytes": 1082020,
+        "sha256": "fd65a26d0ff739d8d91b0939ec039d9a6eca2eb74b28118af58d7471615988f2"
+      },
+      {
+        "file": "Vehicles/nissan-skyline-gt-r-color-15.png",
+        "bytes": 221601,
+        "sha256": "a2a8f269ed9126bd48c90232f559fea06a4a6b0c974659c9b27cf97c5794f787"
+      },
+      {
+        "file": "Vehicles/nissan-skyline-gt-r-normal-16.png",
+        "bytes": 1355929,
+        "sha256": "18248b64795a9961f8b2126da5535e5218a65f352028b18763bdd5d036c351e1"
+      },
+      {
+        "file": "Vehicles/nissan-skyline-gt-r-color-17.png",
+        "bytes": 123526,
+        "sha256": "c5d2231dfc3cd4acad2c437f096782af3246bbee1b9c8351abf0ec17504ec1cd"
+      },
+      {
+        "file": "Vehicles/nissan-skyline-gt-r-normal-18.png",
+        "bytes": 40399,
+        "sha256": "202cfa9fadd2e7093c450e6ec451025d348f6c7ff94e372b6d1b6a52259c2262"
+      },
+      {
+        "file": "Vehicles/nissan-skyline-gt-r-color-19.png",
+        "bytes": 736516,
+        "sha256": "2626639378d01601ed1f802820caf81062050e5bf853966ce2c4e580733e9609"
+      },
+      {
+        "file": "Vehicles/nissan-skyline-gt-r-linear-20.png",
+        "bytes": 245017,
+        "sha256": "a7476c47b7239b867f3e5b203b438d22e5b34729c3078ce12cd9566396236ac2"
+      },
+      {
+        "file": "Vehicles/nissan-skyline-gt-r-normal-21.png",
+        "bytes": 504269,
+        "sha256": "8f48a5f0a2eaa586c9330fb6f4296febcc3237bf88a5c155efed2a6cc3cb12b0"
+      },
+      {
+        "file": "Vehicles/nissan-skyline-gt-r-color-22.png",
+        "bytes": 170519,
+        "sha256": "029871d11e2c815aca91ddead88de5737db8a41d95124769aa201ba3c15303d4"
+      },
+      {
+        "file": "Vehicles/nissan-skyline-gt-r-linear-23.png",
+        "bytes": 126700,
+        "sha256": "18dc08410ecae1f23a3ab6874cea0bc0904a307a5dc4cf7ff51991db974d63a9"
+      },
+      {
+        "file": "Vehicles/nissan-skyline-gt-r-linear-24.png",
+        "bytes": 238546,
+        "sha256": "3ff39197a085b660e87c36ea9f3a804f05adb3e29f17967c251306e451ee6fe0"
+      }
+    ]
+  },
+  {
+    "source": "public/models/fleet/porsche-911-carrera.glb",
+    "file": "Vehicles/porsche-911-carrera.gltf",
+    "bytes": 6146121,
+    "triangles": 144426,
+    "files": [
+      {
+        "file": "Vehicles/porsche-911-carrera.gltf",
+        "bytes": 39222,
+        "sha256": "3ba2424e192da8c69bcb513ddd299a36030c8619e1e42389d5eed08490a60c24"
+      },
+      {
+        "file": "Vehicles/porsche-911-carrera-data-0.bin",
+        "bytes": 3487980,
+        "sha256": "5ad89c0ccd6fdf7ebc27b5a9eba810b6b5e883920260a6f4a825b584b64bf758"
+      },
+      {
+        "file": "Vehicles/porsche-911-carrera-linear-0.png",
+        "bytes": 212968,
+        "sha256": "e33976064f7825ff40b7902f4812a01837c21ff55c24d0652b6785ba54fafcdd"
+      },
+      {
+        "file": "Vehicles/porsche-911-carrera-color-1.png",
+        "bytes": 119172,
+        "sha256": "98a8529d8e04efd61a99602bb6f8c76cb4187711e7da7afbb4bd80e65f151e9c"
+      },
+      {
+        "file": "Vehicles/porsche-911-carrera-normal-2.png",
+        "bytes": 112746,
+        "sha256": "a99ca18e43b8e1aa180467cb4b63222ede9d7b7af54117d76344c4cfe4309fe0"
+      },
+      {
+        "file": "Vehicles/porsche-911-carrera-color-3.png",
+        "bytes": 227822,
+        "sha256": "88b87c42a33453c8404da5fbc1e5bf852d0de0c213200ed7551faec9f14ff5ec"
+      },
+      {
+        "file": "Vehicles/porsche-911-carrera-linear-4.png",
+        "bytes": 559480,
+        "sha256": "3c0ed955303885d1d2cb1a0e7e31611d98c9ca07b33322a46d40f0c8daf04c37"
+      },
+      {
+        "file": "Vehicles/porsche-911-carrera-normal-5.png",
+        "bytes": 679729,
+        "sha256": "b27519e5496fa13ed4e6e672b655e5d5b075785217f67fcaec9e03db2cdcbf5c"
+      },
+      {
+        "file": "Vehicles/porsche-911-carrera-color-6.png",
+        "bytes": 588868,
+        "sha256": "10ee7e9bbdb16e0170f9a0eb09caf6405fbd34a44d8ce8383c2fdb0f0822bee2"
+      },
+      {
+        "file": "Vehicles/porsche-911-carrera-color-7.png",
+        "bytes": 118134,
+        "sha256": "36abbf3f161feb671d48b07b7f92a03a24b23444ecd40ae28a094ae386cdffa9"
+      }
+    ]
+  },
+  {
+    "source": "public/models/fleet/ferrari-458.glb",
+    "file": "Vehicles/ferrari-458.gltf",
+    "bytes": 4356598,
+    "triangles": 141881,
+    "files": [
+      {
+        "file": "Vehicles/ferrari-458.gltf",
+        "bytes": 51154,
+        "sha256": "0254bdbdb70a7e7911c3bb9290edc1bfd5d37db0a2e4c8797eed49caf644e8ed"
+      },
+      {
+        "file": "Vehicles/ferrari-458-data-0.bin",
+        "bytes": 4305444,
+        "sha256": "c535bbea5b71e19b372fb2ba1fd2c1b0454d99615e2e92f5e188ba8c98664f2d"
+      }
+    ]
+  },
+  {
+    "source": "public/models/driver.glb",
+    "file": "Driver/driver.gltf",
+    "bytes": 5828778,
+    "triangles": 7440,
+    "files": [
+      {
+        "file": "Driver/driver.gltf",
+        "bytes": 37125,
+        "sha256": "719823bf709f3ab732983717d55e7f6de24842fff7949c9a5ae589c096ea93d9"
+      },
+      {
+        "file": "Driver/driver-data-0.bin",
+        "bytes": 362328,
+        "sha256": "1ab0a79b31f365c5fbdb395e0e77e723909e3ad4b80c93cf7119efd3663234fe"
+      },
+      {
+        "file": "Driver/driver-normal-0.png",
+        "bytes": 1024727,
+        "sha256": "1d9f7783bb661a023e26d97844a88af659e13dc93f8d55f685cdd05d5c794127"
+      },
+      {
+        "file": "Driver/driver-color-1.png",
+        "bytes": 1183695,
+        "sha256": "aae2a0cad9af263e316809da180eb8de99506d74b03f9944aa75a959abc6f75a"
+      },
+      {
+        "file": "Driver/driver-normal-2.png",
+        "bytes": 884256,
+        "sha256": "b7c06440f1318344c4fd2bf8b10533478d8dcbfd55a61c6a65bfe74067a51a77"
+      },
+      {
+        "file": "Driver/driver-color-3.png",
+        "bytes": 991894,
+        "sha256": "f49f7ec3fea6ebe2baf280950edf6fed1121b2dfd78fc69cea54ec46797533de"
+      },
+      {
+        "file": "Driver/driver-color-4.png",
+        "bytes": 1344753,
+        "sha256": "10412ec4e625e86e18d91edcdf70938a43c50202f419130f21ce4041f25e56fd"
+      }
+    ]
+  }
+]

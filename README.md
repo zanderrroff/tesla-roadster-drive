@@ -66,3 +66,8 @@ Three graphics presets, sound volume, camera sensitivity, stability assistance a
 Audio uses attributed engine/skid/impact/ambient recordings, electric-motor synthesis, speed-dependent wind and a horn. The generic combustion engine sample is not a recording of each named vehicle.
 
 Validation for this release: TypeScript/Vite build, fleet geometry and Cannon regression checks, markup rendering and offline asset renders. Browser/WebGL interaction and physical-device performance were not verified because the browser tool was unavailable. No GTA asset/code is used, and GTA-level graphics or universally stable FPS are not claimed.
+
+
+## Native iPhone port (Unity 6)
+
+The native Unity 6 / URP / Metal / IL2CPP project is in [unity/MotorCoast](unity/MotorCoast). See [build instructions and current status](unity/README.md). Native C++ checks pass, but Unity compilation and the IPA release are blocked until an activated Unity installation/build host is available. This is not yet a shipped iPhone build.

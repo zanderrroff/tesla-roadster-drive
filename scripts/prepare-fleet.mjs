@@ -1,6 +1,7 @@
 /**
  * Rebuild the licensed fleet from the sources recorded in public/models/fleet/manifest.json.
  * Run from the repository root: node scripts/prepare-fleet.mjs
+ * Optional: --only=<id> rebuilds one car; --licenses also refreshes LICENSES.md.
  * Source downloads are cached in .asset-work. Output is ready for GLTFLoader + the local Draco decoder.
  * Edits: ground planes removed; metric Y-up/+Z-front; four real wheel pivots;
  * neutral steering; material and draw-call cleanup; <=150k triangles; <=1024px textures.
@@ -12,7 +13,7 @@ import {dedup, prune, weld, simplifyPrimitive, joinPrimitives, textureCompress, 
 import {MeshoptDecoder, MeshoptSimplifier} from 'meshoptimizer';
 import draco3d from 'draco3dgltf';
 import sharp from 'sharp';
-import {Matrix4, Matrix3, Vector3, Box3} from 'three';
+import {Matrix4, Matrix3, Vector3, Box3, Quaternion} from 'three';
 const work='.asset-work',out='public/models/fleet';
 fs.mkdirSync(work,{recursive:true});fs.mkdirSync(out,{recursive:true});
 const io=new NodeIO().registerExtensions(ALL_EXTENSIONS).registerDependencies({'meshopt.decoder':MeshoptDecoder,'draco3d.decoder':await draco3d.createDecoderModule(),'draco3d.encoder':await draco3d.createEncoderModule()});
@@ -23,9 +24,19 @@ const specs=[
  {id:'mercedes-benz-amg-gt',name:'Mercedes-Benz AMG GT',length:4.55,rotation:'amg',author:'Yan Carvalho',uid:'661dcab94455463784651a3ebc63cfb9',hasInterior:true,eye:[.34,.46,-.35],skip:n=>n==='Object_4',tire:r=>r.name==='Object_28',wheel:r=>['Object_13','Object_15','Object_28'].includes(r.name),paint:/^Material\.001$/,color:[.024,.21,.31,1]},
  {id:'mercedes-benz-190e-evo',name:'Mercedes-Benz 190E EVO',length:4.44,rotation:0,author:'Betier Models',uid:'15e5576f4b724f2db357165caed3492b',hasInterior:true,eye:[.33,.56,-.06],tire:r=>r.name.startsWith('TYRE_'),wheel:r=>/^(TYRE_|RIM_|IN_|Name-WheelBrake)/.test(r.name),paint:/^Car_body_color$/,color:[.025,.032,.045,1]},
  {id:'nissan-skyline-gt-r',name:'Nissan Skyline GT-R C110',length:4.46,rotation:Math.PI,author:'Martin Trafas',uid:'1a950b81ee274a0eb8014bd84ba047f5',hasInterior:false,eye:[.34,.49,-.24],skip:n=>['Shadow_Shadow_0','Inside_InsideMaterial_0'].includes(n),tire:r=>r.name.startsWith('Tire_'),wheel:r=>/^(HayashiStreet|Tire_|Brake_)/.test(r.name),paint:/^Paint$/,color:null},
- {id:'porsche-911-carrera',name:'Porsche 911 Carrera 4S',length:4.45,rotation:0,author:'Lionsharp Studios',hasInterior:false,eye:[.35,.47,-.25],skip:n=>n==='Plane_0',tire:r=>/^Cylinder/.test(r.name)&&r.material.getName()==='rubber',wheel:r=>/^Cylinder/.test(r.name),paint:/^paint$/,color:[.62,.65,.67,1],license:'CC BY-SA 4.0'},
+ {id:'porsche-911-carrera',name:'Porsche 911 Carrera 4S',length:4.45,rotation:0,author:'Lionsharp Studios',hasInterior:false,eye:[.35,.47,-.25],skip:n=>['Plane_0','Cube.002_0'].includes(n),tire:r=>/^Cylinder/.test(r.name)&&r.material.getName()==='rubber',wheel:r=>/^Cylinder/.test(r.name),paint:/^paint$/,color:[.62,.65,.67,1],license:'CC BY-SA 4.0'},
  {id:'ferrari-458',name:'Ferrari 458 Italia',length:4.53,rotation:Math.PI,author:'vicent091036',uid:'57bf6cc56931426e87494f554df1dab6',url:'https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/models/gltf/ferrari.glb',hasInterior:true,eye:[.35,.49,-.08],tire:r=>r.name==='tire',wheel:r=>r.parent.startsWith('wheel_'),paint:/^Body_Color$/,color:[.56,.008,.012,1]}
 ];
+// Seat denotes the cushion contact point, not the character origin. Measurements
+// use the normalized chassis frame. Incomplete source cabins need generated seats.
+const cabinMeasurements={
+ 'bmw-m3-e30':{seat:[.34,-.22,-.265],floorY:-.39,roofY:.70,eye:[.34,.48,-.225],source:'generated'},
+ 'mercedes-benz-amg-gt':{seat:[.435,-.294,-.44],floorY:-.39,roofY:.61,eye:[.435,.415,-.40],source:'original'},
+ 'mercedes-benz-190e-evo':{seat:[.333,-.148,.02],floorY:-.346,roofY:.70,eye:[.333,.561,.06],source:'original'},
+ 'nissan-skyline-gt-r':{seat:[.34,-.25,-.30],floorY:-.40,roofY:.67,eye:[.34,.459,-.26],source:'generated'},
+ 'porsche-911-carrera':{seat:[.35,-.245,-.24],floorY:-.40,roofY:.64,eye:[.35,.464,-.20],source:'generated',removedOriginalHeadrests:true},
+ 'ferrari-458':{seat:[.35,-.284,-.02],floorY:-.352,roofY:.62,eye:[.35,.425,.02],source:'original'}
+};
 // Keep the source URL exactly as distributed by the attributed upstream library.
 const catalogPath=work+'/carros-cars.json';
 if(!fs.existsSync(catalogPath)){const r=await fetch('https://raw.githubusercontent.com/pedrosoandre/carros/main/cars.json');if(!r.ok)throw Error('Cannot fetch catalog');fs.writeFileSync(catalogPath,await r.text());}
@@ -60,6 +71,38 @@ function getRecords(doc,spec){
   }
  }return records;
 }
+function connectedParts(r){
+ const parent=r.positions.map((_,i)=>i),seen=new Map(),find=i=>{while(i!==parent[i]){parent[i]=parent[parent[i]];i=parent[i]}return i},join=(a,b)=>{parent[find(a)]=find(b)};
+ // Weld for component identification only. Export preserves hard normal seams.
+ for(let i=0;i<r.positions.length;i++){const key=r.positions[i].toArray().map(x=>x.toFixed(5)).join(',');if(seen.has(key))join(i,seen.get(key));else seen.set(key,i)}
+ for(let i=0;i<r.indices.length;i+=3){join(r.indices[i],r.indices[i+1]);join(r.indices[i],r.indices[i+2])}
+ const parts=new Map();for(let i=0;i<r.indices.length;i+=3){const key=find(r.indices[i]);if(!parts.has(key))parts.set(key,[]);parts.get(key).push(...r.indices.slice(i,i+3))}
+ return [...parts.values()].map(indices=>({indices,bounds:pointsBounds(indices.map(i=>r.positions[i]))}));
+}
+function steeringAssembly(spec,records){
+ const selections=new Map(),fit=[];
+ for(const r of records){
+  if(spec.id==='ferrari-458'&&r.parent==='steering_wheel'&&r.name!=='steering_column'){
+   selections.set(r,true);if(['steering_carbon','steering_leather'].includes(r.name))fit.push(...r.positions);
+  }else if(spec.id==='mercedes-benz-190e-evo'&&r.name.includes('cockpit_steering_wheel_')){
+   selections.set(r,true);if(r.material.getName()==='bump_leather2')fit.push(...r.positions);
+  }else if(spec.id==='mercedes-benz-amg-gt'){
+   // Select complete disconnected components, including the wheel badge, from the
+   // measured wheel envelope. Do not crop triangles or move the dashboard/column.
+   const b=pointsBounds(r.positions);if(b.min.x>.65||b.max.x<.23||b.min.y>.36||b.max.y<-.01||b.min.z>.05||b.max.z<-.16)continue;
+   const selected=new Set();for(const part of connectedParts(r)){
+    const b=part.bounds;if(b.min.x<.23||b.max.x>.65||b.min.y<-.01||b.max.y>.36||b.min.z<-.16||b.max.z>.05)continue;
+    for(const i of part.indices)selected.add(i);
+    const size=b.getSize(new Vector3());if(size.x>.30&&size.y>.30)fit.push(...[...new Set(part.indices)].map(i=>r.positions[i]));
+   }if(selected.size)selections.set(r,selected);
+  }
+ }
+ if(!selections.size)return null;if(!fit.length)throw Error('Missing steering rim for '+spec.id);
+ const bounds=pointsBounds(fit),center=bounds.getCenter(new Vector3()),mean=fit.reduce((v,p)=>v.add(p),new Vector3()).multiplyScalar(1/fit.length);
+ let yy=0,yz=0;for(const p of fit){yy+=(p.y-mean.y)**2;yz+=(p.y-mean.y)*(p.z-mean.z)}
+ const axis=new Vector3(0,-yz/yy,1).normalize(),rotation=[Math.atan2(-axis.y,axis.z),0,0],quaternion=new Quaternion().setFromUnitVectors(new Vector3(0,0,1),axis),inverse=quaternion.clone().invert(),round=a=>a.map(x=>+x.toFixed(6));
+ return {selections,center,quaternion,inverse,metadata:{center:round(center.toArray()),axis:round(axis.toArray()),rotation:round(rotation),quaternion:round(quaternion.toArray()),radius:+(bounds.getSize(new Vector3()).x/2).toFixed(6)}};
+}
 const only=process.argv.find(a=>a.startsWith('--only='))?.slice(7);if(only&&!specs.some(s=>s.id===only))throw Error('Unknown fleet id: '+only);
 const manifest=only&&fs.existsSync(out+'/manifest.json')?JSON.parse(fs.readFileSync(out+'/manifest.json')).filter(m=>m.id!==only):[];
 for(const spec of specs.filter(s=>!only||s.id===only)){
@@ -80,19 +123,30 @@ for(const spec of specs.filter(s=>!only||s.id===only)){
  const scale=spec.length/(bounds.max.z-bounds.min.z),center=bounds.getCenter(new Vector3()),ground=Math.min(...rawWheels.map(w=>pointsBounds(w.points).min.y));
  const translate=new Vector3(-center.x*scale,-.58-ground*scale,-center.z*scale);
  for(const r of records)r.positions.forEach(p=>p.multiplyScalar(scale).add(translate));
+ if(spec.id==='ferrari-458')for(const r of records){
+  // The FBX export repeats almost every face with reversed winding. Welding those
+  // coincident opposite faces before decimation destroys thin seat surfaces.
+  // Keep one exact face with its original vertex normals and render both sides.
+  const keys=r.positions.map(p=>p.toArray().map(x=>x.toFixed(6)).join(',')),seen=new Set(),indices=[];
+  for(let i=0;i<r.indices.length;i+=3){const face=r.indices.slice(i,i+3),key=face.map(j=>keys[j]).sort().join('|');if(seen.has(key))continue;seen.add(key);indices.push(...face)}
+  r.indices=indices;r.material.setDoubleSided(true);
+ }
  const wheels=clusters(tireRecords.flatMap(r=>r.positions));
  for(const w of wheels){w.correct=steeringCorrection(w.points,w.center);w.rotation=new Matrix4().makeRotationY(w.correct);w.normalRotation=new Matrix3().setFromMatrix4(w.rotation)}
- const buffer=root.listBuffers()[0]||doc.createBuffer(),groups=[doc.createNode('Chassis'),...wheels.map((_,i)=>doc.createNode('Wheel_'+i))],buckets=groups.map(()=>new Map());
+ const steering=steeringAssembly(spec,records);
+ const buffer=root.listBuffers()[0]||doc.createBuffer(),groups=[doc.createNode('Chassis'),...wheels.map((_,i)=>doc.createNode('Wheel_'+i))];
+ if(steering)groups.push(doc.createNode('SteeringWheel').setTranslation(steering.center.toArray()).setRotation(steering.quaternion.toArray()));
+ const buckets=groups.map(()=>new Map());
  for(const r of records){
-  const wheel=spec.wheel(r),pieces=new Map();
-  for(let i=0;i<r.indices.length;i+=3){let k=0;if(wheel){v.copy(r.positions[r.indices[i]]).add(r.positions[r.indices[i+1]]).add(r.positions[r.indices[i+2]]).multiplyScalar(1/3);const ds=wheels.map(w=>w.center.distanceToSquared(v));k=ds.indexOf(Math.min(...ds))+1}if(!pieces.has(k))pieces.set(k,[]);pieces.get(k).push(...r.indices.slice(i,i+3));}
+  const wheel=spec.wheel(r),selection=steering?.selections.get(r),pieces=new Map();
+  for(let i=0;i<r.indices.length;i+=3){let k=0;if(selection===true||selection?.has(r.indices[i]))k=5;else if(wheel){v.copy(r.positions[r.indices[i]]).add(r.positions[r.indices[i+1]]).add(r.positions[r.indices[i+2]]).multiplyScalar(1/3);const ds=wheels.map(w=>w.center.distanceToSquared(v));k=ds.indexOf(Math.min(...ds))+1}if(!pieces.has(k))pieces.set(k,[]);pieces.get(k).push(...r.indices.slice(i,i+3));}
   for(const [k,sourceIndices] of pieces){
    const remap=new Map(),indices=[],attributes={},semantics=r.primitive.listSemantics().filter(s=>!s.startsWith('JOINTS')&&!s.startsWith('WEIGHTS'));
    for(const semantic of semantics)attributes[semantic]=[];
    for(const index of sourceIndices){if(!remap.has(index)){remap.set(index,remap.size);for(const semantic of semantics){let values;
-    if(semantic==='POSITION'){const p=r.positions[index].clone();if(k)p.sub(wheels[k-1].center).applyMatrix4(wheels[k-1].rotation);values=p.toArray()}
-    else if(semantic==='NORMAL'){const p=r.normals[index].clone();if(k)p.applyMatrix3(wheels[k-1].normalRotation);values=p.toArray()}
-    else if(semantic==='TANGENT'){const t=r.tangents[index],p=new Vector3(...t.slice(0,3));if(k)p.applyMatrix3(wheels[k-1].normalRotation);values=[...p.toArray(),t[3]]}
+    if(semantic==='POSITION'){const p=r.positions[index].clone();if(k===5)p.sub(steering.center).applyQuaternion(steering.inverse);else if(k)p.sub(wheels[k-1].center).applyMatrix4(wheels[k-1].rotation);values=p.toArray()}
+    else if(semantic==='NORMAL'){const p=r.normals[index].clone();if(k===5)p.applyQuaternion(steering.inverse);else if(k)p.applyMatrix3(wheels[k-1].normalRotation);values=p.toArray()}
+    else if(semantic==='TANGENT'){const t=r.tangents[index],p=new Vector3(...t.slice(0,3));if(k===5)p.applyQuaternion(steering.inverse);else if(k)p.applyMatrix3(wheels[k-1].normalRotation);values=[...p.toArray(),t[3]]}
     else values=r.primitive.getAttribute(semantic).getElement(index,[]);
     attributes[semantic].push(...values);
    }}indices.push(remap.get(index));}
@@ -101,9 +155,9 @@ for(const spec of specs.filter(s=>!only||s.id===only)){
    const key=root.listMaterials().indexOf(r.material)+'|'+semantics.sort().join(',');if(!buckets[k].has(key))buckets[k].set(key,[]);buckets[k].get(key).push(primitive);
   }
  }
- for(let k=0;k<groups.length;k++)for(const prims of buckets[k].values()){const joined=prims.length>1?joinPrimitives(prims):prims[0];if(prims.length>1)prims.forEach(p=>p.dispose());const material=joined.getMaterial().getName();groups[k].addChild(doc.createNode((k?'WheelDetail_':'BodyDetail_')+material).setMesh(doc.createMesh(material).addPrimitive(joined)))}
+ for(let k=0;k<groups.length;k++)for(const prims of buckets[k].values()){const joined=prims.length>1?joinPrimitives(prims):prims[0];if(prims.length>1)prims.forEach(p=>p.dispose());const material=joined.getMaterial().getName();groups[k].addChild(doc.createNode((k===5?'SteeringDetail_':k?'WheelDetail_':'BodyDetail_')+material).setMesh(doc.createMesh(material).addPrimitive(joined)))}
  for(const scene of root.listScenes())for(const n of [...scene.listChildren()])scene.removeChild(n);
- const scene=root.listScenes()[0];for(const group of groups)scene.addChild(group);
+ const scene=root.listScenes()[0];for(const group of groups.slice(0,5))scene.addChild(group);if(steering)groups[0].addChild(groups[5]);
  for(const animation of root.listAnimations())animation.dispose();
  for(const ext of [...root.listExtensionsUsed()])if(['EXT_meshopt_compression','KHR_mesh_quantization','KHR_draco_mesh_compression'].includes(ext.extensionName))ext.dispose();
  const clearcoat=doc.createExtension(KHRMaterialsClearcoat);
@@ -117,16 +171,13 @@ for(const spec of specs.filter(s=>!only||s.id===only)){
   if(spec.id==='ferrari-458'&&['Carpet','Carbon_Fiber'].includes(material.getName()))material.setBaseColorFactor([.025,.03,.035,1]).setMetallicFactor(.1).setRoughnessFactor(.8);
   if(spec.id==='mercedes-benz-amg-gt'&&material.getName()==='Material')material.setBaseColorFactor([.15,.2,.23,.19]).setMetallicFactor(.08).setRoughnessFactor(.14).setAlphaMode('BLEND');
  }
- if(spec.id==='ferrari-458')for(const mesh of root.listMeshes())for(const p of mesh.listPrimitives()){const pos=p.getAttribute('POSITION'),nor=p.getAttribute('NORMAL');if(!nor)continue;const sums=new Map();for(let i=0;i<pos.getCount();i++){const key=pos.getElement(i,[]).map(x=>x.toFixed(6)).join(','),normal=new Vector3().fromArray(nor.getElement(i,[]));if(!sums.has(key))sums.set(key,new Vector3());sums.get(key).add(normal)}for(const sum of sums.values())sum.normalize();for(let i=0;i<pos.getCount();i++){const key=pos.getElement(i,[]).map(x=>x.toFixed(6)).join(',');nor.setElement(i,sums.get(key).toArray())}}
  await doc.transform(prune(),dedup(),weld());
  const count=()=>root.listMeshes().reduce((sum,mesh)=>sum+mesh.listPrimitives().reduce((s,p)=>s+(p.getIndices()?.getCount()||p.getAttribute('POSITION').getCount())/3,0),0);
  let tri=count();if(tri>145000){const ratio=142000/tri;for(const mesh of root.listMeshes())for(const primitive of mesh.listPrimitives())simplifyPrimitive(primitive,{simplifier:MeshoptSimplifier,ratio,error:.0015});await doc.transform(prune(),dedup());tri=count()}
  for(const error of [.006,.015])if(tri>150000){for(const mesh of root.listMeshes())for(const primitive of mesh.listPrimitives())simplifyPrimitive(primitive,{simplifier:MeshoptSimplifier,ratio:140000/tri,error});await doc.transform(prune(),dedup());tri=count()}
  if(tri>150000)throw Error(spec.id+' exceeds triangle budget: '+tri);
- // Ferrari's FBX source duplicates surfaces with opposite winding. They may share
- // vertices during decimation, but final shading must keep each side's normals.
- // Rebuild crease-aware normals from the delivered faces so opposite surfaces never
- // cancel each other, and hard panel edges remain hard.
+ // Rebuild Ferrari shading from the delivered faces while preserving panel creases.
+ // Coincident opposite triangles were removed before decimation above.
  if(spec.id==='ferrari-458'){
   for(const mesh of root.listMeshes())for(const p of mesh.listPrimitives()){
    const position=p.getAttribute('POSITION'),indices=p.getIndices().getArray(),points=Array.from({length:position.getCount()},(_,i)=>new Vector3(...position.getElement(i,[]))),keys=points.map(v=>v.toArray().map(x=>x.toFixed(6)).join(',')),adjacent=new Map(),faces=[];
@@ -146,6 +197,8 @@ for(const spec of specs.filter(s=>!only||s.id===only)){
  // Draco can discard degenerate triangles; record the actual decoded delivery count.
  const delivered=await io.read(out+'/'+spec.id+'.glb');tri=delivered.getRoot().listMeshes().reduce((sum,m)=>sum+m.listPrimitives().reduce((s,p)=>s+(p.getIndices()?.getCount()||p.getAttribute('POSITION').getCount())/3,0),0);
  const size=pointsBounds(records.flatMap(r=>r.positions)).getSize(new Vector3());
- const m={id:spec.id,name:spec.name,file:'/models/fleet/'+spec.id+'.glb',centers:wheels.map(w=>w.center.toArray().map(x=>+x.toFixed(5))),radius:+(wheels.reduce((sum,w)=>sum+pointsBounds(w.points).getSize(new Vector3()).y/2,0)/4).toFixed(5),size:[+(size.x*.9).toFixed(4),.58,+(size.z*.9).toFixed(4)],license,licenseUrl,source,author:spec.author,triangleCount:tri,bytes:fs.statSync(out+'/'+spec.id+'.glb').size,hasInterior:spec.hasInterior,cockpitEye:spec.eye,paintMaterial:spec.paint.source,changes:'Separated and straightened wheels; normalized scale and pivots; removed display ground; optimized geometry and textures; adjusted paint and glazing.'};manifest.push(m);fs.writeFileSync(out+'/manifest.json',JSON.stringify(manifest,null,2)+'\n');console.log(spec.id,tri,'triangles',m.bytes,'bytes',m.centers,'wheel yaw correction',wheels.map(w=>+(w.correct*180/Math.PI).toFixed(2)));
+ const cabin=cabinMeasurements[spec.id];
+ const m={id:spec.id,name:spec.name,file:'/models/fleet/'+spec.id+'.glb',centers:wheels.map(w=>w.center.toArray().map(x=>+x.toFixed(5))),radius:+(wheels.reduce((sum,w)=>sum+pointsBounds(w.points).getSize(new Vector3()).y/2,0)/4).toFixed(5),size:[+(size.x*.9).toFixed(4),.58,+(size.z*.9).toFixed(4)],license,licenseUrl,source,author:spec.author,triangleCount:tri,bytes:fs.statSync(out+'/'+spec.id+'.glb').size,hasInterior:spec.hasInterior,cockpitEye:cabin.eye,cabin,steeringWheel:steering?.metadata,paintMaterial:spec.paint.source,changes:'Separated and straightened wheels; normalized scale and pivots; removed display ground; optimized geometry and textures; adjusted paint and glazing.'+(steering?' Separated original steering wheel with measured local rotation axis.':'')+(spec.id==='porsche-911-carrera'?' Removed isolated source headrests to prevent overlap with the generated interior.':'')+(spec.id==='ferrari-458'?' Removed exact opposite-face duplicates before optimization to preserve seat cushions.':'')};manifest.push(m);fs.writeFileSync(out+'/manifest.json',JSON.stringify(manifest,null,2)+'\n');console.log(spec.id,tri,'triangles',m.bytes,'bytes',m.centers,'wheel yaw correction',wheels.map(w=>+(w.correct*180/Math.PI).toFixed(2)),'steering',steering?.metadata);
 }
-fs.writeFileSync(out+'/LICENSES.md','# Fleet model attribution\n\nThese model assets are independently licensed from the MIT game code. Brand names identify the depicted vehicles; no manufacturer endorsement is implied.\n\n'+manifest.map(m=>`## ${m.name}\n\n- Author: ${m.author}\n- Source: ${m.source}\n- License: [${m.license}](${m.licenseUrl})\n- File: [${m.id}.glb](./${m.id}.glb)\n- Changes: ${m.changes}\n${m.id==='ferrari-458'?'- Distributed by the official [Three.js examples](https://github.com/mrdoob/three.js/blob/dev/examples/webgl_materials_car.html); [license record](https://github.com/mrdoob/three.js/issues/23089).\n':'- Source distribution: [carros library](https://github.com/pedrosoandre/carros). Source license was verified using the public Sketchfab model API on 2026-10-18.\n'}${m.license.includes('SA')?'- This modified GLB is distributed under CC BY-SA 4.0.\n':''}`).join('\n'));
+for(const m of manifest){m.cabin=cabinMeasurements[m.id];m.cockpitEye=m.cabin.eye}manifest.sort((a,b)=>specs.findIndex(s=>s.id===a.id)-specs.findIndex(s=>s.id===b.id));fs.writeFileSync(out+'/manifest.json',JSON.stringify(manifest,null,2)+'\n');
+if(process.argv.includes('--licenses'))fs.writeFileSync(out+'/LICENSES.md','# Fleet model attribution\n\nThese model assets are independently licensed from the MIT game code. Brand names identify the depicted vehicles; no manufacturer endorsement is implied.\n\n'+manifest.map(m=>`## ${m.name}\n\n- Author: ${m.author}\n- Source: ${m.source}\n- License: [${m.license}](${m.licenseUrl})\n- File: [${m.id}.glb](./${m.id}.glb)\n- Changes: ${m.changes}\n${m.id==='ferrari-458'?'- Distributed by the official [Three.js examples](https://github.com/mrdoob/three.js/blob/dev/examples/webgl_materials_car.html); [license record](https://github.com/mrdoob/three.js/issues/23089).\n':'- Source distribution: [carros library](https://github.com/pedrosoandre/carros). Source license was verified using the public Sketchfab model API on 2026-10-18.\n'}${m.license.includes('SA')?'- This modified GLB is distributed under CC BY-SA 4.0.\n':''}`).join('\n'));
