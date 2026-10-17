@@ -8,7 +8,11 @@ A noncommercial browser driving game forked from [pmndrs/racing-game](https://gi
 
 Free driving, ramps, two follow cameras, pause, reset, sound and graphics settings. No account or multiplayer backend. Touch controls support simultaneous steering and acceleration; turn your phone landscape.
 
-Desktop: WASD/arrows drive, B brakes, Space handbrake, R reset, C camera, Esc pause.
+Desktop: W/↑ throttle, S/↓/B brake, A/D or ←/→ steer, R selects D/R, Space toggles the handbrake, Backspace resets, C changes camera, Esc pauses. Stop before changing direction.
+
+Touch: rotate the wheel on the left (or switch to arrows), select D/N/R, hold the accelerator or brake on the right. Tap the handbrake to latch/release. Drag the free screen area to orbit; pinch to zoom. Mouse dragging and wheel zoom work too. The camera-return button restores the rear view.
+
+v1.1 adds reflective clear-coat paint, environment lighting, smooth terrain normals, surface grain, instanced ground details, contact shadows, and adaptive render resolution. High quality adds dynamic shadows and the more detailed vehicle. The original stylized desert map is preserved.
 
 ## Development
 
@@ -19,6 +23,7 @@ npm ci
 npm run dev
 npm run build
 node scripts/check-model.mjs
+node --experimental-strip-types scripts/check-controls.mjs
 ```
 
 Deploy the generated `dist` directory to a static HTTPS host. No secrets or environment variables are required to play. `.openai/hosting.json` identifies the Sites deployment.

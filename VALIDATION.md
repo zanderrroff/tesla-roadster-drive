@@ -13,3 +13,13 @@ Validated on 17 October 2026 on the local Mac in the Codex Chromium-based browse
 - Sites deployment succeeded and public access was enabled.
 
 Limits: physical iOS/Android devices and WebKit were not available for verification. The in-app browser does not support CDP touch injection, so actual simultaneous multitouch remains unverified. The implementation uses independent pointer IDs, pointer capture and cancellation handling. Ramp collision is retained from the upstream physics setup; full jump traversal has not been independently measured.
+
+## v1.1 — 2026-10-17
+
+- TypeScript and Vite production build passed. Geometry checks still pass for mobile (133,574 triangles) and high (344,098 triangles), four independent wheels each.
+- 11 drivetrain regression assertions pass: forward/reverse torque, neutral, brake priority, latched handbrake, pause and direction-change safety.
+- Chromium-based Codex browser on Intel Mac: verified D/R selection by tap and keyboard R, throttle, service braking, handbrake latch and throttle inhibition, reset, mouse orbit, camera return and high-quality loading/shadows.
+- Responsive layout inspected at 1280×720 and 844×390. Production preview at 844×390 averaged 40.1 requestAnimationFrame FPS over 90 frames near spawn in automatic quality. Development/HMR sessions measured 15–18 FPS; these are not production or phone benchmarks. FPS varies with location, hardware and load.
+- Production smoke test recorded no JavaScript errors. Screenshot: local ignored `.qa/v11-mobile.png`.
+- Pointer capture supports independent pedals, wheel and camera pointers, release/cancel/lost-capture cleanup; physical multi-touch/pinch, iOS Safari and Android device tests were not available. No claim of physical-phone validation or universally stable 30 FPS.
+- Original stylized map retained; smoother terrain shading, material grain and instanced small ground details improve appearance without replacing its geometry with a photorealistic map.
