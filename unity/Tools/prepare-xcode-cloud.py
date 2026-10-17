@@ -14,7 +14,11 @@ assert not u.query and not u.fragment
 (root/'artifacts').mkdir(exist_ok=True);archive=root/'artifacts/xcode-payload.tar.gz'
 with tarfile.open(archive,'w:gz',compresslevel=5) as t:
     for file in sorted(source.iterdir()):t.add(file,arcname=file.name)
-digest=hashlib.sha256(archive.read_bytes()).hexdigest()
+checksum=hashlib.sha256()
+with archive.open('rb') as payload:
+    for block in iter(lambda:payload.read(1024*1024),b''):
+        checksum.update(block)
+digest=checksum.hexdigest()
 output.mkdir(parents=True,exist_ok=True)
 shutil.copytree(source/'Unity-iPhone.xcodeproj',output/'Unity-iPhone.xcodeproj',dirs_exist_ok=True)
 shutil.copyfile(source/'Info.plist',output/'Info.plist')

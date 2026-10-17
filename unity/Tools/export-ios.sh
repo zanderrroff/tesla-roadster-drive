@@ -7,9 +7,17 @@ if [ ! -x "$EDITOR" ]; then
   echo "Unity $VERSION is not installed. Install it with iOS Build Support and activate it in Unity Hub." >&2
   exit 2
 fi
-if [ ! -d "$(dirname "$EDITOR")/../PlaybackEngines/iOSSupport" ]; then
+CONTENTS="$(cd "$(dirname "$EDITOR")/.." && pwd)"
+# Unity 6 Hub installs additional platforms beside Unity.app. Older Editors
+# keep them inside Contents; support both official layouts.
+IOS_MODULE=""
+for candidate in "$CONTENTS/PlaybackEngines/iOSSupport" "$CONTENTS/../../PlaybackEngines/iOSSupport"; do
+  if [ -f "$candidate/UnityEditor.iOS.Extensions.dll" ]; then IOS_MODULE="$candidate"; break; fi
+done
+if [ -z "$IOS_MODULE" ]; then
   echo 'iOS Build Support module is missing.' >&2; exit 3
 fi
+echo "iOS Build Support: $IOS_MODULE"
 mkdir -p "$ROOT/artifacts"
 bash "$ROOT/Tools/build-editor-plugin.sh"
 "$EDITOR" -batchmode -quit -projectPath "$ROOT/MotorCoast" -buildTarget iOS -executeMethod MotorCoast.Editor.BuildIOS.Prepare -logFile "$ROOT/artifacts/unity-prepare.log"
