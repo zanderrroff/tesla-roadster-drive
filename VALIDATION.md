@@ -23,3 +23,13 @@ Limits: physical iOS/Android devices and WebKit were not available for verificat
 - Production smoke test recorded no JavaScript errors. Screenshot: local ignored `.qa/v11-mobile.png`.
 - Pointer capture supports independent pedals, wheel and camera pointers, release/cancel/lost-capture cleanup; physical multi-touch/pinch, iOS Safari and Android device tests were not available. No claim of physical-phone validation or universally stable 30 FPS.
 - Original stylized map retained; smoother terrain shading, material grain and instanced small ground details improve appearance without replacing its geometry with a photorealistic map.
+
+## v1.2 — Playground redesign, 2026-10-17
+
+- Replaced the old visual map / sampled-heightfield combination with an original 346 m square open playground over one continuous thick collision box. Ramp visuals and physics use shared transforms; buildings are outside the driving zones.
+- Cannon regression runs import the same chassis, suspension and ramp configuration as the game. Verified stable ride height, acceleration, reverse, braking without overturning, wheel rotation, jump/landing above the floor (peak about 7.1 m), and handbrake oversteer (peak lateral speed about 12.6 m/s). The previous excessive service-brake impulse caused flips and failed reverse after stopping; reduced 120 to 12 for the 120 Hz simulation. Parking impulse reduced 180 to 18.
+- Browser driving crossed the center of the playground and braked upright; ground clearance settled near 0.52 m. Actual wheel world quaternions changed with travel. Browser ramp run launched and landed, and the jump record updated. Drift challenge awarded 102 points in a short turn test.
+- Added free driving, checkpoint route, drift score/combo, jump score, minimap and tire trails. Mode selection resets to the corresponding activity's start.
+- CSS disables user selection, WebKit callouts and dragging across the game; context menu is prevented. Chromium reported user-select:none and empty selection. Physical iOS long-press and multi-touch remain unverified.
+- Mobile-sized QA: 844×390. High detail no longer silently lowers render density below 1. Auto mode may go down to .75. A short automatic-mode sample before static batching measured 16.6 FPS with several old game tabs open on this Intel Mac; this is not a phone benchmark or a stable-FPS guarantee. Static decoration batching and paused/hidden render suspension were then added.
+- Geometry validation and drivetrain regressions remain passing. Detailed and mobile models keep the existing respective triangle budgets.

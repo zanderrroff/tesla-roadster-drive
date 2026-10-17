@@ -9,7 +9,7 @@ export function driveForces(active: boolean, throttle: boolean, brake: boolean, 
     if (gear === 'D' && signedSpeed < 58) force = -1900
     if (gear === 'R' && signedSpeed > -10) force = 1150
   }
-  const service = active && brake ? 120 : 0
-  const parking = active && handbrake ? 180 : 0
+  const service = active && brake ? 12 : 0
+  const parking = active && handbrake ? 18 : 0
   return { force, frontBrake: Math.max(service, stopped ? parking : 0), rearBrake: Math.max(service, parking) }
 }

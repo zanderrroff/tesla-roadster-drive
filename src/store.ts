@@ -1,4 +1,5 @@
 import create from 'zustand'
+import {SPAWN} from './playground-layout'
 import {canSelectGear} from './driving'
 import type {Gear} from './driving'
 export type Control = 'forward' | 'left' | 'right' | 'brake'
@@ -10,14 +11,14 @@ export const clearInput = () => {Object.values(input).forEach(s=>s.clear());stee
 const saved=(()=>{try{return JSON.parse(localStorage.getItem('roadster-settings')||'{}')}catch{return {}}})()
 export type Quality='mobile'|'high'
 interface State {
- started:boolean;paused:boolean;loaded:boolean;camera:number;sound:boolean;quality:Quality;
+ spawn:[number,number,number];started:boolean;paused:boolean;loaded:boolean;camera:number;sound:boolean;quality:Quality;
  reset:number;about:boolean;gear:Gear;handbrake:boolean;steeringMode:'wheel'|'arrows';hint:string;
  set:(patch:Partial<State>)=>void
 }
-export const useStore=create<State>(set=>({started:false,paused:false,loaded:false,camera:0,sound:saved.sound??true,
+export const useStore=create<State>(set=>({spawn:SPAWN,started:false,paused:false,loaded:false,camera:0,sound:saved.sound??true,
  quality:saved.quality==='high'?'high':'mobile',reset:0,about:false,gear:'D',handbrake:false,
  steeringMode:saved.steeringMode==='arrows'?'arrows':'wheel',hint:'',set:patch=>set(s=>({...s,...patch}))}))
-export const telemetry={speed:0,signedSpeed:0,distance:0,position:[0,0,0],fps:0,dpr:1}
+export const telemetry={speed:0,signedSpeed:0,distance:0,position:[0,0,0],fps:0,dpr:1,heading:0,lateralSpeed:0,height:0,groundClearance:0,wheelRotation:0,wheelQuaternions:[] as number[][]}
 export function pause(){clearInput();useStore.getState().set({paused:true})}
 export function resetView(){orbit.yaw=0;orbit.pitch=useStore.getState().camera? .95:.38;orbit.distance=useStore.getState().camera?15:7.8;orbit.manual=false}
 export function resetCar(){clearInput();resetView();useStore.getState().set({reset:useStore.getState().reset+1,gear:'D',handbrake:false,hint:''})}
