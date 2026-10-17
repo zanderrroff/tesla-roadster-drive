@@ -52,3 +52,17 @@ The visible ground and collision surface share y=0, with a thick continuous box 
 ## v1.3: smoother presentation and cabin
 
 Visual chassis/wheels are separated from worker physics updates and damped independently of frame rate. Camera follows the same filtered anchor; pause freezes all visual poses. Suspension damping was retuned. C cycles chase, overview and cockpit views. A lightweight original cabin adds seats, dashboard, live speed display, steering wheel and a seated generic driver. The interior is an artistic reconstruction, not a licensed Tesla interior scan. Soft shadows use a simplified caster in automatic mode and the detailed car in high mode, with texel-aligned tracking.
+
+## v1.4 — Motor Coast
+
+Seven selectable, independently licensed vehicles: Tesla Roadster, BMW M3 E30, Mercedes-Benz AMG GT, Mercedes-Benz 190E Evolution, Nissan Skyline GT-R C110, Porsche 911 Carrera 4S and Ferrari 458 Italia. Fleet models load only when selected, have separate wheel assemblies and per-model dimensions, and add approximately 6 MB of compressed GLB assets in total. Source attribution and derivative licenses are retained in public/models/fleet/LICENSES.md. The Porsche derivative stays CC BY-SA 4.0; the Tesla asset stays noncommercial.
+
+The former primitive character is replaced by Microsoft Rocketbox Male Adult 01 (MIT), posed sitting with original skin/clothing textures. The lightweight reconstructed cabin adds perforated upholstery, trim, a navigation display and a steering wheel. Imported interiors are retained where available; fallback cabins are original interpretations, not manufacturer scans.
+
+Desktop: WASD/arrows, Space held for handbrake, S brakes then reverses after stopping; W brakes a reversing car then drives forward. C cycles cameras, H horn, G garage, Escape pause, Backspace reset. Touch: arrow buttons (default) or steering wheel, independent gas and brake/reverse pedals, hold handbrake, swipe orbit, pinch zoom. Manual D/N/R is optional and turns automatic reverse off; AUTO re-enables it. Touch controls are hidden on large fine-pointer desktops.
+
+Three graphics presets, sound volume, camera sensitivity, stability assistance and two lighting choices are persisted locally. The coastal scenery adds ocean, palms, mountains, a distant skyline and paddock structures outside the driving apron. A real CC0 HDR environment replaces night reflections.
+
+Audio uses attributed engine/skid/impact/ambient recordings, electric-motor synthesis, speed-dependent wind and a horn. The generic combustion engine sample is not a recording of each named vehicle.
+
+Validation for this release: TypeScript/Vite build, fleet geometry and Cannon regression checks, markup rendering and offline asset renders. Browser/WebGL interaction and physical-device performance were not verified because the browser tool was unavailable. No GTA asset/code is used, and GTA-level graphics or universally stable FPS are not claimed.

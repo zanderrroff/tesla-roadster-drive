@@ -41,3 +41,13 @@ Limits: physical iOS/Android devices and WebKit were not available for verificat
 - Added an original lightweight procedural cabin, dashboard with live speed, seats, door cards, steering wheel, and generic seated driver; head hidden in cockpit to prevent camera intersections. This is not an exact scanned Tesla interior.
 - Suspension damping increased. Soft shadow filtering and texel-aligned shadow tracking added; automatic mode uses simple shadow casters instead of rendering the full model in the shadow pass.
 - Build, model, controls, motion and Cannon physics regression suites pass. Physical-phone FPS, WebKit and real multitouch remain unverified; visual detail and procedural characters do not constitute photorealism.
+
+## v1.4 — Motor Coast, 2026-10-18
+
+- Seven cars share tested raycast-vehicle behavior but use their own wheel centers/radii and collider dimensions. Scripted 120 Hz runs verify settled ride, acceleration, braking without overturning, then automatic reverse on continuous brake input. Minimum chassis centers in these runs were 0.51–0.52 m above the flat floor; these checks do not establish that every possible crash is bug-free.
+- 18 driving assertions verify manual-gear safety, opposing-pedal priority, stopping before reversal and delayed automatic reverse. Existing ramp and motion regression tests pass; handbrake produces measurable lateral slip.
+- Six new GLBs stay below 150,000 triangles each. Geometry, indices, wheel groups, pivots and required Draco/WebP compatibility were inspected. Original source licenses checked on Sketchfab, Three.js and Microsoft.
+- Offline CPU renders inspected all six cars, driver, cabin cutaway and first-person framing. This caught and corrected Ferrari smoothing across coincident opposite surfaces. These are asset inspections, not browser screenshots or PBR render benchmarks.
+- React server-rendered markup checks intro, all seven garage entries, settings and labelled driving controls. This does not test pointer events, CSS layout or WebGL.
+- TypeScript and Vite production build pass. Local preview responds HTTP 200. All WAV recordings are PCM16/44.1 kHz; loop boundaries crossfaded. Real-time audio mixing/listening was not verified.
+- CUA returned no available browsers and rejected in-app-browser creation. Native preview opening was queued. Browser interaction, final WebGL rendering, responsive screenshots, current FPS, physical multitouch and iOS/Android/WebKit remain UNVERIFIED in this release. No prior-release FPS number is used as evidence for this version.

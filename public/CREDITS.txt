@@ -16,3 +16,108 @@ Track and heightmap retained from the upstream game.
 Three.js, React, React Three Fiber, React Three Cannon and cannon-es: MIT.
 Google Draco decoder: Apache 2.0.
 Manrope font: SIL Open Font License.
+
+
+MOTOR COAST 1.4 ADDITIONAL ASSETS
+
+# Fleet model attribution
+
+These model assets are independently licensed from the MIT game code. Brand names identify the depicted vehicles; no manufacturer endorsement is implied.
+
+## BMW M3 E30
+
+- Author: Martin Trafas
+- Source: https://sketchfab.com/3d-models/none-ac3c7013434e403e8faff87948caf422
+- License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+- File: [bmw-m3-e30.glb](./bmw-m3-e30.glb)
+- Changes: Separated and straightened wheels; normalized scale and pivots; removed display ground; optimized geometry and textures; adjusted paint and glazing.
+- Source distribution: [carros library](https://github.com/pedrosoandre/carros). Source license was verified using the public Sketchfab model API on 2026-10-18.
+
+## Mercedes-Benz AMG GT
+
+- Author: Yan Carvalho
+- Source: https://sketchfab.com/3d-models/661dcab94455463784651a3ebc63cfb9
+- License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+- File: [mercedes-benz-amg-gt.glb](./mercedes-benz-amg-gt.glb)
+- Changes: Separated and straightened wheels; normalized scale and pivots; removed display ground; optimized geometry and textures; adjusted paint and glazing.
+- Source distribution: [carros library](https://github.com/pedrosoandre/carros). Source license was verified using the public Sketchfab model API on 2026-10-18.
+
+## Mercedes-Benz 190E EVO
+
+- Author: Betier Models
+- Source: https://sketchfab.com/3d-models/none-15e5576f4b724f2db357165caed3492b
+- License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+- File: [mercedes-benz-190e-evo.glb](./mercedes-benz-190e-evo.glb)
+- Changes: Separated and straightened wheels; normalized scale and pivots; removed display ground; optimized geometry and textures; adjusted paint and glazing.
+- Source distribution: [carros library](https://github.com/pedrosoandre/carros). Source license was verified using the public Sketchfab model API on 2026-10-18.
+
+## Nissan Skyline GT-R C110
+
+- Author: Martin Trafas
+- Source: https://sketchfab.com/3d-models/none-1a950b81ee274a0eb8014bd84ba047f5
+- License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+- File: [nissan-skyline-gt-r.glb](./nissan-skyline-gt-r.glb)
+- Changes: Separated and straightened wheels; normalized scale and pivots; removed display ground; optimized geometry and textures; adjusted paint and glazing.
+- Source distribution: [carros library](https://github.com/pedrosoandre/carros). Source license was verified using the public Sketchfab model API on 2026-10-18.
+
+## Porsche 911 Carrera 4S
+
+- Author: Lionsharp Studios
+- Source: https://sketchfab.com/3d-models/none-d01b254483794de3819786d93e0e1ebf
+- License: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+- File: [porsche-911-carrera.glb](./porsche-911-carrera.glb)
+- Changes: Separated and straightened wheels; normalized scale and pivots; removed display ground; optimized geometry and textures; adjusted paint and glazing.
+- Source distribution: [carros library](https://github.com/pedrosoandre/carros). Source license was verified using the public Sketchfab model API on 2026-10-18.
+- This modified GLB is distributed under CC BY-SA 4.0.
+
+## Ferrari 458 Italia
+
+- Author: vicent091036
+- Source: https://sketchfab.com/models/57bf6cc56931426e87494f554df1dab6
+- License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+- File: [ferrari-458.glb](./ferrari-458.glb)
+- Changes: Separated and straightened wheels; normalized scale and pivots; removed display ground; optimized geometry and textures; adjusted paint and glazing.
+- Distributed by the official [Three.js examples](https://github.com/mrdoob/three.js/blob/dev/examples/webgl_materials_car.html); [license record](https://github.com/mrdoob/three.js/issues/23089).
+
+
+Driver: Microsoft Rocketbox Male Adult 01 (MIT, ©2020 Microsoft).
+https://github.com/microsoft/Microsoft-Rocketbox/tree/master/Assets/Avatars/Adults/Male_Adult_01
+GLB conversion: CodeLove — https://models.codelove.in/models/male-adult-01/
+Changes: decoded/normalized geometry, seated bone pose, removed animations; textures retained.
+Full MIT license: /models/driver-LICENSE.txt
+
+DRIVING SOUND CREDITS / v1.4
+
+Source licenses checked on 2026-10-18. The authors do not endorse this game.
+
+engine-loop.wav — Car Engine Loop 96kHz, 4s
+Author: qubodup
+License: CC BY 3.0 (https://creativecommons.org/licenses/by/3.0/)
+Source: https://opengameart.org/content/car-engine-loop-96khz-4s
+Changes: Downmixed to mono 44.1 kHz, peak normalized to 0.85 and 40 ms loop crossfade; PCM 16-bit WAV.
+
+tire-loop.wav — Car tire squeal skid loop
+Author: audible-edge (Tom Haigh); loop editing by qubodup
+License: CC BY 3.0 (https://creativecommons.org/licenses/by/3.0/)
+Source: https://opengameart.org/content/car-tire-squeal-skid-loop
+Changes: Resampled to 44.1 kHz mono, peak normalized to 0.80 and 60 ms loop crossfade; PCM 16-bit WAV.
+
+impact.wav — Impact Sounds 1.0
+Author: Kenney
+License: CC0 1.0 (https://creativecommons.org/publicdomain/zero/1.0/)
+Source: https://kenney.nl/assets/impact-sounds
+Changes: Mixed three original impacts at different levels with slight offsets, downmixed to mono and peak normalized to 0.88; PCM 16-bit WAV at 44.1 kHz.
+
+ambience.wav — Breeze
+Author: Lanea Zimmerman (Sharm)
+License: CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+Source: https://opengameart.org/content/breeze
+Changes: Peak normalized to 0.60 with 250 ms loop crossfade; stereo PCM 16-bit WAV at 44.1 kHz.
+
+A generic car-engine recording is used for gameplay; it is not a recording of any specific vehicle in the garage.
+
+Kloppenheim 06 Pure Sky HDRI — Greg Zaal / Jarod Guest, Poly Haven, CC0.
+https://polyhaven.com/a/kloppenheim_06_puresky
+https://creativecommons.org/publicdomain/zero/1.0/
+
+Coastal playground, cabin reconstruction and interface icons are original project assets.
