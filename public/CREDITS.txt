@@ -1,0 +1,18 @@
+Tesla Roadster Free Drive — noncommercial fan project. Not affiliated with Tesla, Inc.
+
+Game code derived from pmndrs/racing-game (MIT).
+https://github.com/pmndrs/racing-game
+Original MIT license retained as LICENSE.md in the source repository.
+
+This work is based on "Tesla Roadster 2.0" (https://sketchfab.com/3d-models/tesla-roadster-20-439a7e7f228f4d3281998aa9985e98e1) by treechai111 (https://sketchfab.com/treechai111) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+Changes: polygon reduction, separated wheels, normalized axes, adapted materials.
+The model and its derivatives are NONCOMMERCIAL and are not covered by the code's MIT license.
+
+Desert Race Game Prototype Map V2 by Batuhan13
+https://sketchfab.com/3d-models/desert-race-game-prototype-map-v2-2ccd3dcbd197415d9f1b97c30b1248c5
+CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+Track and heightmap retained from the upstream game.
+
+Three.js, React, React Three Fiber, React Three Cannon and cannon-es: MIT.
+Google Draco decoder: Apache 2.0.
+Manrope font: SIL Open Font License.

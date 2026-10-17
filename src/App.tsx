@@ -1,85 +1,33 @@
-import { useState } from 'react'
-import { Layers } from 'three'
-import { Canvas } from '@react-three/fiber'
-import { Physics, Debug } from '@react-three/cannon'
-import { Sky, Environment, PerspectiveCamera, OrbitControls, Stats } from '@react-three/drei'
-
-import type { DirectionalLight } from 'three'
-
-import { HideMouse, Keyboard } from './controls'
-import { Cameras } from './effects'
-import { BoundingBox, Ramp, Track, Vehicle, Goal, Train, Heightmap } from './models'
-import { angularVelocity, levelLayer, position, rotation, useStore } from './store'
-import { Checkpoint, Clock, Speed, Minimap, Intro, Help, Editor, LeaderBoard, Finished, PickColor } from './ui'
-import { useToggle } from './useToggle'
-
-const layers = new Layers()
-layers.enable(levelLayer)
-
-export function App(): JSX.Element {
-  const [light, setLight] = useState<DirectionalLight | null>(null)
-  const [actions, dpr, editor, shadows] = useStore((s) => [s.actions, s.dpr, s.editor, s.shadows])
-  const { onCheckpoint, onFinish, onStart } = actions
-
-  const ToggledCheckpoint = useToggle(Checkpoint, 'checkpoint')
-  const ToggledDebug = useToggle(Debug, 'debug')
-  const ToggledEditor = useToggle(Editor, 'editor')
-  const ToggledFinished = useToggle(Finished, 'finished')
-  const ToggledMap = useToggle(Minimap, 'map')
-  const ToggledOrbitControls = useToggle(OrbitControls, 'editor')
-  const ToggledStats = useToggle(Stats, 'stats')
-
-  return (
-    <Intro>
-      <Canvas key={`${dpr}${shadows}`} dpr={[1, dpr]} shadows={shadows} camera={{ position: [0, 5, 15], fov: 50 }}>
-        <fog attach="fog" args={['white', 0, 500]} />
-        <Sky sunPosition={[100, 10, 100]} distance={1000} />
-        <ambientLight layers={layers} intensity={0.1} />
-        <directionalLight
-          ref={setLight}
-          layers={layers}
-          position={[0, 50, 150]}
-          intensity={1}
-          shadow-bias={-0.001}
-          shadow-mapSize={[4096, 4096]}
-          shadow-camera-left={-150}
-          shadow-camera-right={150}
-          shadow-camera-top={150}
-          shadow-camera-bottom={-150}
-          castShadow
-        />
-        <PerspectiveCamera makeDefault={editor} fov={75} position={[0, 20, 20]} />
-        <Physics allowSleep broadphase="SAP" defaultContactMaterial={{ contactEquationRelaxation: 4, friction: 1e-3 }}>
-          <ToggledDebug scale={1.0001} color="white">
-            <Vehicle angularVelocity={[...angularVelocity]} position={[...position]} rotation={[...rotation]}>
-              {light && <primitive object={light.target} />}
-              <Cameras />
-            </Vehicle>
-            <Train />
-            <Ramp args={[30, 6, 8]} position={[2, -1, 168.55]} rotation={[0, 0.49, Math.PI / 15]} />
-            <Heightmap elementSize={0.5085} position={[327 - 66.5, -3.3, -473 + 213]} rotation={[-Math.PI / 2, 0, -Math.PI]} />
-            <Goal args={[0.001, 10, 18]} onCollideBegin={onStart} rotation={[0, 0.55, 0]} position={[-27, 1, 180]} />
-            <Goal args={[0.001, 10, 18]} onCollideBegin={onFinish} rotation={[0, -1.2, 0]} position={[-104, 1, -189]} />
-            <Goal args={[0.001, 10, 18]} onCollideBegin={onCheckpoint} rotation={[0, -0.5, 0]} position={[-50, 1, -5]} />
-            <BoundingBox {...{ depth: 512, height: 100, position: [0, 40, 0], width: 512 }} />
-          </ToggledDebug>
-        </Physics>
-        <Track />
-        <Environment files="textures/dikhololo_night_1k.hdr" />
-        <ToggledMap />
-        <ToggledOrbitControls />
-      </Canvas>
-      <Clock />
-      <ToggledEditor />
-      <ToggledFinished />
-      <Help />
-      <Speed />
-      <ToggledStats />
-      <ToggledCheckpoint />
-      <LeaderBoard />
-      <PickColor />
-      <HideMouse />
-      <Keyboard />
-    </Intro>
-  )
+import React,{Suspense,useEffect,useRef,useState} from 'react'
+import {Canvas,useFrame} from '@react-three/fiber'
+import {Physics} from '@react-three/cannon'
+import {DefaultLoadingManager} from 'three'
+import {Car} from './Car'
+import {World,Terrain,Ramp} from './World'
+import {useStore,input,clearInput,pause,resetCar,telemetry} from './store'
+import type {Control,Quality} from './store'
+let audio:AudioContext|undefined,osc:OscillatorNode|undefined,gain:GainNode|undefined
+function startAudio(){try{audio??=new AudioContext();if(!osc){osc=audio.createOscillator();gain=audio.createGain();osc.type='sine';gain.gain.value=0;osc.connect(gain);gain.connect(audio.destination);osc.start()}void audio.resume()}catch{}}
+function Sound(){useEffect(()=>{const t=setInterval(()=>{if(!audio||!gain||!osc)return;const s=useStore.getState();gain.gain.setTargetAtTime(s.started&&!s.paused&&s.sound?Math.min(telemetry.speed/50,.035):0,audio.currentTime,.1);osc.frequency.setTargetAtTime(90+telemetry.speed*10,audio.currentTime,.12)},80);return()=>clearInterval(t)},[]);return null}
+const mapping:Record<string,Control>={KeyW:'forward',ArrowUp:'forward',KeyS:'backward',ArrowDown:'backward',KeyA:'left',ArrowLeft:'left',KeyD:'right',ArrowRight:'right',Space:'handbrake',KeyB:'brake'}
+function Controls(){useEffect(()=>{const key=(e:KeyboardEvent,on:boolean)=>{if(e.target instanceof HTMLSelectElement)return;const s=useStore.getState();if(!s.started)return;const c=mapping[e.code];if(c){e.preventDefault();if(on&&!s.paused)input[c].add(e.code);else input[c].delete(e.code)}if(on&&!e.repeat){if(e.code==='Escape'){clearInput();s.set({paused:!s.paused})}if(e.code==='KeyR')resetCar();if(e.code==='KeyC')s.set({camera:1-s.camera})}};const press=(e:KeyboardEvent)=>key(e,true),release=(e:KeyboardEvent)=>key(e,false);const blur=()=>{if(useStore.getState().started)pause();else clearInput()};const visibility=()=>{if(document.hidden)blur()};window.addEventListener('keydown',press);window.addEventListener('keyup',release);window.addEventListener('blur',blur);document.addEventListener('visibilitychange',visibility);const resize=()=>{if(innerHeight>innerWidth&&matchMedia('(pointer:coarse)').matches)blur()};window.addEventListener('resize',resize);return()=>{window.removeEventListener('keydown',press);window.removeEventListener('keyup',release);window.removeEventListener('blur',blur);document.removeEventListener('visibilitychange',visibility);window.removeEventListener('resize',resize)}},[]);return null}
+function Pedal({control,children,className='',label}:{control:Control;children:React.ReactNode;className?:string;label:string}){
+ const [held,setHeld]=useState(false);useEffect(()=>{const t=setInterval(()=>setHeld(input[control].size>0),100);return()=>clearInterval(t)},[control]);
+ const up=(e:React.PointerEvent<HTMLButtonElement>)=>{input[control].delete('touch'+e.pointerId);setHeld(input[control].size>0)};
+ return <button aria-label={label} className={`pedal ${className} ${held?'held':''}`} onContextMenu={e=>e.preventDefault()} onPointerDown={e=>{e.preventDefault();e.currentTarget.setPointerCapture(e.pointerId);input[control].add('touch'+e.pointerId);setHeld(true)}} onPointerUp={up} onPointerCancel={up} onLostPointerCapture={up}>{children}</button>
+}
+function Instruments(){const [v,setV]=useState({speed:0,distance:0});useEffect(()=>{const t=setInterval(()=>setV({speed:Math.round(telemetry.speed*3.6),distance:telemetry.distance/1000}),100);return()=>clearInterval(t)},[]);return <div className="instruments"><div className="speed"><strong>{v.speed.toString().padStart(2,'0')}</strong><span>КМ/Ч</span></div><div className="distance">{v.distance.toFixed(2)} <span>КМ В ПУТИ</span></div></div>}
+function Performance(){const frames=useRef(0),elapsed=useRef(0);useFrame((_,d)=>{frames.current++;elapsed.current+=d;if(elapsed.current>1){telemetry.fps=frames.current/elapsed.current;frames.current=0;elapsed.current=0}});return null}
+class ErrorBoundary extends React.Component<{children:React.ReactNode},{error:boolean}>{state={error:false};static getDerivedStateFromError(){return {error:true}}render(){return this.state.error?<div className="error-panel"><h2>Не удалось загрузить игру</h2><p>Проверьте соединение и попробуйте ещё раз.</p><button className="primary" onClick={()=>location.reload()}>Повторить загрузку ↻</button></div>:this.props.children}}
+function Settings(){const s=useStore();return <div className="settings"><label>Графика<select aria-label="Качество графики" value={s.quality} onChange={e=>{clearInput();s.set({quality:e.target.value as Quality,loaded:false})}}><option value="mobile">Для телефона</option><option value="high">Высокая</option></select></label><button className="setting-toggle" onClick={()=>{startAudio();s.set({sound:!s.sound})}}>Звук <strong>{s.sound?'Вкл':'Выкл'}</strong></button></div>}
+export function App(){const s=useStore();const [progress,setProgress]=useState(0);useEffect(()=>{DefaultLoadingManager.onProgress=(_,loaded,total)=>setProgress(Math.round(loaded/total*100));return()=>{DefaultLoadingManager.onProgress=()=>{}}},[]);
+ const launch=()=>{startAudio();clearInput();s.set({started:true,paused:false})};
+ return <main className="game"><ErrorBoundary><Canvas key={s.quality} shadows={s.quality==='high'} dpr={s.quality==='high'?[1,1.5]:[1,1]} camera={{position:[-116,4,214],fov:55,near:.1,far:700}} gl={{antialias:s.quality==='high',powerPreference:'high-performance'}}><color attach="background" args={['#bed5d8']}/><fog attach="fog" args={['#bed5d8',130,490]}/><hemisphereLight args={['#d5edff','#c4966c',.85]}/><directionalLight position={[40,100,60]} intensity={1.2} castShadow={s.quality==='high'} shadow-mapSize={[1024,1024]} shadow-camera-left={-80} shadow-camera-right={80} shadow-camera-top={80} shadow-camera-bottom={-80}/><Suspense fallback={null}><World/><Physics isPaused={s.paused||!s.started} gravity={[0,-9.81,0]} broadphase="SAP" defaultContactMaterial={{friction:.3,contactEquationRelaxation:4}}><Terrain/><Car/><Ramp args={[30,6,8]} position={[2,-1,168.55]} rotation={[0,.49,Math.PI/15]}/></Physics></Suspense><Performance/></Canvas></ErrorBoundary>
+ <Controls/><Sound/>
+ <header className="topbar"><a className="brand" href="#" onClick={e=>e.preventDefault()}><span className="brand-symbol">T</span><span>ROADSTER<span className="brand-sub">FREE DRIVE</span></span></a><div className="top-right"><span className="world-label"><i/> DESERT PLAYGROUND</span>{s.started&&<><button className="icon-btn" aria-label="Сменить камеру" onClick={()=>s.set({camera:1-s.camera})}>◉</button><button className="icon-btn" aria-label="Вернуть машину на старт" onClick={resetCar}>↺</button><button className="icon-btn" aria-label="Пауза" onClick={pause}>Ⅱ</button></>}</div></header>
+ {!s.started?<section className="intro"><div className="intro-copy"><div className="eyebrow">ЭЛЕКТРИЧЕСТВО. СКОРОСТЬ. СВОБОДА.</div><h1>Твоя дорога.<br/><em>Твои правила.</em></h1><p>Пустынные дороги, крутые повороты и рампы.<br/>Садись за руль Tesla Roadster.</p><button className="primary" disabled={!s.loaded} onClick={launch}>{s.loaded?'Начать поездку':'Загрузка '+progress+'%'} <span>↗</span></button><div className="intro-hint">БЕЗ УСТАНОВКИ · ТЕЛЕФОН И КОМПЬЮТЕР</div><Settings/></div><div className="intro-bottom"><span>01 / СВОБОДНОЕ ВОЖДЕНИЕ</span><button onClick={()=>s.set({about:true})}>Об игре ↗</button></div></section>:<><div className="mode-tag">СВОБОДНАЯ ПОЕЗДКА <span>Исследуй. Разгоняйся. Прыгай.</span></div><Instruments/><div className="keyboard-hint">WASD / СТРЕЛКИ · ПРОБЕЛ — РУЧНИК · R — СБРОС · C — КАМЕРА</div>{!s.paused&&<div className="touch-controls"><div className="steering"><Pedal control="left" label="Поворот налево">←</Pedal><Pedal control="right" label="Поворот направо">→</Pedal></div><div className="pedals"><div className="aux-controls"><Pedal control="backward" label="Задний ход" className="small">R</Pedal><Pedal control="handbrake" label="Ручной тормоз" className="small">РУЧНИК</Pedal></div><Pedal control="brake" label="Тормоз" className="brake">ТОРМОЗ</Pedal><Pedal control="forward" label="Газ" className="accelerator">ГАЗ <span>↑</span></Pedal></div></div>}</>}
+ {s.started&&s.paused&&<div className="modal-shade"><section className="panel"><div className="eyebrow">МОЖНО ПЕРЕВЕСТИ ДУХ</div><h2>Поездка на паузе</h2><p>WASD / стрелки — ехать · B — тормоз<br/>Пробел — ручник · R — на старт · C — камера</p><Settings/><button className="primary" disabled={!s.loaded} onClick={launch}>{s.loaded?'Продолжить':'Загрузка модели…'} <span>→</span></button><div className="panel-links"><button onClick={()=>{resetCar();launch()}}>Вернуться на старт</button><button onClick={()=>s.set({about:true})}>Об игре</button></div></section></div>}
+ {s.about&&<div className="modal-shade"><section className="panel about"><button className="close" aria-label="Закрыть" onClick={()=>s.set({about:false})}>×</button><h2>Roadster Free Drive</h2><p>Некоммерческая фанатская игра. Не связана с Tesla, Inc. Физика аркадная; характеристики реального автомобиля не моделируются.</p><p>Основано на <a href="https://github.com/pmndrs/racing-game" target="_blank" rel="noreferrer">pmndrs/racing-game</a> (MIT). <a href="https://github.com/zanderrroff/tesla-roadster-drive" target="_blank" rel="noreferrer">Исходный код этой версии ↗</a></p><p>Модель «Tesla Roadster 2.0» — <a href="https://sketchfab.com/treechai111">treechai111</a>, <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>. Геометрия оптимизирована, колёса отделены, материалы адаптированы.</p><p>Локация «Desert Race Game Prototype Map V2» — Batuhan13, CC BY 4.0.</p><a href="/CREDITS.txt" target="_blank">Все источники и лицензии ↗</a></section></div>}
+ <div className="rotate-hint"><span>↻</span>Поверните телефон горизонтально<small>Так удобнее управлять машиной</small></div>
+ </main>
 }
