@@ -70,4 +70,4 @@ Validation for this release: TypeScript/Vite build, fleet geometry and Cannon re
 
 ## Native iPhone port (Unity 6)
 
-The native Unity 6 / URP / Metal / IL2CPP project is in [unity/MotorCoast](unity/MotorCoast). See [build instructions and current status](unity/README.md). Native C++ checks pass, but Unity compilation and the IPA release are blocked until an activated Unity installation/build host is available. This is not yet a shipped iPhone build.
+The native Unity 6 / URP / Metal / IL2CPP project is in [unity/MotorCoast](unity/MotorCoast). See [build instructions and current status](unity/README.md). Native C++ checks and 14 Unity tests pass; the project imports, renders on Metal, and exports a real iPhone Xcode project. The signed IPA and Apple processing status are tracked separately in unity/VERIFICATION.txt. The existing website remains the browser version.

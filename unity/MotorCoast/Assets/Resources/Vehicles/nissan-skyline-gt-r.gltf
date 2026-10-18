@@ -2043,7 +2043,7 @@
       ]
     },
     {
-      "name": "Primary_Color",
+      "name": "Primary_Color__17",
       "primitives": [
         {
           "attributes": {
@@ -2059,7 +2059,7 @@
       ]
     },
     {
-      "name": "Secondary_Color",
+      "name": "Secondary_Color__18",
       "primitives": [
         {
           "attributes": {
@@ -2073,7 +2073,7 @@
       ]
     },
     {
-      "name": "Tire",
+      "name": "Tire__19",
       "primitives": [
         {
           "attributes": {
@@ -2087,7 +2087,7 @@
       ]
     },
     {
-      "name": "Brake",
+      "name": "Brake__20",
       "primitives": [
         {
           "attributes": {
@@ -2102,7 +2102,7 @@
       ]
     },
     {
-      "name": "Primary_Color",
+      "name": "Primary_Color__21",
       "primitives": [
         {
           "attributes": {
@@ -2118,7 +2118,7 @@
       ]
     },
     {
-      "name": "Secondary_Color",
+      "name": "Secondary_Color__22",
       "primitives": [
         {
           "attributes": {
@@ -2132,7 +2132,7 @@
       ]
     },
     {
-      "name": "Tire",
+      "name": "Tire__23",
       "primitives": [
         {
           "attributes": {
@@ -2146,7 +2146,7 @@
       ]
     },
     {
-      "name": "Brake",
+      "name": "Brake__24",
       "primitives": [
         {
           "attributes": {
@@ -2161,7 +2161,7 @@
       ]
     },
     {
-      "name": "Primary_Color",
+      "name": "Primary_Color__25",
       "primitives": [
         {
           "attributes": {
@@ -2177,7 +2177,7 @@
       ]
     },
     {
-      "name": "Secondary_Color",
+      "name": "Secondary_Color__26",
       "primitives": [
         {
           "attributes": {
@@ -2191,7 +2191,7 @@
       ]
     },
     {
-      "name": "Tire",
+      "name": "Tire__27",
       "primitives": [
         {
           "attributes": {
@@ -2205,7 +2205,7 @@
       ]
     },
     {
-      "name": "Brake",
+      "name": "Brake__28",
       "primitives": [
         {
           "attributes": {
@@ -2344,51 +2344,51 @@
       "mesh": 16
     },
     {
-      "name": "WheelDetail_Primary_Color",
+      "name": "WheelDetail_Primary_Color__22",
       "mesh": 17
     },
     {
-      "name": "WheelDetail_Secondary_Color",
+      "name": "WheelDetail_Secondary_Color__23",
       "mesh": 18
     },
     {
-      "name": "WheelDetail_Tire",
+      "name": "WheelDetail_Tire__24",
       "mesh": 19
     },
     {
-      "name": "WheelDetail_Brake",
+      "name": "WheelDetail_Brake__25",
       "mesh": 20
     },
     {
-      "name": "WheelDetail_Primary_Color",
+      "name": "WheelDetail_Primary_Color__26",
       "mesh": 21
     },
     {
-      "name": "WheelDetail_Secondary_Color",
+      "name": "WheelDetail_Secondary_Color__27",
       "mesh": 22
     },
     {
-      "name": "WheelDetail_Tire",
+      "name": "WheelDetail_Tire__28",
       "mesh": 23
     },
     {
-      "name": "WheelDetail_Brake",
+      "name": "WheelDetail_Brake__29",
       "mesh": 24
     },
     {
-      "name": "WheelDetail_Primary_Color",
+      "name": "WheelDetail_Primary_Color__30",
       "mesh": 25
     },
     {
-      "name": "WheelDetail_Secondary_Color",
+      "name": "WheelDetail_Secondary_Color__31",
       "mesh": 26
     },
     {
-      "name": "WheelDetail_Tire",
+      "name": "WheelDetail_Tire__32",
       "mesh": 27
     },
     {
-      "name": "WheelDetail_Brake",
+      "name": "WheelDetail_Brake__33",
       "mesh": 28
     }
   ],

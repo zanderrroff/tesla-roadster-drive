@@ -1756,12 +1756,12 @@
       "doubleSided": true,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.025,
-          0.05,
-          0.07,
-          0.86
+          0.12,
+          0.18,
+          0.2,
+          0.16
         ],
-        "roughnessFactor": 0.15,
+        "roughnessFactor": 0.1,
         "metallicFactor": 0
       }
     },
@@ -2010,7 +2010,7 @@
       ]
     },
     {
-      "name": "Black Body_Material.002_0",
+      "name": "Black Body_Material.002_0__3",
       "primitives": [
         {
           "attributes": {
@@ -2164,7 +2164,7 @@
       ]
     },
     {
-      "name": "Breaks_Material.010_0",
+      "name": "Breaks_Material.010_0__14",
       "primitives": [
         {
           "attributes": {
@@ -2178,7 +2178,7 @@
       ]
     },
     {
-      "name": "Breaks_Material.010_0",
+      "name": "Breaks_Material.010_0__15",
       "primitives": [
         {
           "attributes": {
@@ -2192,7 +2192,7 @@
       ]
     },
     {
-      "name": "Breaks_Material.010_0",
+      "name": "Breaks_Material.010_0__16",
       "primitives": [
         {
           "attributes": {
@@ -2220,7 +2220,7 @@
       ]
     },
     {
-      "name": "Breaks_Material.013_0",
+      "name": "Breaks_Material.013_0__18",
       "primitives": [
         {
           "attributes": {
@@ -2234,7 +2234,7 @@
       ]
     },
     {
-      "name": "Breaks_Material.013_0",
+      "name": "Breaks_Material.013_0__19",
       "primitives": [
         {
           "attributes": {
@@ -2248,7 +2248,7 @@
       ]
     },
     {
-      "name": "Breaks_Material.013_0",
+      "name": "Breaks_Material.013_0__20",
       "primitives": [
         {
           "attributes": {
@@ -2276,7 +2276,7 @@
       ]
     },
     {
-      "name": "Maxs_Material.007_0",
+      "name": "Maxs_Material.007_0__22",
       "primitives": [
         {
           "attributes": {
@@ -2290,7 +2290,7 @@
       ]
     },
     {
-      "name": "Maxs_Material.007_0",
+      "name": "Maxs_Material.007_0__23",
       "primitives": [
         {
           "attributes": {
@@ -2304,7 +2304,7 @@
       ]
     },
     {
-      "name": "Maxs_Material.007_0",
+      "name": "Maxs_Material.007_0__24",
       "primitives": [
         {
           "attributes": {
@@ -2332,7 +2332,7 @@
       ]
     },
     {
-      "name": "Tires_Material.008_0",
+      "name": "Tires_Material.008_0__26",
       "primitives": [
         {
           "attributes": {
@@ -2346,7 +2346,7 @@
       ]
     },
     {
-      "name": "Tires_Material.008_0",
+      "name": "Tires_Material.008_0__27",
       "primitives": [
         {
           "attributes": {
@@ -2360,7 +2360,7 @@
       ]
     },
     {
-      "name": "Tires_Material.008_0",
+      "name": "Tires_Material.008_0__28",
       "primitives": [
         {
           "attributes": {
@@ -2374,7 +2374,7 @@
       ]
     },
     {
-      "name": "Tires_Material.008_0",
+      "name": "Tires_Material.008_0__29",
       "primitives": [
         {
           "attributes": {
@@ -2388,7 +2388,7 @@
       ]
     },
     {
-      "name": "Tires_Material.008_0",
+      "name": "Tires_Material.008_0__30",
       "primitives": [
         {
           "attributes": {
@@ -2402,7 +2402,7 @@
       ]
     },
     {
-      "name": "Tires_Material.008_0",
+      "name": "Tires_Material.008_0__31",
       "primitives": [
         {
           "attributes": {
@@ -2430,7 +2430,7 @@
       ]
     },
     {
-      "name": "Disc_Material.011_0",
+      "name": "Disc_Material.011_0__33",
       "primitives": [
         {
           "attributes": {
@@ -2444,7 +2444,7 @@
       ]
     },
     {
-      "name": "Disc_Material.011_0",
+      "name": "Disc_Material.011_0__34",
       "primitives": [
         {
           "attributes": {
@@ -2458,7 +2458,7 @@
       ]
     },
     {
-      "name": "Disc_Material.011_0",
+      "name": "Disc_Material.011_0__35",
       "primitives": [
         {
           "attributes": {
@@ -2486,7 +2486,7 @@
       ]
     },
     {
-      "name": "Disc_Material.009_0",
+      "name": "Disc_Material.009_0__37",
       "primitives": [
         {
           "attributes": {
@@ -2500,7 +2500,7 @@
       ]
     },
     {
-      "name": "Disc_Material.009_0",
+      "name": "Disc_Material.009_0__38",
       "primitives": [
         {
           "attributes": {
@@ -2514,7 +2514,7 @@
       ]
     },
     {
-      "name": "Disc_Material.009_0",
+      "name": "Disc_Material.009_0__39",
       "primitives": [
         {
           "attributes": {
@@ -2542,7 +2542,7 @@
       ]
     },
     {
-      "name": "Disc_Material.007_0",
+      "name": "Disc_Material.007_0__41",
       "primitives": [
         {
           "attributes": {
@@ -2556,7 +2556,7 @@
       ]
     },
     {
-      "name": "Disc_Material.007_0",
+      "name": "Disc_Material.007_0__42",
       "primitives": [
         {
           "attributes": {
@@ -2570,7 +2570,7 @@
       ]
     },
     {
-      "name": "Disc_Material.007_0",
+      "name": "Disc_Material.007_0__43",
       "primitives": [
         {
           "attributes": {
@@ -2682,7 +2682,7 @@
       "mesh": 2
     },
     {
-      "name": "Black_Body_Material.002_0",
+      "name": "Black_Body_Material.002_0__8",
       "mesh": 3
     },
     {
@@ -2726,15 +2726,15 @@
       "mesh": 13
     },
     {
-      "name": "Breaks_Material.010_0",
+      "name": "Breaks_Material.010_0__19",
       "mesh": 14
     },
     {
-      "name": "Breaks_Material.010_0",
+      "name": "Breaks_Material.010_0__20",
       "mesh": 15
     },
     {
-      "name": "Breaks_Material.010_0",
+      "name": "Breaks_Material.010_0__21",
       "mesh": 16
     },
     {
@@ -2742,15 +2742,15 @@
       "mesh": 17
     },
     {
-      "name": "Breaks_Material.013_0",
+      "name": "Breaks_Material.013_0__23",
       "mesh": 18
     },
     {
-      "name": "Breaks_Material.013_0",
+      "name": "Breaks_Material.013_0__24",
       "mesh": 19
     },
     {
-      "name": "Breaks_Material.013_0",
+      "name": "Breaks_Material.013_0__25",
       "mesh": 20
     },
     {
@@ -2758,15 +2758,15 @@
       "mesh": 21
     },
     {
-      "name": "Maxs_Material.007_0",
+      "name": "Maxs_Material.007_0__27",
       "mesh": 22
     },
     {
-      "name": "Maxs_Material.007_0",
+      "name": "Maxs_Material.007_0__28",
       "mesh": 23
     },
     {
-      "name": "Maxs_Material.007_0",
+      "name": "Maxs_Material.007_0__29",
       "mesh": 24
     },
     {
@@ -2774,27 +2774,27 @@
       "mesh": 25
     },
     {
-      "name": "Tires_Material.008_0",
+      "name": "Tires_Material.008_0__31",
       "mesh": 26
     },
     {
-      "name": "Tires_Material.008_0",
+      "name": "Tires_Material.008_0__32",
       "mesh": 27
     },
     {
-      "name": "Tires_Material.008_0",
+      "name": "Tires_Material.008_0__33",
       "mesh": 28
     },
     {
-      "name": "Tires_Material.008_0",
+      "name": "Tires_Material.008_0__34",
       "mesh": 29
     },
     {
-      "name": "Tires_Material.008_0",
+      "name": "Tires_Material.008_0__35",
       "mesh": 30
     },
     {
-      "name": "Tires_Material.008_0",
+      "name": "Tires_Material.008_0__36",
       "mesh": 31
     },
     {
@@ -2802,15 +2802,15 @@
       "mesh": 32
     },
     {
-      "name": "Disc_Material.011_0",
+      "name": "Disc_Material.011_0__38",
       "mesh": 33
     },
     {
-      "name": "Disc_Material.011_0",
+      "name": "Disc_Material.011_0__39",
       "mesh": 34
     },
     {
-      "name": "Disc_Material.011_0",
+      "name": "Disc_Material.011_0__40",
       "mesh": 35
     },
     {
@@ -2818,15 +2818,15 @@
       "mesh": 36
     },
     {
-      "name": "Disc_Material.009_0",
+      "name": "Disc_Material.009_0__42",
       "mesh": 37
     },
     {
-      "name": "Disc_Material.009_0",
+      "name": "Disc_Material.009_0__43",
       "mesh": 38
     },
     {
-      "name": "Disc_Material.009_0",
+      "name": "Disc_Material.009_0__44",
       "mesh": 39
     },
     {
@@ -2834,15 +2834,15 @@
       "mesh": 40
     },
     {
-      "name": "Disc_Material.007_0",
+      "name": "Disc_Material.007_0__46",
       "mesh": 41
     },
     {
-      "name": "Disc_Material.007_0",
+      "name": "Disc_Material.007_0__47",
       "mesh": 42
     },
     {
-      "name": "Disc_Material.007_0",
+      "name": "Disc_Material.007_0__48",
       "mesh": 43
     },
     {

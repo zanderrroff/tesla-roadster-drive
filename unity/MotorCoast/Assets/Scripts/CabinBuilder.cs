@@ -10,7 +10,7 @@ public static class CabinBuilder {
         var metal=Geometry.Lit("Satin aluminium",new Color(.55f,.61f,.64f),.85f,.65f);
         var carbon=Geometry.Lit("Carbon trim",new Color(.035f,.045f,.05f),.35f,.55f);
         var led=Geometry.Lit("Ambient lighting",new Color(.20f,.45f,.52f),.1f,.6f);
-        led.EnableKeyword("_EMISSION");led.SetColor("_EmissionColor",new Color(.08f,.3f,.38f));
+        led.EnableKeyword("_EMISSION");led.SetColor("_EmissionColor",new Color(.025f,.08f,.10f));
         void Box(Vector3 size,Vector3 p,Material m,float tilt=0) {
             var b=Geometry.RoundedBox(root,size,p,m,Mathf.Min(size.x,Mathf.Min(size.y,size.z))*.32f);b.transform.localRotation=Quaternion.Euler(tilt,0,0);
         }
@@ -47,6 +47,7 @@ public static class CabinBuilder {
         for(int i=0;i<4;i++)Box(new Vector3(.035f,.002f,.001f),new Vector3(-.11f+i*.06f,.06f,.352f),led);
         foreach(float x in new[]{-.52f,.52f})for(int i=0;i<5;i++)Box(new Vector3(.16f,.002f,.01f),new Vector3(x,.14f+i*.007f,.38f),metal);
         Geometry.Combine(root);
+        DashboardDisplay.Build(root);
         var wheel=new GameObject("SteeringWheel").transform;wheel.SetParent(chassis,false);wheel.localPosition=spec.wheelPosition;wheel.localRotation=Quaternion.Euler(spec.wheelTilt,0,0);
         Geometry.MeshObject("Leather rim",wheel,Geometry.Torus(spec.steeringRadius,.014f,56,12),black);
         Geometry.RoundedBox(wheel,new Vector3(.20f,.024f,.026f),new Vector3(0,-.01f,0),metal,.008f);
@@ -55,10 +56,28 @@ public static class CabinBuilder {
         return wheel;
     }
 }
+public sealed class DashboardDisplay:MonoBehaviour {
+    UnityEngine.UI.Text speed;VehicleController car;float nextUpdate;
+    public static void Build(Transform parent){
+        var o=new GameObject("Instrument screen",typeof(RectTransform),typeof(Canvas));var rect=o.GetComponent<RectTransform>();rect.SetParent(parent,false);rect.sizeDelta=new Vector2(320,180);rect.localScale=Vector3.one*.001f;rect.localPosition=new Vector3(0,.108f,.347f);
+        var canvas=o.GetComponent<Canvas>();canvas.renderMode=RenderMode.WorldSpace;canvas.sortingOrder=1;
+        var display=o.AddComponent<DashboardDisplay>();display.car=parent.GetComponentInParent<VehicleController>();
+        var font=Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+        UnityEngine.UI.Text Label(string content,float y,int size,Color color){
+            var textObject=new GameObject("Instrument text",typeof(RectTransform),typeof(CanvasRenderer),typeof(UnityEngine.UI.Text));var r=textObject.GetComponent<RectTransform>();r.SetParent(rect,false);r.sizeDelta=new Vector2(300,70);r.anchoredPosition=new Vector2(0,y);
+            var t=textObject.GetComponent<UnityEngine.UI.Text>();t.font=font;t.fontSize=size;t.text=content;t.alignment=TextAnchor.MiddleCenter;t.color=color;t.raycastTarget=false;return t;
+        }
+        Label("M O T O R   C O A S T",60,13,new Color(.45f,.68f,.72f));
+        display.speed=Label("000   D",8,48,new Color(.72f,.87f,.9f));
+        Label("КМ/Ч    •    СВОБОДНОЕ ВОЖДЕНИЕ",-48,11,new Color(.4f,.6f,.65f));
+    }
+    void Update(){if(!car||Time.unscaledTime<nextUpdate)return;nextUpdate=Time.unscaledTime+.1f;speed.text=Mathf.RoundToInt(car.Kph).ToString("000")+"   "+(car.Gear<0?"R":"D");}
+}
 public static class Geometry {
     static void Remove(Object o){if(Application.isPlaying)Object.Destroy(o);else Object.DestroyImmediate(o);}
     public static Material Lit(string name,Color color,float metallic=0,float smoothness=.3f) {
-        var m=new Material(Shader.Find("Universal Render Pipeline/Lit")){name=name,enableInstancing=true};m.SetColor("_BaseColor",color);m.SetFloat("_Metallic",metallic);m.SetFloat("_Smoothness",smoothness);return m;
+        var template=Resources.Load<Material>("Render/RuntimeLit");
+        var m=template?new Material(template):new Material(Shader.Find("Universal Render Pipeline/Lit"));m.name=name;m.enableInstancing=true;m.SetColor("_BaseColor",color);m.SetFloat("_Metallic",metallic);m.SetFloat("_Smoothness",smoothness);return m;
     }
     public static GameObject MeshObject(string name,Transform parent,Mesh mesh,Material material) {
         var o=new GameObject(name,typeof(MeshFilter),typeof(MeshRenderer));o.transform.SetParent(parent,false);o.GetComponent<MeshFilter>().sharedMesh=mesh;o.GetComponent<MeshRenderer>().sharedMaterial=material;return o;

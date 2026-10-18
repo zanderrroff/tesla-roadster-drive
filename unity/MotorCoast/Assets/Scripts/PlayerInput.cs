@@ -12,8 +12,9 @@ public sealed class PlayerInput {
         bool forward=Input.GetKey(KeyCode.W)||Input.GetKey(KeyCode.UpArrow);
         bool back=Input.GetKey(KeyCode.S)||Input.GetKey(KeyCode.DownArrow);
         float throttle=TouchGas, brake=TouchBrake;
-        if(forward) { RequestedGear=1; throttle=1; }
-        if(back) { if(speed>.65f) brake=1; else { RequestedGear=-1; throttle=1; } }
+        if(forward&&back){brake=1;throttle=0;}
+        else if(forward) { RequestedGear=1; throttle=1; }
+        else if(back) { if(speed>.65f) brake=1; else { RequestedGear=-1; throttle=1; } }
         return new DriveInput { steer=Mathf.Clamp(TouchSteer+right-left+(TouchRight?1:0)-(TouchLeft?1:0),-1,1), throttle=throttle, brake=brake,
             handbrake=Mathf.Max(TouchHandbrake,Input.GetKey(KeyCode.Space)?1:0), requestedGear=RequestedGear,speed=speed };
     }

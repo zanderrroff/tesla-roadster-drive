@@ -20,9 +20,9 @@ public sealed class VehicleController : MonoBehaviour {
     readonly Transform[] visuals=new Transform[4];
     readonly Quaternion[] rest=new Quaternion[4];
     DriverRig driver; DriveState state; DriveOutput output;
-    Vector3 spawn; float flippedTime; bool suspended;
+    Vector3 spawn; float flippedTime,wheelbase; bool suspended;
     public void Configure(VehicleSpec spec,GameObject model,GameObject driverPrefab,PlayerInput controls) {
-        Spec=spec;Controls=controls;spawn=new Vector3(0,spec.wheelRadius-Mathf.Min(spec.wheelCenters[0].y,spec.wheelCenters[2].y)+.008f,-80);Body=GetComponent<Rigidbody>();
+        Spec=spec;Controls=controls;wheelbase=Mathf.Abs((spec.wheelCenters[0].z+spec.wheelCenters[1].z-spec.wheelCenters[2].z-spec.wheelCenters[3].z)*.5f);spawn=new Vector3(0,spec.wheelRadius-Mathf.Min(spec.wheelCenters[0].y,spec.wheelCenters[2].y)+.008f,-80);Body=GetComponent<Rigidbody>();
         Body.mass=spec.mass;Body.centerOfMass=new Vector3(0,-.14f,-.10f);
         Body.interpolation=RigidbodyInterpolation.Interpolate;Body.collisionDetectionMode=CollisionDetectionMode.ContinuousDynamic;
         Body.solverIterations=12;Body.solverVelocityIterations=6;Body.linearDamping=.025f;Body.angularDamping=.45f;
@@ -53,24 +53,37 @@ public sealed class VehicleController : MonoBehaviour {
             r.receiveShadows=true;r.shadowCastingMode=ShadowCastingMode.On;
             foreach(var m in r.sharedMaterials) if(m.renderQueue>=3000) { r.shadowCastingMode=ShadowCastingMode.Off;break; }
         }
-        Nodes.Layer(gameObject,VehicleLayer);DriveNative.MCReset(ref state);Reset();
+        Nodes.Layer(gameObject,VehicleLayer);DriveNative.MCReset(ref state);ResetToStart();
     }
     void FixedUpdate() {
         if(Spec==null||suspended||Time.timeScale==0)return;
         var input=Controls.Sample(Speed);DriveNative.MCStep(ref state,ref input,Time.fixedDeltaTime,Spec.power,out output);
         Grounded=0;Slip=0;
+        float centreAngle=Mathf.Atan(Mathf.Tan(output.steerDegrees*Mathf.Deg2Rad)*wheelbase/2.7f)*Mathf.Rad2Deg;
         for(int i=0;i<4;i++) {
             var wc=wheels[i];bool front=i<2;
-            wc.steerAngle=front?output.steerDegrees:0;
+            wc.steerAngle=front?Ackermann(centreAngle,wheelbase,Spec.wheelCenters[i].x):0;
             wc.motorTorque=output.driveTorque*(front?.15f:.35f);
             wc.brakeTorque=front?output.brakeTorque:output.rearBrakeTorque;
             var grip=wc.sidewaysFriction;grip.stiffness=1.32f*(front?1:output.rearGrip);wc.sidewaysFriction=grip;
-            if(wc.GetGroundHit(out var hit)) { Grounded++;Slip=Mathf.Max(Slip,Mathf.Abs(hit.sidewaysSlip)); }
+            if(wc.GetGroundHit(out var hit)) {
+                Grounded++;Slip=Mathf.Max(Slip,Mathf.Abs(hit.sidewaysSlip));
+                // Reduce wheelspin and release a locking service brake. Rear
+                // handbrake remains deliberately exempt from ABS for drifting.
+                if(Mathf.Abs(hit.forwardSlip)>.3f)wc.motorTorque*=Mathf.Clamp01(.3f/Mathf.Abs(hit.forwardSlip));
+                if(Mathf.Abs(Speed)>5&&Mathf.Abs(hit.forwardSlip)>.45f&&(front||input.handbrake<.1f))
+                    wc.brakeTorque*=Mathf.Clamp(.45f/Mathf.Abs(hit.forwardSlip),.25f,1);
+            }
         }
         AntiRoll(0,1);AntiRoll(2,3);
         if(Grounded>1)Body.AddForce(-transform.up*Mathf.Min(Body.linearVelocity.sqrMagnitude*.5f,Body.mass*4f));
         flippedTime=Vector3.Dot(transform.up,Vector3.up)<.15f && Kph<5 ? flippedTime+Time.fixedDeltaTime : 0;
-        if(transform.position.y < -12 || transform.position.sqrMagnitude>2500000 || flippedTime>3)Reset();
+        if(transform.position.y < -12 || transform.position.sqrMagnitude>2500000 || flippedTime>3)ResetToStart();
+    }
+    public static float Ackermann(float centreDegrees,float wheelbase,float lateralPosition) {
+        if(Mathf.Abs(centreDegrees)<.001f)return 0;
+        float sign=Mathf.Sign(centreDegrees),radius=wheelbase/Mathf.Tan(Mathf.Abs(centreDegrees)*Mathf.Deg2Rad);
+        return sign*Mathf.Atan(wheelbase/Mathf.Max(.5f,radius-sign*lateralPosition))*Mathf.Rad2Deg;
     }
     void AntiRoll(int left,int right) {
         bool a=wheels[left].GetGroundHit(out var ha),b=wheels[right].GetGroundHit(out var hb);
@@ -94,7 +107,7 @@ public sealed class VehicleController : MonoBehaviour {
     }
     public void SetCockpit(bool value)=>driver.Cockpit(value);
     public void Suspend(bool value) { suspended=value;Controls.Clear(); }
-    public void Reset() {
+    public void ResetToStart() {
         Controls.Clear();Controls.RequestedGear=1;DriveNative.MCReset(ref state);output=default;
         Body.linearVelocity=Vector3.zero;Body.angularVelocity=Vector3.zero;
         Body.position=spawn;Body.rotation=Quaternion.identity;

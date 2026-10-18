@@ -10,7 +10,7 @@ public sealed class CoastWorld : MonoBehaviour {
         asphalt=Geometry.Lit("Photogrammetry asphalt",Color.white,0,.12f);
         asphalt.SetTexture("_BaseMap",Resources.Load<Texture2D>("Textures/asphalt-color"));asphalt.SetTexture("_BumpMap",Resources.Load<Texture2D>("Textures/asphalt-normal"));asphalt.EnableKeyword("_NORMALMAP");asphalt.SetFloat("_BumpScale",.55f);
         asphalt.SetTexture("_MetallicGlossMap",Resources.Load<Texture2D>("Textures/asphalt-metal-smooth"));asphalt.EnableKeyword("_METALLICSPECGLOSSMAP");asphalt.SetFloat("_Smoothness",1);
-        asphalt.SetTexture("_OcclusionMap",Resources.Load<Texture2D>("Textures/asphalt-ao"));asphalt.SetFloat("_OcclusionStrength",.7f);asphalt.SetTextureScale("_BaseMap",new Vector2(153,153));
+        asphalt.SetTexture("_OcclusionMap",Resources.Load<Texture2D>("Textures/asphalt-ao"));asphalt.EnableKeyword("_OCCLUSIONMAP");asphalt.SetFloat("_OcclusionStrength",.7f);asphalt.SetTextureScale("_BaseMap",new Vector2(153,153));
         stone=Geometry.Lit("Pale concrete",new Color(.58f,.59f,.56f),0,.24f);grass=Geometry.Lit("Dry coastal grass",new Color(.25f,.29f,.13f),0,.1f);
         white=Geometry.Lit("Warm white markings",new Color(.78f,.78f,.70f),0,.2f);orange=Geometry.Lit("Safety orange",new Color(.85f,.20f,.045f),0,.22f);metal=Geometry.Lit("Dark metal",new Color(.12f,.16f,.17f),.7f,.45f);leaf=Geometry.Lit("Palm foliage",new Color(.12f,.22f,.075f),0,.16f);
         Geometry.Box("Continuous collision foundation",transform,new Vector3(660,4,660),new Vector3(0,-2,0),grass,true);
@@ -39,9 +39,13 @@ public sealed class CoastWorld : MonoBehaviour {
         for(int i=0;i<60;i++) {
             float a=i*Mathf.PI*2/60;float r=248+Next()*25;Palm(new Vector3(Mathf.Cos(a)*r,0,Mathf.Sin(a)*r),5+Next()*4);
         }
-        for(int i=0;i<45;i++) {
-            var p=new Vector3(-295-Next()*85,Next()*3-3,-350+Next()*700);
-            var rock=GameObject.CreatePrimitive(PrimitiveType.Sphere);rock.name="Coastal boulder";rock.transform.SetParent(transform,false);rock.transform.position=p;rock.transform.localScale=new Vector3(15+Next()*40,10+Next()*35,15+Next()*30);rock.GetComponent<Renderer>().sharedMaterial=stone;Destroy(rock.GetComponent<Collider>());
+        var cliff=Resources.Load<GameObject>("Scenery/coastal-cliff");
+        if(!cliff)throw new System.InvalidOperationException("Coastal cliff resource missing");
+        for(int i=0;i<8;i++) {
+            var rock=Instantiate(cliff,transform,false);rock.name="Photogrammetry coastline";
+            rock.transform.localPosition=new Vector3(-300-Next()*14,-3,-300+i*85);
+            rock.transform.localRotation=Quaternion.Euler(0,85+(Next()-.5f)*18,0);
+            rock.transform.localScale=Vector3.one*(.94f+Next()*.14f);
         }
         var ocean=GameObject.CreatePrimitive(PrimitiveType.Plane);ocean.name="Coastal water";ocean.transform.SetParent(transform,false);ocean.transform.localPosition=new Vector3(0,-.38f,0);ocean.transform.localScale=new Vector3(220,1,220);ocean.GetComponent<Renderer>().sharedMaterial=new Material(Shader.Find("MotorCoast/CoastWater"));ocean.GetComponent<Collider>().enabled=false;Destroy(ocean.GetComponent<Collider>());
         SetupLight();
@@ -81,6 +85,7 @@ public sealed class CoastWorld : MonoBehaviour {
     void SetupLight() {
         var sun=new GameObject("Afternoon sun",typeof(Light));sun.transform.SetParent(transform,false);sun.transform.rotation=Quaternion.Euler(37,-35,0);var light=sun.GetComponent<Light>();light.type=LightType.Directional;light.color=new Color(1,.91f,.79f);light.intensity=2.1f;light.shadows=LightShadows.Soft;light.shadowBias=.08f;light.shadowNormalBias=.22f;light.shadowStrength=.85f;RenderSettings.sun=light;
         RenderSettings.ambientMode=AmbientMode.Trilight;RenderSettings.ambientSkyColor=new Color(.28f,.36f,.43f);RenderSettings.ambientEquatorColor=new Color(.19f,.21f,.22f);RenderSettings.ambientGroundColor=new Color(.09f,.08f,.06f);
+        var ambient=new SphericalHarmonicsL2();ambient.AddAmbientLight(new Color(.24f,.28f,.32f));ambient.AddDirectionalLight(Vector3.up,new Color(.45f,.58f,.72f),.45f);RenderSettings.ambientProbe=ambient;
         var sky=new Material(Shader.Find("Skybox/Panoramic"));sky.SetTexture("_MainTex",Resources.Load<Texture2D>("Textures/coast-sky"));sky.SetFloat("_Exposure",.8f);sky.SetFloat("_Rotation",75);RenderSettings.skybox=sky;
         RenderSettings.fog=true;RenderSettings.fogMode=FogMode.ExponentialSquared;RenderSettings.fogDensity=.0007f;RenderSettings.fogColor=new Color(.64f,.75f,.80f);
         var probe=new GameObject("Static sky reflection",typeof(ReflectionProbe));probe.transform.SetParent(transform,false);probe.transform.position=new Vector3(0,3,-80);var reflection=probe.GetComponent<ReflectionProbe>();reflection.mode=ReflectionProbeMode.Realtime;reflection.refreshMode=ReflectionProbeRefreshMode.ViaScripting;reflection.timeSlicingMode=ReflectionProbeTimeSlicingMode.IndividualFaces;reflection.resolution=256;reflection.size=Vector3.one*2000;reflection.cullingMask=~(1<<VehicleController.VehicleLayer);reflection.clearFlags=ReflectionProbeClearFlags.Skybox;reflection.intensity=.8f;reflection.RenderProbe();

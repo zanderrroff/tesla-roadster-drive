@@ -1,0 +1,82 @@
+{
+  "sources": [
+    {
+      "author": "looneybits",
+      "url": "https://opengameart.org/content/car-controls",
+      "license": "CC0-1.0"
+    },
+    {
+      "author": "Kenney",
+      "url": "https://kenney.nl/assets/mobile-controls",
+      "download": "https://kenney.nl/media/pages/assets/mobile-controls/0d047b3be4-1754738457/mobile-controls-1.zip",
+      "license": "CC0-1.0"
+    },
+    {
+      "author": "Lucide contributors",
+      "url": "https://lucide.dev",
+      "license": "ISC"
+    }
+  ],
+  "files": [
+    {
+      "file": "GUI/brake.png",
+      "bytes": 69331,
+      "sha256": "0f203bb9eefbd88aa41054521941e2fc798be296009785ce2901274a13c8eb77"
+    },
+    {
+      "file": "GUI/button-circle.png",
+      "bytes": 1549,
+      "sha256": "1d76f94cd758abb649a781e895ed08984648d5c21464f773bd8eea6e4e7b4d15"
+    },
+    {
+      "file": "GUI/button-wide.png",
+      "bytes": 308,
+      "sha256": "f139d698925ed655eb393cc4185a79fe37145c76116f58161878c52b73e694ab"
+    },
+    {
+      "file": "GUI/camera.png",
+      "bytes": 1944,
+      "sha256": "f7d5ef17f2b59efdf6e147a77307ba7ebba0177bc550fd07857fb208b95b23fe"
+    },
+    {
+      "file": "GUI/garage.png",
+      "bytes": 1450,
+      "sha256": "ed4a1baaabd32b76f0c2a5b868812d4003a7c440ef0a8c2612d3cbaa134141ad"
+    },
+    {
+      "file": "GUI/gas.png",
+      "bytes": 45370,
+      "sha256": "19e03113f9a60b107a37e85631dc58b8ff2537ed9e245e163bfbb54def25e4bf"
+    },
+    {
+      "file": "GUI/horn.png",
+      "bytes": 489,
+      "sha256": "79580b08a529ad03b03449bd703692e959f88b402e215c4e190925d1b860f818"
+    },
+    {
+      "file": "GUI/left.png",
+      "bytes": 489,
+      "sha256": "d3dffbd1f151288424844b29e24a1be47a1fc67b13d818fa9bbaae7381bd9bee"
+    },
+    {
+      "file": "GUI/pause.png",
+      "bytes": 209,
+      "sha256": "8a2f4999746234cb16e49c798b27a3aa890965446e6bdc0c9112e01286940469"
+    },
+    {
+      "file": "GUI/reset.png",
+      "bytes": 939,
+      "sha256": "ac8707f3200411134842533882e2304605b2627e49c2c0d9368e032aca488c02"
+    },
+    {
+      "file": "GUI/right.png",
+      "bytes": 468,
+      "sha256": "71d1420339b89264c107c045fea72bb7c0f5ff1192c47cedc275ad640be3b723"
+    },
+    {
+      "file": "GUI/wheel.png",
+      "bytes": 161504,
+      "sha256": "cc22288236a7d819e2fb5fe81f161f6dfb422365ed839d11af83a639bb1e4f41"
+    }
+  ]
+}

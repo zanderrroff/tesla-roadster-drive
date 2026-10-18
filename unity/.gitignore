@@ -17,3 +17,6 @@ artifacts/
 .DS_Store
 
 __pycache__/
+
+MotorCoast/Assets/Resources/PerformanceTestRun*.json
+MotorCoast/Assets/Resources/PerformanceTestRun*.json.meta

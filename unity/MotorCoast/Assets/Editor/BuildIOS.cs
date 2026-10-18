@@ -31,7 +31,44 @@ public static class BuildIOS {
             pipeline.mainLightShadowmapResolution=q==2?4096:2048;pipeline.shadowDistance=new[]{55f,90f,140f}[q];pipeline.shadowCascadeCount=q==2?4:2;
             pipeline.shadowDepthBias=.08f;pipeline.shadowNormalBias=.22f;pipeline.supportsCameraDepthTexture=false;pipeline.supportsCameraOpaqueTexture=false;
             pipeline.useSRPBatcher=true;pipeline.supportsDynamicBatching=false;settings.FindProperty("m_ReflectionProbeBlending").boolValue=q>0;settings.FindProperty("m_ReflectionProbeBoxProjection").boolValue=q>0;settings.ApplyModifiedPropertiesWithoutUndo();
+            if(q==2) {
+                // Half-resolution contact shading only on the detail preset.
+                var renderer=AssetDatabase.LoadAssetAtPath<UniversalRendererData>("Assets/Resources/Render/"+names[q]+"Renderer.asset");
+                var ao=renderer.rendererFeatures.OfType<ScreenSpaceAmbientOcclusion>().FirstOrDefault();
+                if(!ao){ao=ScriptableObject.CreateInstance<ScreenSpaceAmbientOcclusion>();ao.name="Cabin and tyre contact shadows";AssetDatabase.AddObjectToAsset(ao,renderer);renderer.rendererFeatures.Add(ao);}
+                var values=new SerializedObject(ao);var options=values.FindProperty("m_Settings");
+                options.FindPropertyRelative("Downsample").boolValue=true;options.FindPropertyRelative("AfterOpaque").boolValue=true;
+                options.FindPropertyRelative("Source").intValue=0;options.FindPropertyRelative("NormalSamples").intValue=1;
+                options.FindPropertyRelative("Intensity").floatValue=.6f;options.FindPropertyRelative("Radius").floatValue=.12f;
+                options.FindPropertyRelative("AOMethod").intValue=1;
+                options.FindPropertyRelative("Samples").intValue=1;options.FindPropertyRelative("BlurQuality").intValue=0;
+                options.FindPropertyRelative("Falloff").floatValue=55;values.ApplyModifiedPropertiesWithoutUndo();
+                EditorUtility.SetDirty(ao);EditorUtility.SetDirty(renderer);pipeline.supportsCameraDepthTexture=true;
+                pipeline.cascade4Split=new Vector3(.08f,.22f,.5f);
+            }
             EditorUtility.SetDirty(pipeline);
+        }
+        // Register every runtime pipeline with build-time stripping and keep the
+        // four-bone driver skin and full-resolution textures on every preset.
+        var quality=new SerializedObject(AssetDatabase.LoadAllAssetsAtPath("ProjectSettings/QualitySettings.asset")[0]);
+        var levels=quality.FindProperty("m_QualitySettings");
+        for(int i=0;i<levels.arraySize;i++){
+            int q=Mathf.Min(2,i*3/levels.arraySize);var level=levels.GetArrayElementAtIndex(i);
+            level.FindPropertyRelative("customRenderPipeline").objectReferenceValue=AssetDatabase.LoadAssetAtPath<UniversalRenderPipelineAsset>("Assets/Resources/Render/"+names[q]+".asset");
+            level.FindPropertyRelative("skinWeights").intValue=(int)SkinWeights.FourBones;
+            level.FindPropertyRelative("globalTextureMipmapLimit").intValue=0;
+            level.FindPropertyRelative("realtimeReflectionProbes").boolValue=true;
+        }
+        quality.ApplyModifiedPropertiesWithoutUndo();
+        // Serialized materials preserve only the Lit feature combinations the
+        // procedural scenery uses, instead of shipping every Lit shader variant.
+        string[] materialNames={"RuntimeLit","RuntimeAsphalt","RuntimeEmission"};
+        for(int i=0;i<materialNames.Length;i++){
+            string path="Assets/Resources/Render/"+materialNames[i]+".mat";
+            var material=AssetDatabase.LoadAssetAtPath<Material>(path);
+            if(!material){material=new Material(Shader.Find("Universal Render Pipeline/Lit")){enableInstancing=true};AssetDatabase.CreateAsset(material,path);}
+            material.shaderKeywords=i==1?new[]{"_NORMALMAP","_METALLICSPECGLOSSMAP","_OCCLUSIONMAP"}:i==2?new[]{"_EMISSION"}:Array.Empty<string>();
+            EditorUtility.SetDirty(material);
         }
         GraphicsSettings.defaultRenderPipeline=AssetDatabase.LoadAssetAtPath<UniversalRenderPipelineAsset>("Assets/Resources/Render/Balanced.asset");QualitySettings.renderPipeline=GraphicsSettings.defaultRenderPipeline;
         PlayerSettings.companyName="Motor Coast";PlayerSettings.productName="Motor Coast";PlayerSettings.bundleVersion="2.0.0";PlayerSettings.colorSpace=ColorSpace.Linear;PlayerSettings.runInBackground=false;
@@ -45,7 +82,8 @@ public static class BuildIOS {
         PlayerSettings.defaultInterfaceOrientation=UIOrientation.AutoRotation;PlayerSettings.allowedAutorotateToLandscapeLeft=PlayerSettings.allowedAutorotateToLandscapeRight=true;PlayerSettings.allowedAutorotateToPortrait=PlayerSettings.allowedAutorotateToPortraitUpsideDown=false;
         var icon=AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/Brand/AppIcon.png");if(icon)PlayerSettings.SetIconsForTargetGroup(BuildTargetGroup.Unknown,new[]{icon});
         var graphics=new SerializedObject(AssetDatabase.LoadAllAssetsAtPath("ProjectSettings/GraphicsSettings.asset")[0]);var shaders=graphics.FindProperty("m_AlwaysIncludedShaders");
-        foreach(string name in new[]{"Universal Render Pipeline/Lit","MotorCoast/CoastWater","Skybox/Panoramic","UI/Default","UI/Default Font"}) {
+        for(int n=shaders.arraySize-1;n>=0;n--)if(shaders.GetArrayElementAtIndex(n).objectReferenceValue==Shader.Find("Universal Render Pipeline/Lit")){shaders.GetArrayElementAtIndex(n).objectReferenceValue=null;shaders.DeleteArrayElementAtIndex(n);}
+        foreach(string name in new[]{"MotorCoast/CoastWater","Skybox/Panoramic","UI/Default","UI/Default Font"}) {
             var shader=Shader.Find(name);if(!shader)throw new BuildFailedException("Shader missing: "+name);
             bool present=false;for(int n=0;n<shaders.arraySize;n++)if(shaders.GetArrayElementAtIndex(n).objectReferenceValue==shader)present=true;
             if(!present){shaders.InsertArrayElementAtIndex(shaders.arraySize);shaders.GetArrayElementAtIndex(shaders.arraySize-1).objectReferenceValue=shader;}
@@ -58,8 +96,24 @@ public static class BuildIOS {
             var importer=AssetImporter.GetAtPath(file) as PluginImporter;if(!importer)continue;importer.SetCompatibleWithAnyPlatform(false);importer.SetCompatibleWithEditor(true);importer.SetEditorData("OS","OSX");importer.SetEditorData("CPU","AnyCPU");importer.SaveAndReimport();
         }
         AssetDatabase.SaveAssets();
+        foreach(var folder in new[]{"Assets/Resources","Assets/Brand"})foreach(var file in Directory.GetFiles(folder,"*",SearchOption.AllDirectories)){
+            if(!file.EndsWith(".png")&&!file.EndsWith(".hdr"))continue;
+            var texture=AssetImporter.GetAtPath(file) as TextureImporter;
+            if(texture&&texture.textureShape!=TextureImporterShape.Texture2D){texture.textureShape=TextureImporterShape.Texture2D;texture.SaveAndReimport();}
+        }
         // Re-import after choosing URP so glTFast generates URP materials, never Built-in shaders.
-        foreach(var file in Directory.GetFiles("Assets/Resources","*.gltf",SearchOption.AllDirectories))AssetDatabase.ImportAsset(file,ImportAssetOptions.ForceUpdate|ImportAssetOptions.ForceSynchronousImport);
+        foreach(var file in Directory.GetFiles("Assets/Resources","*.gltf",SearchOption.AllDirectories)){
+            AssetDatabase.ImportAsset(file,ImportAssetOptions.ForceUpdate|ImportAssetOptions.ForceSynchronousImport);
+            var importer=AssetImporter.GetAtPath(file);var report=new SerializedObject(importer).FindProperty("reportItems");
+            if(report==null)continue;
+            for(int n=0;n<report.arraySize;n++){
+                var item=report.GetArrayElementAtIndex(n);var code=item.FindPropertyRelative("code");var messages=item.FindPropertyRelative("messages");
+                string detail=string.Join("; ",Enumerable.Range(0,messages.arraySize).Select(i=>messages.GetArrayElementAtIndex(i).stringValue));
+                Debug.Log("glTF diagnostics "+file+": "+code.enumDisplayNames[code.enumValueIndex]+" "+detail);
+                var type=(LogType)item.FindPropertyRelative("type").intValue;
+                if(type==LogType.Error||type==LogType.Exception)throw new BuildFailedException("glTF import failed: "+file+" "+detail);
+            }
+        }
         var catalog=JsonUtility.FromJson<VehicleCatalog>(Resources.Load<TextAsset>("Data/vehicles").text);
         foreach(var spec in catalog.vehicles)foreach(var resource in new[]{spec.resource,spec.highResource}) {
             var model=Resources.Load<GameObject>(resource);if(!model||!Nodes.Find(model.transform,"Chassis"))throw new BuildFailedException("Invalid imported car: "+resource);
@@ -86,9 +140,10 @@ public static class BuildIOS {
 public sealed class AssetSettings:AssetPostprocessor {
     void OnPreprocessTexture(){
         if(!assetPath.StartsWith("Assets/Resources/")&&!assetPath.StartsWith("Assets/Brand/"))return;
-        var t=(TextureImporter)assetImporter;t.mipmapEnabled=!assetPath.Contains("Brand/");t.isReadable=false;t.anisoLevel=8;t.maxTextureSize=2048;
+        var t=(TextureImporter)assetImporter;t.textureShape=TextureImporterShape.Texture2D;t.mipmapEnabled=!assetPath.Contains("Brand/");t.isReadable=false;t.anisoLevel=8;t.maxTextureSize=2048;
         t.sRGBTexture=!(assetPath.Contains("-linear-")||assetPath.Contains("-normal")||assetPath.Contains("-metal-smooth")||assetPath.Contains("-ao"));
         if(assetPath.Contains("-normal"))t.textureType=TextureImporterType.NormalMap;
+        if(assetPath.Contains("Resources/GUI/")){t.mipmapEnabled=false;t.wrapMode=TextureWrapMode.Clamp;t.alphaIsTransparency=true;t.maxTextureSize=512;t.textureCompression=TextureImporterCompression.Uncompressed;t.SetPlatformTextureSettings(new TextureImporterPlatformSettings{name="iPhone",overridden=true,format=TextureImporterFormat.RGBA32,maxTextureSize=512});return;}
         if(assetPath.EndsWith(".hdr")){t.textureCompression=TextureImporterCompression.Uncompressed;return;}
         if(assetPath.Contains("Brand/")){t.maxTextureSize=1024;t.textureCompression=TextureImporterCompression.Uncompressed;return;}
         t.SetPlatformTextureSettings(new TextureImporterPlatformSettings{name="iPhone",overridden=true,format=TextureImporterFormat.ASTC_6x6,maxTextureSize=2048,compressionQuality=80});

@@ -1,59 +1,44 @@
 MOTOR COAST NATIVE PORT — 2026-10-18
 
-Host: Intel MacBook Air, macOS 14.8.7.
-Local Xcode: /Applications/Xcode-15.4.0.app (15.4).
-Installed Unity: 6000.3.26f1 LTS, Intel; iOS Build Support installed.
-Installed Unity Hub: 3.22.3. Official Unity CLI: 1.0.0-beta.13.
-Unity account not signed in; no activated Editor license.
-Disk cleanup reclaimed 31.24 GB: available 1.29 -> 32.53 GB.
-After SDK installation and installer cleanup: approximately 19.7 GB available.
-Only recoverable caches/build intermediates were removed; source and credentials preserved.
+Host: Intel MacBook Air, Core i5-8210Y 1.60 GHz, 8 GB RAM,
+Intel UHD Graphics 617 / Metal, macOS 14.8.7.
+Unity 6000.3.26f1 LTS + iOS Build Support; Unity Personal active.
+Local Xcode 15.4 / iOS SDK 17.5.
 
 PASSED
-- Official editor/iOS package MD5 and Hub SHA-512 checksums verified.
-- Editor installer signature and installed Hub code signature verified.
-- Installed Editor version confirmed from its Info.plist and Hub registry.
-- iOS extension DLL and player libraries present in the external PlaybackEngines
-  directory; export-ios.sh now supports both macOS module layouts.
-- MotorCoast project registered in Hub; native editor plugin rebuilt successfully.
-- DriveCore C++17 tests under AddressSanitizer and UndefinedBehaviorSanitizer:
-  60/120 Hz input smoothing consistency; brake priority; rear-only handbrake;
-  shift-to-reverse braking; pause (dt=0); speed/steer bounds; invalid floats.
-- Universal x86_64 + arm64 macOS plugin compiled.
-- iOS ARM64 DriveCore object compiled with Xcode 15.4 / iOS SDK.
-- C# grammar parsed (tree-sitter 0.26.0 / c-sharp 0.23.5).
-  This is NOT a Unity compilation or semantic API check.
-- Khronos glTF Validator 2.0.0-dev.3.10: 9 exports, zero errors.
-  Character retains three standard non-root skin hierarchy warnings; Unity-specific
-  skin/bounds checks are a mandatory gate, not yet executed.
-- Native material splitting preserves skinned vertex positions exactly (0 delta)
-  against the source in all seven seated poses and three steering angles.
-- Source asset preflight: 7 cars, 9 models, hashes, four wheel pivots per car,
-  driver bone names, local resource paths, JSON and plist.
-- Original Three/glTF geometry checks: all seven seated characters above floor
-  and below roof; hand grip error < 0.000001 m; no steering/pose accumulation.
-  These checks are NOT a Unity renderer test.
-- Shader/API setup reviewed against official Unity 6.3 Graphics/UnityCsReference.
-- App Store Connect read-only authentication succeeded; existing Xcode Cloud
-  product/provider visible. No changes to Aloe or Mivori.
-- Separate Motor Coast bundle ID registered with Apple:
-  app.zanderrroff.motorcoast, resource ID XB2393B45T.
-- Required Unity animation/inputlegacy/vehicles modules added to package manifest.
-- Xcode Cloud payload hashing streams the file instead of loading a large archive
-  entirely into memory. Python and shell syntax checks passed.
+- C++17 AddressSanitizer + UndefinedBehaviorSanitizer: time-step invariance,
+  safe reverse, pause, brake priority, rear handbrake, invalid input, speed limits,
+  full-lock parking and <=0.95 g steering envelope at 54/90/144/216 km/h.
+- Universal macOS native plugin and iOS ARM64 DriveCore compilation.
+- Unity C# compilation; glTF import with no import errors.
+- Source preflight: seven cars, ten models including driver and coastline;
+  resource hashes, wheel pivots, skeleton bones, twelve licensed GUI sprites.
+- 14 Unity tests: native ABI, seven complete vehicles, seven fitted driver poses,
+  CPU-vs-baked skinning within 2 mm, floor/roof clearance, hand/finger grip,
+  visible wheel rotation, braking, reverse, rear handbrake, reset, pause,
+  settled suspension oscillation <1 cm, Ackermann geometry, touch ownership,
+  outside release, cancellation, focus loss and high-speed steering.
+- Actual PhysX corner tests: full input at 108 km/h produced 52.7 degrees heading
+  change in three seconds, peak yaw 0.42 rad/s, maximum roll 1.5 degrees.
+  At 162 km/h: 38.1 degrees, 0.33 rad/s, 1.8 degrees roll.
+  Countersteering remained upright; trajectories were curved, not teleported.
+- Native Metal/URP preview at 1280x720: exterior, cabin, cockpit, park,
+  desktop and touch controls. Player/render/UI exceptions fail the preview gate.
+- Actual iPhone Xcode export with UnityFramework, Data and IL2CPP C++ output.
+- Apple app record 6824150042, bundle app.zanderrroff.motorcoast.
+- New active Apple distribution certificate and matching Motor Coast profile.
+  Private signing key stays outside Git on the owner's Mac.
 
-BLOCKED / NOT RUN
-- export-ios.sh reached the installed Editor; exit 198 before project preparation.
-  Exact Editor diagnosis: "No valid Unity Editor license found. Please activate your license."
-- Official CLI Personal activation returned NOT_SIGNED_IN; browser sign-in timed out.
-  Unity Hub remains installed/open for user sign-in. No license was bypassed.
-- Unity C# compilation, asset import and EditMode tests have NOT run.
-- No Unity scene rendering, Metal screenshot, device FPS, touch or thermal test.
-- No generated Xcode project, archive, signed IPA, new Cloud workflow or TestFlight build.
-- No claim of GTA-level graphics, measured 30/60 FPS, or completed native release.
+LIMITS / PENDING DELIVERY
+- No physical iPhone run, sustained FPS, memory, heat or physical multitouch result.
+  60 FPS is a target for all presets, not a measured phone result.
+- No guarantee of GTA-level graphics or absence of every possible bug.
+- Four interiors are artistic reconstructions, not factory interior scans.
+- Unity 6000.3 occasionally logs an editor-only Quick Search index exception;
+  this exact editor trace is excluded from player-exception gating.
+- First Xcode Cloud product onboarding requires Xcode UI. The prepared fallback
+  builds with a current Xcode on GitHub's macOS runner; signing stays local.
+- Signed IPA, modern-SDK cloud archive and Apple processing are still pending.
+  Update this record only after each artifact actually exists and verifies.
 
-NEXT REQUIRED GATE
-Sign in to Unity Hub and activate a suitable license, then re-run
-unity/Tools/export-ios.sh on this prepared Mac. Only a passing Unity run can
-start Xcode export/archive. An App Store Connect app record and new Xcode Cloud
-workflow have not been created; the registered bundle ID alone is not a release.
+The published browser website is the earlier web version, not this native player.

@@ -2071,7 +2071,7 @@
       ]
     },
     {
-      "name": "metal_gray",
+      "name": "metal_gray__17",
       "primitives": [
         {
           "attributes": {
@@ -2085,7 +2085,7 @@
       ]
     },
     {
-      "name": "Ferrari_Yellow",
+      "name": "Ferrari_Yellow__18",
       "primitives": [
         {
           "attributes": {
@@ -2099,7 +2099,7 @@
       ]
     },
     {
-      "name": "Tires",
+      "name": "Tires__19",
       "primitives": [
         {
           "attributes": {
@@ -2113,7 +2113,7 @@
       ]
     },
     {
-      "name": "Interior_dark",
+      "name": "Interior_dark__20",
       "primitives": [
         {
           "attributes": {
@@ -2127,7 +2127,7 @@
       ]
     },
     {
-      "name": "metal_gray",
+      "name": "metal_gray__21",
       "primitives": [
         {
           "attributes": {
@@ -2141,7 +2141,7 @@
       ]
     },
     {
-      "name": "Ferrari_Yellow",
+      "name": "Ferrari_Yellow__22",
       "primitives": [
         {
           "attributes": {
@@ -2155,7 +2155,7 @@
       ]
     },
     {
-      "name": "Interior_dark",
+      "name": "Interior_dark__23",
       "primitives": [
         {
           "attributes": {
@@ -2169,7 +2169,7 @@
       ]
     },
     {
-      "name": "Tires",
+      "name": "Tires__24",
       "primitives": [
         {
           "attributes": {
@@ -2183,7 +2183,7 @@
       ]
     },
     {
-      "name": "metal_gray",
+      "name": "metal_gray__25",
       "primitives": [
         {
           "attributes": {
@@ -2197,7 +2197,7 @@
       ]
     },
     {
-      "name": "Tires",
+      "name": "Tires__26",
       "primitives": [
         {
           "attributes": {
@@ -2211,7 +2211,7 @@
       ]
     },
     {
-      "name": "Ferrari_Yellow",
+      "name": "Ferrari_Yellow__27",
       "primitives": [
         {
           "attributes": {
@@ -2225,7 +2225,7 @@
       ]
     },
     {
-      "name": "Interior_dark",
+      "name": "Interior_dark__28",
       "primitives": [
         {
           "attributes": {
@@ -2239,7 +2239,7 @@
       ]
     },
     {
-      "name": "Tires",
+      "name": "Tires__29",
       "primitives": [
         {
           "attributes": {
@@ -2253,7 +2253,7 @@
       ]
     },
     {
-      "name": "metal_gray",
+      "name": "metal_gray__30",
       "primitives": [
         {
           "attributes": {
@@ -2267,7 +2267,7 @@
       ]
     },
     {
-      "name": "Ferrari_Yellow",
+      "name": "Ferrari_Yellow__31",
       "primitives": [
         {
           "attributes": {
@@ -2281,7 +2281,7 @@
       ]
     },
     {
-      "name": "Interior_dark",
+      "name": "Interior_dark__32",
       "primitives": [
         {
           "attributes": {
@@ -2295,7 +2295,7 @@
       ]
     },
     {
-      "name": "Carbon_Fiber",
+      "name": "Carbon_Fiber__33",
       "primitives": [
         {
           "attributes": {
@@ -2309,7 +2309,7 @@
       ]
     },
     {
-      "name": "Ferrari_Yellow",
+      "name": "Ferrari_Yellow__34",
       "primitives": [
         {
           "attributes": {
@@ -2323,7 +2323,7 @@
       ]
     },
     {
-      "name": "Leather",
+      "name": "Leather__35",
       "primitives": [
         {
           "attributes": {
@@ -2337,7 +2337,7 @@
       ]
     },
     {
-      "name": "metal_gray",
+      "name": "metal_gray__36",
       "primitives": [
         {
           "attributes": {
@@ -2351,7 +2351,7 @@
       ]
     },
     {
-      "name": "Taillight_Glass",
+      "name": "Taillight_Glass__37",
       "primitives": [
         {
           "attributes": {
@@ -2365,7 +2365,7 @@
       ]
     },
     {
-      "name": "Leather_red",
+      "name": "Leather_red__38",
       "primitives": [
         {
           "attributes": {
@@ -2546,51 +2546,51 @@
       "mesh": 20
     },
     {
-      "name": "WheelDetail_metal_gray",
+      "name": "WheelDetail_metal_gray__27",
       "mesh": 21
     },
     {
-      "name": "WheelDetail_Ferrari_Yellow",
+      "name": "WheelDetail_Ferrari_Yellow__28",
       "mesh": 22
     },
     {
-      "name": "WheelDetail_Interior_dark",
+      "name": "WheelDetail_Interior_dark__29",
       "mesh": 23
     },
     {
-      "name": "WheelDetail_Tires",
+      "name": "WheelDetail_Tires__30",
       "mesh": 24
     },
     {
-      "name": "WheelDetail_metal_gray",
+      "name": "WheelDetail_metal_gray__31",
       "mesh": 25
     },
     {
-      "name": "WheelDetail_Tires",
+      "name": "WheelDetail_Tires__32",
       "mesh": 26
     },
     {
-      "name": "WheelDetail_Ferrari_Yellow",
+      "name": "WheelDetail_Ferrari_Yellow__33",
       "mesh": 27
     },
     {
-      "name": "WheelDetail_Interior_dark",
+      "name": "WheelDetail_Interior_dark__34",
       "mesh": 28
     },
     {
-      "name": "WheelDetail_Tires",
+      "name": "WheelDetail_Tires__35",
       "mesh": 29
     },
     {
-      "name": "WheelDetail_metal_gray",
+      "name": "WheelDetail_metal_gray__36",
       "mesh": 30
     },
     {
-      "name": "WheelDetail_Ferrari_Yellow",
+      "name": "WheelDetail_Ferrari_Yellow__37",
       "mesh": 31
     },
     {
-      "name": "WheelDetail_Interior_dark",
+      "name": "WheelDetail_Interior_dark__38",
       "mesh": 32
     },
     {

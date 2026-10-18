@@ -18,6 +18,7 @@ const manifest=[]
 await fs.mkdir(dest+'/Vehicles',{recursive:true})
 async function convert(source,name){
  const doc=await io.read(source),root=doc.getRoot()
+ if(name==='Vehicles/roadster'||name==='Vehicles/roadster-high')for(const m of root.listMaterials())if(m.getName()==='Material'&&m.getAlphaMode()==='BLEND')m.setBaseColorFactor([.12,.18,.20,.16]).setRoughnessFactor(.10)
  const roles=new Map();
  for(const m of root.listMaterials()){if(m.getBaseColorTexture())roles.set(m.getBaseColorTexture(),'color');if(m.getEmissiveTexture())roles.set(m.getEmissiveTexture(),'color');if(m.getNormalTexture())roles.set(m.getNormalTexture(),'normal');}
  let ti=0;const base=path.basename(name);
@@ -50,6 +51,10 @@ async function convert(source,name){
  await doc.transform(prune())
  for(const ext of root.listExtensionsUsed())if(['KHR_draco_mesh_compression','EXT_meshopt_compression','EXT_texture_webp'].includes(ext.extensionName))ext.dispose()
  for(const node of root.listNodes())node.setName(node.getName().replaceAll(' ','_'))
+ // Unity sub-assets need stable unique names for reimports and scene references.
+ for(const objects of [root.listNodes(),root.listMeshes()]){
+  const used=new Set();for(let i=0;i<objects.length;i++){const object=objects[i];const base=object.getName()||'Part';let name=base;if(used.has(name))name=base+'__'+i;while(used.has(name))name+='_';object.setName(name);used.add(name)}
+ }
  let triangles=0
  for(const mesh of root.listMeshes())for(const p of mesh.listPrimitives())triangles+=(p.getIndices()?.getCount()??p.getAttribute('POSITION').getCount())/3
  root.listBuffers().forEach((b,i)=>b.setURI(`${base}-data-${i}.bin`));
@@ -91,7 +96,8 @@ await fs.copyFile('public/textures/coast-sky-1k.hdr',dest+'/Textures/coast-sky.h
 await fs.mkdir(dest+'/Audio',{recursive:true})
 for(const name of ['engine-loop','tire-loop','impact','ambience'])await fs.copyFile('public/sounds/v14/'+name+'.wav',dest+'/Audio/'+name+'.wav')
 let credits=await fs.readFile('public/CREDITS.txt','utf8')
-credits+='\nAsphalt 02 — Rob Tuytel / Poly Haven, CC0. https://polyhaven.com/a/asphalt_02\nUnity conversion: decoded meshes, PNG texture conversion, mirrored coordinates on import; steering and driver rig corrections. Porsche derivative retains CC BY-SA 4.0.\n'
+credits+='\nAsphalt 02 — Rob Tuytel / Poly Haven, CC0. https://polyhaven.com/a/asphalt_02\nCoastal Cliff 01 — Rico Cilliers, Rob Tuytel / Poly Haven, CC0. https://polyhaven.com/a/coastal_cliff_01; mesh simplified for mobile, 2K textures.\nUnity conversion: decoded meshes, PNG texture conversion, mirrored coordinates on import; steering and driver rig corrections; Roadster glass adjusted for cockpit visibility. Porsche derivative retains CC BY-SA 4.0.\n'
+credits+='\n'+await fs.readFile('unity/ThirdParty/GUI/CREDITS.txt','utf8')+'\n'+await fs.readFile('unity/ThirdParty/GUI/Lucide-LICENSE.txt','utf8')
 await fs.writeFile(dest+'/Data/CREDITS.txt',credits)
 await fs.copyFile('public/models/driver-LICENSE.txt',dest+'/Data/Driver-LICENSE.txt')
 console.log('Unity assets prepared; original source and licenses preserved.')

@@ -1,0 +1,176 @@
+{
+  "asset": {
+    "generator": "glTF-Transform v4.3.0",
+    "version": "2.0"
+  },
+  "accessors": [
+    {
+      "type": "SCALAR",
+      "componentType": 5123,
+      "count": 35994,
+      "bufferView": 0,
+      "byteOffset": 0
+    },
+    {
+      "type": "VEC3",
+      "componentType": 5126,
+      "count": 8337,
+      "max": [
+        46.924373626708984,
+        9.675003051757812,
+        4.726827621459961
+      ],
+      "min": [
+        -45.055580139160156,
+        -0.6500276327133179,
+        -6.205799579620361
+      ],
+      "bufferView": 1,
+      "byteOffset": 0
+    },
+    {
+      "type": "VEC2",
+      "componentType": 5126,
+      "count": 8337,
+      "bufferView": 1,
+      "byteOffset": 12
+    },
+    {
+      "type": "VEC3",
+      "componentType": 5126,
+      "count": 8337,
+      "bufferView": 1,
+      "byteOffset": 20
+    },
+    {
+      "name": "Coastal tangent frame",
+      "type": "VEC4",
+      "componentType": 5126,
+      "count": 8337,
+      "bufferView": 1,
+      "byteOffset": 32
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 71988,
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 71988,
+      "byteLength": 400176,
+      "byteStride": 48,
+      "target": 34962
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "textures": [
+    {
+      "source": 1,
+      "sampler": 0
+    },
+    {
+      "source": 0,
+      "sampler": 0
+    },
+    {
+      "source": 2,
+      "sampler": 0
+    }
+  ],
+  "images": [
+    {
+      "name": "coastal_cliff_01_nor_gl",
+      "mimeType": "image/png",
+      "uri": "coastal-cliff-normal-0.png"
+    },
+    {
+      "name": "coastal_cliff_01_diff",
+      "mimeType": "image/png",
+      "uri": "coastal-cliff-color-1.png"
+    },
+    {
+      "name": "coastal_cliff_01_rough",
+      "mimeType": "image/png",
+      "uri": "coastal-cliff-linear-2.png"
+    }
+  ],
+  "buffers": [
+    {
+      "uri": "coastal-cliff-0.bin",
+      "byteLength": 472164
+    }
+  ],
+  "materials": [
+    {
+      "name": "coastal_cliff_01",
+      "doubleSided": true,
+      "pbrMetallicRoughness": {
+        "metallicFactor": 0,
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicRoughnessTexture": {
+          "index": 2
+        }
+      },
+      "normalTexture": {
+        "index": 1
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Plane.001",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 1,
+            "TEXCOORD_0": 2,
+            "NORMAL": 3,
+            "TANGENT": 4
+          },
+          "mode": 4,
+          "material": 0,
+          "indices": 0
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "name": "coastal_cliff_01",
+      "mesh": 0
+    },
+    {
+      "name": "CoastalCliff",
+      "translation": [
+        -0.9343967437744141,
+        0.6500276327133179,
+        0.7394859790802002
+      ],
+      "children": [
+        0
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "name": "Scene",
+      "nodes": [
+        1
+      ]
+    }
+  ],
+  "scene": 0
+}

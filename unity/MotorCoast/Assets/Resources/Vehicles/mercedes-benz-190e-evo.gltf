@@ -2915,7 +2915,7 @@
       ]
     },
     {
-      "name": "caliper",
+      "name": "caliper__34",
       "primitives": [
         {
           "attributes": {
@@ -2929,7 +2929,7 @@
       ]
     },
     {
-      "name": "Tyre",
+      "name": "Tyre__35",
       "primitives": [
         {
           "attributes": {
@@ -2943,7 +2943,7 @@
       ]
     },
     {
-      "name": "material_43",
+      "name": "material_43__36",
       "primitives": [
         {
           "attributes": {
@@ -2957,7 +2957,7 @@
       ]
     },
     {
-      "name": "caliper",
+      "name": "caliper__37",
       "primitives": [
         {
           "attributes": {
@@ -2971,7 +2971,7 @@
       ]
     },
     {
-      "name": "Tyre",
+      "name": "Tyre__38",
       "primitives": [
         {
           "attributes": {
@@ -2985,7 +2985,7 @@
       ]
     },
     {
-      "name": "material_43",
+      "name": "material_43__39",
       "primitives": [
         {
           "attributes": {
@@ -2999,7 +2999,7 @@
       ]
     },
     {
-      "name": "Tyre",
+      "name": "Tyre__40",
       "primitives": [
         {
           "attributes": {
@@ -3013,7 +3013,7 @@
       ]
     },
     {
-      "name": "material_43",
+      "name": "material_43__41",
       "primitives": [
         {
           "attributes": {
@@ -3027,7 +3027,7 @@
       ]
     },
     {
-      "name": "reflector",
+      "name": "reflector__42",
       "primitives": [
         {
           "attributes": {
@@ -3042,7 +3042,7 @@
       ]
     },
     {
-      "name": "plastic",
+      "name": "plastic__43",
       "primitives": [
         {
           "attributes": {
@@ -3056,7 +3056,7 @@
       ]
     },
     {
-      "name": "Car_frame",
+      "name": "Car_frame__44",
       "primitives": [
         {
           "attributes": {
@@ -3070,7 +3070,7 @@
       ]
     },
     {
-      "name": "chrome",
+      "name": "chrome__45",
       "primitives": [
         {
           "attributes": {
@@ -3084,7 +3084,7 @@
       ]
     },
     {
-      "name": "bump_leather3",
+      "name": "bump_leather3__46",
       "primitives": [
         {
           "attributes": {
@@ -3098,7 +3098,7 @@
       ]
     },
     {
-      "name": "bump_leather2",
+      "name": "bump_leather2__47",
       "primitives": [
         {
           "attributes": {
@@ -3344,31 +3344,31 @@
       "mesh": 34
     },
     {
-      "name": "WheelDetail_Tyre",
+      "name": "WheelDetail_Tyre__41",
       "mesh": 35
     },
     {
-      "name": "WheelDetail_material_43",
+      "name": "WheelDetail_material_43__42",
       "mesh": 36
     },
     {
-      "name": "WheelDetail_caliper",
+      "name": "WheelDetail_caliper__43",
       "mesh": 37
     },
     {
-      "name": "WheelDetail_Tyre",
+      "name": "WheelDetail_Tyre__44",
       "mesh": 38
     },
     {
-      "name": "WheelDetail_material_43",
+      "name": "WheelDetail_material_43__45",
       "mesh": 39
     },
     {
-      "name": "WheelDetail_Tyre",
+      "name": "WheelDetail_Tyre__46",
       "mesh": 40
     },
     {
-      "name": "WheelDetail_material_43",
+      "name": "WheelDetail_material_43__47",
       "mesh": 41
     },
     {

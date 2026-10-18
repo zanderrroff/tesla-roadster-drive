@@ -2299,7 +2299,7 @@
       ]
     },
     {
-      "name": "Material.012",
+      "name": "Material.012__29",
       "primitives": [
         {
           "attributes": {
@@ -2313,7 +2313,7 @@
       ]
     },
     {
-      "name": "Material.009",
+      "name": "Material.009__30",
       "primitives": [
         {
           "attributes": {
@@ -2327,7 +2327,7 @@
       ]
     },
     {
-      "name": "Material.023",
+      "name": "Material.023__31",
       "primitives": [
         {
           "attributes": {
@@ -2341,7 +2341,7 @@
       ]
     },
     {
-      "name": "Material.012",
+      "name": "Material.012__32",
       "primitives": [
         {
           "attributes": {
@@ -2355,7 +2355,7 @@
       ]
     },
     {
-      "name": "Material.009",
+      "name": "Material.009__33",
       "primitives": [
         {
           "attributes": {
@@ -2369,7 +2369,7 @@
       ]
     },
     {
-      "name": "Material.023",
+      "name": "Material.023__34",
       "primitives": [
         {
           "attributes": {
@@ -2383,7 +2383,7 @@
       ]
     },
     {
-      "name": "Material.012",
+      "name": "Material.012__35",
       "primitives": [
         {
           "attributes": {
@@ -2397,7 +2397,7 @@
       ]
     },
     {
-      "name": "Material.009",
+      "name": "Material.009__36",
       "primitives": [
         {
           "attributes": {
@@ -2411,7 +2411,7 @@
       ]
     },
     {
-      "name": "Material.023",
+      "name": "Material.023__37",
       "primitives": [
         {
           "attributes": {
@@ -2425,7 +2425,7 @@
       ]
     },
     {
-      "name": "Material.004",
+      "name": "Material.004__38",
       "primitives": [
         {
           "attributes": {
@@ -2439,7 +2439,7 @@
       ]
     },
     {
-      "name": "Material.028",
+      "name": "Material.028__39",
       "primitives": [
         {
           "attributes": {
@@ -2653,39 +2653,39 @@
       "mesh": 28
     },
     {
-      "name": "WheelDetail_Material.012",
+      "name": "WheelDetail_Material.012__35",
       "mesh": 29
     },
     {
-      "name": "WheelDetail_Material.009",
+      "name": "WheelDetail_Material.009__36",
       "mesh": 30
     },
     {
-      "name": "WheelDetail_Material.023",
+      "name": "WheelDetail_Material.023__37",
       "mesh": 31
     },
     {
-      "name": "WheelDetail_Material.012",
+      "name": "WheelDetail_Material.012__38",
       "mesh": 32
     },
     {
-      "name": "WheelDetail_Material.009",
+      "name": "WheelDetail_Material.009__39",
       "mesh": 33
     },
     {
-      "name": "WheelDetail_Material.023",
+      "name": "WheelDetail_Material.023__40",
       "mesh": 34
     },
     {
-      "name": "WheelDetail_Material.012",
+      "name": "WheelDetail_Material.012__41",
       "mesh": 35
     },
     {
-      "name": "WheelDetail_Material.009",
+      "name": "WheelDetail_Material.009__42",
       "mesh": 36
     },
     {
-      "name": "WheelDetail_Material.023",
+      "name": "WheelDetail_Material.023__43",
       "mesh": 37
     },
     {

@@ -2087,7 +2087,7 @@
       ]
     },
     {
-      "name": "BMW_E30_M3_RIM",
+      "name": "BMW_E30_M3_RIM__15",
       "primitives": [
         {
           "attributes": {
@@ -2103,7 +2103,7 @@
       ]
     },
     {
-      "name": "BMW_E30_M3_TIRE",
+      "name": "BMW_E30_M3_TIRE__16",
       "primitives": [
         {
           "attributes": {
@@ -2119,7 +2119,7 @@
       ]
     },
     {
-      "name": "Brake_Disc",
+      "name": "Brake_Disc__17",
       "primitives": [
         {
           "attributes": {
@@ -2135,7 +2135,7 @@
       ]
     },
     {
-      "name": "Brembo_Calipers",
+      "name": "Brembo_Calipers__18",
       "primitives": [
         {
           "attributes": {
@@ -2151,7 +2151,7 @@
       ]
     },
     {
-      "name": "Logo_Plane",
+      "name": "Logo_Plane__19",
       "primitives": [
         {
           "attributes": {
@@ -2165,7 +2165,7 @@
       ]
     },
     {
-      "name": "BMW_E30_M3_RIM",
+      "name": "BMW_E30_M3_RIM__20",
       "primitives": [
         {
           "attributes": {
@@ -2181,7 +2181,7 @@
       ]
     },
     {
-      "name": "BMW_E30_M3_TIRE",
+      "name": "BMW_E30_M3_TIRE__21",
       "primitives": [
         {
           "attributes": {
@@ -2197,7 +2197,7 @@
       ]
     },
     {
-      "name": "Brake_Disc",
+      "name": "Brake_Disc__22",
       "primitives": [
         {
           "attributes": {
@@ -2213,7 +2213,7 @@
       ]
     },
     {
-      "name": "Brembo_Calipers",
+      "name": "Brembo_Calipers__23",
       "primitives": [
         {
           "attributes": {
@@ -2229,7 +2229,7 @@
       ]
     },
     {
-      "name": "Logo_Plane",
+      "name": "Logo_Plane__24",
       "primitives": [
         {
           "attributes": {
@@ -2243,7 +2243,7 @@
       ]
     },
     {
-      "name": "BMW_E30_M3_RIM",
+      "name": "BMW_E30_M3_RIM__25",
       "primitives": [
         {
           "attributes": {
@@ -2259,7 +2259,7 @@
       ]
     },
     {
-      "name": "BMW_E30_M3_TIRE",
+      "name": "BMW_E30_M3_TIRE__26",
       "primitives": [
         {
           "attributes": {
@@ -2275,7 +2275,7 @@
       ]
     },
     {
-      "name": "Brake_Disc",
+      "name": "Brake_Disc__27",
       "primitives": [
         {
           "attributes": {
@@ -2291,7 +2291,7 @@
       ]
     },
     {
-      "name": "Brembo_Calipers",
+      "name": "Brembo_Calipers__28",
       "primitives": [
         {
           "attributes": {
@@ -2307,7 +2307,7 @@
       ]
     },
     {
-      "name": "Logo_Plane",
+      "name": "Logo_Plane__29",
       "primitives": [
         {
           "attributes": {
@@ -2438,63 +2438,63 @@
       "mesh": 14
     },
     {
-      "name": "WheelDetail_BMW_E30_M3_RIM",
+      "name": "WheelDetail_BMW_E30_M3_RIM__20",
       "mesh": 15
     },
     {
-      "name": "WheelDetail_BMW_E30_M3_TIRE",
+      "name": "WheelDetail_BMW_E30_M3_TIRE__21",
       "mesh": 16
     },
     {
-      "name": "WheelDetail_Brake_Disc",
+      "name": "WheelDetail_Brake_Disc__22",
       "mesh": 17
     },
     {
-      "name": "WheelDetail_Brembo_Calipers",
+      "name": "WheelDetail_Brembo_Calipers__23",
       "mesh": 18
     },
     {
-      "name": "WheelDetail_Logo_Plane",
+      "name": "WheelDetail_Logo_Plane__24",
       "mesh": 19
     },
     {
-      "name": "WheelDetail_BMW_E30_M3_RIM",
+      "name": "WheelDetail_BMW_E30_M3_RIM__25",
       "mesh": 20
     },
     {
-      "name": "WheelDetail_BMW_E30_M3_TIRE",
+      "name": "WheelDetail_BMW_E30_M3_TIRE__26",
       "mesh": 21
     },
     {
-      "name": "WheelDetail_Brake_Disc",
+      "name": "WheelDetail_Brake_Disc__27",
       "mesh": 22
     },
     {
-      "name": "WheelDetail_Brembo_Calipers",
+      "name": "WheelDetail_Brembo_Calipers__28",
       "mesh": 23
     },
     {
-      "name": "WheelDetail_Logo_Plane",
+      "name": "WheelDetail_Logo_Plane__29",
       "mesh": 24
     },
     {
-      "name": "WheelDetail_BMW_E30_M3_RIM",
+      "name": "WheelDetail_BMW_E30_M3_RIM__30",
       "mesh": 25
     },
     {
-      "name": "WheelDetail_BMW_E30_M3_TIRE",
+      "name": "WheelDetail_BMW_E30_M3_TIRE__31",
       "mesh": 26
     },
     {
-      "name": "WheelDetail_Brake_Disc",
+      "name": "WheelDetail_Brake_Disc__32",
       "mesh": 27
     },
     {
-      "name": "WheelDetail_Brembo_Calipers",
+      "name": "WheelDetail_Brembo_Calipers__33",
       "mesh": 28
     },
     {
-      "name": "WheelDetail_Logo_Plane",
+      "name": "WheelDetail_Logo_Plane__34",
       "mesh": 29
     }
   ],

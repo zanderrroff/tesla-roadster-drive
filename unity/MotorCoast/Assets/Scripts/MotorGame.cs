@@ -14,7 +14,7 @@ public sealed class MotorGame : MonoBehaviour {
     public bool SoundEnabled=>PlayerPrefs.GetInt("sound",1)==1;
     GameHud hud;CoastWorld world;VehicleAudio audioRig;bool loading,started;int selected;
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
-    static void Boot(){if(!FindFirstObjectByType<MotorGame>())new GameObject("Motor Coast").AddComponent<MotorGame>();}
+    static void Boot(){if(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name=="Coast"&&!FindFirstObjectByType<MotorGame>())new GameObject("Motor Coast").AddComponent<MotorGame>();}
     IEnumerator Start() {
         Screen.orientation=ScreenOrientation.AutoRotation;Screen.autorotateToLandscapeLeft=Screen.autorotateToLandscapeRight=true;Screen.autorotateToPortrait=Screen.autorotateToPortraitUpsideDown=false;
         Screen.sleepTimeout=SleepTimeout.NeverSleep;Time.fixedDeltaTime=1f/120;Time.maximumDeltaTime=.1f;Time.timeScale=0;Input.Blocked=true;
@@ -56,7 +56,7 @@ public sealed class MotorGame : MonoBehaviour {
     public void SelectVehicle(int index){if(!loading)StartCoroutine(LoadVehicle(index));}
     public void Resume(){if(!Car||loading)return;started=true;IsPaused=false;Time.timeScale=1;Input.Clear();Input.Blocked=false;Car.Suspend(false);AudioListener.pause=false;hud.Driving();Camera.Snap();}
     public void Pause(bool garage=false){if(loading)return;IsPaused=true;Time.timeScale=0;Input.Clear();Input.Blocked=true;if(Car)Car.Suspend(true);AudioListener.pause=true;if(Car)hud.Menu(!started,garage);}
-    public void ResetCar(){if(!Car)return;Car.Reset();Camera.Snap();Challenges.ResetRun();}
+    public void ResetCar(){if(!Car)return;Car.ResetToStart();Camera.Snap();Challenges.ResetRun();}
     public void Horn(){if(!IsPaused&&audioRig)audioRig.Horn();}
     public void Retry(){if(Catalog!=null && Catalog.vehicles!=null && Catalog.vehicles.Length>0)SelectVehicle(selected);else UnityEngine.SceneManagement.SceneManager.LoadScene(0);}
     public void ChangeQuality(int level){Quality.Apply(level);if(Car&&Car.Spec.id=="roadster"&&!loading)StartCoroutine(LoadVehicle(selected));}

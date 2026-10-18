@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Validate a real native IPA; never manufacture one from the website."""
-import pathlib,plistlib,sys,zipfile,subprocess,tempfile,struct
+import pathlib,plistlib,sys,zipfile,subprocess,tempfile,struct,hashlib,datetime
 p=pathlib.Path(sys.argv[1])
 if not p.exists():
     candidates=list(p.parent.glob('*.ipa'))
@@ -27,4 +27,9 @@ with tempfile.TemporaryDirectory(prefix='motorcoast-ipa-verify-') as temporary:
     provision=plistlib.loads(profile.stdout)
     assert provision['Entitlements']['application-identifier']=='U8QHYG2G45.app.zanderrroff.motorcoast'
     assert not provision['Entitlements'].get('get-task-allow',False),'Release must not allow debugging'
+    assert provision['ExpirationDate']>datetime.datetime.utcnow(),'Provisioning profile has expired'
+    prefix=str(pathlib.Path(temporary)/'signing-certificate-')
+    subprocess.run(['codesign','--display','--extract-certificates',prefix,str(apps[0])],check=True,capture_output=True)
+    leaf=pathlib.Path(prefix+'0').read_bytes()
+    assert hashlib.sha256(leaf).digest() in [hashlib.sha256(c).digest() for c in provision['DeveloperCertificates']],'Signing certificate is not authorized by the embedded profile'
     print('Signature verification PASS; release provisioning belongs to Motor Coast.')

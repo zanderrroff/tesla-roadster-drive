@@ -29,5 +29,6 @@ r=E.parse(sys.argv[1]).getroot()
 assert int(r.attrib.get('total','0'))>0, 'No Unity tests executed'
 assert r.attrib.get('result')=='Passed', r.attrib
 PY
+"$EDITOR" -batchmode -projectPath "$ROOT/MotorCoast" -buildTarget iOS -screen-width 1280 -screen-height 720 -executeMethod MotorCoast.Editor.NativePreview.Capture -logFile "$ROOT/artifacts/unity-preview.log"
 "$EDITOR" -batchmode -quit -projectPath "$ROOT/MotorCoast" -buildTarget iOS -executeMethod MotorCoast.Editor.BuildIOS.Export -logFile "$ROOT/artifacts/unity-export.log"
 echo "Xcode project: $ROOT/Build/iOS/Unity-iPhone.xcodeproj"

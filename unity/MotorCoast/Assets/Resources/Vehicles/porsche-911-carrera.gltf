@@ -1618,7 +1618,7 @@
       ]
     },
     {
-      "name": "silver",
+      "name": "silver__11",
       "primitives": [
         {
           "attributes": {
@@ -1632,7 +1632,7 @@
       ]
     },
     {
-      "name": "plastic",
+      "name": "plastic__12",
       "primitives": [
         {
           "attributes": {
@@ -1676,7 +1676,7 @@
       ]
     },
     {
-      "name": "silver",
+      "name": "silver__15",
       "primitives": [
         {
           "attributes": {
@@ -1690,7 +1690,7 @@
       ]
     },
     {
-      "name": "plastic",
+      "name": "plastic__16",
       "primitives": [
         {
           "attributes": {
@@ -1704,7 +1704,7 @@
       ]
     },
     {
-      "name": "rubber",
+      "name": "rubber__17",
       "primitives": [
         {
           "attributes": {
@@ -1720,7 +1720,7 @@
       ]
     },
     {
-      "name": "Material.001",
+      "name": "Material.001__18",
       "primitives": [
         {
           "attributes": {
@@ -1734,7 +1734,7 @@
       ]
     },
     {
-      "name": "silver",
+      "name": "silver__19",
       "primitives": [
         {
           "attributes": {
@@ -1748,7 +1748,7 @@
       ]
     },
     {
-      "name": "plastic",
+      "name": "plastic__20",
       "primitives": [
         {
           "attributes": {
@@ -1762,7 +1762,7 @@
       ]
     },
     {
-      "name": "rubber",
+      "name": "rubber__21",
       "primitives": [
         {
           "attributes": {
@@ -1778,7 +1778,7 @@
       ]
     },
     {
-      "name": "Material.001",
+      "name": "Material.001__22",
       "primitives": [
         {
           "attributes": {
@@ -1792,7 +1792,7 @@
       ]
     },
     {
-      "name": "silver",
+      "name": "silver__23",
       "primitives": [
         {
           "attributes": {
@@ -1806,7 +1806,7 @@
       ]
     },
     {
-      "name": "plastic",
+      "name": "plastic__24",
       "primitives": [
         {
           "attributes": {
@@ -1820,7 +1820,7 @@
       ]
     },
     {
-      "name": "rubber",
+      "name": "rubber__25",
       "primitives": [
         {
           "attributes": {
@@ -1836,7 +1836,7 @@
       ]
     },
     {
-      "name": "Material.001",
+      "name": "Material.001__26",
       "primitives": [
         {
           "attributes": {
@@ -1964,51 +1964,51 @@
       "mesh": 14
     },
     {
-      "name": "WheelDetail_silver",
+      "name": "WheelDetail_silver__20",
       "mesh": 15
     },
     {
-      "name": "WheelDetail_plastic",
+      "name": "WheelDetail_plastic__21",
       "mesh": 16
     },
     {
-      "name": "WheelDetail_rubber",
+      "name": "WheelDetail_rubber__22",
       "mesh": 17
     },
     {
-      "name": "WheelDetail_Material.001",
+      "name": "WheelDetail_Material.001__23",
       "mesh": 18
     },
     {
-      "name": "WheelDetail_silver",
+      "name": "WheelDetail_silver__24",
       "mesh": 19
     },
     {
-      "name": "WheelDetail_plastic",
+      "name": "WheelDetail_plastic__25",
       "mesh": 20
     },
     {
-      "name": "WheelDetail_rubber",
+      "name": "WheelDetail_rubber__26",
       "mesh": 21
     },
     {
-      "name": "WheelDetail_Material.001",
+      "name": "WheelDetail_Material.001__27",
       "mesh": 22
     },
     {
-      "name": "WheelDetail_silver",
+      "name": "WheelDetail_silver__28",
       "mesh": 23
     },
     {
-      "name": "WheelDetail_plastic",
+      "name": "WheelDetail_plastic__29",
       "mesh": 24
     },
     {
-      "name": "WheelDetail_rubber",
+      "name": "WheelDetail_rubber__30",
       "mesh": 25
     },
     {
-      "name": "WheelDetail_Material.001",
+      "name": "WheelDetail_Material.001__31",
       "mesh": 26
     }
   ],

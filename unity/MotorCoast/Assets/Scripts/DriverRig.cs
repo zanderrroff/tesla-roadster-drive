@@ -24,7 +24,15 @@ public sealed class DriverRig : MonoBehaviour {
         foreach(string side in new[]{"L","R"}) {
             var upper=Nodes.Find(model,"Bip01_"+side+"_UpperArm");var lower=Nodes.Find(model,"Bip01_"+side+"_Forearm");var hand=Nodes.Find(model,"Bip01_"+side+"_Hand");
             arms[i]=new Arm { upper=upper,lower=lower,hand=hand,upperRest=upper.localRotation,lowerRest=lower.localRotation,handRest=hand.localRotation,
-                handInWheel=Quaternion.Inverse(wheel.rotation)*hand.rotation,sign=i==0?-1:1 };i++;
+                handInWheel=Quaternion.LookRotation((i==0?-1:1)*Vector3.up,(i==0?1:-1)*Vector3.right),sign=i==0?-1:1 };i++;
+        }
+        // The imported relaxed pose leaves fingers open. Close each original
+        // finger chain around the rim, keeping the thumb on the upper/inner edge.
+        foreach(string side in new[]{"L","R"})for(int finger=1;finger<=4;finger++) {
+            foreach(string suffix in new[]{"","1","2"}) {
+                var joint=Nodes.Find(model,"Bip01_"+side+"_Finger"+finger+suffix);
+                if(joint)joint.localRotation*=Quaternion.AngleAxis(suffix==""?-7:suffix=="1"?-28:-18,Vector3.forward);
+            }
         }
         var le=Nodes.Find(model,"Bip01_LEye");var re=Nodes.Find(model,"Bip01_REye");
         EyeLocal=chassis.InverseTransformPoint((le.position+re.position)*.5f);
@@ -43,10 +51,11 @@ public sealed class DriverRig : MonoBehaviour {
         wheel.localRotation=neutral*Quaternion.AngleAxis(Mathf.Clamp(-roadAngle*1.65f,-45.8f,45.8f),Vector3.forward);
         foreach(var a in arms) { a.upper.localRotation=a.upperRest;a.lower.localRotation=a.lowerRest;a.hand.localRotation=a.handRest; }
         foreach(var a in arms) {
-            var target=wheel.TransformPoint(new Vector3(a.sign*radius*1.0595f,radius*.0532f,-.1137f*scale));
+            var target=wheel.TransformPoint(GripWristLocal(a.sign,radius,scale));
             Reach(a.upper,a.lower,a.hand,target,null);a.hand.rotation=wheel.rotation*a.handInWheel;
         }
     }
+    public static Vector3 GripWristLocal(float sign,float rimRadius,float driverScale)=>new Vector3(sign*(rimRadius+.014f),rimRadius*.08f,-.095f*driverScale);
     static void Aim(Transform bone,Transform child,Vector3 target) {
         bone.rotation=Quaternion.FromToRotation(child.position-bone.position,target-bone.position)*bone.rotation;
     }

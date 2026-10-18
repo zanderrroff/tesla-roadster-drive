@@ -22,10 +22,17 @@ extern "C" void MCStep(MCState* s, const MCInput* i, float dt, float power, MCOu
         if (absoluteSpeed < .65f) s->gear = requested;
         else brake = 1.f;
     }
-    s->steer = damp(finite(s->steer), clamp(i->steer, -1.f, 1.f), absoluteSpeed > 20.f ? 5.f : 9.f, dt);
+    float rawSteer = clamp(i->steer, -1.f, 1.f);
+    // Fine control around centre without reducing full-lock parking manoeuvres.
+    float desiredSteer = rawSteer * (.45f + .55f * rawSteer * rawSteer);
+    s->steer = damp(finite(s->steer), desiredSteer, absoluteSpeed > 20.f ? 4.5f : 8.f, dt);
     float throttle = brake > .05f || handbrake > .5f || s->gear == 0 ? 0.f : clamp(i->throttle, 0.f, 1.f);
     s->throttle = damp(finite(s->throttle), throttle, throttle == 0.f ? 25.f : 6.f, dt);
-    float maxSteer = 9.f + 25.f / (1.f + absoluteSpeed * absoluteSpeed * .0045f);
+    // Bicycle-model steering envelope for a 2.7 m wheelbase and 0.95 g.
+    // C# scales curvature to each actual wheelbase before applying Ackermann.
+    // No high-speed angle floor: 9 degrees at 140 km/h would demand over 8 g.
+    constexpr float radiansToDegrees = 57.295779513f;
+    float maxSteer = std::min(34.f, std::atan(9.3195f * 2.7f / std::max(1.f, absoluteSpeed * absoluteSpeed)) * radiansToDegrees);
     o->steerDegrees = s->steer * maxSteer;
     float limit = s->gear < 0 ? 12.f : 68.f;
     float torqueFade = clamp((limit - absoluteSpeed) / 12.f, 0.f, 1.f);
