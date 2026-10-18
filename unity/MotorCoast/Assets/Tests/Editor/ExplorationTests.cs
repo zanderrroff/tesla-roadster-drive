@@ -47,7 +47,9 @@ public sealed class ExplorationTests {
         var ceiling=GameObject.CreatePrimitive(PrimitiveType.Cube);ceiling.transform.position=new Vector3(0,1.8f,1.5f);ceiling.transform.localScale=new Vector3(3,.2f,2);ceiling.SetActive(blocked);
         try{
             var person=root.AddComponent<OnFootController>();person.Configure(game,Resources.Load<GameObject>("Characters/Male_Adult_01"));Physics.SyncTransforms();
-            person.SendMessage("TryClimb");Assert.AreEqual(!blocked,person.Climbing,"Climb must require a reachable landing with standing clearance");
+            var climb=typeof(OnFootController).GetMethod("TryClimb",System.Reflection.BindingFlags.Instance|System.Reflection.BindingFlags.NonPublic);
+            Assert.AreEqual(!blocked,(bool)climb.Invoke(person,null),"Climb must require a reachable landing with standing clearance");
+            Assert.AreEqual(!blocked,person.Climbing);
         }finally{Object.DestroyImmediate(root);Object.DestroyImmediate(ledge);Object.DestroyImmediate(ceiling);Object.DestroyImmediate(game.gameObject);}
     }
     [Test] public void FootJoystickAndSprintCannotStickAfterLosingFocus(){

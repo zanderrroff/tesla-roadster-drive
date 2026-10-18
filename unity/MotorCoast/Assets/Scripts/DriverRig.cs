@@ -30,6 +30,13 @@ public sealed class DriverRig : MonoBehaviour {
             float correction=spec.floorY+.008f-minimum;if(correction<=.001f)break;
             foreach(string side in new[]{"L","R"}){var thigh=Nodes.Find(model,"Bip01_"+side+"_Thigh");var calf=Nodes.Find(model,"Bip01_"+side+"_Calf");var foot=Nodes.Find(model,"Bip01_"+side+"_Foot");var rotation=foot.rotation;Reach(thigh,calf,foot,foot.position+chassis.up*correction,chassis.up);foot.rotation=rotation;}
         }
+        if(avatar){
+            float bottom=float.PositiveInfinity,top=float.NegativeInfinity;
+            foreach(var skin in model.GetComponentsInChildren<SkinnedMeshRenderer>()){var mesh=new Mesh();skin.BakeMesh(mesh,true);foreach(var p in mesh.vertices){float y=chassis.InverseTransformPoint(skin.transform.TransformPoint(p)).y;bottom=Mathf.Min(bottom,y);top=Mathf.Max(top,y);}if(Application.isPlaying)Destroy(mesh);else DestroyImmediate(mesh);}
+            // Small roadsters can put the pedal just beyond an avatar's leg
+            // reach. Use remaining seat/headroom instead of burying the shoe.
+            float lift=Mathf.Min(Mathf.Max(0,spec.floorY+.006f-bottom),Mathf.Max(0,spec.roofY-.004f-top));model.position+=chassis.up*lift;
+        }
         arms=new Arm[2];int i=0;
         foreach(string side in new[]{"L","R"}) {
             var upper=Nodes.Find(model,"Bip01_"+side+"_UpperArm");var lower=Nodes.Find(model,"Bip01_"+side+"_Forearm");var hand=Nodes.Find(model,"Bip01_"+side+"_Hand");

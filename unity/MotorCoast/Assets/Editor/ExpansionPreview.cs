@@ -55,7 +55,7 @@ public static class ExpansionPreview {
             AssetDatabase.SaveAssets();File.WriteAllLines(Path.GetFullPath("../artifacts/expansion-preview.txt"),report);Finish(0);
         }
     }catch(Exception e){Debug.LogException(e);report.Add("FAIL: "+e);File.WriteAllLines(Path.GetFullPath("../artifacts/expansion-preview.txt"),report);Finish(1);}}
-    static void ShowMenu(MotorGame game,string name){var hud=UnityEngine.Object.FindFirstObjectByType<GameHud>();foreach(var canvas in UnityEngine.Object.FindObjectsByType<Canvas>(FindObjectsSortMode.None)){canvas.enabled=true;canvas.renderMode=RenderMode.ScreenSpaceCamera;canvas.worldCamera=game.Camera.GetComponent<Camera>();canvas.planeDistance=.4f;}hud.SendMessage(name);Canvas.ForceUpdateCanvases();}
+    static void ShowMenu(MotorGame game,string name){var hud=UnityEngine.Object.FindFirstObjectByType<GameHud>();foreach(var canvas in UnityEngine.Object.FindObjectsByType<Canvas>(FindObjectsSortMode.None)){if(canvas.renderMode==RenderMode.WorldSpace)continue;canvas.enabled=true;canvas.renderMode=RenderMode.ScreenSpaceCamera;canvas.worldCamera=game.Camera.GetComponent<Camera>();canvas.planeDistance=.4f;}hud.SendMessage(name);Canvas.ForceUpdateCanvases();}
     static void RecordCar(MotorGame game){
         var car=game.Car;foreach(string name in new[]{"Chassis","SteeringWheel","Wheel_0","Wheel_1","Wheel_2","Wheel_3"})if(!Nodes.Find(car.transform,name))throw new Exception(car.Spec.id+" missing "+name);
         foreach(var renderer in car.GetComponentsInChildren<Renderer>())foreach(var material in renderer.sharedMaterials){if(!material||!material.shader||material.shader.name.Contains("InternalError"))throw new Exception("Invalid vehicle material "+car.Spec.id);PreserveVariant(material);}

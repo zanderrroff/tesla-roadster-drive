@@ -68,9 +68,6 @@ public static class NativePreview {
                 Time.timeScale=0;game.Camera.enabled=false;
                 foreach(var c in UnityEngine.Object.FindObjectsByType<Canvas>(FindObjectsSortMode.None))if(c.renderMode!=RenderMode.WorldSpace)c.enabled=false;
                 Render(game,"bmw-exterior",new Vector3(4,1.8f,5.5f),new Vector3(0,.25f,0),52);
-                var sun=RenderSettings.sun;sun.shadows=LightShadows.None;Render(game,"bmw-without-shadows",new Vector3(4,1.8f,5.5f),new Vector3(0,.25f,0),52);sun.shadows=LightShadows.Soft;
-                var pipeline=(UniversalRenderPipelineAsset)QualitySettings.renderPipeline;pipeline.shadowDepthBias=1;pipeline.shadowNormalBias=.6f;sun.shadowBias=1;sun.shadowNormalBias=.6f;
-                Render(game,"bmw-shadow-bias",new Vector3(4,1.8f,5.5f),new Vector3(0,.25f,0),52);
                 Render(game,"bmw-cabin",new Vector3(.6f,.7f,-.8f),new Vector3(-.3f,.1f,.6f),65);
                 File.WriteAllText(Path.GetFullPath("../artifacts/preview/host.txt"),"Unity "+Application.unityVersion+"\n"+SystemInfo.operatingSystem+"\n"+SystemInfo.processorType+"\n"+SystemInfo.graphicsDeviceName+" / "+SystemInfo.graphicsDeviceType+"\nEditor render at 1280 x 720; this is not a physical iPhone test.\n");
                 Finish(0);
@@ -80,7 +77,7 @@ public static class NativePreview {
     internal static void Render(MotorGame game,string name,Vector3 offset,Vector3 lookAt,float fov){
         var camera=game.Camera.GetComponent<Camera>();var car=game.Car.transform;
         camera.transform.SetPositionAndRotation(car.TransformPoint(offset),Quaternion.LookRotation(car.TransformPoint(lookAt)-car.TransformPoint(offset),Vector3.up));
-        camera.fieldOfView=fov;camera.nearClipPlane=.025f;camera.aspect=16f/9;
+        camera.fieldOfView=fov;camera.nearClipPlane=offset.magnitude>20?1:offset.magnitude>3?.15f:.025f;camera.aspect=16f/9;
         var target=new RenderTexture(1280,720,24,RenderTextureFormat.ARGB32){antiAliasing=4};target.Create();
         var request=new UniversalRenderPipeline.SingleCameraRequest{destination=target};
         ShaderUtil.allowAsyncCompilation=false;Canvas.ForceUpdateCanvases();
