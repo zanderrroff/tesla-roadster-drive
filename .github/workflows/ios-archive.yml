@@ -1,0 +1,46 @@
+name: Native iPhone archive
+on:
+  push:
+    branches: [ios-xcode-export]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: motorcoast-ios-archive
+  cancel-in-progress: true
+jobs:
+  archive:
+    runs-on: macos-26
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore verified Unity export
+        env:
+          CI_PRIMARY_REPOSITORY_PATH: ${{ github.workspace }}
+          CI_BUILD_NUMBER: ${{ github.run_number }}
+          MOTORCOAST_PAYLOAD_PASSWORD: ${{ secrets.MOTORCOAST_PAYLOAD_PASSWORD }}
+        run: sh ci_scripts/ci_post_clone.sh
+      - name: Archive native ARM64 player
+        run: |
+          set -euo pipefail
+          xcodebuild -version
+          SDK_VERSION=$(xcrun --sdk iphoneos --show-sdk-version)
+          test "${SDK_VERSION%%.*}" -ge 26
+          xcodebuild -project Unity-iPhone.xcodeproj -scheme Unity-iPhone \
+            -configuration Release -destination 'generic/platform=iOS' \
+            -archivePath "$RUNNER_TEMP/MotorCoast.xcarchive" \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY='' \
+            archive > xcode-archive.log 2>&1
+          tar -czf unsigned-archive.tar.gz -C "$RUNNER_TEMP" MotorCoast.xcarchive
+      - uses: actions/upload-artifact@v4
+        with:
+          name: MotorCoast-unsigned-archive
+          path: unsigned-archive.tar.gz
+          compression-level: 0
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: iOS-build-log
+          path: xcode-archive.log
+          retention-days: 7
