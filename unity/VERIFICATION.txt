@@ -25,11 +25,23 @@ PASSED
 - Native Metal/URP preview at 1280x720: exterior, cabin, cockpit, park,
   desktop and touch controls. Player/render/UI exceptions fail the preview gate.
 - Actual iPhone Xcode export with UnityFramework, Data and IL2CPP C++ output.
+- GitHub Actions run 39104795453: native ARM64 archive succeeded with
+  Xcode 26.6 (17F113), iOS SDK 26.5, minimum iOS 16.0.
+- MotorCoast-2.0.0-1.ipa exists: 75,670,937 bytes. Strict deep codesign
+  verification and profile/certificate matching pass after IPA extraction.
+  SHA-256: 507e353f69f8b2bf71ffd0bd1e9b13d5b9e8cf616de816c8ba423a90a686184e
 - Apple app record 6824150042, bundle app.zanderrroff.motorcoast.
 - New active Apple distribution certificate and matching Motor Coast profile.
   Private signing key stays outside Git on the owner's Mac.
+- Apple altool validation and upload accepted with no errors.
+- Apple processing: VALID. Build d40fefeb-96a9-42b8-9928-83eef1bed02c,
+  version 2.0.0 (1), internalBuildState IN_BETA_TESTING.
+- Internal group "Motor Coast — iPhone" has this build and the account holder
+  as its only tester. Russian app description and test notes are saved.
+- Signed IPA published at:
+  https://github.com/zanderrroff/tesla-roadster-drive/releases/tag/ios-v2.0.0-build-1
 
-LIMITS / PENDING DELIVERY
+LIMITS / REMAINING DEVICE VALIDATION
 - No physical iPhone run, sustained FPS, memory, heat or physical multitouch result.
   60 FPS is a target for all presets, not a measured phone result.
 - No guarantee of GTA-level graphics or absence of every possible bug.
@@ -38,7 +50,8 @@ LIMITS / PENDING DELIVERY
   this exact editor trace is excluded from player-exception gating.
 - First Xcode Cloud product onboarding requires Xcode UI. The prepared fallback
   builds with a current Xcode on GitHub's macOS runner; signing stays local.
-- Signed IPA, modern-SDK cloud archive and Apple processing are still pending.
-  Update this record only after each artifact actually exists and verifies.
+- External public TestFlight review is not submitted (READY_FOR_BETA_SUBMISSION).
+  The signed IPA is public; installation uses the owner's internal TestFlight
+  access. This is a test build, not an App Store release.
 
 The published browser website is the earlier web version, not this native player.

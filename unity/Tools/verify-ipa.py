@@ -29,7 +29,7 @@ with tempfile.TemporaryDirectory(prefix='motorcoast-ipa-verify-') as temporary:
     assert not provision['Entitlements'].get('get-task-allow',False),'Release must not allow debugging'
     assert provision['ExpirationDate']>datetime.datetime.utcnow(),'Provisioning profile has expired'
     prefix=str(pathlib.Path(temporary)/'signing-certificate-')
-    subprocess.run(['codesign','--display','--extract-certificates',prefix,str(apps[0])],check=True,capture_output=True)
+    subprocess.run(['codesign','--display','--extract-certificates='+prefix,str(apps[0])],check=True,capture_output=True)
     leaf=pathlib.Path(prefix+'0').read_bytes()
     assert hashlib.sha256(leaf).digest() in [hashlib.sha256(c).digest() for c in provision['DeveloperCertificates']],'Signing certificate is not authorized by the embedded profile'
     print('Signature verification PASS; release provisioning belongs to Motor Coast.')

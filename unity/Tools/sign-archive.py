@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Sign a real native Xcode archive locally; private keys never enter CI."""
-import argparse,datetime,hashlib,json,os,pathlib,plistlib,secrets,shutil,subprocess,tempfile
+import argparse,datetime,hashlib,json,os,pathlib,plistlib,re,secrets,shlex,shutil,subprocess,tempfile
 p=argparse.ArgumentParser();p.add_argument('archive',type=pathlib.Path);args=p.parse_args()
 root=pathlib.Path(__file__).resolve().parents[1]
 keys=pathlib.Path(os.environ.get('MOTORCOAST_SIGNING_DIR',str(pathlib.Path.home()/'.private_keys/motorcoast')))
@@ -26,12 +26,23 @@ with tempfile.TemporaryDirectory(prefix='sign-',dir=keys) as signing, tempfile.T
     keychain=signing/'build.keychain-db';pem=signing/'certificate.pem';p12=signing/'identity.p12'
     run('openssl','x509','-inform','DER','-in',str(keys/'distribution.cer'),'-out',str(pem))
     run('openssl','pkcs12','-export','-inkey',str(keys/'distribution-private.pem'),'-in',str(pem),'-out',str(p12),'-passout','file:'+str(password_file))
+    original_search=shlex.split(run('security','list-keychains','-d','user').decode())
     run('security','create-keychain','-p',password,str(keychain))
     try:
+        run('security','list-keychains','-d','user','-s',str(keychain),*original_search)
         run('security','unlock-keychain','-p',password,str(keychain))
         run('security','set-keychain-settings','-lut','7200',str(keychain))
         run('security','import',str(p12),'-k',str(keychain),'-P',password,'-T','/usr/bin/codesign','-T','/usr/bin/security')
+        # An isolated keychain needs the issuing intermediate as well as the
+        # identity. Reuse Apple's existing certificate without changing trust.
+        certificates=run('security','find-certificate','-a','-c','Apple Worldwide Developer Relations','-p')
+        intermediates=re.findall(rb'-----BEGIN CERTIFICATE-----.*?-----END CERTIFICATE-----',certificates,re.S)
+        for index,certificate in enumerate(intermediates):
+            intermediate=signing/('wwdr-'+str(index)+'.pem');intermediate.write_bytes(certificate)
+            run('security','import',str(intermediate),'-k',str(keychain))
         run('security','set-key-partition-list','-S','apple-tool:,apple:,codesign:','-s','-k',password,str(keychain))
+        identities=run('security','find-identity','-v','-p','codesigning',str(keychain)).decode()
+        assert metadata['certificateSha1'] in identities,'Distribution identity is not valid in the signing keychain: '+identities
         payload=packaging/'Payload';payload.mkdir();app=payload/source.name
         shutil.copytree(source,app,symlinks=True)
         for stale in app.rglob('_CodeSignature'):
@@ -48,6 +59,7 @@ with tempfile.TemporaryDirectory(prefix='sign-',dir=keys) as signing, tempfile.T
         ipa=destination/('MotorCoast-'+info['CFBundleShortVersionString']+'-'+info['CFBundleVersion']+'.ipa')
         run('ditto','-c','-k','--keepParent',str(payload),str(ipa))
     finally:
-        run('security','delete-keychain',str(keychain))
+        try:run('security','list-keychains','-d','user','-s',*original_search)
+        finally:run('security','delete-keychain',str(keychain))
 subprocess.run(['python3',str(root/'Tools/verify-ipa.py'),str(ipa)],check=True)
 print('Signed native IPA:',ipa)
