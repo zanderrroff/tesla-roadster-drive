@@ -5,7 +5,10 @@ import argparse, concurrent.futures, hashlib, json, os, pathlib, subprocess, url
 p=argparse.ArgumentParser()
 p.add_argument('artifact_id',type=int)
 p.add_argument('output',type=pathlib.Path)
+p.add_argument('--resume',action='store_true',help='Reuse an interrupted sparse download of the same artifact; the complete hash is always checked.')
+p.add_argument('--connections',type=int,default=12)
 args=p.parse_args()
+assert 1<=args.connections<=16
 base='https://api.github.com/repos/zanderrroff/tesla-roadster-drive'
 credential=subprocess.run(['git','credential','fill'],input='protocol=https\nhost=github.com\n\n',text=True,capture_output=True,check=True).stdout
 token=dict(line.split('=',1) for line in credential.splitlines() if '=' in line)['password']
@@ -40,9 +43,21 @@ with urllib.request.urlopen(urllib.request.Request(location,method='HEAD'),timeo
 assert total==artifact['size_in_bytes']
 args.output.parent.mkdir(parents=True,exist_ok=True)
 partial=args.output.with_suffix(args.output.suffix+'.part')
-with partial.open('wb') as output:output.truncate(total)
+resume=args.resume and partial.exists() and partial.stat().st_size==total
+if not resume:
+    with partial.open('wb') as output:output.truncate(total)
 def part(bounds):
     begin,end=bounds;position=begin
+    if resume and hasattr(os,'SEEK_HOLE') and hasattr(os,'SEEK_DATA'):
+        # Every worker wrote contiguous 1 MiB blocks into its own sparse range.
+        # Rewind the final block to cover any interrupted buffered write.
+        # If the filesystem cannot report holes, download that range again.
+        try:
+            with partial.open('rb') as prior:
+                if os.lseek(prior.fileno(),begin,os.SEEK_DATA)==begin:
+                    hole=min(end+1,os.lseek(prior.fileno(),begin,os.SEEK_HOLE))
+                    position=begin+max(0,(hole-begin)//(1024*1024)-1)*(1024*1024)
+        except OSError:pass
     for attempt in range(3):
         try:
             req=urllib.request.Request(location,headers={'Range':f'bytes={position}-{end}'})
@@ -60,7 +75,7 @@ def part(bounds):
             if position>end:return end-begin+1
 ranges=[(start,min(total-1,start+32*1024*1024-1)) for start in range(0,total,32*1024*1024)]
 completed=0
-with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
+with concurrent.futures.ThreadPoolExecutor(max_workers=args.connections) as pool:
     for future in concurrent.futures.as_completed([pool.submit(part,item) for item in ranges]):
         completed+=future.result();print(f'Archive: {completed/total:.0%} ({completed/1024**2:.1f} MiB)',flush=True)
 assert digest(partial)==expected,'Official GitHub artifact SHA-256 does not match'
