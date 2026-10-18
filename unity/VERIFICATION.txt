@@ -60,8 +60,11 @@ DELIVERY STATUS
   https://github.com/zanderrroff/tesla-roadster-drive/releases/tag/ios-v2.1.0-build-2
   GitHub state uploaded, size and SHA-256 match. Unauthenticated range download
   returned HTTP 206, bytes 0-4095/274296340, with a valid ZIP header.
-- Apple upload was accepted; processing and TestFlight availability are pending.
-- The existing 2.0.0 (1) internal TestFlight build remains available.
+- Apple processing: VALID. Build 75bd0688-d5b1-4cdf-a372-361447c74788,
+  version 2.1.0 (2), internalBuildState IN_BETA_TESTING.
+- Internal group "Motor Coast — iPhone" has this build and the account holder
+  as its only tester. Russian app description and build test notes are saved.
+- External build state READY_FOR_BETA_SUBMISSION; external review is not submitted.
 
 LIMITS / REMAINING DEVICE VALIDATION
 - No physical iPhone run, sustained FPS, memory, heat or physical multitouch result.
