@@ -2,9 +2,9 @@
 
 Нативная игра на Unity **6000.3.26f1 LTS**, URP 17.3, Metal и IL2CPP. Сцена, интерфейс, камеры и WheelCollider работают в Unity; C++ управляет тягой, торможением, безопасным реверсом и сглаживанием руля. В iOS код C# также преобразуется в C++ через IL2CPP. WebView не используется.
 
-На 18 октября 2026 успешно выполнены импорт ресурсов, компиляция Unity, 14 тестов и рендеры на Metal. Облачный Xcode 26.6 / iOS SDK 26.5 собрал ARM64-приложение; подписанная **MotorCoast-2.0.0-1.ipa** размером 75 670 937 байт прошла проверку подписи и профиля. Статус обработки Apple отдельно зафиксирован в `VERIFICATION.txt`. Просмотр в редакторе не является тестом на физическом iPhone.
+На 18 октября 2026 успешно выполнены импорт ресурсов, компиляция Unity, **22 теста** и рендеры всех 97 машин, 50 персонажей и десяти карт на Metal. Облачный Xcode 26.6 / iOS SDK 26.5 собрал ARM64-приложение; подписанная **MotorCoast-2.1.0-2.ipa** размером 274 296 340 байт прошла проверку подписи и профиля. Сборка: [GitHub Actions 39118666800](https://github.com/zanderrroff/tesla-roadster-drive/actions/runs/39118666800). Просмотр в редакторе не является тестом на физическом iPhone.
 
-[Скачать тестовую IPA 2.0.0 (1)](https://github.com/zanderrroff/tesla-roadster-drive/releases/tag/ios-v2.0.0-build-1). Apple завершила обработку (`VALID`); сборка доступна владельцу аккаунта во внутренней группе TestFlight (`IN_BETA_TESTING`). Публичная внешняя бета и выпуск в App Store пока не отправлены на проверку.
+[Скачать тестовую IPA 2.1.0 (2)](https://github.com/zanderrroff/tesla-roadster-drive/releases/tag/ios-v2.1.0-build-2). Публичное скачивание и совпадение SHA-256 подтверждены. Сборка прошла предварительную проверку Apple; загрузка в TestFlight выполняется. Предыдущая версия 2.0.0 (1) остаётся доступна владельцу аккаунта во внутренней группе TestFlight. Публичная внешняя бета и выпуск в App Store пока не отправлены на проверку.
 
 ## Игра и управление
 
@@ -50,7 +50,7 @@ bash unity/Tools/export-ios.sh
 
 ```sh
 python3 unity/Tools/prepare-xcode-cloud.py \
-  --payload-url https://github.com/zanderrroff/tesla-roadster-drive/releases/download/ios-native-build-1/xcode-payload.tar.gz.enc
+  --payload-url https://github.com/zanderrroff/tesla-roadster-drive/releases/download/ios-native-build-2/xcode-payload.tar.gz.enc
 ```
 
 Скрипт создаёт зашифрованный пакет Unity-экспорта и небольшой проект `unity/Build/cloud-source` для ветки `ios-xcode-export`. Шифрование не позволяет публиковать исходники встроенного инструментария Unity открытым текстом. Пароль хранится локально вне Git и в отдельном секрете CI `MOTORCOAST_PAYLOAD_PASSWORD`. Перед распаковкой проверяются SHA-256 зашифрованного и исходного пакета. Пароль, ключи Apple и профили не включаются в игру.
@@ -63,10 +63,11 @@ python3 unity/Tools/prepare-xcode-cloud.py \
 python3 unity/Tools/sign-archive.py /path/to/MotorCoast.xcarchive
 python3 unity/Tools/upload-testflight.py /path/to/MotorCoast.ipa \
   --key-id "$MOTORCOAST_API_KEY_ID" --issuer "$MOTORCOAST_API_ISSUER" \
-  --private-keys-dir "$MOTORCOAST_API_KEYS_DIR"
+  --private-keys-dir "$MOTORCOAST_API_KEYS_DIR" \
+  --developer-dir /Applications/Xcode-15.4.0.app/Contents/Developer
 ```
 
-Загрузка сначала проверяет структуру и подпись IPA, затем запускает проверку Apple. `--validate-only` выполняет проверки без отправки сборки. Успешная отправка не означает завершение обработки Apple; доступность в TestFlight проверяется отдельно. Логи сохраняются локально в `unity/artifacts`.
+Путь `--developer-dir` выбирает установленный Xcode только для этой команды и не меняет системный `xcode-select`; его можно опустить, если Xcode уже выбран. Загрузка сначала проверяет структуру и подпись IPA, затем запускает проверку Apple. `--validate-only` выполняет проверки без отправки сборки. Успешная отправка не означает завершение обработки Apple; доступность в TestFlight проверяется отдельно. Логи сохраняются локально в `unity/artifacts`.
 
 ## Ресурсы и лицензии
 

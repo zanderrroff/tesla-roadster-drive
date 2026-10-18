@@ -1,57 +1,88 @@
-MOTOR COAST NATIVE PORT — 2026-10-18
+MOTOR COAST 2.1.0 (2) — NATIVE IPHONE TEST UPDATE — 2026-10-18
 
+ENVIRONMENT
 Host: Intel MacBook Air, Core i5-8210Y 1.60 GHz, 8 GB RAM,
 Intel UHD Graphics 617 / Metal, macOS 14.8.7.
-Unity 6000.3.26f1 LTS + iOS Build Support; Unity Personal active.
-Local Xcode 15.4 / iOS SDK 17.5.
+Unity 6000.3.26f1 LTS + iOS Build Support; URP 17.3; IL2CPP.
+Local Xcode 15.4 is used for delivery tooling. Native archive was built with
+Xcode 26.6 (17F113), iOS SDK 26.5; minimum deployment target iOS 16.0.
 
 PASSED
 - C++17 AddressSanitizer + UndefinedBehaviorSanitizer: time-step invariance,
   safe reverse, pause, brake priority, rear handbrake, invalid input, speed limits,
   full-lock parking and <=0.95 g steering envelope at 54/90/144/216 km/h.
 - Universal macOS native plugin and iOS ARM64 DriveCore compilation.
-- Unity C# compilation; glTF import with no import errors.
-- Source preflight: seven cars, ten models including driver and coastline;
-  resource hashes, wheel pivots, skeleton bones, twelve licensed GUI sprites.
-- 14 Unity tests: native ABI, seven complete vehicles, seven fitted driver poses,
-  CPU-vs-baked skinning within 2 mm, floor/roof clearance, hand/finger grip,
-  visible wheel rotation, braking, reverse, rear handbrake, reset, pause,
-  settled suspension oscillation <1 cm, Ackermann geometry, touch ownership,
-  outside release, cancellation, focus loss and high-speed steering.
-- Actual PhysX corner tests: full input at 108 km/h produced 52.7 degrees heading
+- Unity C# compilation; glTF import; source and resource hash checks.
+- 22/22 Unity tests, zero failures/skips: native ABI, original seven vehicles
+  and fitted drivers, CPU-vs-baked skinning, wheel positioning/rotation, braking,
+  reverse, rear handbrake, reset, pause, settled suspension oscillation <1 cm,
+  Ackermann/high-speed steering, touch ownership/cancellation/focus loss,
+  fifty avatar fits in Tesla, animation clips, quality migration, ten maps,
+  headroom, clear climb landing and blocked climb rejection.
+  Report: artifacts/update-release-tests.xml.
+- Actual PhysX corner tests: full input at 108 km/h produced 52.8 degrees heading
   change in three seconds, peak yaw 0.42 rad/s, maximum roll 1.5 degrees.
-  At 162 km/h: 38.1 degrees, 0.33 rad/s, 1.8 degrees roll.
+  At 162 km/h: 38.3 degrees, 0.33 rad/s, 1.8 degrees roll.
   Countersteering remained upright; trajectories were curved, not teleported.
-- Native Metal/URP preview at 1280x720: exterior, cabin, cockpit, park,
-  desktop and touch controls. Player/render/UI exceptions fail the preview gate.
-- Actual iPhone Xcode export with UnityFramework, Data and IL2CPP C++ output.
-- GitHub Actions run 39104795453: native ARM64 archive succeeded with
-  Xcode 26.6 (17F113), iOS SDK 26.5, minimum iOS 16.0.
-- MotorCoast-2.0.0-1.ipa exists: 75,670,937 bytes. Strict deep codesign
-  verification and profile/certificate matching pass after IPA extraction.
-  SHA-256: 507e353f69f8b2bf71ffd0bd1e9b13d5b9e8cf616de816c8ba423a90a686184e
+- Native Metal/URP rendering at 1280x720 in the Unity editor: all 97 vehicles
+  (exterior/cabin), 50 characters, 10 maps, garage, character preview, settings,
+  driving controls and on-foot controls. Every vehicle has four wheel pivots,
+  a steering wheel and a driver-door node; materials passed shader checks.
+  Full report: artifacts/expansion-preview-all-cars.txt. After correcting the
+  Fiat 850 driver clearance, a second preview covered cars 60-96, all avatars,
+  all maps and on-foot transitions: artifacts/expansion-preview.txt.
+- Preview simulation: door opening, exit, walking/running, jump, prone,
+  and re-entry passed. Avatar floor/roof fits were tested for all 50 in Tesla.
+  All 4,850 avatar/vehicle combinations were not separately tested.
+- Seven cars are embedded. Ninety optional cars are available in the public
+  motorcoast-content-v2.1 release, 137 distinct GLB assets (about 1.1 GB total).
+  All hosted asset sizes and SHA-256 digests match the manifest. Three complete
+  unauthenticated sample downloads (Fiat 850, BMW E39, Chevrolet Suburban)
+  also matched SHA-256. The player loads the selected model and caches it.
+- Actual iPhone export: UnityFramework, Data and IL2CPP C++ output;
+  94 Metal shaders compiled. BuildPlayer completed in 313.9 seconds.
+- GitHub Actions run 39118666800 succeeded:
+  https://github.com/zanderrroff/tesla-roadster-drive/actions/runs/39118666800
+  Game source commit: 6a5014ab32dd5c4e57a48b331c507ebeccc3bd1c
+  Cloud export commit: 800af57d12e537914d512625df199f9d4ff76671
+- Downloaded native archive ZIP: 446,196,451 bytes, SHA-256:
+  9e8ed57f9b2b1c501f85c6d19dedbf52e80c1cc5f57cf05e1937a7d0c81dde1f
+  The full ZIP, including symbols, is retained in local artifacts/ios-archive-2.zip.
+- MotorCoast-2.1.0-2.ipa: 274,296,340 bytes. Native ARM64 structure, strict
+  deep codesign verification and profile/certificate matching passed.
+  SHA-256: 8cf72a9625ae86c65ce61ca6c14c735d17fc4c15d5224f94b2c81b3f9ecfaadf
 - Apple app record 6824150042, bundle app.zanderrroff.motorcoast.
-- New active Apple distribution certificate and matching Motor Coast profile.
-  Private signing key stays outside Git on the owner's Mac.
+  Private signing keys stay outside Git on the owner's Mac.
 - Apple altool validation and upload accepted with no errors.
-- Apple processing: VALID. Build d40fefeb-96a9-42b8-9928-83eef1bed02c,
-  version 2.0.0 (1), internalBuildState IN_BETA_TESTING.
-- Internal group "Motor Coast — iPhone" has this build and the account holder
-  as its only tester. Russian app description and test notes are saved.
+
+DELIVERY STATUS
 - Signed IPA published at:
-  https://github.com/zanderrroff/tesla-roadster-drive/releases/tag/ios-v2.0.0-build-1
+  https://github.com/zanderrroff/tesla-roadster-drive/releases/tag/ios-v2.1.0-build-2
+  GitHub state uploaded, size and SHA-256 match. Unauthenticated range download
+  returned HTTP 206, bytes 0-4095/274296340, with a valid ZIP header.
+- Apple upload was accepted; processing and TestFlight availability are pending.
+- The existing 2.0.0 (1) internal TestFlight build remains available.
 
 LIMITS / REMAINING DEVICE VALIDATION
 - No physical iPhone run, sustained FPS, memory, heat or physical multitouch result.
-  60 FPS is a target for all presets, not a measured phone result.
-- No guarantee of GTA-level graphics or absence of every possible bug.
+  60 FPS is a target for Standard and Ultra, not a measured phone result.
+  The editor preview is not an iPhone emulator or a device performance test.
+- The GTA-level visual target is not achieved. Asset quality varies; the
+  update does not guarantee every possible bug has been removed.
 - Four interiors are artistic reconstructions, not factory interior scans.
+  Other interiors are retained from their source models; detail varies.
+- Ten maps are original layouts with licensed scenery and surface resources.
+  They are not downloaded GTA cities. New territories are 2.4 x 2.4 km each.
+- The photographic HDR sky and per-map sun are static; no dynamic weather.
+- Character customization is character selection plus six clothing tints;
+  it is not a face/body/wardrobe editor. Climbing covers reachable clear ledges
+  up to 1.5 m, not arbitrary mountaineering or every real-world movement.
 - Unity 6000.3 occasionally logs an editor-only Quick Search index exception;
   this exact editor trace is excluded from player-exception gating.
-- First Xcode Cloud product onboarding requires Xcode UI. The prepared fallback
-  builds with a current Xcode on GitHub's macOS runner; signing stays local.
-- External public TestFlight review is not submitted (READY_FOR_BETA_SUBMISSION).
-  The signed IPA is public; installation uses the owner's internal TestFlight
-  access. This is a test build, not an App Store release.
+- First Xcode Cloud product onboarding requires Xcode UI. This build uses
+  GitHub's macOS runner with current Xcode; signing stays local.
+- External public TestFlight review and App Store release are not submitted.
+  This is a native test build; an App Store-signed IPA cannot be installed
+  on an arbitrary iPhone by downloading the file alone.
 
 The published browser website is the earlier web version, not this native player.
