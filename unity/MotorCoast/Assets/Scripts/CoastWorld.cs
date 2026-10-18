@@ -6,13 +6,17 @@ public sealed class CoastWorld : MonoBehaviour {
     public readonly List<Vector3> Slalom=new List<Vector3>();
     readonly System.Random random=new System.Random(3218);
     Material asphalt,stone,grass,white,orange,metal,leaf;
-    public void Build() {
+    public int MapIndex {get;private set;}
+    public void Build(int mapIndex=0) {
+        using var resources=RuntimeResources.Begin(gameObject);
+        MapIndex=Mathf.Clamp(mapIndex,0,WorldCatalog.Maps.Length-1);
         asphalt=Geometry.Lit("Photogrammetry asphalt",Color.white,0,.12f);
         asphalt.SetTexture("_BaseMap",Resources.Load<Texture2D>("Textures/asphalt-color"));asphalt.SetTexture("_BumpMap",Resources.Load<Texture2D>("Textures/asphalt-normal"));asphalt.EnableKeyword("_NORMALMAP");asphalt.SetFloat("_BumpScale",.55f);
         asphalt.SetTexture("_MetallicGlossMap",Resources.Load<Texture2D>("Textures/asphalt-metal-smooth"));asphalt.EnableKeyword("_METALLICSPECGLOSSMAP");asphalt.SetFloat("_Smoothness",1);
         asphalt.SetTexture("_OcclusionMap",Resources.Load<Texture2D>("Textures/asphalt-ao"));asphalt.EnableKeyword("_OCCLUSIONMAP");asphalt.SetFloat("_OcclusionStrength",.7f);asphalt.SetTextureScale("_BaseMap",new Vector2(153,153));
-        stone=Geometry.Lit("Pale concrete",new Color(.58f,.59f,.56f),0,.24f);grass=Geometry.Lit("Dry coastal grass",new Color(.25f,.29f,.13f),0,.1f);
+        stone=ExpeditionWorld.Surface("concrete",new Color(.88f,.89f,.86f));grass=ExpeditionWorld.Surface("grass",Color.white,1);
         white=Geometry.Lit("Warm white markings",new Color(.78f,.78f,.70f),0,.2f);orange=Geometry.Lit("Safety orange",new Color(.85f,.20f,.045f),0,.22f);metal=Geometry.Lit("Dark metal",new Color(.12f,.16f,.17f),.7f,.45f);leaf=Geometry.Lit("Palm foliage",new Color(.12f,.22f,.075f),0,.16f);
+        if(MapIndex>0){new ExpeditionWorld(transform,WorldCatalog.Maps[MapIndex]).Build();Ramp(new Vector3(-32,0,35),12,24,2.4f,0);Ramp(new Vector3(-32,0,92),16,28,2.4f,180);SetupLight();return;}
         Geometry.Box("Continuous collision foundation",transform,new Vector3(660,4,660),new Vector3(0,-2,0),grass,true);
         var ground=GameObject.CreatePrimitive(PrimitiveType.Plane);ground.name="Drift and stunt apron";ground.transform.SetParent(transform,false);ground.transform.localScale=new Vector3(46,1,46);ground.transform.localPosition=new Vector3(0,.008f,0);ground.GetComponent<Renderer>().sharedMaterial=asphalt;ground.GetComponent<Collider>().enabled=false;Destroy(ground.GetComponent<Collider>());
         // Flat painted lines have no collision. The entire apron remains freely drivable.
@@ -47,7 +51,7 @@ public sealed class CoastWorld : MonoBehaviour {
             rock.transform.localRotation=Quaternion.Euler(0,85+(Next()-.5f)*18,0);
             rock.transform.localScale=Vector3.one*(.94f+Next()*.14f);
         }
-        var ocean=GameObject.CreatePrimitive(PrimitiveType.Plane);ocean.name="Coastal water";ocean.transform.SetParent(transform,false);ocean.transform.localPosition=new Vector3(0,-.38f,0);ocean.transform.localScale=new Vector3(220,1,220);ocean.GetComponent<Renderer>().sharedMaterial=new Material(Shader.Find("MotorCoast/CoastWater"));ocean.GetComponent<Collider>().enabled=false;Destroy(ocean.GetComponent<Collider>());
+        var ocean=GameObject.CreatePrimitive(PrimitiveType.Plane);ocean.name="Coastal water";ocean.transform.SetParent(transform,false);ocean.transform.localPosition=new Vector3(0,-.38f,0);ocean.transform.localScale=new Vector3(220,1,220);ocean.GetComponent<Renderer>().sharedMaterial=RuntimeResources.Own(new Material(Shader.Find("MotorCoast/CoastWater")));ocean.GetComponent<Collider>().enabled=false;Destroy(ocean.GetComponent<Collider>());
         SetupLight();
         // Unity static batching is invoked once. Dynamic vehicle/character are outside this root.
         foreach(var r in GetComponentsInChildren<MeshRenderer>())r.gameObject.isStatic=true;
@@ -72,6 +76,11 @@ public sealed class CoastWorld : MonoBehaviour {
         var parent=new GameObject("Ramp").transform;parent.SetParent(transform,false);parent.localPosition=position;parent.localRotation=Quaternion.Euler(0,yaw,0);
         var v=new[]{new Vector3(-width/2,0,-length/2),new Vector3(width/2,0,-length/2),new Vector3(-width/2,height,length/2),new Vector3(width/2,height,length/2),new Vector3(-width/2,0,length/2),new Vector3(width/2,0,length/2)};
         var mesh=new Mesh{name="Shared ramp surface and collider"};mesh.vertices=v;mesh.triangles=new[]{0,2,1,1,2,3,2,4,3,3,4,5,0,4,2,1,3,5,0,1,4,1,5,4};mesh.uv=new[]{new Vector2(0,0),new Vector2(1,0),new Vector2(0,1),new Vector2(1,1),new Vector2(0,1),new Vector2(1,1)};mesh.RecalculateNormals();
+        // Separate face normals prevent a wedge from shading like a rounded lump;
+        // physical metre UVs keep the same concrete grain on every ramp size.
+        var flat=new List<Vector3>();var uv=new List<Vector2>();var indices=new List<int>();
+        foreach(int index in mesh.triangles){var p=v[index];flat.Add(p);uv.Add(new Vector2(p.x/3,(p.z+p.y)/3));indices.Add(indices.Count);}
+        mesh.Clear();mesh.SetVertices(flat);mesh.SetUVs(0,uv);mesh.SetTriangles(indices,0);mesh.RecalculateNormals();mesh.RecalculateTangents();
         var o=Geometry.MeshObject("Concrete ramp",parent,mesh,stone);o.AddComponent<MeshCollider>().sharedMesh=mesh;
         foreach(float x in new[]{-width/2+.3f,width/2-.3f}) { var stripe=Geometry.Box("Ramp edge",parent,new Vector3(.14f,.012f,Mathf.Sqrt(length*length+height*height)),new Vector3(x,height*.5f+.01f,0),orange);stripe.transform.localRotation=Quaternion.Euler(-Mathf.Atan2(height,length)*Mathf.Rad2Deg,0,0); }
     }
@@ -83,11 +92,11 @@ public sealed class CoastWorld : MonoBehaviour {
         var mesh=new Mesh{name="Palm fronds"};mesh.SetVertices(vertices);mesh.SetTriangles(triangles,0);mesh.RecalculateNormals();Geometry.MeshObject(mesh.name,root,mesh,leaf);
     }
     void SetupLight() {
-        var sun=new GameObject("Afternoon sun",typeof(Light));sun.transform.SetParent(transform,false);sun.transform.rotation=Quaternion.Euler(37,-35,0);var light=sun.GetComponent<Light>();light.type=LightType.Directional;light.color=new Color(1,.91f,.79f);light.intensity=2.1f;light.shadows=LightShadows.Soft;light.shadowBias=.08f;light.shadowNormalBias=.22f;light.shadowStrength=.85f;RenderSettings.sun=light;
+        var sun=new GameObject("Afternoon sun",typeof(Light));sun.transform.SetParent(transform,false);sun.transform.rotation=Quaternion.Euler(WorldCatalog.Maps[MapIndex].Sun,-35,0);var light=sun.GetComponent<Light>();light.type=LightType.Directional;light.color=new Color(1,.91f,.79f);light.intensity=2.1f;light.shadows=LightShadows.Soft;light.shadowBias=.08f;light.shadowNormalBias=.22f;light.shadowStrength=.85f;RenderSettings.sun=light;
         RenderSettings.ambientMode=AmbientMode.Trilight;RenderSettings.ambientSkyColor=new Color(.28f,.36f,.43f);RenderSettings.ambientEquatorColor=new Color(.19f,.21f,.22f);RenderSettings.ambientGroundColor=new Color(.09f,.08f,.06f);
         var ambient=new SphericalHarmonicsL2();ambient.AddAmbientLight(new Color(.24f,.28f,.32f));ambient.AddDirectionalLight(Vector3.up,new Color(.45f,.58f,.72f),.45f);RenderSettings.ambientProbe=ambient;
-        var sky=new Material(Shader.Find("Skybox/Panoramic"));sky.SetTexture("_MainTex",Resources.Load<Texture2D>("Textures/coast-sky"));sky.SetFloat("_Exposure",.8f);sky.SetFloat("_Rotation",75);RenderSettings.skybox=sky;
-        RenderSettings.fog=true;RenderSettings.fogMode=FogMode.ExponentialSquared;RenderSettings.fogDensity=.0007f;RenderSettings.fogColor=new Color(.64f,.75f,.80f);
+        var sky=RuntimeResources.Own(new Material(Shader.Find("Skybox/Panoramic")));sky.SetTexture("_MainTex",Resources.Load<Texture2D>("Textures/coast-sky"));sky.SetFloat("_Exposure",.8f);sky.SetFloat("_Rotation",75);RenderSettings.skybox=sky;
+        RenderSettings.fog=true;RenderSettings.fogMode=FogMode.ExponentialSquared;RenderSettings.fogDensity=MapIndex==0?.0007f:.0012f;RenderSettings.fogColor=new Color(.64f,.75f,.80f);
         var probe=new GameObject("Static sky reflection",typeof(ReflectionProbe));probe.transform.SetParent(transform,false);probe.transform.position=new Vector3(0,3,-80);var reflection=probe.GetComponent<ReflectionProbe>();reflection.mode=ReflectionProbeMode.Realtime;reflection.refreshMode=ReflectionProbeRefreshMode.ViaScripting;reflection.timeSlicingMode=ReflectionProbeTimeSlicingMode.IndividualFaces;reflection.resolution=256;reflection.size=Vector3.one*2000;reflection.cullingMask=~(1<<VehicleController.VehicleLayer);reflection.clearFlags=ReflectionProbeClearFlags.Skybox;reflection.intensity=.8f;reflection.RenderProbe();
     }
 }

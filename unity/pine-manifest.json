@@ -1,0 +1,202 @@
+[
+  {
+    "file": "Scenery/pine-medium_1-lod0.gltf",
+    "source": "https://sketchfab.com/3d-models/e1e9c07b8e2e445c943fec660beefba2",
+    "distribution": "https://raw.githubusercontent.com/milnet01/Vestige/6d2187af5aa761cac0e30742be2eddf24311d22b/assets/models/nature/gameready/pine/pine_pine_medium_1_lod0.gltf",
+    "author": "LOLIPOP",
+    "license": "CC BY 4.0",
+    "triangles": 4425,
+    "files": [
+      {
+        "file": "Scenery/pine-medium_1-lod0.gltf",
+        "bytes": 5904,
+        "sha256": "0c3faa36a362caa5776cde13c2dc248af9f54ad37b8edeee0f4d6ec10ed1cb45"
+      },
+      {
+        "file": "Scenery/pine-medium_1-lod0-0.bin",
+        "bytes": 179736,
+        "sha256": "35bca47ea6a17494b8cbae3d9bb965d9beb8639f910a45114331690f1104e1c4"
+      },
+      {
+        "file": "Scenery/pine-Bark_Mat_normal-normal.png",
+        "bytes": 1426913,
+        "sha256": "1a5815bea5c75d3e3746a44b52ffd268dcc06018c72df9c33d4c126bd6187b24"
+      },
+      {
+        "file": "Scenery/pine-Bark_Mat_metallicRoughness-linear.png",
+        "bytes": 887185,
+        "sha256": "3bdef5f01998a3676121395b98102d70041b777614ed8167ee1b9576a4615110"
+      },
+      {
+        "file": "Scenery/pine-Bark_Mat_baseColor-color.png",
+        "bytes": 1256979,
+        "sha256": "393bdf49d12893e18fa0518beb08c5c5ba5f6ea4c1b304fcee2d69cc6e38a0e9"
+      },
+      {
+        "file": "Scenery/pine-Clusters_Mat_normal-normal.png",
+        "bytes": 1779024,
+        "sha256": "bba1d1253e563d1e041ec9115837fc44ffa4bb221947bc5240baf76700035107"
+      },
+      {
+        "file": "Scenery/pine-Clusters_Mat_metallicRoughness-linear.png",
+        "bytes": 902536,
+        "sha256": "1f0cead8ce2ea62cd59da54f5fb26b593b3b1630b397f8a968025562ffd5ce99"
+      },
+      {
+        "file": "Scenery/pine-Clusters_Mat_baseColor-color.png",
+        "bytes": 1418879,
+        "sha256": "501751c3168043bb844d28ab1406a638a3714bdb12a6487b5095427e8d2ee43a"
+      }
+    ]
+  },
+  {
+    "file": "Scenery/pine-medium_1-lod2.gltf",
+    "source": "https://sketchfab.com/3d-models/e1e9c07b8e2e445c943fec660beefba2",
+    "distribution": "https://raw.githubusercontent.com/milnet01/Vestige/6d2187af5aa761cac0e30742be2eddf24311d22b/assets/models/nature/gameready/pine/pine_pine_medium_1_lod2.gltf",
+    "author": "LOLIPOP",
+    "license": "CC BY 4.0",
+    "triangles": 1253,
+    "files": [
+      {
+        "file": "Scenery/pine-medium_1-lod2.gltf",
+        "bytes": 5902,
+        "sha256": "3efecac31d31ccbf3c0ddcf7f31f704a2d127853d104f72395626e4545142b84"
+      },
+      {
+        "file": "Scenery/pine-medium_1-lod2-0.bin",
+        "bytes": 45952,
+        "sha256": "8d9fb720ca366b555d73ccf86a272aa2c1a0aeecd9603fcce6223e1464ded0ac"
+      },
+      {
+        "file": "Scenery/pine-Bark_Mat_normal-normal.png",
+        "bytes": 1426913,
+        "sha256": "1a5815bea5c75d3e3746a44b52ffd268dcc06018c72df9c33d4c126bd6187b24"
+      },
+      {
+        "file": "Scenery/pine-Bark_Mat_metallicRoughness-linear.png",
+        "bytes": 887185,
+        "sha256": "3bdef5f01998a3676121395b98102d70041b777614ed8167ee1b9576a4615110"
+      },
+      {
+        "file": "Scenery/pine-Bark_Mat_baseColor-color.png",
+        "bytes": 1256979,
+        "sha256": "393bdf49d12893e18fa0518beb08c5c5ba5f6ea4c1b304fcee2d69cc6e38a0e9"
+      },
+      {
+        "file": "Scenery/pine-Clusters_Mat_normal-normal.png",
+        "bytes": 1779024,
+        "sha256": "bba1d1253e563d1e041ec9115837fc44ffa4bb221947bc5240baf76700035107"
+      },
+      {
+        "file": "Scenery/pine-Clusters_Mat_metallicRoughness-linear.png",
+        "bytes": 902536,
+        "sha256": "1f0cead8ce2ea62cd59da54f5fb26b593b3b1630b397f8a968025562ffd5ce99"
+      },
+      {
+        "file": "Scenery/pine-Clusters_Mat_baseColor-color.png",
+        "bytes": 1418879,
+        "sha256": "501751c3168043bb844d28ab1406a638a3714bdb12a6487b5095427e8d2ee43a"
+      }
+    ]
+  },
+  {
+    "file": "Scenery/pine-large_1-lod0.gltf",
+    "source": "https://sketchfab.com/3d-models/e1e9c07b8e2e445c943fec660beefba2",
+    "distribution": "https://raw.githubusercontent.com/milnet01/Vestige/6d2187af5aa761cac0e30742be2eddf24311d22b/assets/models/nature/gameready/pine/pine_pine_large_1_lod0.gltf",
+    "author": "LOLIPOP",
+    "license": "CC BY 4.0",
+    "triangles": 11844,
+    "files": [
+      {
+        "file": "Scenery/pine-large_1-lod0.gltf",
+        "bytes": 5894,
+        "sha256": "6d2bed687bacd9c869b32130e020db4aa3afa908190e4797410b2e94649a3fa5"
+      },
+      {
+        "file": "Scenery/pine-large_1-lod0-0.bin",
+        "bytes": 487260,
+        "sha256": "6d4eeecccd77cc3149eaeb17b75375d846e19f561c62d3d0e0b7b8c2c1bd28bc"
+      },
+      {
+        "file": "Scenery/pine-Bark_Mat_normal-normal.png",
+        "bytes": 1426913,
+        "sha256": "1a5815bea5c75d3e3746a44b52ffd268dcc06018c72df9c33d4c126bd6187b24"
+      },
+      {
+        "file": "Scenery/pine-Bark_Mat_metallicRoughness-linear.png",
+        "bytes": 887185,
+        "sha256": "3bdef5f01998a3676121395b98102d70041b777614ed8167ee1b9576a4615110"
+      },
+      {
+        "file": "Scenery/pine-Bark_Mat_baseColor-color.png",
+        "bytes": 1256979,
+        "sha256": "393bdf49d12893e18fa0518beb08c5c5ba5f6ea4c1b304fcee2d69cc6e38a0e9"
+      },
+      {
+        "file": "Scenery/pine-Clusters_Mat_normal-normal.png",
+        "bytes": 1779024,
+        "sha256": "bba1d1253e563d1e041ec9115837fc44ffa4bb221947bc5240baf76700035107"
+      },
+      {
+        "file": "Scenery/pine-Clusters_Mat_metallicRoughness-linear.png",
+        "bytes": 902536,
+        "sha256": "1f0cead8ce2ea62cd59da54f5fb26b593b3b1630b397f8a968025562ffd5ce99"
+      },
+      {
+        "file": "Scenery/pine-Clusters_Mat_baseColor-color.png",
+        "bytes": 1418879,
+        "sha256": "501751c3168043bb844d28ab1406a638a3714bdb12a6487b5095427e8d2ee43a"
+      }
+    ]
+  },
+  {
+    "file": "Scenery/pine-large_1-lod2.gltf",
+    "source": "https://sketchfab.com/3d-models/e1e9c07b8e2e445c943fec660beefba2",
+    "distribution": "https://raw.githubusercontent.com/milnet01/Vestige/6d2187af5aa761cac0e30742be2eddf24311d22b/assets/models/nature/gameready/pine/pine_pine_large_1_lod2.gltf",
+    "author": "LOLIPOP",
+    "license": "CC BY 4.0",
+    "triangles": 3176,
+    "files": [
+      {
+        "file": "Scenery/pine-large_1-lod2.gltf",
+        "bytes": 5888,
+        "sha256": "4ca038e5fa689e0aee63364bcc3b56046e8dc3ccd241d2edd7dd67e359cbc652"
+      },
+      {
+        "file": "Scenery/pine-large_1-lod2-0.bin",
+        "bytes": 121172,
+        "sha256": "bcb1461e3f0de82a0c81b1017faf01eb908a1048206d3417a69ea8467d993719"
+      },
+      {
+        "file": "Scenery/pine-Bark_Mat_normal-normal.png",
+        "bytes": 1426913,
+        "sha256": "1a5815bea5c75d3e3746a44b52ffd268dcc06018c72df9c33d4c126bd6187b24"
+      },
+      {
+        "file": "Scenery/pine-Bark_Mat_metallicRoughness-linear.png",
+        "bytes": 887185,
+        "sha256": "3bdef5f01998a3676121395b98102d70041b777614ed8167ee1b9576a4615110"
+      },
+      {
+        "file": "Scenery/pine-Bark_Mat_baseColor-color.png",
+        "bytes": 1256979,
+        "sha256": "393bdf49d12893e18fa0518beb08c5c5ba5f6ea4c1b304fcee2d69cc6e38a0e9"
+      },
+      {
+        "file": "Scenery/pine-Clusters_Mat_normal-normal.png",
+        "bytes": 1779024,
+        "sha256": "bba1d1253e563d1e041ec9115837fc44ffa4bb221947bc5240baf76700035107"
+      },
+      {
+        "file": "Scenery/pine-Clusters_Mat_metallicRoughness-linear.png",
+        "bytes": 902536,
+        "sha256": "1f0cead8ce2ea62cd59da54f5fb26b593b3b1630b397f8a968025562ffd5ce99"
+      },
+      {
+        "file": "Scenery/pine-Clusters_Mat_baseColor-color.png",
+        "bytes": 1418879,
+        "sha256": "501751c3168043bb844d28ab1406a638a3714bdb12a6487b5095427e8d2ee43a"
+      }
+    ]
+  }
+]

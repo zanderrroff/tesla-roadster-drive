@@ -4,7 +4,14 @@ public sealed class PlayerInput {
     public float TouchSteer, TouchGas, TouchBrake, TouchHandbrake;
     public int RequestedGear=1;
     public bool Blocked, TouchLeft, TouchRight;
-    public void Clear() { TouchSteer=TouchGas=TouchBrake=TouchHandbrake=0; TouchLeft=TouchRight=false; }
+    public Vector2 TouchMove;public bool TouchRun;
+    public void Clear() { TouchSteer=TouchGas=TouchBrake=TouchHandbrake=0; TouchLeft=TouchRight=TouchRun=false;TouchMove=Vector2.zero; }
+    public Vector2 FootMove(){
+        if(Blocked)return Vector2.zero;
+        float x=(Input.GetKey(KeyCode.D)||Input.GetKey(KeyCode.RightArrow)?1:0)-(Input.GetKey(KeyCode.A)||Input.GetKey(KeyCode.LeftArrow)?1:0);
+        float y=(Input.GetKey(KeyCode.W)||Input.GetKey(KeyCode.UpArrow)?1:0)-(Input.GetKey(KeyCode.S)||Input.GetKey(KeyCode.DownArrow)?1:0);
+        return Vector2.ClampMagnitude(TouchMove+new Vector2(x,y),1);
+    }
     public DriveInput Sample(float speed) {
         if(Blocked) return new DriveInput { requestedGear=RequestedGear, speed=speed };
         float left=Input.GetKey(KeyCode.A)||Input.GetKey(KeyCode.LeftArrow)?1:0;

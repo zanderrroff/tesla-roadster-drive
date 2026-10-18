@@ -1,0 +1,312 @@
+{
+  "asset": {
+    "generator": "glTF-Transform v4.3.0",
+    "version": "2.0"
+  },
+  "accessors": [
+    {
+      "type": "VEC3",
+      "componentType": 5126,
+      "count": 1577,
+      "max": [
+        2.5568130016326904,
+        1.6773587465286255,
+        11.807456016540527
+      ],
+      "min": [
+        -1.5555078983306885,
+        -1.9982637166976929,
+        -0.5894300937652588
+      ],
+      "bufferView": 0,
+      "byteOffset": 0
+    },
+    {
+      "type": "VEC3",
+      "componentType": 5126,
+      "count": 1577,
+      "bufferView": 0,
+      "byteOffset": 12
+    },
+    {
+      "type": "VEC2",
+      "componentType": 5126,
+      "count": 1577,
+      "bufferView": 0,
+      "byteOffset": 24
+    },
+    {
+      "type": "SCALAR",
+      "componentType": 5123,
+      "count": 6441,
+      "bufferView": 1,
+      "byteOffset": 0
+    },
+    {
+      "type": "SCALAR",
+      "componentType": 5123,
+      "count": 6834,
+      "bufferView": 1,
+      "byteOffset": 12884
+    },
+    {
+      "type": "VEC3",
+      "componentType": 5126,
+      "count": 3210,
+      "max": [
+        3.946694850921631,
+        2.791668653488159,
+        13.335349082946777
+      ],
+      "min": [
+        -2.679926633834839,
+        -2.778984785079956,
+        4.169503211975098
+      ],
+      "bufferView": 2,
+      "byteOffset": 0
+    },
+    {
+      "type": "VEC3",
+      "componentType": 5126,
+      "count": 3210,
+      "bufferView": 2,
+      "byteOffset": 12
+    },
+    {
+      "type": "VEC2",
+      "componentType": 5126,
+      "count": 3210,
+      "bufferView": 2,
+      "byteOffset": 24
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 50464,
+      "byteStride": 32,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 50464,
+      "byteLength": 26552,
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 77016,
+      "byteLength": 102720,
+      "byteStride": 32,
+      "target": 34962
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "textures": [
+    {
+      "source": 2,
+      "sampler": 0
+    },
+    {
+      "source": 0,
+      "sampler": 0
+    },
+    {
+      "source": 1,
+      "sampler": 0
+    },
+    {
+      "source": 5,
+      "sampler": 0
+    },
+    {
+      "source": 3,
+      "sampler": 0
+    },
+    {
+      "source": 4,
+      "sampler": 0
+    }
+  ],
+  "images": [
+    {
+      "name": "Bark_Mat_normal",
+      "mimeType": "image/png",
+      "uri": "pine-Bark_Mat_normal-normal.png"
+    },
+    {
+      "name": "Bark_Mat_metallicRoughness",
+      "mimeType": "image/png",
+      "uri": "pine-Bark_Mat_metallicRoughness-linear.png"
+    },
+    {
+      "name": "Bark_Mat_baseColor",
+      "mimeType": "image/png",
+      "uri": "pine-Bark_Mat_baseColor-color.png"
+    },
+    {
+      "name": "Clusters_Mat_normal",
+      "mimeType": "image/png",
+      "uri": "pine-Clusters_Mat_normal-normal.png"
+    },
+    {
+      "name": "Clusters_Mat_metallicRoughness",
+      "mimeType": "image/png",
+      "uri": "pine-Clusters_Mat_metallicRoughness-linear.png"
+    },
+    {
+      "name": "Clusters_Mat_baseColor",
+      "mimeType": "image/png",
+      "uri": "pine-Clusters_Mat_baseColor-color.png"
+    }
+  ],
+  "buffers": [
+    {
+      "uri": "pine-medium_1-lod0-0.bin",
+      "byteLength": 179736
+    }
+  ],
+  "materials": [
+    {
+      "name": "Bark_Mat",
+      "doubleSided": true,
+      "pbrMetallicRoughness": {
+        "metallicFactor": 0,
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicRoughnessTexture": {
+          "index": 2
+        }
+      },
+      "normalTexture": {
+        "index": 1
+      },
+      "occlusionTexture": {
+        "index": 2
+      },
+      "extensions": {
+        "KHR_materials_specular": {
+          "specularFactor": 0.18505889177322388
+        }
+      }
+    },
+    {
+      "name": "Clusters_Mat",
+      "alphaMode": "BLEND",
+      "doubleSided": true,
+      "pbrMetallicRoughness": {
+        "metallicFactor": 0,
+        "baseColorTexture": {
+          "index": 3
+        },
+        "metallicRoughnessTexture": {
+          "index": 5
+        }
+      },
+      "normalTexture": {
+        "index": 4
+      },
+      "occlusionTexture": {
+        "index": 5
+      },
+      "extensions": {
+        "KHR_materials_specular": {
+          "specularFactor": 0.23168791830539703
+        }
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Pine_medium_1_LOD0_Bark_Mat_0",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "mode": 4,
+          "material": 0,
+          "indices": 3
+        }
+      ]
+    },
+    {
+      "name": "Pine_medium_1_LOD0_Clusters_Mat_0",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 5,
+            "NORMAL": 6,
+            "TEXCOORD_0": 7
+          },
+          "mode": 4,
+          "material": 1,
+          "indices": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "name": "Pine_medium_1_LOD0_Bark_Mat_0",
+      "translation": [
+        -0.6333847045898438,
+        0.5894306302070618,
+        0.00634455680847168
+      ],
+      "rotation": [
+        -0.70710688829422,
+        0,
+        0,
+        0.7071066498756409
+      ],
+      "mesh": 0
+    },
+    {
+      "name": "Pine_medium_1_LOD0_Clusters_Mat_0",
+      "translation": [
+        -0.6333847045898438,
+        0.5894306302070618,
+        0.00634455680847168
+      ],
+      "rotation": [
+        -0.70710688829422,
+        0,
+        0,
+        0.7071066498756409
+      ],
+      "mesh": 1
+    },
+    {
+      "name": "Pine tree",
+      "children": [
+        0,
+        1
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "name": "Scene",
+      "nodes": [
+        2
+      ]
+    }
+  ],
+  "scene": 0,
+  "extensionsUsed": [
+    "KHR_materials_specular"
+  ]
+}

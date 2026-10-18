@@ -1,4 +1,4 @@
-Tesla Roadster Free Drive — noncommercial fan project. Not affiliated with Tesla, Inc.
+Motor Coast — noncommercial driving and exploration game. Not affiliated with the depicted vehicle manufacturers.
 
 Game code derived from pmndrs/racing-game (MIT).
 https://github.com/pmndrs/racing-game
@@ -182,3 +182,465 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+World surfaces: Concrete Floor 01, Rocky Terrain 02, Sandy Gravel, Aerial Grass Rock, Snow 02, Brick Wall 001 — Poly Haven, CC0. https://polyhaven.com/ License: https://creativecommons.org/publicdomain/zero/1.0/ Converted to PNG, packed roughness as smoothness.
+Menu panels and buttons: Kenney UI Pack, CC0. https://kenney.nl/assets/ui-pack
+
+3D pine tree models by LOLIPOP (https://sketchfab.com/lolipop_1707), CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Source: https://sketchfab.com/3d-models/e1e9c07b8e2e445c943fec660beefba2. Distributed by https://github.com/milnet01/Vestige; original LOD0 and LOD2 retained, pivots normalized, textures resized to 2K.
+
+EXPANDED GARAGE 2.1
+Original cabins retained; wheels, steering and driver doors separated. Standard textures up to 1K; Ultra up to 2K. BY-SA derivatives retain their source license.
+
+Alfa Romeo Stelvio — tonielpro520 / CC Attribution
+https://sketchfab.com/3d-models/b6e382aee4a44fb3b1222d7191470640
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Audi A90 — Tiaan.Pretorius / CC Attribution
+https://sketchfab.com/3d-models/none-3c21f5beb34345bc834227d708e4d830
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+BMW M3 GTR — memoov / CC Attribution
+https://sketchfab.com/3d-models/none-b6a04764e3ea42cc9021327fdccd45ab
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Chevrolet Blazer — Ddiaz Design / CC Attribution
+https://sketchfab.com/3d-models/1d47b347a3a7455eb3e0b5167fa96959
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Dodge Challenger — kevin (ケビン) / CC Attribution
+https://sketchfab.com/3d-models/none-ffb8bead6c2642bbbd02a71b0b19e5b9
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Ferrari 599 GTO — Black Snow / CC Attribution
+https://sketchfab.com/3d-models/none-14b4f6d9f84d4e30be52a2158685d3ff
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Ford Mustang — Jiaxing / CC Attribution
+https://sketchfab.com/3d-models/0eaa7a16796540f29461ddae05ecdeb3
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Hyundai Azera — Nieve5677 / CC Attribution
+https://sketchfab.com/3d-models/711b67ea05f9441a863dce4badaca660
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Koenigsegg Gemera — ALIEEEN / CC Attribution
+https://sketchfab.com/3d-models/none-8bae74bd359940508717afb5c1f212a3
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Koenigsegg Jesko — Ddiaz Design / CC Attribution
+https://sketchfab.com/3d-models/none-c657f51fb0db43e38fea172dfa385287
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Lamborghini Centenario LP-770 — SDC PERFORMANCE™️ / CC Attribution
+https://sketchfab.com/3d-models/none-d679af35b5694301a185c7454a700c73
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Lamborghini Centenario Roadster — SDC PERFORMANCE™️ / CC Attribution
+https://sketchfab.com/3d-models/none-938d3e3642cf4ea895c62c2a4bf6fc08
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Lamborghini Revuelto — ALIEEEN / CC Attribution
+https://sketchfab.com/3d-models/none-cf52245eb68f48daa909c7ad2a8deaa3
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Land Rover Range Rover Sport — Mona x Supercars / CC Attribution
+https://sketchfab.com/3d-models/5462d65acb0e4dca8c20da82360261db
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Standard textures limited to 1K; Ultra textures up to 2K.
+
+McLaren 570S — Ddiaz Design / CC Attribution
+https://sketchfab.com/3d-models/a504090e516f44608e35160953b61fcd
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Standard textures limited to 1K; Ultra textures up to 2K.
+
+McLaren P1 — vecarz / CC Attribution
+https://sketchfab.com/3d-models/none-adae2edc721e4ce7b31c1d06a581e30a
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Mitsubishi Lancer — vecarz / CC Attribution
+https://sketchfab.com/3d-models/c3d5dcd8ff724bc88c46760d92fc5188
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Nissan 240sx — autoNgraphic / CC Attribution
+https://sketchfab.com/3d-models/none-0c82659677374e0895026c2772d3beba
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Nissan S15 Drift — autoNgraphic / CC Attribution
+https://sketchfab.com/3d-models/none-18348c1698f74d9db1497a791bd21a2f
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Porsche 911 GT3 — ChevroletSS / CC Attribution
+https://sketchfab.com/3d-models/none-78d5c47ab2554c2592b7e499179a0792
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Porsche 911 RAUH-Welt — autoNgraphic / CC Attribution
+https://sketchfab.com/3d-models/none-0e1f5e1c0ddc4c3f88b8484461146a79
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Porsche 991 GT2 — vecarz / CC Attribution
+https://sketchfab.com/3d-models/none-98767072b9f94f8eb6c4512b7be891c4
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Toyota AE86 Black — Martin Trafas / CC Attribution
+https://sketchfab.com/3d-models/none-80854ba302034431b517f523db328129
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Toyota AE86 Sprinter — Martin Trafas / CC Attribution
+https://sketchfab.com/3d-models/none-a5737bf3cc9b4179a6e5ebe173ff70d9
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Toyota Corolla Levin — Nix_Dektara / CC Attribution
+https://sketchfab.com/3d-models/none-66dcbaf822ae47468655a604a83af703
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Audi Q7 — razor24 / CC Attribution
+https://sketchfab.com/3d-models/65917c52e0b24f1289126128600ed7aa
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Audi TT — razor24 / CC Attribution
+https://sketchfab.com/3d-models/80cc29628e1b407d8e14d5ae0710f6fe
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+BMW M3 — Black Snow / CC Attribution
+https://sketchfab.com/3d-models/e2a4d608b2034e639c7eb6a2ef8dbfa1
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Standard textures limited to 1K; Ultra textures up to 2K.
+
+BMW M4 CSL — Black Snow / CC Attribution
+https://sketchfab.com/3d-models/none-26d05968e63b4fc28205cbb9abb0ea41
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Standard textures limited to 1K; Ultra textures up to 2K.
+
+BMW M4 F82 — Black Snow / CC Attribution
+https://sketchfab.com/3d-models/none-8e87379f40fd40dcac0a751e22c1a188
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Standard textures limited to 1K; Ultra textures up to 2K.
+
+BMW M6 — Black Snow / CC Attribution
+https://sketchfab.com/3d-models/none-f132152d91dd41bda8ae806ad6e4a5d2
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Chevrolet Cruze — Ddiaz Design / CC Attribution
+https://sketchfab.com/3d-models/235872def34f43198c9c2e98ca439109
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Dodge Viper — Black Snow / CC Attribution
+https://sketchfab.com/3d-models/b4234b7970fa464faaecaf637acb0912
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Fiat 500 — Luquita / CC Attribution
+https://sketchfab.com/3d-models/b59a403dfa1d40318c1126e658f87c19
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Fiat Ducato — razor24 / CC Attribution
+https://sketchfab.com/3d-models/8a651ad182414bb0a8b6c6d8d5bd7c01
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Hyundai Tucson — razor24 / CC Attribution
+https://sketchfab.com/3d-models/7674a3bd168a451daf73fc0a33d39589
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Lada VAZ-2103 — Black Snow / CC Attribution
+https://sketchfab.com/3d-models/none-9d02e433d9dc4b92a271a4c8641b6211
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Lamborghini Gallardo Lp560 — Black Snow / CC Attribution
+https://sketchfab.com/3d-models/none-86691e28bae34cffa896b148c895e58d
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Mercedes-Benz S-Class — Black Snow / CC Attribution
+https://sketchfab.com/3d-models/none-6b1c0ad55406406a8cf8177dc0a4f2b9
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Mercedes-Benz S63 Coupe — Black Snow / CC Attribution
+https://sketchfab.com/3d-models/none-1b79ffa597de49d188537b3f40aa8b50
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Mini Countryman — razor24 / CC Attribution
+https://sketchfab.com/3d-models/8d5fd459a54d4a529c2be4c7ac444b01
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Nissan 180sx — autoNgraphic / CC Attribution
+https://sketchfab.com/3d-models/none-b37cea6e8a864a2aa602934ddb0e6ff0
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Nissan Cefiro A31 — Asadawut.Kaewma / CC Attribution
+https://sketchfab.com/3d-models/none-539b2257cb504e53969a8c38c1a686cc
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Nissan Skyline GTR — Black Snow / CC Attribution
+https://sketchfab.com/3d-models/none-7b142ea3376e4811a326256c59bbc7a2
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Nissan Terra — Asadawut.Kaewma / CC Attribution
+https://sketchfab.com/3d-models/none-46727bb6f4f84df5878bed50c58a70bf
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Porsche 918 Spyder — vecarz / CC Attribution
+https://sketchfab.com/3d-models/none-9fb9a088d0704a06ba69a8a6de100f10
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Renault Duster — razor24 / CC Attribution
+https://sketchfab.com/3d-models/30bc2e09de66426bb67be72c95fa2476
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Toyota Supra Mk4 — Black Snow / CC Attribution
+https://sketchfab.com/3d-models/none-8bebdee25b774067929bb33e648533ac
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Volkswagen Gol — Black Snow / CC Attribution
+https://sketchfab.com/3d-models/191d4905f1274cee8539a39a0a672fd9
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Standard textures limited to 1K; Ultra textures up to 2K.
+
+McLaren MP4-12C Ultimate — COOL601 / CC Attribution
+https://sketchfab.com/3d-models/none-80f19f7f5aac428985356987769538fe
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+McLaren Spider — SINNIK / CC Attribution
+https://sketchfab.com/3d-models/none-10b474f26b2643be82ee26417ca78a0a
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+BMW G82 M4 — vecarz / CC Attribution
+https://sketchfab.com/3d-models/none-bdea1df6c22e4efd9b01a52034789fd7
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Chevrolet '65 Malibu — Joko_P / CC Attribution
+https://sketchfab.com/3d-models/none-170df9c498a84dcea040985871ee4e67
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Fiat 850 Spider — Lucas Soler / CC Attribution
+https://sketchfab.com/3d-models/none-8ea03b3cbb9f439ea82a68ddbeb5f6ae
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Honda S800 — Yakpower / CC Attribution
+https://sketchfab.com/3d-models/none-fa6c6113f1e34d9baaff80b5b586a25d
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Kia Picanto — Nieve5677 / CC Attribution
+https://sketchfab.com/3d-models/b4fd928f3e814ef29900c706bccc344d
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Lamborghini Gallardo — Artem P / CC Attribution
+https://sketchfab.com/3d-models/none-ff0eb2242d0e42eb8b7034b4db639e56
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Mercedes-Benz 300sl Gullwing — vecarz / CC Attribution
+https://sketchfab.com/3d-models/none-65edd5814c9842bb9c769388d13fa27f
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Porsche 911 GT2 — COOL601 / CC Attribution
+https://sketchfab.com/3d-models/none-41419345868e406eaec8a271e33de3c1
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Porsche 959 — Yakpower / CC Attribution-ShareAlike
+https://sketchfab.com/3d-models/none-0530aa8fa4b74427a71c961a5bdd7087
+http://creativecommons.org/licenses/by-sa/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Porsche Taycan — VuckyZ / CC Attribution
+https://sketchfab.com/3d-models/05d7951204e84686ba12625c66d7a8b7
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Renault Clio — Mona x Supercars / CC Attribution
+https://sketchfab.com/3d-models/1dad7e4438c74f3b8bac1ab72acd78ed
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Lincoln Futura — vecarz / CC Attribution
+https://sketchfab.com/3d-models/none-46bcff2b4d104bda97ef07febee31355
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Mercedes-Benz S65 — Black Snow / CC Attribution
+https://sketchfab.com/3d-models/none-f42d9d13b0404b5b9a2302a4c590a94d
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Nissan 350z Rocket — Black Snow / CC Attribution
+https://sketchfab.com/3d-models/none-c881a7e4285c42c2b359abf525fa7c95
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Rolls-Royce Ghost — Black Snow / CC Attribution
+https://sketchfab.com/3d-models/none-4a590f4afa094fa8b407a14db77a63a8
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Audi A1 — Mona x Supercars / CC Attribution
+https://sketchfab.com/3d-models/3f582a018306464ea501aaaec29efd2c
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Aston Martin Valour — vecarz / CC Attribution
+https://sketchfab.com/3d-models/none-0c36c7adb6d742e9bc27444880eb2f02
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Aston Martin Vantage — vecarz / CC Attribution
+https://sketchfab.com/3d-models/dbdd5aadc1d64df289f65fc0f6da3c07
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Audi A4 — Tomaso / CC Attribution
+https://sketchfab.com/3d-models/2f6aea1435bd4ad093146c019c8e0fb6
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+BMW i8 — vecarz / CC Attribution
+https://sketchfab.com/3d-models/b7108d20560c43e2b0a2d1473b311cfb
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+BMW X6M Competition — vecarz / CC Attribution
+https://sketchfab.com/3d-models/none-3979a908081948e0971f5a5380b60a0f
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Chevrolet S10 — Luquita / CC Attribution
+https://sketchfab.com/3d-models/2c2fcccdd96948aaa655f936aa325f0d
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Ford Corcel — Nieve5677 / CC Attribution
+https://sketchfab.com/3d-models/68ebd70c5c8b4d0bb4f613343a926361
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Ford Mustang ROUSH — _the.render.box_ / CC Attribution
+https://sketchfab.com/3d-models/none-c3be292e50774be98bac9de749579d80
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Hyundai Elantra — Maroi Mister Let Me Think Official 3D Studio / CC Attribution
+https://sketchfab.com/3d-models/673a4a83715d411ba713c0c270cdf93f
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Jaguar XJ220 — Comrade1280 / CC Attribution
+https://sketchfab.com/3d-models/none-d99bb7b0fc0e4e3c9553246679dd067f
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+McLaren 18' Senna — crxw.cgi / CC Attribution
+https://sketchfab.com/3d-models/none-5d1f14a4b68b47c8aa65b7a8f1bb4c5a
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Nissan Aimgain GT — vecarz / CC Attribution
+https://sketchfab.com/3d-models/none-77456704dc1b4d299a23fecdf341003c
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Pagani Utopia — DFLEX / CC Attribution
+https://sketchfab.com/3d-models/none-a8a0264c80714a21b6f3e2ab4b538b0b
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Porsche 911 C4S — JK3Dstudios / CC Attribution
+https://sketchfab.com/3d-models/none-ee69c474a1cc4085944cde4cb7ae87db
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Классический седан · 1980-е — Daniel Zhabotinsky / CC Attribution
+https://sketchfab.com/3d-models/e2678da920cc4be68dbc193727919ffb
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Минивэн · 1990-е — Daniel Zhabotinsky / CC Attribution
+https://sketchfab.com/3d-models/09d718c9cf72401b8534d265a06a803f
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Alfa Romeo 4C — Mona x Supercars / CC Attribution
+https://sketchfab.com/3d-models/93da1386a94744c5bd8a676a09f9d4e9
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+BMW E39 — Black Snow / CC Attribution
+https://sketchfab.com/3d-models/none-531a5a93da5d493d9918eb36f011c20d
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Chevrolet Suburban — Randomness / CC Attribution
+https://sketchfab.com/3d-models/44bdb8317f0840b3bc858e606f86db6b
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Land Rover Range Rover — Randomness / CC Attribution
+https://sketchfab.com/3d-models/277cf51a9f95473c85580612651990fd
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Nissan Silvia S15 — Socksthecat / CC Attribution
+https://sketchfab.com/3d-models/none-2c3481e502c24d818d23a5eb2be8dac9
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Porsche 718 — vecarz / CC Attribution
+https://sketchfab.com/3d-models/0b210ff1ee3e4f75acf3fd31e6b1b298
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+Volkswagen Voyage — lael.eugenio / CC Attribution
+https://sketchfab.com/3d-models/d5527fb1aff24ba0bc785370ffb14fba
+http://creativecommons.org/licenses/by/4.0/
+Changes: Metric conversion, separate rotating wheels and steering; original cabin retained; optional driver door; texture conversion and mobile geometry reduction. Driver-side door separated along fitted panel planes, retaining original materials and cabin surfaces. Standard textures limited to 1K; Ultra textures up to 2K.
+
+50 adult characters and 17 motion clips: Microsoft Rocketbox (MIT, copyright 2020 Microsoft).
+https://github.com/microsoft/Microsoft-Rocketbox/tree/0943055db6ec570bcef9f2c8b41c9e5467c808f9
+Changes: normalized height, seated IK, rotation retargeting, root motion removal, texture conversion and clothing tint masks. Source files and full MIT license included.

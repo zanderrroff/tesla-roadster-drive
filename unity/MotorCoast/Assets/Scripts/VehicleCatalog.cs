@@ -3,6 +3,8 @@ using UnityEngine;
 namespace MotorCoast {
 [Serializable] public sealed class VehicleSpec {
     public string id, label, resource, highResource;
+    public string modelUrl,highModelUrl,modelSha256,highModelSha256;
+    public long downloadBytes,highDownloadBytes;
     public bool electric, hasInterior, fitLegs;
     public float power, mass, wheelRadius, driverScale, torsoLean, floorY, roofY, pedalZ, wheelTilt, steeringRadius;
     public Vector3[] wheelCenters;

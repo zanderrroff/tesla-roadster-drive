@@ -1,0 +1,254 @@
+{
+    "characters": [
+        {
+            "id": "Business_Female_01",
+            "label": "Business Female 01",
+            "resource": "Characters/Business_Female_01"
+        },
+        {
+            "id": "Business_Female_02",
+            "label": "Business Female 02",
+            "resource": "Characters/Business_Female_02"
+        },
+        {
+            "id": "Business_Male_01",
+            "label": "Business Male 01",
+            "resource": "Characters/Business_Male_01"
+        },
+        {
+            "id": "Business_Male_02",
+            "label": "Business Male 02",
+            "resource": "Characters/Business_Male_02"
+        },
+        {
+            "id": "Female_Adult_01",
+            "label": "Female Adult 01",
+            "resource": "Characters/Female_Adult_01"
+        },
+        {
+            "id": "Female_Adult_02",
+            "label": "Female Adult 02",
+            "resource": "Characters/Female_Adult_02"
+        },
+        {
+            "id": "Female_Adult_03",
+            "label": "Female Adult 03",
+            "resource": "Characters/Female_Adult_03"
+        },
+        {
+            "id": "Female_Adult_04",
+            "label": "Female Adult 04",
+            "resource": "Characters/Female_Adult_04"
+        },
+        {
+            "id": "Female_Adult_05",
+            "label": "Female Adult 05",
+            "resource": "Characters/Female_Adult_05"
+        },
+        {
+            "id": "Female_Adult_06",
+            "label": "Female Adult 06",
+            "resource": "Characters/Female_Adult_06"
+        },
+        {
+            "id": "Female_Adult_07",
+            "label": "Female Adult 07",
+            "resource": "Characters/Female_Adult_07"
+        },
+        {
+            "id": "Female_Adult_08",
+            "label": "Female Adult 08",
+            "resource": "Characters/Female_Adult_08"
+        },
+        {
+            "id": "Female_Adult_09",
+            "label": "Female Adult 09",
+            "resource": "Characters/Female_Adult_09"
+        },
+        {
+            "id": "Female_Adult_10",
+            "label": "Female Adult 10",
+            "resource": "Characters/Female_Adult_10"
+        },
+        {
+            "id": "Female_Adult_11",
+            "label": "Female Adult 11",
+            "resource": "Characters/Female_Adult_11"
+        },
+        {
+            "id": "Female_Adult_12",
+            "label": "Female Adult 12",
+            "resource": "Characters/Female_Adult_12"
+        },
+        {
+            "id": "Female_Adult_13",
+            "label": "Female Adult 13",
+            "resource": "Characters/Female_Adult_13"
+        },
+        {
+            "id": "Female_Adult_14",
+            "label": "Female Adult 14",
+            "resource": "Characters/Female_Adult_14"
+        },
+        {
+            "id": "Female_Adult_15",
+            "label": "Female Adult 15",
+            "resource": "Characters/Female_Adult_15"
+        },
+        {
+            "id": "Female_Adult_16",
+            "label": "Female Adult 16",
+            "resource": "Characters/Female_Adult_16"
+        },
+        {
+            "id": "Female_Adult_17",
+            "label": "Female Adult 17",
+            "resource": "Characters/Female_Adult_17"
+        },
+        {
+            "id": "Female_Party_01",
+            "label": "Female Party 01",
+            "resource": "Characters/Female_Party_01"
+        },
+        {
+            "id": "Female_Party_02",
+            "label": "Female Party 02",
+            "resource": "Characters/Female_Party_02"
+        },
+        {
+            "id": "Male_Adult_01",
+            "label": "Male Adult 01",
+            "resource": "Characters/Male_Adult_01"
+        },
+        {
+            "id": "Male_Adult_02",
+            "label": "Male Adult 02",
+            "resource": "Characters/Male_Adult_02"
+        },
+        {
+            "id": "Male_Adult_03",
+            "label": "Male Adult 03",
+            "resource": "Characters/Male_Adult_03"
+        },
+        {
+            "id": "Male_Adult_04",
+            "label": "Male Adult 04",
+            "resource": "Characters/Male_Adult_04"
+        },
+        {
+            "id": "Male_Adult_05",
+            "label": "Male Adult 05",
+            "resource": "Characters/Male_Adult_05"
+        },
+        {
+            "id": "Male_Adult_06",
+            "label": "Male Adult 06",
+            "resource": "Characters/Male_Adult_06"
+        },
+        {
+            "id": "Male_Adult_07",
+            "label": "Male Adult 07",
+            "resource": "Characters/Male_Adult_07"
+        },
+        {
+            "id": "Male_Adult_08",
+            "label": "Male Adult 08",
+            "resource": "Characters/Male_Adult_08"
+        },
+        {
+            "id": "Male_Adult_09",
+            "label": "Male Adult 09",
+            "resource": "Characters/Male_Adult_09"
+        },
+        {
+            "id": "Male_Adult_10",
+            "label": "Male Adult 10",
+            "resource": "Characters/Male_Adult_10"
+        },
+        {
+            "id": "Male_Adult_11",
+            "label": "Male Adult 11",
+            "resource": "Characters/Male_Adult_11"
+        },
+        {
+            "id": "Male_Adult_12",
+            "label": "Male Adult 12",
+            "resource": "Characters/Male_Adult_12"
+        },
+        {
+            "id": "Male_Adult_13",
+            "label": "Male Adult 13",
+            "resource": "Characters/Male_Adult_13"
+        },
+        {
+            "id": "Male_Adult_14",
+            "label": "Male Adult 14",
+            "resource": "Characters/Male_Adult_14"
+        },
+        {
+            "id": "Male_Adult_15",
+            "label": "Male Adult 15",
+            "resource": "Characters/Male_Adult_15"
+        },
+        {
+            "id": "Male_Adult_16",
+            "label": "Male Adult 16",
+            "resource": "Characters/Male_Adult_16"
+        },
+        {
+            "id": "Male_Adult_17",
+            "label": "Male Adult 17",
+            "resource": "Characters/Male_Adult_17"
+        },
+        {
+            "id": "Male_Adult_18",
+            "label": "Male Adult 18",
+            "resource": "Characters/Male_Adult_18"
+        },
+        {
+            "id": "Male_Adult_19",
+            "label": "Male Adult 19",
+            "resource": "Characters/Male_Adult_19"
+        },
+        {
+            "id": "Male_Adult_20",
+            "label": "Male Adult 20",
+            "resource": "Characters/Male_Adult_20"
+        },
+        {
+            "id": "Male_Adult_21",
+            "label": "Male Adult 21",
+            "resource": "Characters/Male_Adult_21"
+        },
+        {
+            "id": "Sports_Female_01",
+            "label": "Sports Female 01",
+            "resource": "Characters/Sports_Female_01"
+        },
+        {
+            "id": "Sports_Female_02",
+            "label": "Sports Female 02",
+            "resource": "Characters/Sports_Female_02"
+        },
+        {
+            "id": "Sports_Male_01",
+            "label": "Sports Male 01",
+            "resource": "Characters/Sports_Male_01"
+        },
+        {
+            "id": "Sports_Male_02",
+            "label": "Sports Male 02",
+            "resource": "Characters/Sports_Male_02"
+        },
+        {
+            "id": "Sports_Male_03",
+            "label": "Sports Male 03",
+            "resource": "Characters/Sports_Male_03"
+        },
+        {
+            "id": "Sports_Male_04",
+            "label": "Sports Male 04",
+            "resource": "Characters/Sports_Male_04"
+        }
+    ]
+}

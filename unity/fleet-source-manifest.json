@@ -1,0 +1,3383 @@
+[
+  {
+    "car": {
+      "id": "alfa-romeo-4c",
+      "brand": "Alfa Romeo",
+      "model": "4C",
+      "years": [
+        2000,
+        2024
+      ],
+      "category": "sports",
+      "file": "alfa-romeo-4c.glb",
+      "bytes": 1392352,
+      "paint": {
+        "materials": [
+          "CAR_BODY_PAINT"
+        ],
+        "textured": true,
+        "confidence": "alta"
+      },
+      "credit": {
+        "author": "Mona x Supercars",
+        "authorUrl": "https://sketchfab.com/Car2022",
+        "license": "CC Attribution",
+        "sourceName": "Alfa Romeo 4C",
+        "sourceUrl": "https://sketchfab.com/3d-models/93da1386a94744c5bd8a676a09f9d4e9"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uid": "322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullname": "Creative Commons Attribution",
+      "slug": "by",
+      "summary": "Share & adapt with credit",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "free": true,
+      "isCc": true,
+      "needsAttribution": true,
+      "ccClauses": [
+        "Attribution"
+      ]
+    },
+    "description": "Biturbo TBI I4 Engine.",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/alfa-romeo-4c.glb",
+    "sourceSha256": "aea86499c89b9d585ce0d24a36f6c5b69b24f37679ac02e1188b404af759dd57"
+  },
+  {
+    "car": {
+      "id": "alfa-romeo-stelvio",
+      "brand": "Alfa Romeo",
+      "model": "Stelvio",
+      "years": [
+        2000,
+        2024
+      ],
+      "category": "suv",
+      "file": "alfa-romeo-stelvio.glb",
+      "bytes": 7630796,
+      "paint": {
+        "materials": [
+          "carPaint_int_0",
+          "carPaint_int_1"
+        ],
+        "textured": false,
+        "confidence": "alta"
+      },
+      "credit": {
+        "author": "tonielpro520",
+        "authorUrl": "https://sketchfab.com/tonielpro520",
+        "license": "CC Attribution",
+        "sourceName": "2017 Alfa Romeo Stelvio Quadrifoglio",
+        "sourceUrl": "https://sketchfab.com/3d-models/b6e382aee4a44fb3b1222d7191470640"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "2017 Alfa Romeo Stelvio Quadrifoglio\n![](https://www.motormundial.es/wp-content/uploads/2017/12/Alfa_Romeo_Stelvio_Quadrifoglio_2017_730.jpg)\nFree",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/alfa-romeo-stelvio.glb",
+    "sourceSha256": "e735a313af56900645949bcc103a0138d47108cf0d8e2e76af3b154ec564d719"
+  },
+  {
+    "car": {
+      "id": "aston-martin-valour",
+      "brand": "Aston Martin",
+      "model": "Valour",
+      "years": [
+        2024,
+        2024
+      ],
+      "category": "coupe",
+      "file": "aston-martin-valour.glb",
+      "bytes": 3781096,
+      "paint": null,
+      "credit": {
+        "author": "vecarz",
+        "authorUrl": "https://sketchfab.com/heynic",
+        "license": "CC Attribution",
+        "sourceName": "Aston Martin Valour 2024 | www.vecarz.com",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-0c36c7adb6d742e9bc27444880eb2f02"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "Gallery showcase: https://www.vecarz.com\n\n==================================================\n\nThank you [Ddiaz Design] for your incredible contribution to the community! You\u2019re an absolute legend and a pillar of our community. Folks, let\u2019s rally behind this and show our support by visiting their website and exhibition His website and cheer for [DisneyCars)]\u2019s hard work! \ud83c\udf89 here: https://sketchfab.com/3d-models/2024-aston-martin-valour-fd01d5121926464298f0ffd4ee6ae170",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/aston-martin-valour.glb",
+    "sourceSha256": "06a1fcc792377da1419afa5ae9373019247cd96f19e84fa9199784e0f6a5b6c8"
+  },
+  {
+    "car": {
+      "id": "aston-martin-vantage",
+      "brand": "Aston Martin",
+      "model": "Vantage",
+      "years": [
+        2000,
+        2024
+      ],
+      "category": "sports",
+      "file": "aston-martin-vantage.glb",
+      "bytes": 1810456,
+      "paint": {
+        "materials": [
+          "Coloured"
+        ],
+        "textured": false,
+        "confidence": "alta"
+      },
+      "credit": {
+        "author": "vecarz",
+        "authorUrl": "https://sketchfab.com/heynic",
+        "license": "CC Attribution",
+        "sourceName": "Aston Martin Vantage Roadster | www.vecarz.com",
+        "sourceUrl": "https://sketchfab.com/3d-models/dbdd5aadc1d64df289f65fc0f6da3c07"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "Aston Martin V12 Vantage Roadster 2023\n\nThis 3D models on this Sketchfab account are sourced from third\u2011party platforms such as Facebook, VK and MediaFire. Copyright belongs to the original automotive manufacturers and design companies (\u201cRightsholders\u201d).\n\nModels are provided solely for educational, research, and reference purposes; commercial use is strictly prohibited. Users must comply with applicable laws and Sketchfab community guidelines.\n\nThe account owner assumes no liability for any legal disputes or losses arising from unauthorized use. No warranties are made regarding the completeness, accuracy, or suitability of the models.\n\nIn no event shall the account owner be liable for any direct or indirect damages resulting from use of the models. If you are a Rightsholder or can provide proof of ownership, please contact us via Sketchfab message or email. Verified content will be removed promptly.\n\nCredits: https://vk.com/3d_car_models",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/aston-martin-vantage.glb",
+    "sourceSha256": "bc341d587bf30c9e6acd4506b9137f356ca3225385133aa7cdfef69105ce86c0"
+  },
+  {
+    "car": {
+      "id": "audi-a1",
+      "brand": "Audi",
+      "model": "A1",
+      "years": [
+        2000,
+        2024
+      ],
+      "category": "hatchback",
+      "file": "audi-a1.glb",
+      "bytes": 1139732,
+      "paint": {
+        "materials": [
+          "body1"
+        ],
+        "textured": false,
+        "confidence": "alta"
+      },
+      "credit": {
+        "author": "Mona x Supercars",
+        "authorUrl": "https://sketchfab.com/Car2022",
+        "license": "CC Attribution",
+        "sourceName": "Audi A1 Clubsport Quattro",
+        "sourceUrl": "https://sketchfab.com/3d-models/3f582a018306464ea501aaaec29efd2c"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "Color: Ibis White\nSeating Capacity: 2\nGearbox: Manual\nDriver: LHD\nFuel: Petrol\nProduction: 2013\nOrigin: \ud83c\udde9\ud83c\uddea Germany",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/audi-a1.glb",
+    "sourceSha256": "a770c5719a1ea0ea486561fe7dc3549982fa3c158fb5af82a61d96667f2a9776"
+  },
+  {
+    "car": {
+      "id": "audi-a4",
+      "brand": "Audi",
+      "model": "A4",
+      "years": [
+        2000,
+        2024
+      ],
+      "category": "sedan",
+      "file": "audi-a4.glb",
+      "bytes": 3310412,
+      "paint": {
+        "materials": [
+          "hull.001"
+        ],
+        "textured": true,
+        "confidence": "alta"
+      },
+      "credit": {
+        "author": "Tomaso",
+        "authorUrl": "https://sketchfab.com/Tomasoo",
+        "license": "CC Attribution",
+        "sourceName": "Audi A4 B5.5 Avant",
+        "sourceUrl": "https://sketchfab.com/3d-models/2f6aea1435bd4ad093146c019c8e0fb6"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "This time I made my car whitch I drive quite often, Its pretty good car, I recommend It to you.\n\nIt's a 1999-12 version facelift model; changes were largely cosmetic, but affected many components, such as both front and rear bumpers, the front and rear lights, the center console, and door handles rather then It's older predecessor.\n\nModelled in Blender and textured in Substance Painter\n\nhttps://www.artstation.com/artwork/ybaAZQ",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/audi-a4.glb",
+    "sourceSha256": "97a6e9167cf7f0c21350f79efed41a576e529744460d68dcf0503bc4c7fe7cb1"
+  },
+  {
+    "car": {
+      "id": "audi-a90",
+      "brand": "Audi",
+      "model": "A90",
+      "years": [
+        0,
+        0
+      ],
+      "category": "coupe",
+      "file": "audi-a90.glb",
+      "bytes": 8908816,
+      "paint": null,
+      "credit": {
+        "author": "Tiaan.Pretorius",
+        "authorUrl": "https://sketchfab.com/Tiaan.Pretorius",
+        "license": "CC Attribution",
+        "sourceName": "Audi A90",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-3c21f5beb34345bc834227d708e4d830"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "The IMSA Audi 90 GTO was one of the wildest, most technologically advanced four-door race cars to ever hit the tracks. It was basically a 700bhp AWD Group B rally car engine-drive train package, mated to a space frame chassis, and draped with a carbon fiber silhouette body.\n\nIt featured a 2,190 cc / 133.6 cu in 5 cyliner engine pushing 709 bhp / 529 kW of power @ 7,500 rpm and 720 Nm / 531 ft lbs of torque @ 6,000 rpm.\n\nThers were only 6 ever built.",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/audi-a90.glb",
+    "sourceSha256": "7d28d18079b9bbdbe3535d2f45efeec02057f649acd01a31a50a4eb1bb58d978"
+  },
+  {
+    "car": {
+      "id": "audi-q7",
+      "brand": "Audi",
+      "model": "Q7",
+      "years": [
+        2000,
+        2024
+      ],
+      "category": "suv",
+      "file": "audi-q7.glb",
+      "bytes": 1315740,
+      "paint": {
+        "materials": [
+          "varnish"
+        ],
+        "textured": false,
+        "confidence": "alta"
+      },
+      "credit": {
+        "author": "razor24",
+        "authorUrl": "https://sketchfab.com/razor24",
+        "license": "CC Attribution",
+        "sourceName": "2015 Audi Q7",
+        "sourceUrl": "https://sketchfab.com/3d-models/65917c52e0b24f1289126128600ed7aa"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "Made in Blender 2.79",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/audi-q7.glb",
+    "sourceSha256": "8f40bd0d2fc6028c8e20dc7ad23cb39084ecf97ac2d730262b95cd9518e87ec9"
+  },
+  {
+    "car": {
+      "id": "audi-tt",
+      "brand": "Audi",
+      "model": "TT",
+      "years": [
+        2000,
+        2024
+      ],
+      "category": "sports",
+      "file": "audi-tt.glb",
+      "bytes": 1123224,
+      "paint": {
+        "materials": [
+          "metal"
+        ],
+        "textured": false,
+        "confidence": "alta"
+      },
+      "credit": {
+        "author": "razor24",
+        "authorUrl": "https://sketchfab.com/razor24",
+        "license": "CC Attribution",
+        "sourceName": "2015 Audi TT Convertible",
+        "sourceUrl": "https://sketchfab.com/3d-models/80cc29628e1b407d8e14d5ae0710f6fe"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "Blender 2.79",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/audi-tt.glb",
+    "sourceSha256": "26f659935f925c8b06b280e348edca1c3b65436d335b249fe6dc29cbe7eb0468"
+  },
+  {
+    "car": {
+      "id": "bmw-e39",
+      "brand": "BMW",
+      "model": "E39",
+      "years": [
+        0,
+        0
+      ],
+      "category": "coupe",
+      "file": "bmw-e39.glb",
+      "bytes": 1521176,
+      "paint": {
+        "materials": [
+          "body"
+        ],
+        "textured": false,
+        "confidence": "m\u00e9dia"
+      },
+      "credit": {
+        "author": "Black Snow",
+        "authorUrl": "https://sketchfab.com/BlackSnow02",
+        "license": "CC Attribution",
+        "sourceName": "BMW E39 Free",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-531a5a93da5d493d9918eb36f011c20d"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uid": "322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullname": "Creative Commons Attribution",
+      "slug": "by",
+      "summary": "Share & adapt with credit",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "free": true,
+      "isCc": true,
+      "needsAttribution": true,
+      "ccClauses": [
+        "Attribution"
+      ]
+    },
+    "description": "",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/bmw-e39.glb",
+    "sourceSha256": "984a9daab49b5a31c45bbc284c657fa5898a010f2201c003358cb6b6f411751d"
+  },
+  {
+    "car": {
+      "id": "bmw-g82-m4",
+      "brand": "BMW",
+      "model": "G82 M4",
+      "years": [
+        2022,
+        2022
+      ],
+      "category": "coupe",
+      "file": "bmw-g82-m4.glb",
+      "bytes": 2039612,
+      "paint": null,
+      "credit": {
+        "author": "vecarz",
+        "authorUrl": "https://sketchfab.com/heynic",
+        "license": "CC Attribution",
+        "sourceName": "BMW G82 M4 with Adro Kit 2022 | www.vecarz.com",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-bdea1df6c22e4efd9b01a52034789fd7"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "Bmw G82 M4 Adro carbon-fiber-widebody-kit 2022\n\nGallery showcase: https://www.vecarz.com\nCreate your self Liveries in Vecarz's Veditor : https://www.vecarz.com/garage/liveries-2026\n\n==================================================\n\nThank you [Ddiaz Design)] for your incredible contribution to the community! You\u2019re an absolute legend and a pillar of our community. Folks, let\u2019s rally behind this and show our support by visiting their website and exhibition \nHis website and cheer for his hard work! \ud83c\udf89\nhere: https://sketchfab.com/3d-models/2022-bmw-g82-m4-adro-carbon-fiber-widebody-kit-54f2273c00e94ebdba0f0db1a7945bf2",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/bmw-g82-m4.glb",
+    "sourceSha256": "92d3d299c377d0997627b24c3e96ffaf973b91c135d7300d0b35da346ede569e"
+  },
+  {
+    "car": {
+      "id": "bmw-i8",
+      "brand": "BMW",
+      "model": "i8",
+      "years": [
+        2000,
+        2024
+      ],
+      "category": "sports",
+      "file": "bmw-i8.glb",
+      "bytes": 2715356,
+      "paint": {
+        "materials": [
+          "bBMW_i8Elite_2017Coloured_Material1"
+        ],
+        "textured": true,
+        "confidence": "alta"
+      },
+      "credit": {
+        "author": "vecarz",
+        "authorUrl": "https://sketchfab.com/heynic",
+        "license": "CC Attribution",
+        "sourceName": "BMW i8 XS 2015 | www.vecarz.com",
+        "sourceUrl": "https://sketchfab.com/3d-models/b7108d20560c43e2b0a2d1473b311cfb"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "https://www.vecarz.com/journal/museum-v1-2\n\nThis 3D models on this Sketchfab account are sourced from third\u2011party platforms such as Facebook, VK and MediaFire. Copyright belongs to the original automotive manufacturers and design companies (\u201cRightsholders\u201d).\n\nModels are provided solely for educational, research, and reference purposes; commercial use is strictly prohibited. Users must comply with applicable laws and Sketchfab community guidelines.\n\nThe account owner assumes no liability for any legal disputes or losses arising from unauthorized use. No warranties are made regarding the completeness, accuracy, or suitability of the models.\n\nIn no event shall the account owner be liable for any direct or indirect damages resulting from use of the models. If you are a Rightsholder or can provide proof of ownership, please contact us via Sketchfab message or email. Verified content will be removed promptly.\n\nCredits: https://www.assettohub.com/",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/bmw-i8.glb",
+    "sourceSha256": "f8e4babb93f2298f7aca2dfe450c48fab7110dac5eefd49a8f37ab0301515966"
+  },
+  {
+    "car": {
+      "id": "bmw-m3",
+      "brand": "BMW",
+      "model": "M3",
+      "years": [
+        2000,
+        2024
+      ],
+      "category": "coupe",
+      "file": "bmw-m3.glb",
+      "bytes": 4984344,
+      "paint": {
+        "materials": [
+          "m3g81law_mechanical"
+        ],
+        "textured": false,
+        "confidence": "alta"
+      },
+      "credit": {
+        "author": "Black Snow",
+        "authorUrl": "https://sketchfab.com/BlackSnow02",
+        "license": "CC Attribution",
+        "sourceName": "BMW m3 Competition Tourning [g81]",
+        "sourceUrl": "https://sketchfab.com/3d-models/e2a4d608b2034e639c7eb6a2ef8dbfa1"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/bmw-m3.glb",
+    "sourceSha256": "de46c210fd05d3b3b075542f85b15e97f24e57638e237bd552521f68603a8b2b"
+  },
+  {
+    "car": {
+      "id": "bmw-m3-need",
+      "brand": "BMW",
+      "model": "M3 Need",
+      "years": [
+        0,
+        0
+      ],
+      "category": "coupe",
+      "file": "bmw-m3-need.glb",
+      "bytes": 7693784,
+      "paint": null,
+      "credit": {
+        "author": "memoov",
+        "authorUrl": "https://sketchfab.com/movartD",
+        "license": "CC Attribution",
+        "sourceName": "BMW M3 Need for speed Most Wanted",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-b6a04764e3ea42cc9021327fdccd45ab"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "As a tribute and personal proyect I`m working on all NFS Most Wanted original blacklist cars. Hope you enjoy them!\n\nYou can see more about this project on https://www.artstation.com/m3dov\nAlso you can follow my insta https://www.instagram.com/3dov_mxn/\n\nThis is the last car of the collection, I hope you`ve liked it!",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/bmw-m3-need.glb",
+    "sourceSha256": "5112ac01ca294c14f8df51680b1d854a1e9bfa74834fac79241b280e5888bb7d"
+  },
+  {
+    "car": {
+      "id": "bmw-m4-csl",
+      "brand": "BMW",
+      "model": "M4 CSL",
+      "years": [
+        2023,
+        2023
+      ],
+      "category": "coupe",
+      "file": "bmw-m4-csl.glb",
+      "bytes": 2835044,
+      "paint": null,
+      "credit": {
+        "author": "Black Snow",
+        "authorUrl": "https://sketchfab.com/BlackSnow02",
+        "license": "CC Attribution",
+        "sourceName": "BMW m4 CSL 2023",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-26d05968e63b4fc28205cbb9abb0ea41"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/bmw-m4-csl.glb",
+    "sourceSha256": "f6dd4822ef0e1a6d3b4ade101e3e5c90fff29b551b94caa3699d4b8f4e66a99f"
+  },
+  {
+    "car": {
+      "id": "bmw-m4-f82",
+      "brand": "BMW",
+      "model": "M4 F82",
+      "years": [
+        0,
+        0
+      ],
+      "category": "sports",
+      "file": "bmw-m4-f82.glb",
+      "bytes": 4125880,
+      "paint": null,
+      "credit": {
+        "author": "Black Snow",
+        "authorUrl": "https://sketchfab.com/BlackSnow02",
+        "license": "CC Attribution",
+        "sourceName": "BMW M4 f82",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-8e87379f40fd40dcac0a751e22c1a188"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/bmw-m4-f82.glb",
+    "sourceSha256": "bb60765bc6476972f34d4a56effeaf6421ac0afafe581b0dd42e5c67751a758d"
+  },
+  {
+    "car": {
+      "id": "bmw-m6",
+      "brand": "BMW",
+      "model": "M6",
+      "years": [
+        0,
+        0
+      ],
+      "category": "coupe",
+      "file": "bmw-m6.glb",
+      "bytes": 4329860,
+      "paint": null,
+      "credit": {
+        "author": "Black Snow",
+        "authorUrl": "https://sketchfab.com/BlackSnow02",
+        "license": "CC Attribution",
+        "sourceName": "BMW M6 [Gran Coupe]",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-f132152d91dd41bda8ae806ad6e4a5d2"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/bmw-m6.glb",
+    "sourceSha256": "bb5c14f238ff49236afbe106284e0c20fef95fce9a5a47fa365c55784004a077"
+  },
+  {
+    "car": {
+      "id": "bmw-x6m-competition",
+      "brand": "BMW",
+      "model": "X6M Competition",
+      "years": [
+        0,
+        0
+      ],
+      "category": "coupe",
+      "file": "bmw-x6m-competition.glb",
+      "bytes": 4339172,
+      "paint": {
+        "materials": [
+          "body"
+        ],
+        "textured": false,
+        "confidence": "m\u00e9dia"
+      },
+      "credit": {
+        "author": "vecarz",
+        "authorUrl": "https://sketchfab.com/heynic",
+        "license": "CC Attribution",
+        "sourceName": "BMW X6M Competition Assetto | www.vecarz.com",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-3979a908081948e0971f5a5380b60a0f"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "2020 BMW X6M Competition\n\nThis 3D models on this Sketchfab account are sourced from third\u2011party platforms such as Facebook and MediaFire. Copyright belongs to the original automotive manufacturers and design companies (\u201cRightsholders\u201d). \n\nModels are provided solely for educational, research, and reference purposes; commercial use is strictly prohibited. Users must comply with applicable laws and Sketchfab community guidelines. \n\nThe account owner assumes no liability for any legal disputes or losses arising from unauthorized use. No warranties are made regarding the completeness, accuracy, or suitability of the models. \n\nIn no event shall the account owner be liable for any direct or indirect damages resulting from use of the models. If you are a Rightsholder or can provide proof of ownership, please contact us via Sketchfab message or email. Verified content will be removed promptly.",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/bmw-x6m-competition.glb",
+    "sourceSha256": "4f12388398bcaf0b47f9e8da07aca756ca6d7572af363a4b70932be519ee28af"
+  },
+  {
+    "car": {
+      "id": "chevrolet-65-malibu",
+      "brand": "Chevrolet",
+      "model": "'65 Malibu",
+      "years": [
+        0,
+        0
+      ],
+      "category": "coupe",
+      "file": "chevrolet-65-malibu.glb",
+      "bytes": 2181352,
+      "paint": {
+        "materials": [
+          "Car_Paint"
+        ],
+        "textured": false,
+        "confidence": "m\u00e9dia"
+      },
+      "credit": {
+        "author": "Joko_P",
+        "authorUrl": "https://sketchfab.com/joko_p",
+        "license": "CC Attribution",
+        "sourceName": "'65 Chevy Malibu",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-170df9c498a84dcea040985871ee4e67"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "This is one of my early model. I forget when I finished this (either after or before the Civic Kanjo). If I remember correctly, one of my friend requested this but then just gone or forgot about it. Either way here it is! I remember it was pretty hard because the blueprint for it was only left and top side, no front or back. Even until now, I'm still heavily dependent on blueprint and can't model without it.",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/chevrolet-65-malibu.glb",
+    "sourceSha256": "ec88b4379506d4529d3dd06b0d3ede5532bfed65a3e600091c13099c87f74c69"
+  },
+  {
+    "car": {
+      "id": "chevrolet-blazer",
+      "brand": "Chevrolet",
+      "model": "Blazer",
+      "years": [
+        2000,
+        2024
+      ],
+      "category": "suv",
+      "file": "chevrolet-blazer.glb",
+      "bytes": 3302828,
+      "paint": {
+        "materials": [
+          "B4W_carpaint"
+        ],
+        "textured": false,
+        "confidence": "alta"
+      },
+      "credit": {
+        "author": "Ddiaz Design",
+        "authorUrl": "https://sketchfab.com/ddiaz-design",
+        "license": "CC Attribution",
+        "sourceName": "2019 Chevrolet Blazer Premier",
+        "sourceUrl": "https://sketchfab.com/3d-models/1d47b347a3a7455eb3e0b5167fa96959"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "Repositorio de modelos 3D de Ddiaz Design\n\n![](https://i.ytimg.com/vi/Rw_ALVSAeHc/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBleaZ1GduAPz06Qn800mOqHYGyFg)\n\nChevrolet is raising the bar on crossover design with the introduction of the 2019 Blazer as the newest member of the industry's broadest, freshest crossover and SUV lineup since 2015. The all-new contemporary midsize SUV is rooted in attention-grabbing design with seamlessly integrated customer-focused technologies and superb functionality.\n\nInstagram del proyecto: https://www.instagram.com/ddiaz.design/\n\nPaypal Donations: https://paypal.me/sergiodd\n\nBased on a Chevrolet 3d model\n\nCredits: https://vk.com/album-84830094_265110560",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/chevrolet-blazer.glb",
+    "sourceSha256": "684dd1c008623917232b61e241b0eca1ffb631464c295e5fe8b42e988b589e1f"
+  },
+  {
+    "car": {
+      "id": "chevrolet-cruze",
+      "brand": "Chevrolet",
+      "model": "Cruze",
+      "years": [
+        2011,
+        2024
+      ],
+      "category": "sedan",
+      "file": "chevrolet-cruze.glb",
+      "bytes": 4347312,
+      "paint": {
+        "materials": [
+          "cruzoESCUROO_CHOQUE_CRUZES18"
+        ],
+        "textured": false,
+        "confidence": "alta"
+      },
+      "credit": {
+        "author": "Ddiaz Design",
+        "authorUrl": "https://sketchfab.com/ddiaz-design",
+        "license": "CC Attribution",
+        "sourceName": "2017 Chevrolet Cruze LTZ",
+        "sourceUrl": "https://sketchfab.com/3d-models/235872def34f43198c9c2e98ca439109"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "Repositorio de modelos 3D de Ddiaz Design\n\n![](https://acnews.blob.core.windows.net/imgnews/extralarge/NAZ_ce7a71be53b54533bf894915c0f0ddca.jpg)\n\nChevrolet acaba de lanzar el renovado Cruze LT y LTZ, en versiones sed\u00e1n y hatchback, con motores de 1.4 litros y una potencia superior a los 150 caballos de fuerza. El veh\u00edculo est\u00e1 disponible desde los 73 millones de pesos y cuenta con prestaciones que ponen a \u201ctemblar\u201d a sus competidores.\n\nInstagram del proyecto: https://www.instagram.com/ddiaz.design/\n\nPaypal Donations: https://paypal.me/sergiodd\n\nBased on a Chebrolet 3d model\n\nCredits: https://vk.com/3d_car_models",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/chevrolet-cruze.glb",
+    "sourceSha256": "18252bfb0bd5a42e3a6d346854afe0b23f83146b0f37d34ec8d5fdb81671fb9a"
+  },
+  {
+    "car": {
+      "id": "chevrolet-s10",
+      "brand": "Chevrolet",
+      "model": "S10",
+      "years": [
+        1995,
+        2024
+      ],
+      "category": "pickup",
+      "file": "chevrolet-s10.glb",
+      "bytes": 1661100,
+      "paint": {
+        "materials": [
+          "carpaint"
+        ],
+        "textured": false,
+        "confidence": "alta"
+      },
+      "credit": {
+        "author": "Luquita",
+        "authorUrl": "https://sketchfab.com/speedmodel",
+        "license": "CC Attribution",
+        "sourceName": "Chevrolet S10",
+        "sourceUrl": "https://sketchfab.com/3d-models/2c2fcccdd96948aaa655f936aa325f0d"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "The Chevrolet S-10 is a compact pickup truck that was produced by Chevrolet. It was the first domestically built compact pickup of the big three American automakers. When it was first introduced as a \"quarter-ton pickup\" in 1981 for the 1982 model year, the GMC version was known as the S-15 and later renamed the GMC Sonoma. A high-performance version was released in 1991 and given the name of GMC Syclone. The pickup was also sold by Isuzu as the Hombre from 1996 through 2000, but only in North America. There was also an SUV version, the Chevrolet S-10 Blazer/GMC S-15 Jimmy. An electric version was leased as a fleet vehicle in 1997 and 1998. Together, these pickups are often referred to as the S-series.",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/chevrolet-s10.glb",
+    "sourceSha256": "7f66c530216410404650f956da95f95efaf0b95e74324b939514ffdaa8d46134"
+  },
+  {
+    "car": {
+      "id": "chevrolet-suburban",
+      "brand": "Chevrolet",
+      "model": "Suburban",
+      "years": [
+        1989,
+        2000
+      ],
+      "category": "suv",
+      "file": "chevrolet-suburban.glb",
+      "bytes": 6014200,
+      "paint": {
+        "materials": [
+          "Reference4ref002reference4ref002paintmetallic1Mtl"
+        ],
+        "textured": false,
+        "confidence": "alta"
+      },
+      "credit": {
+        "author": "Randomness",
+        "authorUrl": "https://sketchfab.com/throwbackthursdaymodels",
+        "license": "CC Attribution",
+        "sourceName": "1989 Chevrolet Suburban",
+        "sourceUrl": "https://sketchfab.com/3d-models/44bdb8317f0840b3bc858e606f86db6b"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "An iconic american family SUV with a big gas guzzling V8 under the hood.\n\nWikipedia - https://en.wikipedia.org/wiki/Chevrolet_Suburban",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/chevrolet-suburban.glb",
+    "sourceSha256": "0ea9a04ffbfed33466f2e035b3b6017464f0abd1ea95a4d7c33f9815039d1a3f"
+  },
+  {
+    "car": {
+      "id": "dodge-",
+      "brand": "Dodge",
+      "model": "",
+      "years": [
+        0,
+        0
+      ],
+      "category": "coupe",
+      "file": "dodge-.glb",
+      "bytes": 11951492,
+      "paint": null,
+      "credit": {
+        "author": "kevin (\u30b1\u30d3\u30f3)",
+        "authorUrl": "https://sketchfab.com/sohyalebret",
+        "license": "CC Attribution",
+        "sourceName": "F&F 8 | Dominic Toretto's ICE DODGE CHARGER",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-ffb8bead6c2642bbbd02a71b0b19e5b9"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "While Dom (Vin Diesel) can be seen with a host of cars in Fast 8, the one that grabs special attention is his 'Dodge Ice Charger', built for the most pivotal action sequence and the film's showdown that includes a spectacular ice-jump across a submarine steered (remotely) by Charlize Theron. The 1968 Dodge Charger has been custom built and is more like a cross between the cars from Mad Max and Ken Block's outrageous Hoonicorn. The steel metal paneled muscle car with the flared body looks menacing and gets all-wheel drive and spiked tyres to take on the ice terrain sideways.",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/dodge-.glb",
+    "sourceSha256": "5630c6b47f0752210f98f2e3bae237c8ec5e13c5894139e2756bf345c66007eb"
+  },
+  {
+    "car": {
+      "id": "dodge-viper",
+      "brand": "Dodge",
+      "model": "Viper",
+      "years": [
+        2000,
+        2024
+      ],
+      "category": "sports",
+      "file": "dodge-viper.glb",
+      "bytes": 923676,
+      "paint": {
+        "materials": [
+          "RRViper_turbo_black"
+        ],
+        "textured": false,
+        "confidence": "alta"
+      },
+      "credit": {
+        "author": "Black Snow",
+        "authorUrl": "https://sketchfab.com/BlackSnow02",
+        "license": "CC Attribution",
+        "sourceName": "Dodge Viper SRT [Free]",
+        "sourceUrl": "https://sketchfab.com/3d-models/b4234b7970fa464faaecaf637acb0912"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/dodge-viper.glb",
+    "sourceSha256": "5aba2ac510b8bb2183740ceba47903a498820a85a5dcb316877adf4db3fbaf0c"
+  },
+  {
+    "car": {
+      "id": "ferrari-599-gto",
+      "brand": "Ferrari",
+      "model": "599 GTO",
+      "years": [
+        0,
+        0
+      ],
+      "category": "coupe",
+      "file": "ferrari-599-gto.glb",
+      "bytes": 14953220,
+      "paint": null,
+      "credit": {
+        "author": "Black Snow",
+        "authorUrl": "https://sketchfab.com/BlackSnow02",
+        "license": "CC Attribution",
+        "sourceName": "Ferrari 599 GTO",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-14b4f6d9f84d4e30be52a2158685d3ff"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/ferrari-599-gto.glb",
+    "sourceSha256": "d3ffcbef634213bfad84ef8f04ac2e77e7c637db550a3570b983f7e289c6909e"
+  },
+  {
+    "car": {
+      "id": "fiat-500",
+      "brand": "Fiat",
+      "model": "500",
+      "years": [
+        2000,
+        2024
+      ],
+      "category": "hatchback",
+      "file": "fiat-500.glb",
+      "bytes": 4086872,
+      "paint": {
+        "materials": [
+          "INT_Skin"
+        ],
+        "textured": true,
+        "confidence": "m\u00e9dia"
+      },
+      "credit": {
+        "author": "Luquita",
+        "authorUrl": "https://sketchfab.com/speedmodel",
+        "license": "CC Attribution",
+        "sourceName": "Fiat Abarth 500",
+        "sourceUrl": "https://sketchfab.com/3d-models/b59a403dfa1d40318c1126e658f87c19"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "Turning the modern Fiat 500 into an Abarth meant lowering the ride, adding a turbocharger to the 1.4-litre engine (no mean feat under that tiny bonnet), giving it Torque Transfer Control for more aggressive cornering and improving the aerodynamics with side-skirts and spoilers.\n\nThe little Abarth is fast, very agile and plenty of fun.",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/fiat-500.glb",
+    "sourceSha256": "5b37f8f504ae9b2719b7362b1344d0f5d062dd42a382c98747297abf668751c7"
+  },
+  {
+    "car": {
+      "id": "fiat-850-spider",
+      "brand": "Fiat",
+      "model": "850 Spider",
+      "years": [
+        0,
+        0
+      ],
+      "category": "coupe",
+      "file": "fiat-850-spider.glb",
+      "bytes": 8417612,
+      "paint": {
+        "materials": [
+          "paint"
+        ],
+        "textured": false,
+        "confidence": "m\u00e9dia"
+      },
+      "credit": {
+        "author": "Lucas Soler",
+        "authorUrl": "https://sketchfab.com/lucassoler",
+        "license": "CC Attribution",
+        "sourceName": "Fiat 850 Spider",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-8ea03b3cbb9f439ea82a68ddbeb5f6ae"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "At the same time as the Coup\u00e9, Fiat also introduced the convertible sporty two-seater Spider, with the original 843 cc engine tuned to produce 49 hp (37 kW) which allowed it to reach a top speed of 145 km/h (90 mph). The body was designed and built by Bertone.\n\nModeled in Blender",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/fiat-850-spider.glb",
+    "sourceSha256": "5e68f0830f47660d2080a36a32f45235412b721c5fd618ffd34afdd762d5f86e"
+  },
+  {
+    "car": {
+      "id": "fiat-ducato",
+      "brand": "Fiat",
+      "model": "Ducato",
+      "years": [
+        2000,
+        2024
+      ],
+      "category": "minivan",
+      "file": "fiat-ducato.glb",
+      "bytes": 1343392,
+      "paint": {
+        "materials": [
+          "metal"
+        ],
+        "textured": false,
+        "confidence": "m\u00e9dia"
+      },
+      "credit": {
+        "author": "razor24",
+        "authorUrl": "https://sketchfab.com/razor24",
+        "license": "CC Attribution",
+        "sourceName": "2014 Fiat Ducato",
+        "sourceUrl": "https://sketchfab.com/3d-models/8a651ad182414bb0a8b6c6d8d5bd7c01"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "Made in Blender 2.79",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/fiat-ducato.glb",
+    "sourceSha256": "d16b2ffa214f0cb0ca7628b796137525f632d035bda9f178fbbfc4df1b534818"
+  },
+  {
+    "car": {
+      "id": "ford-corcel",
+      "brand": "Ford",
+      "model": "Corcel",
+      "years": [
+        2000,
+        2024
+      ],
+      "category": "sedan",
+      "file": "ford-corcel.glb",
+      "bytes": 1378280,
+      "paint": {
+        "materials": [
+          "material_8"
+        ],
+        "textured": false,
+        "confidence": "m\u00e9dia"
+      },
+      "credit": {
+        "author": "Nieve5677",
+        "authorUrl": "https://sketchfab.com/niev",
+        "license": "CC Attribution",
+        "sourceName": "Ford Corcel II",
+        "sourceUrl": "https://sketchfab.com/3d-models/68ebd70c5c8b4d0bb4f613343a926361"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "As per Form Request",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/ford-corcel.glb",
+    "sourceSha256": "d8345b0b82c0993b1082a7f5ae3d78f838fb51a0f9355b509b027f6c66a532cb"
+  },
+  {
+    "car": {
+      "id": "ford-mustang",
+      "brand": "Ford",
+      "model": "Mustang",
+      "years": [
+        2000,
+        2024
+      ],
+      "category": "coupe",
+      "file": "ford-mustang.glb",
+      "bytes": 2004500,
+      "paint": {
+        "materials": [
+          "carpaint"
+        ],
+        "textured": false,
+        "confidence": "alta"
+      },
+      "credit": {
+        "author": "Jiaxing",
+        "authorUrl": "https://sketchfab.com/saitoyang",
+        "license": "CC Attribution",
+        "sourceName": "Ford Mustang Shelby GT500",
+        "sourceUrl": "https://sketchfab.com/3d-models/0eaa7a16796540f29461ddae05ecdeb3"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "This is a test model. Haven't apply the interior texture yet. Engine and chassis were modeled, but without textures.\nAll of the textures are \"aistanderdsurface\" in Maya, feel free to replace them. Carbon-fiber texture is included in the texture folder.\n\nPlease click the LIKE button if you enjoy this model!\nCheck my model page for more info!",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/ford-mustang.glb",
+    "sourceSha256": "0a0632a2da8429c416d0500a96a790a6efdced04da48713e5489c9305640ac28"
+  },
+  {
+    "car": {
+      "id": "ford-mustang-roush",
+      "brand": "Ford",
+      "model": "Mustang ROUSH",
+      "years": [
+        2019,
+        2019
+      ],
+      "category": "coupe",
+      "file": "ford-mustang-roush.glb",
+      "bytes": 966408,
+      "paint": {
+        "materials": [
+          "Paint"
+        ],
+        "textured": false,
+        "confidence": "m\u00e9dia"
+      },
+      "credit": {
+        "author": "_the.render.box_",
+        "authorUrl": "https://sketchfab.com/_the.render.box_",
+        "license": "CC Attribution",
+        "sourceName": "Ford Mustang ROUSH 2019 - Stage 3",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-c3be292e50774be98bac9de749579d80"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "**FREE TO DOWNLOAD NOW!!!**\n\nFord Mustang ROUSH 2019\nStage 3 with detailed interior and mid-detailed engine.",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/ford-mustang-roush.glb",
+    "sourceSha256": "a3283bac9214b91011d64bbdcdd50866ba9ccb94c1ce9067ecb2c3d29eb204b1"
+  },
+  {
+    "car": {
+      "id": "honda-s800",
+      "brand": "Honda",
+      "model": "S800",
+      "years": [
+        0,
+        0
+      ],
+      "category": "coupe",
+      "file": "honda-s800.glb",
+      "bytes": 10564520,
+      "paint": null,
+      "credit": {
+        "author": "Yakpower",
+        "authorUrl": "https://sketchfab.com/Alexios_Apokaukos",
+        "license": "CC Attribution",
+        "sourceName": "Honda s800",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-fa6c6113f1e34d9baaff80b5b586a25d"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "The S800 was available as either a coupe or roadster, and continued the advanced technology of its predecessors. The 791 cc straight-4 high reving engine.\n\nmodeled in blender and textured using substance painter\n\nLike if you download, and feel free to comment any suggestions",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/honda-s800.glb",
+    "sourceSha256": "1a3abfc9337c6ba66c42858c935764ae30728c2a00844a09d06bdf593e49fc11"
+  },
+  {
+    "car": {
+      "id": "hyundai-azera",
+      "brand": "Hyundai",
+      "model": "Azera",
+      "years": [
+        2000,
+        2024
+      ],
+      "category": "sedan",
+      "file": "hyundai-azera.glb",
+      "bytes": 1452700,
+      "paint": {
+        "materials": [
+          "tail"
+        ],
+        "textured": false,
+        "confidence": "m\u00e9dia"
+      },
+      "credit": {
+        "author": "Nieve5677",
+        "authorUrl": "https://sketchfab.com/niev",
+        "license": "CC Attribution",
+        "sourceName": "2009 Hyundai Azera",
+        "sourceUrl": "https://sketchfab.com/3d-models/711b67ea05f9441a863dce4badaca660"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/hyundai-azera.glb",
+    "sourceSha256": "d3155d48de8634a7bc149249794f225d107654b1177ae438eeaa1a521e19f3ca"
+  },
+  {
+    "car": {
+      "id": "hyundai-elantra",
+      "brand": "Hyundai",
+      "model": "Elantra",
+      "years": [
+        2000,
+        2024
+      ],
+      "category": "sedan",
+      "file": "hyundai-elantra.glb",
+      "bytes": 5747180,
+      "paint": {
+        "materials": [
+          "hHyundai_ElantraNRewardRecycled_2022Coloured_Material1"
+        ],
+        "textured": true,
+        "confidence": "alta"
+      },
+      "credit": {
+        "author": "Maroi Mister Let Me Think Official 3D Studio",
+        "authorUrl": "https://sketchfab.com/homicivan53",
+        "license": "CC Attribution",
+        "sourceName": "2021-2023 Hyundai Elantra N",
+        "sourceUrl": "https://sketchfab.com/3d-models/673a4a83715d411ba713c0c270cdf93f"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "Hyundai Princess",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/hyundai-elantra.glb",
+    "sourceSha256": "c589ac95fc77a87d152dabe3d5e7231524b08b437384228da46f4fa377ebcffc"
+  },
+  {
+    "car": {
+      "id": "hyundai-tucson",
+      "brand": "Hyundai",
+      "model": "Tucson",
+      "years": [
+        2000,
+        2024
+      ],
+      "category": "suv",
+      "file": "hyundai-tucson.glb",
+      "bytes": 1152688,
+      "paint": {
+        "materials": [
+          "varnish"
+        ],
+        "textured": false,
+        "confidence": "alta"
+      },
+      "credit": {
+        "author": "razor24",
+        "authorUrl": "https://sketchfab.com/razor24",
+        "license": "CC Attribution",
+        "sourceName": "2015 Hyundai Tucson",
+        "sourceUrl": "https://sketchfab.com/3d-models/7674a3bd168a451daf73fc0a33d39589"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "Made in Blender 2.79",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/hyundai-tucson.glb",
+    "sourceSha256": "4011dfd49efe2735387b66d131975488b936a4f241c1bbfb621a685ec8fa16f7"
+  },
+  {
+    "car": {
+      "id": "jaguar-xj220",
+      "brand": "Jaguar",
+      "model": "XJ220",
+      "years": [
+        1991,
+        1991
+      ],
+      "category": "coupe",
+      "file": "jaguar-xj220.glb",
+      "bytes": 5372556,
+      "paint": {
+        "materials": [
+          "body"
+        ],
+        "textured": false,
+        "confidence": "m\u00e9dia"
+      },
+      "credit": {
+        "author": "Comrade1280",
+        "authorUrl": "https://sketchfab.com/comrade1280",
+        "license": "CC Attribution",
+        "sourceName": "Jaguar XJ220 1991",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-d99bb7b0fc0e4e3c9553246679dd067f"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "I made this model for the game called \"Simraceway\"\n\nRead more about my model in the Art Spotlight I wrote:\n\nhttp://blog.sketchfab.com/post/121007238274/art-spotlight-jaguar-xj220",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/jaguar-xj220.glb",
+    "sourceSha256": "c6fee96eb6737170bfb3566abed6957020075ca20cd31afcebf42384cea856e9"
+  },
+  {
+    "car": {
+      "id": "kia-picanto",
+      "brand": "Kia",
+      "model": "Picanto",
+      "years": [
+        2000,
+        2024
+      ],
+      "category": "hatchback",
+      "file": "kia-picanto.glb",
+      "bytes": 1346180,
+      "paint": {
+        "materials": [
+          "2021_Kia_Picanto_GT-Line_Titanium_Grey"
+        ],
+        "textured": false,
+        "confidence": "alta"
+      },
+      "credit": {
+        "author": "Nieve5677",
+        "authorUrl": "https://sketchfab.com/niev",
+        "license": "CC Attribution",
+        "sourceName": "Kia Picanto Morning GT-Line",
+        "sourceUrl": "https://sketchfab.com/3d-models/b4fd928f3e814ef29900c706bccc344d"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/kia-picanto.glb",
+    "sourceSha256": "ce36a31c0f875e4cb1faeb898a5d2028686b826bbe8b6ea8bf88cbf29793cc3a"
+  },
+  {
+    "car": {
+      "id": "koenigsegg-gemera",
+      "brand": "Koenigsegg",
+      "model": "Gemera",
+      "years": [
+        0,
+        0
+      ],
+      "category": "coupe",
+      "file": "koenigsegg-gemera.glb",
+      "bytes": 4203040,
+      "paint": null,
+      "credit": {
+        "author": "ALIEEEN",
+        "authorUrl": "https://sketchfab.com/ALIEEEN",
+        "license": "CC Attribution",
+        "sourceName": "Free Koenigsegg Gemera",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-8bae74bd359940508717afb5c1f212a3"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "**Koenigsegg Gemera**\n\n\nYou can use this model in your projects, commercial or personal. Attribution is not required but is greatly appreciated.\n\nYou can\u2019t sell this model alone (or in a pack) without SIGNIFICANT modification.\n\nThe car is 40k triangles without the rims.",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/koenigsegg-gemera.glb",
+    "sourceSha256": "c57cedb742993c34d2cac8760d80e15df97dae1900187ef290f22b35521877c1"
+  },
+  {
+    "car": {
+      "id": "koenigsegg-jesko",
+      "brand": "Koenigsegg",
+      "model": "Jesko",
+      "years": [
+        2020,
+        2020
+      ],
+      "category": "coupe",
+      "file": "koenigsegg-jesko.glb",
+      "bytes": 6216192,
+      "paint": null,
+      "credit": {
+        "author": "Ddiaz Design",
+        "authorUrl": "https://sketchfab.com/ddiaz-design",
+        "license": "CC Attribution",
+        "sourceName": "2020 Koenigsegg Jesko",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-c657f51fb0db43e38fea172dfa385287"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "Repositorio de modelos 3D de Ddiaz Design\n\nKoenigsegg has unveiled an all-new megacar - the Koenigsegg Jesko - at the 2019 Geneva International Motor Show. Jesko inherits the mantle left by the Agera RS as the leading track-focused, road-legal car for those looking for the ultimate in vehicle performance.\n\nJesko is named for Jesko von Koenigsegg, the father of company Founder and CEO, Christian von Koenigsegg.\n\nInstagram del proyecto: https://www.instagram.com/ddiaz.design/\n\nPaypal Donations: https://paypal.me/sergiodd\n\nModel from: Real Racing 3\n\nCredits: https://mega.nz/folder/gX4G2YhS#XXUZRiXbMldGmJqK3tHYzA/folder/0S5n1baD",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/koenigsegg-jesko.glb",
+    "sourceSha256": "c7db7e5240a970b0da5910553e44fb931068c6189530e905003c358125a2a122"
+  },
+  {
+    "car": {
+      "id": "lada-vaz-2103",
+      "brand": "Lada",
+      "model": "VAZ-2103",
+      "years": [
+        0,
+        0
+      ],
+      "category": "coupe",
+      "file": "lada-vaz-2103.glb",
+      "bytes": 7308244,
+      "paint": null,
+      "credit": {
+        "author": "Black Snow",
+        "authorUrl": "https://sketchfab.com/BlackSnow02",
+        "license": "CC Attribution",
+        "sourceName": "LADA VAZ-2103 [Zhiguli]",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-9d02e433d9dc4b92a271a4c8641b6211"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/lada-vaz-2103.glb",
+    "sourceSha256": "f452b9b4523cc93332120d4db36511fcb49c51063d21cfe0b94d238ea598f59f"
+  },
+  {
+    "car": {
+      "id": "lamborghini-centenario-lp-770",
+      "brand": "Lamborghini",
+      "model": "Centenario LP-770",
+      "years": [
+        0,
+        0
+      ],
+      "category": "coupe",
+      "file": "lamborghini-centenario-lp-770.glb",
+      "bytes": 3721448,
+      "paint": null,
+      "credit": {
+        "author": "SDC PERFORMANCE\u2122\ufe0f",
+        "authorUrl": "https://sketchfab.com/Lambo_SC04",
+        "license": "CC Attribution",
+        "sourceName": "Lamborghini Centenario LP-770 Interior SDC",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-d679af35b5694301a185c7454a700c73"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "***\u201cTHIS WAS THE MOMENT I FINALLY DECIDED TO CREATE A PERFECT CAR\u201d***\nFerrucio Lamborghini\nHere is the Lamborghini Centenario, one of the most powerful Lamborghini ever built. It was entirely made of carbon fiber worked by hand, in addition it has a 6.5L V12 of 770 horsepower.\n\nNEW VERSION: \n\nhttps://sketchfab.com/3d-models/lamborghini-centenario-roadster-sdc-938d3e3642cf4ea895c62c2a4bf6fc08\n\nIt was present at the Geneva Motor Show in 2017, limited to 40 copies, (no need to run, they have already been sold for a very long time) prices start from 3 million dollars \u2026\n\nBlender 2.9 +ANIMATION and TEXTURES 4K + SOUND - Free dowload ; )\n\n\n**NB :** the interior may be different from the \"real\" Centenario.\nTo change the color of the interior you just need to change the color of the textures.\nDo not hesitate to subscribe!\nFor more models, click here: (all is free!) :\n\nhttps://sketchfab.com/3Duae",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/lamborghini-centenario-lp-770.glb",
+    "sourceSha256": "01eb4ad040915cc770165cd79517f3d0e573763632956933e2c6bd2f3705bda0"
+  },
+  {
+    "car": {
+      "id": "lamborghini-centenario-roadster",
+      "brand": "Lamborghini",
+      "model": "Centenario Roadster",
+      "years": [
+        0,
+        0
+      ],
+      "category": "sports",
+      "file": "lamborghini-centenario-roadster.glb",
+      "bytes": 3156164,
+      "paint": null,
+      "credit": {
+        "author": "SDC PERFORMANCE\u2122\ufe0f",
+        "authorUrl": "https://sketchfab.com/Lambo_SC04",
+        "license": "CC Attribution",
+        "sourceName": "Lamborghini Centenario Roadster SDC",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-938d3e3642cf4ea895c62c2a4bf6fc08"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "\u201cTHIS WAS THE MOMENT I FINALLY DECIDED TO CREATE A PERFECT CAR\u201d Ferrucio Lamborghini Here is the Lamborghini Centenario, one of the most powerful Lamborghini ever built. It was entirely made of carbon fiber worked by hand, in addition it has a 6.5L V12 of 770 horsepower.\n\n\nIt was present at the Geneva Motor Show in 2017, limited to 20 copies, (no need to run, they have already been sold for a very long time) prices start from 3,5 million dollars \u2026\n\nBlender 2.9 +ANIMATION and TEXTURES 4K + SOUND - Free dowload ; ) - By SDC PERFORMANCE\n\nNB : the interior may be different from the \u201creal\u201d Centenario. To change the color of the interior you just need to change the color of the textures. Do not hesitate to subscribe! \n\nFor more models, click here: (all is free!) :\n\nhttps://sketchfab.com/3Duae",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/lamborghini-centenario-roadster.glb",
+    "sourceSha256": "52fa96acb69a401ffc915bb23cda7fc47658d8af149d127d2ba61a3f7a16fca1"
+  },
+  {
+    "car": {
+      "id": "lamborghini-gallardo",
+      "brand": "Lamborghini",
+      "model": "Gallardo",
+      "years": [
+        2010,
+        2010
+      ],
+      "category": "coupe",
+      "file": "lamborghini-gallardo.glb",
+      "bytes": 10575280,
+      "paint": {
+        "materials": [
+          "paint"
+        ],
+        "textured": false,
+        "confidence": "m\u00e9dia"
+      },
+      "credit": {
+        "author": "Artem P",
+        "authorUrl": "https://sketchfab.com/temp0.crazy",
+        "license": "CC Attribution",
+        "sourceName": "Lamborghini Gallardo 2010",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-ff0eb2242d0e42eb8b7034b4db639e56"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "The Lamborghini Gallardo is a sports car built by the Italian automotive manufacturer Lamborghini from 2003 to 2013. It is Lamborghini's first best-selling model with 14,022 built throughout its production run.\r\n\r\nCreated in blender 2.81.\r\n\r\nArtstation: https://www.artstation.com/artwork/XB649w\r\n\r\nBrake disc and caliper by Velstyde: https://www.blendswap.com/blends/view/74983\r\n\r\nTire sidewall texture by young-chief: https://www.deviantart.com/young-chief/art/bfgoodrich-bumpmap-68955392",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/lamborghini-gallardo.glb",
+    "sourceSha256": "df456c48e03571f30d76cd28de6a811d796593eaae4d06859fd3e04acb2bb477"
+  },
+  {
+    "car": {
+      "id": "lamborghini-gallardo-lp560",
+      "brand": "Lamborghini",
+      "model": "Gallardo Lp560",
+      "years": [
+        0,
+        0
+      ],
+      "category": "coupe",
+      "file": "lamborghini-gallardo-lp560.glb",
+      "bytes": 2273548,
+      "paint": null,
+      "credit": {
+        "author": "Black Snow",
+        "authorUrl": "https://sketchfab.com/BlackSnow02",
+        "license": "CC Attribution",
+        "sourceName": "Lamborghini Gallardo lp560",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-86691e28bae34cffa896b148c895e58d"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/lamborghini-gallardo-lp560.glb",
+    "sourceSha256": "ef7aaab5bc1ee39b8f3a34926994922a5e0056179bd233514b3db8803aa80498"
+  },
+  {
+    "car": {
+      "id": "lamborghini-revuelto",
+      "brand": "Lamborghini",
+      "model": "Revuelto",
+      "years": [
+        0,
+        0
+      ],
+      "category": "coupe",
+      "file": "lamborghini-revuelto.glb",
+      "bytes": 2955328,
+      "paint": {
+        "materials": [
+          "Body"
+        ],
+        "textured": false,
+        "confidence": "m\u00e9dia"
+      },
+      "credit": {
+        "author": "ALIEEEN",
+        "authorUrl": "https://sketchfab.com/ALIEEEN",
+        "license": "CC Attribution",
+        "sourceName": "Free Lamborghini Revuelto",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-cf52245eb68f48daa909c7ad2a8deaa3"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "***Lamborghini Revuelto***\n\n\nCheck out my Youtube channel for my future rigging tutorial: https://www.youtube.com/@ALIEEEN_3D\n\n![](https://i.imgur.com/1CD2exZ.jpg)\n\nYou can use this model in your projects, commercial or personal. Attribution is not required but is greatly appreciated.\n\nYou can\u2019t sell this model alone (or in a pack).",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/lamborghini-revuelto.glb",
+    "sourceSha256": "47f148ba4efb0b9bb7c7b7e810f2e0557a616bd33bbbe1381a6015fe12b79809"
+  },
+  {
+    "car": {
+      "id": "land-rover-range-rover",
+      "brand": "Land Rover",
+      "model": "Range Rover",
+      "years": [
+        2000,
+        2024
+      ],
+      "category": "suv",
+      "file": "land-rover-range-rover.glb",
+      "bytes": 3695756,
+      "paint": {
+        "materials": [
+          "PaintFl1Mtl"
+        ],
+        "textured": false,
+        "confidence": "alta"
+      },
+      "credit": {
+        "author": "Randomness",
+        "authorUrl": "https://sketchfab.com/throwbackthursdaymodels",
+        "license": "CC Attribution",
+        "sourceName": "2006 Land Rover Range Rover Supercharged",
+        "sourceUrl": "https://sketchfab.com/3d-models/277cf51a9f95473c85580612651990fd"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "The Land Rover Range Rover Sport, generally known as the Range Rover Sport, is a mid-size luxury SUV produced under their Range Rover marque, by the British car manufacturer Land Rover, later Jaguar Land Rover. The first generation (codename: L320) started production in 2005, and was replaced by the second generation Range Rover Sport (codename: L494) in 2013, which was replaced by the third generation Range Rover Sport (codename: L461) in 2022.\n\nMore Info - https://en.wikipedia.org/wiki/Range_Rover_Sport",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/land-rover-range-rover.glb",
+    "sourceSha256": "e927255691d589f02cfc9f95d348c182f149a36e3094ff7b6ccc71ad87cae8b2"
+  },
+  {
+    "car": {
+      "id": "land-rover-range-rover-sport",
+      "brand": "Land Rover",
+      "model": "Range Rover Sport",
+      "years": [
+        2000,
+        2024
+      ],
+      "category": "suv",
+      "file": "land-rover-range-rover-sport.glb",
+      "bytes": 2354828,
+      "paint": {
+        "materials": [
+          "carPaint"
+        ],
+        "textured": false,
+        "confidence": "alta"
+      },
+      "credit": {
+        "author": "Mona x Supercars",
+        "authorUrl": "https://sketchfab.com/Car2022",
+        "license": "CC Attribution",
+        "sourceName": "Land Rover Range Rover Sport SVR",
+        "sourceUrl": "https://sketchfab.com/3d-models/5462d65acb0e4dca8c20da82360261db"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "![](https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/images/media/672263/2017-land-rover-range-rover-sport-supercharged-svr-in-depth-model-review-car-and-driver-photo-685768-s-original.jpg?crop=0.667xw:0.615xh;0.224xw,0.154xh&resize=2048:*)\n\n4.8L Supercharged V8 Engine.",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/land-rover-range-rover-sport.glb",
+    "sourceSha256": "69f90ee46ad534f9876eb9a385691f13289e2f121e320111c76ea9cdef9fa933"
+  },
+  {
+    "car": {
+      "id": "lincoln-futura",
+      "brand": "Lincoln",
+      "model": "Futura",
+      "years": [
+        1955,
+        1955
+      ],
+      "category": "coupe",
+      "file": "lincoln-futura.glb",
+      "bytes": 2466696,
+      "paint": {
+        "materials": [
+          "carpaint"
+        ],
+        "textured": false,
+        "confidence": "m\u00e9dia"
+      },
+      "credit": {
+        "author": "vecarz",
+        "authorUrl": "https://sketchfab.com/heynic",
+        "license": "CC Attribution",
+        "sourceName": "Lincoln Futura 1955 | www.vecarz.com",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-46bcff2b4d104bda97ef07febee31355"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "This 3D models on this Sketchfab account are sourced from third\u2011party platforms such as Facebook, VK and MediaFire. Copyright belongs to the original automotive manufacturers and design companies (\u201cRightsholders\u201d).\n\nModels are provided solely for educational, research, and reference purposes; commercial use is strictly prohibited. Users must comply with applicable laws and Sketchfab community guidelines.\n\nThe account owner assumes no liability for any legal disputes or losses arising from unauthorized use. No warranties are made regarding the completeness, accuracy, or suitability of the models.\n\nIn no event shall the account owner be liable for any direct or indirect damages resulting from use of the models. If you are a Rightsholder or can provide proof of ownership, please contact us via Sketchfab message or email. Verified content will be removed promptly.",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/lincoln-futura.glb",
+    "sourceSha256": "81a3af1020e45600a57c8754dfb420d02981a3edba90a2a123a39662eb03f82f"
+  },
+  {
+    "car": {
+      "id": "mclaren-18-senna",
+      "brand": "McLaren",
+      "model": "18' Senna",
+      "years": [
+        0,
+        0
+      ],
+      "category": "coupe",
+      "file": "mclaren-18-senna.glb",
+      "bytes": 4690004,
+      "paint": {
+        "materials": [
+          "Car_paint"
+        ],
+        "textured": false,
+        "confidence": "m\u00e9dia"
+      },
+      "credit": {
+        "author": "crxw.cgi",
+        "authorUrl": "https://sketchfab.com/crxwdesign",
+        "license": "CC Attribution",
+        "sourceName": "18' McLaren Senna Crxw Widebody Kit (Animated)",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-5d1f14a4b68b47c8aa65b7a8f1bb4c5a"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "Project developed in the smallest details, a super fast car with a Restomod customization and several insane modifications!! Enjoy!! !",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/mclaren-18-senna.glb",
+    "sourceSha256": "c4f0fdd85becbc03591be66642967acae5f71ca307125b39cd83c66492a2f8c5"
+  },
+  {
+    "car": {
+      "id": "mclaren-570s",
+      "brand": "McLaren",
+      "model": "570S",
+      "years": [
+        2000,
+        2024
+      ],
+      "category": "sports",
+      "file": "mclaren-570s.glb",
+      "bytes": 3671664,
+      "paint": {
+        "materials": [
+          "carpaint"
+        ],
+        "textured": false,
+        "confidence": "alta"
+      },
+      "credit": {
+        "author": "Ddiaz Design",
+        "authorUrl": "https://sketchfab.com/ddiaz-design",
+        "license": "CC Attribution",
+        "sourceName": "2018 McLaren 570S Spider",
+        "sourceUrl": "https://sketchfab.com/3d-models/a504090e516f44608e35160953b61fcd"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "Repositorio de modelos 3D de Ddiaz Design\n\n![](https://cdn.motor1.com/images/mgl/EnzYq/s1/4x3/2018-mclaren-570s-spider-review.webp)\n\nThe new McLaren 570S Spider combines the exceptional dynamism and refinement of the 570S Coup\u00e9 with the extra exhilaration of open-air motoring. Hand-assembled in Woking, England, the 570S Spider is the most attainable McLaren Spider ever and brings supercar attributes such as carbon fibre construction, a mid-engined layout and extreme performance for the first time to the luxury sports convertible segment.\n\nInstagram del proyecto: https://www.instagram.com/ddiaz.design/\n\nPaypal Donations: https://paypal.me/sergiodd\n\nBased on an Asphalt 9 Legends 3d model\n\nCredits: https://3dmodelsdestination.blogspot.com/",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/mclaren-570s.glb",
+    "sourceSha256": "b57c09de1e9e45c86d0188e4f98e783862b17565788e7d95c82c9ce1f64b78a2"
+  },
+  {
+    "car": {
+      "id": "mclaren-mp4-12c-ultimate",
+      "brand": "McLaren",
+      "model": "MP4-12C Ultimate",
+      "years": [
+        0,
+        0
+      ],
+      "category": "coupe",
+      "file": "mclaren-mp4-12c-ultimate.glb",
+      "bytes": 2859464,
+      "paint": null,
+      "credit": {
+        "author": "COOL601",
+        "authorUrl": "https://sketchfab.com/COOL601",
+        "license": "CC Attribution",
+        "sourceName": "Mclaren MP4-12C Ultimate",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-80f19f7f5aac428985356987769538fe"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "Mclaren's greatest project (the secret project)\n\nThe sun beats down on the asphalt as the McLaren MP4-12C Concept slowly emerges from the shadows. The sound of the V8 engine rumbles through the air, sending shivers down your spine. It's clear that this is no ordinary sports car. It's a monster on wheels, ready to conquer the road with its stunning speed and futuristic design. The McLaren MP4-12C Concept Ultimate is not just a car, it's an impressive feat of technology and craftsmanship. And now it stands before you, ready to take you on an unforgettable ride.\n\n\nGet this free model!!!!\n\n\n(rigged btw)\n\nShare your animations/images when ur using this model!!!\nAlways give credits!!!!",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/mclaren-mp4-12c-ultimate.glb",
+    "sourceSha256": "1b89b866f8fe5f203ab7dd14af26e0b8c47e7d7f1118ee9f6cb98b5ac6f07258"
+  },
+  {
+    "car": {
+      "id": "mclaren-p1",
+      "brand": "McLaren",
+      "model": "P1",
+      "years": [
+        0,
+        0
+      ],
+      "category": "coupe",
+      "file": "mclaren-p1.glb",
+      "bytes": 4407404,
+      "paint": {
+        "materials": [
+          "Carpaint"
+        ],
+        "textured": false,
+        "confidence": "m\u00e9dia"
+      },
+      "credit": {
+        "author": "vecarz",
+        "authorUrl": "https://sketchfab.com/heynic",
+        "license": "CC Attribution",
+        "sourceName": "Mclaren P1 | www.vecarz.com",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-adae2edc721e4ce7b31c1d06a581e30a"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "www.vecarz.com\n showcase room: https://www.vecarz.com/cars/mclaren-p1",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/mclaren-p1.glb",
+    "sourceSha256": "5a9361ee8e81c3d1cb120a80b361e05f7ddddeae7c33cf277aaf0bc4548b5b30"
+  },
+  {
+    "car": {
+      "id": "mclaren-spider",
+      "brand": "McLaren",
+      "model": "Spider",
+      "years": [
+        0,
+        0
+      ],
+      "category": "coupe",
+      "file": "mclaren-spider.glb",
+      "bytes": 1391148,
+      "paint": null,
+      "credit": {
+        "author": "SINNIK",
+        "authorUrl": "https://sketchfab.com/sinnik",
+        "license": "CC Attribution",
+        "sourceName": "McLaren Spider",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-10b474f26b2643be82ee26417ca78a0a"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "McLaren Spider free download!",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/mclaren-spider.glb",
+    "sourceSha256": "882327be1577b83ecd55ea56699a3d021b6e700549591c5f14df66f03be5ae75"
+  },
+  {
+    "car": {
+      "id": "mercedes-benz-300sl-gullwing",
+      "brand": "Mercedes-Benz",
+      "model": "300sl Gullwing",
+      "years": [
+        0,
+        0
+      ],
+      "category": "coupe",
+      "file": "mercedes-benz-300sl-gullwing.glb",
+      "bytes": 5352796,
+      "paint": null,
+      "credit": {
+        "author": "vecarz",
+        "authorUrl": "https://sketchfab.com/heynic",
+        "license": "CC Attribution",
+        "sourceName": "Mercedes-Benz 300sl Gullwing | www.vecarz.com",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-65edd5814c9842bb9c769388d13fa27f"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "www.vecarz.com\n\nShowcase Room: https://www.vecarz.com/cars/mercedes-benz-300sl-gullwing\nShwecase Website homepage: https://www.vecarz.com/",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/mercedes-benz-300sl-gullwing.glb",
+    "sourceSha256": "8bb8c6c27cbfe3c884b3c067e3fb8e676852c3fe49c1298bf13baf6aa922a4b8"
+  },
+  {
+    "car": {
+      "id": "mercedes-benz-mersedes-s-class",
+      "brand": "Mercedes-Benz",
+      "model": "Mersedes- S-class",
+      "years": [
+        0,
+        0
+      ],
+      "category": "coupe",
+      "file": "mercedes-benz-mersedes-s-class.glb",
+      "bytes": 11627408,
+      "paint": null,
+      "credit": {
+        "author": "Black Snow",
+        "authorUrl": "https://sketchfab.com/BlackSnow02",
+        "license": "CC Attribution",
+        "sourceName": "Mersedes-Benz S-class W221",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-6b1c0ad55406406a8cf8177dc0a4f2b9"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/mercedes-benz-mersedes-s-class.glb",
+    "sourceSha256": "c63b11984b27921153dcacdad663b942ee7ce0c708695bf654a484b71b4165e3"
+  },
+  {
+    "car": {
+      "id": "mercedes-benz-mersedes-s65",
+      "brand": "Mercedes-Benz",
+      "model": "Mersedes- S65",
+      "years": [
+        0,
+        0
+      ],
+      "category": "coupe",
+      "file": "mercedes-benz-mersedes-s65.glb",
+      "bytes": 2997828,
+      "paint": null,
+      "credit": {
+        "author": "Black Snow",
+        "authorUrl": "https://sketchfab.com/BlackSnow02",
+        "license": "CC Attribution",
+        "sourceName": "Mersedes-Benz s65 w222",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-f42d9d13b0404b5b9a2302a4c590a94d"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "More models: https://boosty.to/black_snow02",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/mercedes-benz-mersedes-s65.glb",
+    "sourceSha256": "8504134c55eacbdaee7eef34929c8861d1674516076c483817116eb4929114c6"
+  },
+  {
+    "car": {
+      "id": "mercedes-benz-s63-coupe",
+      "brand": "Mercedes-Benz",
+      "model": "S63 Coupe",
+      "years": [
+        0,
+        0
+      ],
+      "category": "coupe",
+      "file": "mercedes-benz-s63-coupe.glb",
+      "bytes": 4760304,
+      "paint": null,
+      "credit": {
+        "author": "Black Snow",
+        "authorUrl": "https://sketchfab.com/BlackSnow02",
+        "license": "CC Attribution",
+        "sourceName": "Mercedes-Benz s63 Coupe Brabus 800",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-1b79ffa597de49d188537b3f40aa8b50"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/mercedes-benz-s63-coupe.glb",
+    "sourceSha256": "b50de4b17997b7243454888f58fd4fb287a95832c171f267067ded2de79d0496"
+  },
+  {
+    "car": {
+      "id": "mini-countryman",
+      "brand": "Mini",
+      "model": "Countryman",
+      "years": [
+        2000,
+        2024
+      ],
+      "category": "suv",
+      "file": "mini-countryman.glb",
+      "bytes": 1183804,
+      "paint": {
+        "materials": [
+          "metal"
+        ],
+        "textured": false,
+        "confidence": "m\u00e9dia"
+      },
+      "credit": {
+        "author": "razor24",
+        "authorUrl": "https://sketchfab.com/razor24",
+        "license": "CC Attribution",
+        "sourceName": "2017 Mini Countryman",
+        "sourceUrl": "https://sketchfab.com/3d-models/8d5fd459a54d4a529c2be4c7ac444b01"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "Made in Blender 2.79",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/mini-countryman.glb",
+    "sourceSha256": "4c023839ba9948707a9c294e48ba039ea488e02de8570ea8b4da2dcf127d6b5b"
+  },
+  {
+    "car": {
+      "id": "mitsubishi-lancer",
+      "brand": "Mitsubishi",
+      "model": "Lancer",
+      "years": [
+        2000,
+        2024
+      ],
+      "category": "sedan",
+      "file": "mitsubishi-lancer.glb",
+      "bytes": 2007272,
+      "paint": {
+        "materials": [
+          "material"
+        ],
+        "textured": true,
+        "confidence": "alta"
+      },
+      "credit": {
+        "author": "vecarz",
+        "authorUrl": "https://sketchfab.com/heynic",
+        "license": "CC Attribution",
+        "sourceName": "Mitsubishi Lancer Evolution 6  | www.vecarz.com",
+        "sourceUrl": "https://sketchfab.com/3d-models/c3d5dcd8ff724bc88c46760d92fc5188"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "Mitsubishi Lancer Evolution 6 Tommi Makinen 1999\n\nGallery showcase: https://www.vecarz.com\n\n==================================================\n\nThank you [Ddiaz Design)] for your incredible contribution to the community! You\u2019re an absolute legend and a pillar of our community. Folks, let\u2019s rally behind this and show our support by visiting their website and exhibition His website and cheer for his hard work! \ud83c\udf89 here: \nhttps://sketchfab.com/3d-models/1999-mitsubishi-lancer-evolution-6-tommi-makinen-7e79b3c0e62d43b0b59d1ad80016ddcc",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/mitsubishi-lancer.glb",
+    "sourceSha256": "f6de02ce3bdd0426e0888565d6cb84c93495a0474ed379a95afce5a27b6b257d"
+  },
+  {
+    "car": {
+      "id": "nissan-180sx",
+      "brand": "Nissan",
+      "model": "180sx",
+      "years": [
+        0,
+        0
+      ],
+      "category": "coupe",
+      "file": "nissan-180sx.glb",
+      "bytes": 11959824,
+      "paint": null,
+      "credit": {
+        "author": "autoNgraphic",
+        "authorUrl": "https://sketchfab.com/autoNgraphic",
+        "license": "CC Attribution",
+        "sourceName": "Nissan 180sx [FREE]",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-b37cea6e8a864a2aa602934ddb0e6ff0"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "Enjoy it.",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/nissan-180sx.glb",
+    "sourceSha256": "f4695c0f879cefe36f81c3fd4084b547274cf7bde8c683ab57e95caeef590d0a"
+  },
+  {
+    "car": {
+      "id": "nissan-240sx",
+      "brand": "Nissan",
+      "model": "240sx",
+      "years": [
+        0,
+        0
+      ],
+      "category": "coupe",
+      "file": "nissan-240sx.glb",
+      "bytes": 11671104,
+      "paint": null,
+      "credit": {
+        "author": "autoNgraphic",
+        "authorUrl": "https://sketchfab.com/autoNgraphic",
+        "license": "CC Attribution",
+        "sourceName": "Nissan 240sx [FREE]",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-0c82659677374e0895026c2772d3beba"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "Drift style 180sx.\n\nI created it by using Zmodeler and 3dsMax. Not all parts made by me.",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/nissan-240sx.glb",
+    "sourceSha256": "5b5a3e106eaaa3cd59dc7b605a2138db90e602ef6957554ae34296440e574ea3"
+  },
+  {
+    "car": {
+      "id": "nissan-350z-rocket",
+      "brand": "Nissan",
+      "model": "350z Rocket",
+      "years": [
+        0,
+        0
+      ],
+      "category": "coupe",
+      "file": "nissan-350z-rocket.glb",
+      "bytes": 12664336,
+      "paint": null,
+      "credit": {
+        "author": "Black Snow",
+        "authorUrl": "https://sketchfab.com/BlackSnow02",
+        "license": "CC Attribution",
+        "sourceName": "Nissan 350z Rocket Bunny",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-c881a7e4285c42c2b359abf525fa7c95"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/nissan-350z-rocket.glb",
+    "sourceSha256": "4d745d4b8ce329e952bc94bf4845a61121c0142b8744a7214bc739974f703f67"
+  },
+  {
+    "car": {
+      "id": "nissan-aimgain-gt",
+      "brand": "Nissan",
+      "model": "Aimgain GT",
+      "years": [
+        0,
+        0
+      ],
+      "category": "coupe",
+      "file": "nissan-aimgain-gt.glb",
+      "bytes": 3154436,
+      "paint": null,
+      "credit": {
+        "author": "vecarz",
+        "authorUrl": "https://sketchfab.com/heynic",
+        "license": "CC Attribution",
+        "sourceName": "Nissan Aimgain GT R35 Type2",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-77456704dc1b4d299a23fecdf341003c"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "Thank you [Outlaw Games\u2122] , tell me how setting the beautiful light!\nhttps://sketchfab.com/3d-models/2017-nissan-aimgain-gt-r35-gt-r-type-2-883cf78fadef4d698e50d2c1ae3f59c2",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/nissan-aimgain-gt.glb",
+    "sourceSha256": "69b83067c98cf1a5b261cd2a5b4895827d7f15d30093940a1ba512033853b024"
+  },
+  {
+    "car": {
+      "id": "nissan-cefiro-a31",
+      "brand": "Nissan",
+      "model": "Cefiro A31",
+      "years": [
+        0,
+        0
+      ],
+      "category": "coupe",
+      "file": "nissan-cefiro-a31.glb",
+      "bytes": 3111020,
+      "paint": {
+        "materials": [
+          "carpaint"
+        ],
+        "textured": false,
+        "confidence": "m\u00e9dia"
+      },
+      "credit": {
+        "author": "Asadawut.Kaewma",
+        "authorUrl": "https://sketchfab.com/Asadawut.Kaewma",
+        "license": "CC Attribution",
+        "sourceName": "Nissan Cefiro A31",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-539b2257cb504e53969a8c38c1a686cc"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "Nissan Cefiro A31\nModel By CarX Drift Racing 2",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/nissan-cefiro-a31.glb",
+    "sourceSha256": "c6a1252ec83748d91f0dd724bc4c77bc747a0b10a9f04054e98f47f48c8906d5"
+  },
+  {
+    "car": {
+      "id": "nissan-s15-drift",
+      "brand": "Nissan",
+      "model": "S15 Drift",
+      "years": [
+        0,
+        0
+      ],
+      "category": "coupe",
+      "file": "nissan-s15-drift.glb",
+      "bytes": 12023008,
+      "paint": {
+        "materials": [
+          "BODY"
+        ],
+        "textured": false,
+        "confidence": "m\u00e9dia"
+      },
+      "credit": {
+        "author": "autoNgraphic",
+        "authorUrl": "https://sketchfab.com/autoNgraphic",
+        "license": "CC Attribution",
+        "sourceName": "Nissan S15 Drift [FREE]",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-18348c1698f74d9db1497a791bd21a2f"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "Nissan S15 Silvia with Origin widebody fenders. Engine Sr20det. \n\nSpecial 300 followers realese, enjoy it.\n\nThere is version with Origin bonnet.",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/nissan-s15-drift.glb",
+    "sourceSha256": "3f60f4b2ed0f664ee1df3435cbdf97c01f73bf145035fafe9b3e36bf082dc101"
+  },
+  {
+    "car": {
+      "id": "nissan-silvia-s15",
+      "brand": "Nissan",
+      "model": "Silvia S15",
+      "years": [
+        0,
+        0
+      ],
+      "category": "coupe",
+      "file": "nissan-silvia-s15.glb",
+      "bytes": 5303812,
+      "paint": null,
+      "credit": {
+        "author": "Socksthecat",
+        "authorUrl": "https://sketchfab.com/Socksthecat",
+        "license": "CC Attribution",
+        "sourceName": "Nissan Silvia S15 Custom",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-2c3481e502c24d818d23a5eb2be8dac9"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/nissan-silvia-s15.glb",
+    "sourceSha256": "f4ed4aaa6774edc81d6b6e42ae0a03ac3b9eb0ff494aaaafefe687b0b19d41fe"
+  },
+  {
+    "car": {
+      "id": "nissan-skyline-gtr",
+      "brand": "Nissan",
+      "model": "Skyline GTR",
+      "years": [
+        0,
+        0
+      ],
+      "category": "sports",
+      "file": "nissan-skyline-gtr.glb",
+      "bytes": 4425096,
+      "paint": null,
+      "credit": {
+        "author": "Black Snow",
+        "authorUrl": "https://sketchfab.com/BlackSnow02",
+        "license": "CC Attribution",
+        "sourceName": "Nissan Skyline GTR r35",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-7b142ea3376e4811a326256c59bbc7a2"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/nissan-skyline-gtr.glb",
+    "sourceSha256": "49bf0a19309dce3f9674a8653c14aefdc246bd2d4ae0f52f87963eb8330c4af8"
+  },
+  {
+    "car": {
+      "id": "nissan-terra",
+      "brand": "Nissan",
+      "model": "Terra",
+      "years": [
+        2020,
+        2020
+      ],
+      "category": "coupe",
+      "file": "nissan-terra.glb",
+      "bytes": 3574892,
+      "paint": null,
+      "credit": {
+        "author": "Asadawut.Kaewma",
+        "authorUrl": "https://sketchfab.com/Asadawut.Kaewma",
+        "license": "CC Attribution",
+        "sourceName": "Nissan Terra 2020",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-46727bb6f4f84df5878bed50c58a70bf"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "Nissan Terra 2020\nModel From Nissan China",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/nissan-terra.glb",
+    "sourceSha256": "7a05f33bf8fa126ecaf1786fd22fc08e7e1ac763b23c2a3ec01e3c2249861c91"
+  },
+  {
+    "car": {
+      "id": "pagani-utopia",
+      "brand": "Pagani",
+      "model": "Utopia",
+      "years": [
+        2023,
+        2023
+      ],
+      "category": "coupe",
+      "file": "pagani-utopia.glb",
+      "bytes": 6761468,
+      "paint": null,
+      "credit": {
+        "author": "DFLEX",
+        "authorUrl": "https://sketchfab.com/DFLEX",
+        "license": "CC Attribution",
+        "sourceName": "Pagani Utopia 2023",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-a8a0264c80714a21b6f3e2ab4b538b0b"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "Pagani Utopia 2023 \n\nHIGH END / high poly / fully editable / rigable / interiour\n\nby getting this model you have full control on meshes and materials\n\nyou can even subdivide or unsubdivide all parts for having better look by your needs.\n\n**don\u2019t forget to like and share your thoughts!! \ud83c\udf7b .\n\nyou can support me by folowing me on instagram\n\nmy ig: igdflex",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/pagani-utopia.glb",
+    "sourceSha256": "5bcae421460a2197376f9022503a03c314ca989a0d088b653a312b0e27d3e4d4"
+  },
+  {
+    "car": {
+      "id": "porsche-718",
+      "brand": "Porsche",
+      "model": "718",
+      "years": [
+        2000,
+        2024
+      ],
+      "category": "sports",
+      "file": "porsche-718.glb",
+      "bytes": 2626320,
+      "paint": {
+        "materials": [
+          "Porsche_718CaymanGT4_2020Coloured_Material"
+        ],
+        "textured": true,
+        "confidence": "alta"
+      },
+      "credit": {
+        "author": "vecarz",
+        "authorUrl": "https://sketchfab.com/heynic",
+        "license": "CC Attribution",
+        "sourceName": "Porsche 718 Cayman GT4 2020 | www.vecarz.com",
+        "sourceUrl": "https://sketchfab.com/3d-models/0b210ff1ee3e4f75acf3fd31e6b1b298"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "Gallery showcase: https://www.vecarz.com/journal/museum-v1-2\n\n==================================================\n\nThank you [Ddiaz Design] for your incredible contribution to the community! You\u2019re an absolute legend and a pillar of our community. Folks, let\u2019s rally behind this and show our support by visiting their website and exhibition His website and cheer for [Ddiaz Design)]\u2019s hard work! \ud83c\udf89 here: https://sketchfab.com/3d-models/2017-porsche-718-cayman-982-c599b3aa82eb46f7ba3bb2d22bd9dfc6",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/porsche-718.glb",
+    "sourceSha256": "942e573c288b9dc6544aef35804614d1e6b770e76ce83be5f2f750a3a9067d58"
+  },
+  {
+    "car": {
+      "id": "porsche-911-c4s",
+      "brand": "Porsche",
+      "model": "911 C4S",
+      "years": [
+        2020,
+        2020
+      ],
+      "category": "sports",
+      "file": "porsche-911-c4s.glb",
+      "bytes": 1618524,
+      "paint": null,
+      "credit": {
+        "author": "JK3Dstudios",
+        "authorUrl": "https://sketchfab.com/JK3Dstudio",
+        "license": "CC Attribution",
+        "sourceName": "Porsche 911 C4S 2020 Aerokit",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-ee69c474a1cc4085944cde4cb7ae87db"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "Porsche 911 C4S 2020 Aerokit\n\nPlease Like and share my work\u2b50\ufe0f It's free.\nThank you.",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/porsche-911-c4s.glb",
+    "sourceSha256": "d5261b30a2c8d11d1f4ed1a2c9d8e8166980acfce1d89255f0818721ecaf11bf"
+  },
+  {
+    "car": {
+      "id": "porsche-911-gt2",
+      "brand": "Porsche",
+      "model": "911 GT2",
+      "years": [
+        0,
+        0
+      ],
+      "category": "sports",
+      "file": "porsche-911-gt2.glb",
+      "bytes": 6778268,
+      "paint": {
+        "materials": [
+          "Paint"
+        ],
+        "textured": false,
+        "confidence": "m\u00e9dia"
+      },
+      "credit": {
+        "author": "COOL601",
+        "authorUrl": "https://sketchfab.com/COOL601",
+        "license": "CC Attribution",
+        "sourceName": "Porsche 911 GT2 RS With Angle Eyes",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-41419345868e406eaec8a271e33de3c1"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "Porsche 911 GT2 RS\n\n\nThe Porsche 911 GT2 RS is not just any sports car - it's a masterpiece of engineering and speed. With over 700 horsepower and acceleration from 0 to 100 km/h in just 2.8 seconds, this powerful machine is built for those who demand nothing but the very best on the road. From its streamlined body to its advanced braking system and thrilling engine performance, every millimeter of this car is designed to pump adrenaline and race hearts. The Porsche 911 GT2 RS is a dream come true for car enthusiasts who crave speed and excitement.\n\n\n\nGet this free model!!!\n\n\n(rigged btw)\n\nShare your animations/images when ur using this model!!!\nAlways give credits!!!!",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/porsche-911-gt2.glb",
+    "sourceSha256": "81a4cb2920c08d2e0af7dbe957851e22b101a7a11784084ea2f5e84fa0a8ce3e"
+  },
+  {
+    "car": {
+      "id": "porsche-911-gt3",
+      "brand": "Porsche",
+      "model": "911 GT3",
+      "years": [
+        0,
+        0
+      ],
+      "category": "sports",
+      "file": "porsche-911-gt3.glb",
+      "bytes": 1310556,
+      "paint": null,
+      "credit": {
+        "author": "ChevroletSS",
+        "authorUrl": "https://sketchfab.com/ChevroletSS",
+        "license": "CC Attribution",
+        "sourceName": "Porsche 911 GT3",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-78d5c47ab2554c2592b7e499179a0792"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "The Porsche 911 GT3 is a high-performance homologation model of the Porsche 911 sports car. It is a line of high-performance models, which began with the 1973 911 Carrera RS. The GT3 has had a successful racing career in the one-make national and regional Porsche Carrera Cup and GT3 Cup Challenge series, as well as the international Porsche Supercup supporting the FIA Formula 1 World Championship.\n\n This is my first model on sketchfab, so the materials are not as good as they should be.\n \n The car comes with an interior and a detailed body.",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/porsche-911-gt3.glb",
+    "sourceSha256": "4058dc7aa3c2ad27f230c1ac77fe4bc253930aeacffeab48371360c557456718"
+  },
+  {
+    "car": {
+      "id": "porsche-911-rauh-welt",
+      "brand": "Porsche",
+      "model": "911 RAUH-Welt",
+      "years": [
+        0,
+        0
+      ],
+      "category": "sports",
+      "file": "porsche-911-rauh-welt.glb",
+      "bytes": 7727512,
+      "paint": null,
+      "credit": {
+        "author": "autoNgraphic",
+        "authorUrl": "https://sketchfab.com/autoNgraphic",
+        "license": "CC Attribution",
+        "sourceName": "Porsche 911 RAUH-Welt [FREE]",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-0e1f5e1c0ddc4c3f88b8484461146a79"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "RWB/RAUH-Welt BEGRIFF is a Porsche tuner located in Japan.\nRWB has combined Japanese and Euro tuning elements,\ncreating the distinct RWB style for Porsche chassis.\nStarting off as a small countryside body-shop in Chiba-Ken,\nRAUH-Welt 911\u2019s are now a common sight on both the streets and racing circuits of Japan.\n\nEnjoy it.",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/porsche-911-rauh-welt.glb",
+    "sourceSha256": "1bb963acfb69728cf8c9fbc50f180b3c9057b5889e72ff2d2d5a30a901e7d357"
+  },
+  {
+    "car": {
+      "id": "porsche-918-spyder",
+      "brand": "Porsche",
+      "model": "918 Spyder",
+      "years": [
+        2015,
+        2015
+      ],
+      "category": "sports",
+      "file": "porsche-918-spyder.glb",
+      "bytes": 4343032,
+      "paint": null,
+      "credit": {
+        "author": "vecarz",
+        "authorUrl": "https://sketchfab.com/heynic",
+        "license": "CC Attribution",
+        "sourceName": "Porsche 918 Spyder 2015 | www.vecarz.com",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-9fb9a088d0704a06ba69a8a6de100f10"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "Showcase Website: www.vecarz.com\nShowcase Room: https://www.vecarz.com/cars/porsche-918-spyder-2015\n\n=======================\n\nThanks for [DisneyCars] sharing this mod!\nDisneyCars: https://sketchfab.com/3d-models/2015-porsche-918-spyder-e98b813802aa4658a54953ca8fa0d604",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/porsche-918-spyder.glb",
+    "sourceSha256": "1020d512bf738acbb631bdb68fb2a19e66708481282b788f8f2970c1ce5f2ab9"
+  },
+  {
+    "car": {
+      "id": "porsche-959",
+      "brand": "Porsche",
+      "model": "959",
+      "years": [
+        0,
+        0
+      ],
+      "category": "coupe",
+      "file": "porsche-959.glb",
+      "bytes": 7668068,
+      "paint": {
+        "materials": [
+          "body"
+        ],
+        "textured": false,
+        "confidence": "m\u00e9dia"
+      },
+      "credit": {
+        "author": "Yakpower",
+        "authorUrl": "https://sketchfab.com/Alexios_Apokaukos",
+        "license": "CC Attribution-ShareAlike",
+        "sourceName": "Porsche 959",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-0530aa8fa4b74427a71c961a5bdd7087"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/b9ddc40b93e34cdca1fc152f39b9f375",
+      "label": "CC Attribution-ShareAlike",
+      "fullName": "Creative Commons Attribution-ShareAlike",
+      "requirements": "Author must be credited. Modified versions must have the same license. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by-sa/4.0/",
+      "slug": "by-sa"
+    },
+    "description": "Porsche 959 modeled in fusion 360 and textured in substance painter, using freely avalible automotive materials",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/porsche-959.glb",
+    "sourceSha256": "0e8a425d16209a47eec6adab104db5f86f5c05d08b5a3ad90db4f33a5967a955"
+  },
+  {
+    "car": {
+      "id": "porsche-991-gt2",
+      "brand": "Porsche",
+      "model": "991 GT2",
+      "years": [
+        0,
+        0
+      ],
+      "category": "sports",
+      "file": "porsche-991-gt2.glb",
+      "bytes": 9052412,
+      "paint": null,
+      "credit": {
+        "author": "vecarz",
+        "authorUrl": "https://sketchfab.com/heynic",
+        "license": "CC Attribution",
+        "sourceName": "Porsche 991 GT2 RS CS EVO | www.vecarz.com",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-98767072b9f94f8eb6c4512b7be891c4"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "Credit[MattDoesBlender]\n\nThis 3D models on this Sketchfab account are sourced from third\u2011party platforms such as Facebook, VK and MediaFire. Copyright belongs to the original automotive manufacturers and design companies (\u201cRightsholders\u201d).\n\nModels are provided solely for educational, research, and reference purposes; commercial use is strictly prohibited. Users must comply with applicable laws and Sketchfab community guidelines.\n\nThe account owner assumes no liability for any legal disputes or losses arising from unauthorized use. No warranties are made regarding the completeness, accuracy, or suitability of the models.\n\nIn no event shall the account owner be liable for any direct or indirect damages resulting from use of the models. If you are a Rightsholder or can provide proof of ownership, please contact us via Sketchfab message or email. Verified content will be removed promptly.",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/porsche-991-gt2.glb",
+    "sourceSha256": "5ab5f3c6f27dce91192876561440669cf6848e09b09c171acb0a818de1a219d7"
+  },
+  {
+    "car": {
+      "id": "porsche-taycan",
+      "brand": "Porsche",
+      "model": "Taycan",
+      "years": [
+        2000,
+        2024
+      ],
+      "category": "sedan",
+      "file": "porsche-taycan.glb",
+      "bytes": 2833028,
+      "paint": {
+        "materials": [
+          "por_taycan_paint"
+        ],
+        "textured": false,
+        "confidence": "alta"
+      },
+      "credit": {
+        "author": "VuckyZ",
+        "authorUrl": "https://sketchfab.com/VuckyZ123",
+        "license": "CC Attribution",
+        "sourceName": "Porsche Taycan Turbo S (Project Cars 3)",
+        "sourceUrl": "https://sketchfab.com/3d-models/05d7951204e84686ba12625c66d7a8b7"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "With HD interior.\n\nConverted with 3DSimED.\n\nIf you enjoy what I upload, you can [donate](http://ko-fi.com/vuckyz) for me aswell.\n\nhttp://ko-fi.com/vuckyz",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/porsche-taycan.glb",
+    "sourceSha256": "b193f5417b603166bff3c0b43b563238528710a0a55fb1e3bb1caa8145d4447f"
+  },
+  {
+    "car": {
+      "id": "renault-clio",
+      "brand": "Renault",
+      "model": "Clio",
+      "years": [
+        2000,
+        2024
+      ],
+      "category": "hatchback",
+      "file": "renault-clio.glb",
+      "bytes": 5092540,
+      "paint": {
+        "materials": [
+          "jante"
+        ],
+        "textured": true,
+        "confidence": "m\u00e9dia"
+      },
+      "credit": {
+        "author": "Mona x Supercars",
+        "authorUrl": "https://sketchfab.com/Car2022",
+        "license": "CC Attribution",
+        "sourceName": "Renault Clio Williams",
+        "sourceUrl": "https://sketchfab.com/3d-models/1dad7e4438c74f3b8bac1ab72acd78ed"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "Years: 1993\nClass: C\nWeight: Light\nBody Style: Hatchback\nSize: Compact",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/renault-clio.glb",
+    "sourceSha256": "1a307643dccc44b4fa5217143477487952b00ea94ca4fce664ebf42bc25255f1"
+  },
+  {
+    "car": {
+      "id": "renault-duster",
+      "brand": "Renault",
+      "model": "Duster",
+      "years": [
+        2011,
+        2024
+      ],
+      "category": "suv",
+      "file": "renault-duster.glb",
+      "bytes": 1330200,
+      "paint": {
+        "materials": [
+          "metal"
+        ],
+        "textured": false,
+        "confidence": "alta"
+      },
+      "credit": {
+        "author": "razor24",
+        "authorUrl": "https://sketchfab.com/razor24",
+        "license": "CC Attribution",
+        "sourceName": "2011 Dacia (Renault) Duster",
+        "sourceUrl": "https://sketchfab.com/3d-models/30bc2e09de66426bb67be72c95fa2476"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "Made in Blender 2.79",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/renault-duster.glb",
+    "sourceSha256": "96253aa272e8c20965400ddbe99608ec3ecc8268f63a2810197c0f1be891247b"
+  },
+  {
+    "car": {
+      "id": "rolls-royce-ghost",
+      "brand": "Rolls-Royce",
+      "model": "Ghost",
+      "years": [
+        0,
+        0
+      ],
+      "category": "coupe",
+      "file": "rolls-royce-ghost.glb",
+      "bytes": 3725456,
+      "paint": null,
+      "credit": {
+        "author": "Black Snow",
+        "authorUrl": "https://sketchfab.com/BlackSnow02",
+        "license": "CC Attribution",
+        "sourceName": "Rolls-Royce Ghost",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-4a590f4afa094fa8b407a14db77a63a8"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/rolls-royce-ghost.glb",
+    "sourceSha256": "b5278f12292bf7200fa049b20326c4b0b69ca5ea9131cf2b9fa1923b786ecae9"
+  },
+  {
+    "car": {
+      "id": "toyota-ae86-black",
+      "brand": "Toyota",
+      "model": "AE86 Black",
+      "years": [
+        0,
+        0
+      ],
+      "category": "coupe",
+      "file": "toyota-ae86-black.glb",
+      "bytes": 15219088,
+      "paint": null,
+      "credit": {
+        "author": "Martin Trafas",
+        "authorUrl": "https://sketchfab.com/TinoD2",
+        "license": "CC Attribution",
+        "sourceName": "Toyota AE86 Black Limited Kouki",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-80854ba302034431b517f523db328129"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "The AE86 series of the Toyota Corolla Levin and Toyota Sprinter Trueno are small, front-engine/rear-wheel-drive models within the front-engine/front-wheel-drive fifth generation Corolla (E80) range \u2014 marketed by Toyota from 1983 to 1987 in coup\u00e9 and liftback configurations.\nWidely popular for Showroom Stock, Group A, and Group N, Rally and Club racing, the cars' inherent qualities also earned the AE86 an early and enduring international prominence in the motorsport discipline of drifting. The AE86 was featured centrally in the popular, long-running Japanese manga and anime series titled Initial D (1995\u20132013) \u2014 as the main character's drift and tofu delivery car. In 2015, Road & Track called the AE86 \"a cult icon, inextricably interwoven with the earliest days of drifting.\n\nThe model includes interior, but I would recommend not to try and open doors because they are not modeled completely.",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/toyota-ae86-black.glb",
+    "sourceSha256": "84f794c7a4f9ce881711611d793a5b289d8ea7ebfa6f626cc43baf1a1bf99526"
+  },
+  {
+    "car": {
+      "id": "toyota-ae86-sprinter",
+      "brand": "Toyota",
+      "model": "AE86 Sprinter",
+      "years": [
+        0,
+        0
+      ],
+      "category": "van",
+      "file": "toyota-ae86-sprinter.glb",
+      "bytes": 13993556,
+      "paint": null,
+      "credit": {
+        "author": "Martin Trafas",
+        "authorUrl": "https://sketchfab.com/TinoD2",
+        "license": "CC Attribution",
+        "sourceName": "Toyota AE86 Sprinter Trueno Zenki",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-a5737bf3cc9b4179a6e5ebe173ff70d9"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "The AE86 series of the Toyota Corolla Levin and Toyota Sprinter Trueno are small, front-engine/rear-wheel-drive models within the front-engine/front-wheel-drive fifth generation Corolla (E80) range \u2014 marketed by Toyota from 1983 to 1987 in coup\u00e9 and liftback configurations. Widely popular for Showroom Stock, Group A, and Group N, Rally and Club racing, the cars\u2019 inherent qualities also earned the AE86 an early and enduring international prominence in the motorsport discipline of drifting. The AE86 was featured centrally in the popular, long-running Japanese manga and anime series titled Initial D (1995\u20132013) \u2014 as the main character\u2019s drift and tofu delivery car. In 2015, Road & Track called the AE86 \u201ca cult icon, inextricably interwoven with the earliest days of drifting.\n\nThe model includes interior, but I would recommend not to try and open doors because they are not modeled completely.",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/toyota-ae86-sprinter.glb",
+    "sourceSha256": "3f7c806fde097ccb2d90e0253a2d7655729e794833d5b98de2735c49027f7797"
+  },
+  {
+    "car": {
+      "id": "toyota-corolla-levin",
+      "brand": "Toyota",
+      "model": "Corolla Levin",
+      "years": [
+        0,
+        0
+      ],
+      "category": "coupe",
+      "file": "toyota-corolla-levin.glb",
+      "bytes": 11932312,
+      "paint": {
+        "materials": [
+          "body"
+        ],
+        "textured": false,
+        "confidence": "m\u00e9dia"
+      },
+      "credit": {
+        "author": "Nix_Dektara",
+        "authorUrl": "https://sketchfab.com/Nix_Dektara",
+        "license": "CC Attribution",
+        "sourceName": "Toyota Corolla Levin AE92 GT APEX Kouki",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-66dcbaf822ae47468655a604a83af703"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "Toyota Corolla Levin AE92 GT APEX Kouki\nModdeled by Nix_Dektara",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/toyota-corolla-levin.glb",
+    "sourceSha256": "ca07508a07d80e33b854c7d20be44b305a73c2be50c96915635551bfe0f6e53a"
+  },
+  {
+    "car": {
+      "id": "toyota-supra-mk4",
+      "brand": "Toyota",
+      "model": "Supra Mk4",
+      "years": [
+        0,
+        0
+      ],
+      "category": "coupe",
+      "file": "toyota-supra-mk4.glb",
+      "bytes": 2891208,
+      "paint": null,
+      "credit": {
+        "author": "Black Snow",
+        "authorUrl": "https://sketchfab.com/BlackSnow02",
+        "license": "CC Attribution",
+        "sourceName": "Toyota Supra mk4",
+        "sourceUrl": "https://sketchfab.com/3d-models/none-8bebdee25b774067929bb33e648533ac"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/toyota-supra-mk4.glb",
+    "sourceSha256": "8fd270671b28e4cdbb327e98f0c27e143e5a71b745c689e09a2c5f57a4e2bcf8"
+  },
+  {
+    "car": {
+      "id": "volkswagen-gol",
+      "brand": "Volkswagen",
+      "model": "Gol",
+      "years": [
+        2000,
+        2024
+      ],
+      "category": "hatchback",
+      "file": "volkswagen-gol.glb",
+      "bytes": 1985744,
+      "paint": {
+        "materials": [
+          "Golf1kuzov"
+        ],
+        "textured": false,
+        "confidence": "alta"
+      },
+      "credit": {
+        "author": "Black Snow",
+        "authorUrl": "https://sketchfab.com/BlackSnow02",
+        "license": "CC Attribution",
+        "sourceName": "Volkswagen Golf mk1 [Tuning]",
+        "sourceUrl": "https://sketchfab.com/3d-models/191d4905f1274cee8539a39a0a672fd9"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/volkswagen-gol.glb",
+    "sourceSha256": "d26af1a8ce7d6b6737df7ce71b4bb55a7116759cf612edac5fb51cc835386c41"
+  },
+  {
+    "car": {
+      "id": "vw-voyage",
+      "brand": "Volkswagen",
+      "model": "Voyage",
+      "years": [
+        1981,
+        2024
+      ],
+      "category": "sedan",
+      "file": "vw-voyage.glb",
+      "bytes": 5053656,
+      "paint": {
+        "materials": [
+          "body"
+        ],
+        "textured": false,
+        "confidence": "alta"
+      },
+      "credit": {
+        "author": "lael.eugenio",
+        "authorUrl": "https://sketchfab.com/lael.eugenio",
+        "license": "CC Attribution",
+        "sourceName": "Voyage GL 1.8",
+        "sourceUrl": "https://sketchfab.com/3d-models/d5527fb1aff24ba0bc785370ffb14fba"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "Modelagem Volksvagem Voyage ano 1992 modelo GL 2 portas motor 1.8\nprimeiro modelo com total modelagem externa e interna feitos por mim.\n\ncontem erros, ainda estou aperfei\u00e7eando a modelagem...\n\nDesde ja muito obrigado\n\nPagina no Face \n\nhttps://www.facebook.com/LW3Dmodseedits",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/vw-voyage.glb",
+    "sourceSha256": "1e4913af7a593044cedae7b94dc7f32645119b1f0ebead92dac579c8e458bb93"
+  },
+  {
+    "car": {
+      "id": "generico-sedan-80",
+      "brand": "Gen\u00e9rico",
+      "model": "Sed\u00e3 anos 80",
+      "years": [
+        2000,
+        2024
+      ],
+      "category": "sedan",
+      "file": "generico-sedan-80.glb",
+      "bytes": 6929028,
+      "paint": {
+        "materials": [
+          "Fairheaven_LT80_Bodymat"
+        ],
+        "textured": false,
+        "confidence": "alta"
+      },
+      "credit": {
+        "author": "Daniel Zhabotinsky",
+        "authorUrl": "https://sketchfab.com/DanielZhabotinsky",
+        "license": "CC Attribution",
+        "sourceName": "Fairheaven LT '80 - Low poly model",
+        "sourceUrl": "https://sketchfab.com/3d-models/e2678da920cc4be68dbc193727919ffb"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "The inspiration for it was a generic CAFE downsized American sedans.\n\nI unconditionally give you permission to use this model at your discretion, modify it or implement it into a digital product. Use the model as you see fit and have a nice day.\n\nYou can also choose authentic period colors from the table that I have compiled for models of this type - take them with a color picker directly from the picture: https://www.behance.net/gallery/217757079/Muscle-cars-color-matching-Game-models",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/generico-sedan-80.glb",
+    "sourceSha256": "459f510d1d637272d3363beccca0217ec7907228eaca93da26efcbe24cd4b9fa"
+  },
+  {
+    "car": {
+      "id": "generico-van-92",
+      "brand": "Gen\u00e9rico",
+      "model": "Van anos 90",
+      "years": [
+        2000,
+        2024
+      ],
+      "category": "van",
+      "file": "generico-van-92.glb",
+      "bytes": 7027664,
+      "paint": {
+        "materials": [
+          "Shvan92_bodymat"
+        ],
+        "textured": false,
+        "confidence": "alta"
+      },
+      "credit": {
+        "author": "Daniel Zhabotinsky",
+        "authorUrl": "https://sketchfab.com/DanielZhabotinsky",
+        "license": "CC Attribution",
+        "sourceName": "Shvan '92 - Low poly model",
+        "sourceUrl": "https://sketchfab.com/3d-models/09d718c9cf72401b8534d265a06a803f"
+      }
+    },
+    "accepted": true,
+    "sourceLicense": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "description": "Model of a Generic panel van, inspired by all beloved movie star - Old black American van.\n\nI unconditionally give you permission to use this model at your discretion, modify it or implement it into a digital product. Use the model as you see fit and have a nice day.",
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/0a56de377f02f2574d781f6920fed08d6423ec2f/assets/generico-van-92.glb",
+    "sourceSha256": "f50596dff3b238d4d5a38873bb68ab6a5121a5e7250099070a883f8e59518580"
+  }
+]

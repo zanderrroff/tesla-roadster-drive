@@ -15,9 +15,24 @@
       "author": "Lucide contributors",
       "url": "https://lucide.dev",
       "license": "ISC"
+    },
+    {
+      "author": "Kenney",
+      "url": "https://kenney.nl/assets/ui-pack",
+      "license": "CC0-1.0"
     }
   ],
   "files": [
+    {
+      "file": "GUI/arrow-down.png",
+      "bytes": 831,
+      "sha256": "bf473be2690f9374ed523bfb3ebc00f812eba7c25f1f38fcaa5fa6c43cb46ea3"
+    },
+    {
+      "file": "GUI/arrow-up.png",
+      "bytes": 834,
+      "sha256": "17b03ab5dd3c8b86812669a99de4225a2b5ff9b338a8f77dfc3255b84ec974f1"
+    },
     {
       "file": "GUI/brake.png",
       "bytes": 69331,
@@ -37,6 +52,21 @@
       "file": "GUI/camera.png",
       "bytes": 1944,
       "sha256": "f7d5ef17f2b59efdf6e147a77307ba7ebba0177bc550fd07857fb208b95b23fe"
+    },
+    {
+      "file": "GUI/car-front.png",
+      "bytes": 1673,
+      "sha256": "28e7243d1dd566d1ee5f171129f91e4a8fa6f063be1aca10f587611140ed39b2"
+    },
+    {
+      "file": "GUI/chevrons-up.png",
+      "bytes": 876,
+      "sha256": "70b5ecee04c0042ed1a2503908fe87826f4174a6c3fc3d087763e1d43e97d024"
+    },
+    {
+      "file": "GUI/footprints.png",
+      "bytes": 2718,
+      "sha256": "497f27ee5f5c56dfbb1103a310284a788af2faa9d450fffa150267ecfd1655a1"
     },
     {
       "file": "GUI/garage.png",
@@ -59,6 +89,31 @@
       "sha256": "d3dffbd1f151288424844b29e24a1be47a1fc67b13d818fa9bbaae7381bd9bee"
     },
     {
+      "file": "GUI/log-out.png",
+      "bytes": 1055,
+      "sha256": "173146324ec6d845fc44c7412906ff82123c47a16ae5ca6b50d3ed5dd2a3b1f2"
+    },
+    {
+      "file": "GUI/map.png",
+      "bytes": 1326,
+      "sha256": "961857383a44fd223121ae84f41496f199020a13bf61cc0a05fe5597beb413d1"
+    },
+    {
+      "file": "GUI/menu-button.png",
+      "bytes": 660,
+      "sha256": "a1eff64c4b5dd37d56caf3d5f55474d5ce6475576731f9dc2418ccea9307ff3a"
+    },
+    {
+      "file": "GUI/move-horizontal.png",
+      "bytes": 671,
+      "sha256": "8bb570b69ac0244136e6aa8634f17be70437e43a4a938ee91a86ff0ba3a6a540"
+    },
+    {
+      "file": "GUI/panel.png",
+      "bytes": 660,
+      "sha256": "a1eff64c4b5dd37d56caf3d5f55474d5ce6475576731f9dc2418ccea9307ff3a"
+    },
+    {
       "file": "GUI/pause.png",
       "bytes": 209,
       "sha256": "8a2f4999746234cb16e49c798b27a3aa890965446e6bdc0c9112e01286940469"
@@ -72,6 +127,16 @@
       "file": "GUI/right.png",
       "bytes": 468,
       "sha256": "71d1420339b89264c107c045fea72bb7c0f5ff1192c47cedc275ad640be3b723"
+    },
+    {
+      "file": "GUI/smile.png",
+      "bytes": 2923,
+      "sha256": "8630ed52908d6424d3ef5e97e1b176f1703e1f89e1a59de0c235c07930308445"
+    },
+    {
+      "file": "GUI/user-round.png",
+      "bytes": 2202,
+      "sha256": "467387f9e959d5011b191677d36403434976df8c8f23cfed383d8a2760d91772"
     },
     {
       "file": "GUI/wheel.png",

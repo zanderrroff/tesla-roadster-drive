@@ -2,54 +2,54 @@
   {
     "source": "public/models/roadster-mobile.glb",
     "file": "Vehicles/roadster.gltf",
-    "bytes": 3172454,
+    "bytes": 3175889,
     "triangles": 133574,
     "files": [
       {
         "file": "Vehicles/roadster.gltf",
-        "bytes": 55738,
-        "sha256": "428bff9b7713cd2a90e8be41c9ba1e408ef8926c6350dfa4bf01dd3a7362d134"
+        "bytes": 59169,
+        "sha256": "95506e796b9a03608168a364f42ddd03728a14287b239843c20f9115037f1874"
       },
       {
         "file": "Vehicles/roadster-data-0.bin",
-        "bytes": 3116716,
-        "sha256": "aa281e4fce41c29bb1584c653905372b2d1c6718bcbb3810c54fe9f82c919528"
+        "bytes": 3116720,
+        "sha256": "9acffe9e05fb887db14eda873cefa561856f6da6e97eeac3e8be168ff1927ef9"
       }
     ]
   },
   {
     "source": "public/models/roadster-high.glb",
     "file": "Vehicles/roadster-high.gltf",
-    "bytes": 7197528,
+    "bytes": 7200964,
     "triangles": 344098,
     "files": [
       {
         "file": "Vehicles/roadster-high.gltf",
-        "bytes": 55868,
-        "sha256": "c2f5e2322a88bbaab5a613c36623c3778d8c64e4359f6f3f8f21f24b16db3404"
+        "bytes": 59304,
+        "sha256": "56906781a558e99881bed8e48f1e823459e9d524f71f89be5fa9bdc188d4e5cd"
       },
       {
         "file": "Vehicles/roadster-high-data-0.bin",
         "bytes": 7141660,
-        "sha256": "388288a9f20e45100046be5e6b3ebe39bf94f9bbe0805437188f6aa2f8372fdb"
+        "sha256": "8e6c3fb6066fbf5f4663ed9979c3f4c8ae8d8d1cf82fc8d2ac1c25d9b779e480"
       }
     ]
   },
   {
     "source": "public/models/fleet/bmw-m3-e30.glb",
     "file": "Vehicles/bmw-m3-e30.gltf",
-    "bytes": 15615209,
-    "triangles": 52728,
+    "bytes": 15640110,
+    "triangles": 53622,
     "files": [
       {
         "file": "Vehicles/bmw-m3-e30.gltf",
-        "bytes": 48804,
-        "sha256": "cb38e66569545604695ad813f26e130babdea82777be3b7e2d99f278ab7474b2"
+        "bytes": 54201,
+        "sha256": "918dfe536afd30a04abab5f7fd65597f8bc23be00bc0f94ea3ba32d5f4f6ccf4"
       },
       {
         "file": "Vehicles/bmw-m3-e30-data-0.bin",
-        "bytes": 2256168,
-        "sha256": "ca0d389c7f738e0bca15140b98770dca06a0f6f09a38a44b194f60dc4179079e"
+        "bytes": 2275672,
+        "sha256": "9870f586647ae865f192b89942af222535398db5266791c76042559a4f929a9e"
       },
       {
         "file": "Vehicles/bmw-m3-e30-linear-0.png",
@@ -146,36 +146,36 @@
   {
     "source": "public/models/fleet/mercedes-benz-amg-gt.glb",
     "file": "Vehicles/mercedes-benz-amg-gt.gltf",
-    "bytes": 5424765,
+    "bytes": 5394228,
     "triangles": 142742,
     "files": [
       {
         "file": "Vehicles/mercedes-benz-amg-gt.gltf",
-        "bytes": 52061,
-        "sha256": "becc68dafc21e7d941641f7c53bde4f847c118d72473700914e9e019610fdb21"
+        "bytes": 56584,
+        "sha256": "a908b66b645fd11d8a17c8c94d0920fdf567e46c9df1c688f696d33e3e0759cc"
       },
       {
         "file": "Vehicles/mercedes-benz-amg-gt-data-0.bin",
-        "bytes": 5372704,
-        "sha256": "463cb7ed9b1da845c02cfaf917c81cfb3ce822a7aa50b773e5d4edb794ae20f4"
+        "bytes": 5337644,
+        "sha256": "a18745b4c0f089f9a44cc746f47bc19ec04b2b09fefd24e35bc7003a831bc646"
       }
     ]
   },
   {
     "source": "public/models/fleet/mercedes-benz-190e-evo.glb",
     "file": "Vehicles/mercedes-benz-190e-evo.gltf",
-    "bytes": 3618182,
+    "bytes": 3542746,
     "triangles": 93596,
     "files": [
       {
         "file": "Vehicles/mercedes-benz-190e-evo.gltf",
-        "bytes": 66480,
-        "sha256": "ee0a53eca04b68ccf4ec033dc43ed14a2048d0caa11ce3a48cfb7a6892de0367"
+        "bytes": 79924,
+        "sha256": "e90389b472dd75d09acbba8095ec554b2c87ac600b1dafe27531a9e05bbac2c8"
       },
       {
         "file": "Vehicles/mercedes-benz-190e-evo-data-0.bin",
-        "bytes": 3167056,
-        "sha256": "80eb662f10d9fcc2dfa1b7fcdb28bdfff92f8343581f27d2af3942ad9141e1e6"
+        "bytes": 3078176,
+        "sha256": "1ac7bef3cb3db060c8cf246c7618258c0abf08059be4e6d333187bcab38437b4"
       },
       {
         "file": "Vehicles/mercedes-benz-190e-evo-color-1.png",
@@ -212,18 +212,18 @@
   {
     "source": "public/models/fleet/nissan-skyline-gt-r.glb",
     "file": "Vehicles/nissan-skyline-gt-r.gltf",
-    "bytes": 10208150,
-    "triangles": 101587,
+    "bytes": 10202746,
+    "triangles": 102803,
     "files": [
       {
         "file": "Vehicles/nissan-skyline-gt-r.gltf",
-        "bytes": 46423,
-        "sha256": "d844b0f424bc4870a463697edec03831234a9451b8c5e2e9e3f786fb7fb58363"
+        "bytes": 49171,
+        "sha256": "61c2cbe33df461788e57c4b523d69141e0ab9618f6da05752ae9fc951b73c5ba"
       },
       {
         "file": "Vehicles/nissan-skyline-gt-r-data-0.bin",
-        "bytes": 3114348,
-        "sha256": "86898d1b12474db7fabd3f1ea7059241389b081295cdade38e18f616126626f5"
+        "bytes": 3106196,
+        "sha256": "849e6da9b895abcde312995c29bcd92f564ef78b966839dc42a7c8e7d85c7845"
       },
       {
         "file": "Vehicles/nissan-skyline-gt-r-color-0.png",
@@ -350,18 +350,18 @@
   {
     "source": "public/models/fleet/porsche-911-carrera.glb",
     "file": "Vehicles/porsche-911-carrera.gltf",
-    "bytes": 6146226,
+    "bytes": 6129445,
     "triangles": 144426,
     "files": [
       {
         "file": "Vehicles/porsche-911-carrera.gltf",
-        "bytes": 39327,
-        "sha256": "a4222f7408202f5ec6d09f075b52112867356bf2f9e176363e7fc6e4cb9178dd"
+        "bytes": 45074,
+        "sha256": "379e9583bcaabbba5679383ce1f3ec6d3f1d7e1a308a3f8d55c325cac2b01eda"
       },
       {
         "file": "Vehicles/porsche-911-carrera-data-0.bin",
-        "bytes": 3487980,
-        "sha256": "5ad89c0ccd6fdf7ebc27b5a9eba810b6b5e883920260a6f4a825b584b64bf758"
+        "bytes": 3465452,
+        "sha256": "da7b35e50d4c7376dcc7c1428d97e1119f13ee98eecd648cf57593a3d8573dd0"
       },
       {
         "file": "Vehicles/porsche-911-carrera-linear-0.png",
@@ -408,18 +408,18 @@
   {
     "source": "public/models/fleet/ferrari-458.glb",
     "file": "Vehicles/ferrari-458.gltf",
-    "bytes": 4356735,
+    "bytes": 4089173,
     "triangles": 141881,
     "files": [
       {
         "file": "Vehicles/ferrari-458.gltf",
-        "bytes": 51291,
-        "sha256": "92195d7ec3ae7bcc89ce1dbd3473dcf372961ec58dccaf465da31064cd4b9f51"
+        "bytes": 59673,
+        "sha256": "3a6a9124af94e726b1797610eaf5cb9231abdd6ee104582bf00ae497ccfec415"
       },
       {
         "file": "Vehicles/ferrari-458-data-0.bin",
-        "bytes": 4305444,
-        "sha256": "c535bbea5b71e19b372fb2ba1fd2c1b0454d99615e2e92f5e188ba8c98664f2d"
+        "bytes": 4029500,
+        "sha256": "e29df5e406a79d827b2ccd2d520712b070c5aa1c0ae1062e45cb8eda0e77178b"
       }
     ]
   },

@@ -12,9 +12,9 @@ public sealed class VehicleTests {
         DriveState s=default;DriveNative.MCReset(ref s);var input=new DriveInput{throttle=1,requestedGear=1};
         DriveNative.MCStep(ref s,ref input,1f/120,1,out var output);Assert.Greater(output.driveTorque,0);
     }
-    [Test] public void CatalogContainsSevenCompleteCars() {
-        var cars=Catalog().vehicles;Assert.AreEqual(7,cars.Length);Assert.AreEqual(7,cars.Select(c=>c.id).Distinct().Count());
-        foreach(var c in cars) {Assert.AreEqual(4,c.wheelCenters.Length);Assert.Greater(c.wheelRadius,.25f);Assert.Less(c.wheelRadius,.4f);Assert.IsNotNull(Resources.Load<GameObject>(c.resource));}
+    [Test] public void CatalogContainsAttributedDriveableCars() {
+        var cars=Catalog().vehicles;Assert.GreaterOrEqual(cars.Length,80);Assert.AreEqual(cars.Length,cars.Select(c=>c.id).Distinct().Count());
+        foreach(var c in cars) {Assert.AreEqual(4,c.wheelCenters.Length);Assert.Greater(c.wheelRadius,.25f);Assert.Less(c.wheelRadius,.48f);if(string.IsNullOrEmpty(c.modelUrl))Assert.IsNotNull(Resources.Load<GameObject>(c.resource));else{Assert.IsTrue(c.hasInterior);Assert.AreEqual(64,c.modelSha256.Length);Assert.IsTrue(c.modelUrl.StartsWith("https://github.com/"));}}
     }
     [TestCase("roadster"),TestCase("bmw-m3-e30"),TestCase("mercedes-benz-amg-gt"),TestCase("mercedes-benz-190e-evo"),TestCase("nissan-skyline-gt-r"),TestCase("porsche-911-carrera"),TestCase("ferrari-458")]
     public void EveryDriverFitsCabinAndFollowsSteering(string id) {
@@ -43,7 +43,7 @@ public sealed class VehicleTests {
                     Assert.GreaterOrEqual(min,spec.floorY-.008f,spec.id+" feet/floor");Assert.LessOrEqual(max,spec.roofY+.004f,spec.id+" head/roof");
                     foreach(string side in new[]{"L","R"}){
                         var hand=Nodes.Find(driver.transform,"Bip01_"+side+"_Hand");float sign=side=="L"?-1:1;
-                        var target=steering.TransformPoint(DriverRig.GripWristLocal(sign,spec.steeringRadius,spec.driverScale));
+                        var target=driver.WristTarget(sign);
                         Assert.Less(Vector3.Distance(hand.position,target),.008f,spec.id+" wrist anchor");
                         var finger=Nodes.Find(driver.transform,"Bip01_"+side+"_Finger21");var contact=steering.InverseTransformPoint(finger.position);
                         float distance=Mathf.Sqrt(Mathf.Pow(new Vector2(contact.x,contact.y).magnitude-spec.steeringRadius,2)+contact.z*contact.z);

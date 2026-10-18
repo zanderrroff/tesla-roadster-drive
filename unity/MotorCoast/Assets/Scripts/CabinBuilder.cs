@@ -29,13 +29,19 @@ public static class CabinBuilder {
                 for(int k=0;k<4;k++)Box(new Vector3(.002f,.045f,.002f),new Vector3(x+side*.15f,-.06f+k*.07f,-.329f),insert,-7.4f);
             }
         }
+        var cabinRoot=root;var openingDoor=Nodes.Find(chassis,"Door_Driver");
+        var innerDoor=openingDoor?new GameObject("Door upholstery").transform:null;
+        if(innerDoor){innerDoor.SetParent(cabinRoot,false);}
         foreach(float s in new[]{-1f,1f}) {
+            if(innerDoor&&Mathf.Sign(spec.driverPosition.x)==s)root=innerDoor;
             Box(new Vector3(.065f,.42f,1.33f),new Vector3(s*.66f,-.07f,-.035f),black);
             Box(new Vector3(.07f,.16f,.85f),new Vector3(s*.621f,-.025f,-.03f),cream);
             Box(new Vector3(.07f,.006f,1.10f),new Vector3(s*.624f,.12f,.02f),led);
             Box(new Vector3(.085f,.055f,.54f),new Vector3(s*.60f,-.045f,-.09f),black);
             Box(new Vector3(.02f,.025f,.14f),new Vector3(s*.574f,.07f,.2f),metal);
+            root=cabinRoot;
         }
+        if(innerDoor){Geometry.Combine(innerDoor);innerDoor.SetParent(openingDoor,true);}
         Box(new Vector3(1.30f,.15f,.34f),new Vector3(0,.12f,.57f),black);
         Box(new Vector3(1.27f,.04f,.28f),new Vector3(0,.207f,.55f),carbon);
         Box(new Vector3(1.17f,.006f,.02f),new Vector3(0,.11f,.39f),led);
@@ -77,13 +83,19 @@ public static class Geometry {
     static void Remove(Object o){if(Application.isPlaying)Object.Destroy(o);else Object.DestroyImmediate(o);}
     public static Material Lit(string name,Color color,float metallic=0,float smoothness=.3f) {
         var template=Resources.Load<Material>("Render/RuntimeLit");
-        var m=template?new Material(template):new Material(Shader.Find("Universal Render Pipeline/Lit"));m.name=name;m.enableInstancing=true;m.SetColor("_BaseColor",color);m.SetFloat("_Metallic",metallic);m.SetFloat("_Smoothness",smoothness);return m;
+        var m=RuntimeResources.Own(template?new Material(template):new Material(Shader.Find("Universal Render Pipeline/Lit")));m.name=name;m.enableInstancing=true;m.SetColor("_BaseColor",color);m.SetFloat("_Metallic",metallic);m.SetFloat("_Smoothness",smoothness);return m;
     }
     public static GameObject MeshObject(string name,Transform parent,Mesh mesh,Material material) {
+        RuntimeResources.Own(mesh);
         var o=new GameObject(name,typeof(MeshFilter),typeof(MeshRenderer));o.transform.SetParent(parent,false);o.GetComponent<MeshFilter>().sharedMesh=mesh;o.GetComponent<MeshRenderer>().sharedMaterial=material;return o;
     }
     public static GameObject Box(string name,Transform parent,Vector3 size,Vector3 position,Material material,bool collide=false) {
         var o=GameObject.CreatePrimitive(PrimitiveType.Cube);o.name=name;o.transform.SetParent(parent,false);o.transform.localPosition=position;o.transform.localScale=size;o.GetComponent<Renderer>().sharedMaterial=material;
+        if(material.name.StartsWith("Scanned ")){
+            var mesh=RuntimeResources.Own(Object.Instantiate(o.GetComponent<MeshFilter>().sharedMesh));mesh.name="Metre-scaled "+name;var uv=new Vector2[mesh.vertexCount];var vertices=mesh.vertices;var normals=mesh.normals;
+            for(int i=0;i<vertices.Length;i++){var p=Vector3.Scale(vertices[i],size);var n=normals[i];uv[i]=Mathf.Abs(n.y)>.5f?new Vector2(p.x,p.z)/3:Mathf.Abs(n.x)>.5f?new Vector2(p.z,p.y)/3:new Vector2(p.x,p.y)/3;}
+            mesh.uv=uv;mesh.RecalculateTangents();o.GetComponent<MeshFilter>().sharedMesh=mesh;
+        }
         if(!collide){o.GetComponent<Collider>().enabled=false;Remove(o.GetComponent<Collider>());}return o;
     }
     public static GameObject RoundedBox(Transform parent,Vector3 size,Vector3 position,Material material,float radius) {
@@ -108,7 +120,8 @@ public static class Geometry {
         for(int i=0;i<rings;i++)for(int j=0;j<sides;j++){int a=i*(sides+1)+j;ix.AddRange(new[]{a,a+sides+1,a+1,a+1,a+sides+1,a+sides+2});}
         var mesh=new Mesh{name="Steering rim"};mesh.SetVertices(v);mesh.SetNormals(n);mesh.SetUVs(0,uv);mesh.SetTriangles(ix,0);mesh.RecalculateBounds();return mesh;
     }
-    public static void Combine(Transform root) {
+    public static void CombineVisuals(Transform root)=>Combine(root,true);
+    public static void Combine(Transform root,bool preserveColliders=false) {
         var groups=new Dictionary<Material,List<CombineInstance>>();var sources=new List<GameObject>();
         foreach(var mf in root.GetComponentsInChildren<MeshFilter>()) {
             if(mf.transform==root)continue;var r=mf.GetComponent<MeshRenderer>();if(!r||r.sharedMaterials.Length!=1)continue;
@@ -116,7 +129,7 @@ public static class Geometry {
             list.Add(new CombineInstance{mesh=mf.sharedMesh,transform=root.worldToLocalMatrix*mf.transform.localToWorldMatrix});sources.Add(mf.gameObject);
         }
         foreach(var item in groups){var mesh=new Mesh{name=item.Key.name+" batch",indexFormat=UnityEngine.Rendering.IndexFormat.UInt32};mesh.CombineMeshes(item.Value.ToArray(),true,true);MeshObject(mesh.name,root,mesh,item.Key);}
-        foreach(var source in sources){source.SetActive(false);Remove(source);}
+        foreach(var source in sources){if(preserveColliders&&source.GetComponent<Collider>()&&source.GetComponent<Collider>().enabled){Remove(source.GetComponent<MeshRenderer>());Remove(source.GetComponent<MeshFilter>());}else{source.SetActive(false);Remove(source);}}
     }
 }
 }

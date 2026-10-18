@@ -23,8 +23,9 @@ public static class NativePreview {
     public static void Capture(){
         Directory.CreateDirectory(Path.GetFullPath("../artifacts/preview"));
         SessionState.SetInt(Pending+"Vehicle",PlayerPrefs.GetInt("vehicle",0));
-        SessionState.SetInt(Pending+"Quality",PlayerPrefs.GetInt("quality",1));
-        PlayerPrefs.SetInt("vehicle",0);PlayerPrefs.SetInt("quality",2);
+        SessionState.SetInt(Pending+"Quality",PlayerPrefs.GetInt("graphicsPreset",0));
+        SessionState.SetInt(Pending+"Map",PlayerPrefs.GetInt("map",0));
+        PlayerPrefs.SetInt("vehicle",0);PlayerPrefs.SetInt("graphicsPreset",1);PlayerPrefs.SetInt("map",0);
         UnityEditor.SceneManagement.EditorSceneManager.OpenScene("Assets/Scenes/Coast.unity");
         SessionState.SetBool(Pending,true);deadline=EditorApplication.timeSinceStartup+900;
         EditorApplication.update-=Tick;EditorApplication.update+=Tick;
@@ -67,13 +68,16 @@ public static class NativePreview {
                 Time.timeScale=0;game.Camera.enabled=false;
                 foreach(var c in UnityEngine.Object.FindObjectsByType<Canvas>(FindObjectsSortMode.None))if(c.renderMode!=RenderMode.WorldSpace)c.enabled=false;
                 Render(game,"bmw-exterior",new Vector3(4,1.8f,5.5f),new Vector3(0,.25f,0),52);
+                var sun=RenderSettings.sun;sun.shadows=LightShadows.None;Render(game,"bmw-without-shadows",new Vector3(4,1.8f,5.5f),new Vector3(0,.25f,0),52);sun.shadows=LightShadows.Soft;
+                var pipeline=(UniversalRenderPipelineAsset)QualitySettings.renderPipeline;pipeline.shadowDepthBias=1;pipeline.shadowNormalBias=.6f;sun.shadowBias=1;sun.shadowNormalBias=.6f;
+                Render(game,"bmw-shadow-bias",new Vector3(4,1.8f,5.5f),new Vector3(0,.25f,0),52);
                 Render(game,"bmw-cabin",new Vector3(.6f,.7f,-.8f),new Vector3(-.3f,.1f,.6f),65);
                 File.WriteAllText(Path.GetFullPath("../artifacts/preview/host.txt"),"Unity "+Application.unityVersion+"\n"+SystemInfo.operatingSystem+"\n"+SystemInfo.processorType+"\n"+SystemInfo.graphicsDeviceName+" / "+SystemInfo.graphicsDeviceType+"\nEditor render at 1280 x 720; this is not a physical iPhone test.\n");
                 Finish(0);
             }
         }catch(Exception e){Debug.LogException(e);Finish(1);}
     }
-    static void Render(MotorGame game,string name,Vector3 offset,Vector3 lookAt,float fov){
+    internal static void Render(MotorGame game,string name,Vector3 offset,Vector3 lookAt,float fov){
         var camera=game.Camera.GetComponent<Camera>();var car=game.Car.transform;
         camera.transform.SetPositionAndRotation(car.TransformPoint(offset),Quaternion.LookRotation(car.TransformPoint(lookAt)-car.TransformPoint(offset),Vector3.up));
         camera.fieldOfView=fov;camera.nearClipPlane=.025f;camera.aspect=16f/9;
@@ -88,6 +92,6 @@ public static class NativePreview {
         RenderTexture.active=previous;RenderTexture.ReleaseTemporary(resolved);UnityEngine.Object.DestroyImmediate(pixels);target.Release();UnityEngine.Object.DestroyImmediate(target);
         Debug.Log("Native preview captured: "+name);
     }
-    static void Finish(int code){PlayerPrefs.SetInt("vehicle",SessionState.GetInt(Pending+"Vehicle",0));PlayerPrefs.SetInt("quality",SessionState.GetInt(Pending+"Quality",1));PlayerPrefs.Save();SessionState.SetBool(Pending,false);EditorApplication.update-=Tick;Application.logMessageReceived-=OnLog;EditorApplication.Exit(code);}
+    static void Finish(int code){PlayerPrefs.SetInt("vehicle",SessionState.GetInt(Pending+"Vehicle",0));PlayerPrefs.SetInt("graphicsPreset",SessionState.GetInt(Pending+"Quality",0));PlayerPrefs.SetInt("map",SessionState.GetInt(Pending+"Map",0));PlayerPrefs.Save();SessionState.SetBool(Pending,false);EditorApplication.update-=Tick;Application.logMessageReceived-=OnLog;EditorApplication.Exit(code);}
 }
 }

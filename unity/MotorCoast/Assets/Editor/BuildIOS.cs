@@ -14,8 +14,8 @@ public static class BuildIOS {
     [MenuItem("Motor Coast/1. Prepare project")]
     public static void Prepare() {
         Directory.CreateDirectory("Assets/Resources/Render");Directory.CreateDirectory("Assets/Scenes");
-        string[] names={"Performance","Balanced","Detail"};
-        for(int q=0;q<3;q++) {
+        string[] names={"Standard","Ultra"};
+        for(int q=0;q<2;q++) {
             string path="Assets/Resources/Render/"+names[q]+".asset";
             var pipeline=AssetDatabase.LoadAssetAtPath<UniversalRenderPipelineAsset>(path);
             if(!pipeline) {
@@ -25,13 +25,13 @@ public static class BuildIOS {
                 ResourceReloader.ReloadAllNullIn(renderer,UniversalRenderPipelineAsset.packagePath);
                 pipeline=UniversalRenderPipelineAsset.Create(renderer);AssetDatabase.CreateAsset(pipeline,path);
             }
-            pipeline.supportsHDR=q>0;pipeline.msaaSampleCount=q==0?2:4;pipeline.renderScale=1;
-            var settings=new SerializedObject(pipeline);settings.FindProperty("m_MainLightShadowsSupported").boolValue=true;settings.FindProperty("m_SoftShadowsSupported").boolValue=q>0;
+            pipeline.supportsHDR=true;pipeline.msaaSampleCount=q==0?2:4;pipeline.renderScale=1;
+            var settings=new SerializedObject(pipeline);settings.FindProperty("m_MainLightShadowsSupported").boolValue=true;settings.FindProperty("m_SoftShadowsSupported").boolValue=true;
             settings.FindProperty("m_MainLightRenderingMode").intValue=(int)LightRenderingMode.PerPixel;settings.FindProperty("m_AdditionalLightsRenderingMode").intValue=(int)LightRenderingMode.Disabled;
-            pipeline.mainLightShadowmapResolution=q==2?4096:2048;pipeline.shadowDistance=new[]{55f,90f,140f}[q];pipeline.shadowCascadeCount=q==2?4:2;
+            pipeline.mainLightShadowmapResolution=q==1?4096:2048;pipeline.shadowDistance=q==1?180:85;pipeline.shadowCascadeCount=q==1?4:2;
             pipeline.shadowDepthBias=.08f;pipeline.shadowNormalBias=.22f;pipeline.supportsCameraDepthTexture=false;pipeline.supportsCameraOpaqueTexture=false;
             pipeline.useSRPBatcher=true;pipeline.supportsDynamicBatching=false;settings.FindProperty("m_ReflectionProbeBlending").boolValue=q>0;settings.FindProperty("m_ReflectionProbeBoxProjection").boolValue=q>0;settings.ApplyModifiedPropertiesWithoutUndo();
-            if(q==2) {
+            if(q==1) {
                 // Half-resolution contact shading only on the detail preset.
                 var renderer=AssetDatabase.LoadAssetAtPath<UniversalRendererData>("Assets/Resources/Render/"+names[q]+"Renderer.asset");
                 var ao=renderer.rendererFeatures.OfType<ScreenSpaceAmbientOcclusion>().FirstOrDefault();
@@ -39,7 +39,7 @@ public static class BuildIOS {
                 var values=new SerializedObject(ao);var options=values.FindProperty("m_Settings");
                 options.FindPropertyRelative("Downsample").boolValue=true;options.FindPropertyRelative("AfterOpaque").boolValue=true;
                 options.FindPropertyRelative("Source").intValue=0;options.FindPropertyRelative("NormalSamples").intValue=1;
-                options.FindPropertyRelative("Intensity").floatValue=.6f;options.FindPropertyRelative("Radius").floatValue=.12f;
+                options.FindPropertyRelative("Intensity").floatValue=.65f;options.FindPropertyRelative("Radius").floatValue=.22f;
                 options.FindPropertyRelative("AOMethod").intValue=1;
                 options.FindPropertyRelative("Samples").intValue=1;options.FindPropertyRelative("BlurQuality").intValue=0;
                 options.FindPropertyRelative("Falloff").floatValue=55;values.ApplyModifiedPropertiesWithoutUndo();
@@ -53,7 +53,7 @@ public static class BuildIOS {
         var quality=new SerializedObject(AssetDatabase.LoadAllAssetsAtPath("ProjectSettings/QualitySettings.asset")[0]);
         var levels=quality.FindProperty("m_QualitySettings");
         for(int i=0;i<levels.arraySize;i++){
-            int q=Mathf.Min(2,i*3/levels.arraySize);var level=levels.GetArrayElementAtIndex(i);
+            int q=i==levels.arraySize-1?1:0;var level=levels.GetArrayElementAtIndex(i);
             level.FindPropertyRelative("customRenderPipeline").objectReferenceValue=AssetDatabase.LoadAssetAtPath<UniversalRenderPipelineAsset>("Assets/Resources/Render/"+names[q]+".asset");
             level.FindPropertyRelative("skinWeights").intValue=(int)SkinWeights.FourBones;
             level.FindPropertyRelative("globalTextureMipmapLimit").intValue=0;
@@ -62,23 +62,23 @@ public static class BuildIOS {
         quality.ApplyModifiedPropertiesWithoutUndo();
         // Serialized materials preserve only the Lit feature combinations the
         // procedural scenery uses, instead of shipping every Lit shader variant.
-        string[] materialNames={"RuntimeLit","RuntimeAsphalt","RuntimeEmission"};
+        string[] materialNames={"RuntimeLit","RuntimeAsphalt","RuntimeEmission","RuntimeTerrain"};
         for(int i=0;i<materialNames.Length;i++){
             string path="Assets/Resources/Render/"+materialNames[i]+".mat";
             var material=AssetDatabase.LoadAssetAtPath<Material>(path);
             if(!material){material=new Material(Shader.Find("Universal Render Pipeline/Lit")){enableInstancing=true};AssetDatabase.CreateAsset(material,path);}
-            material.shaderKeywords=i==1?new[]{"_NORMALMAP","_METALLICSPECGLOSSMAP","_OCCLUSIONMAP"}:i==2?new[]{"_EMISSION"}:Array.Empty<string>();
+            material.shaderKeywords=i==1?new[]{"_NORMALMAP","_METALLICSPECGLOSSMAP","_OCCLUSIONMAP"}:i==2?new[]{"_EMISSION"}:i==3?new[]{"_DETAIL_SCALED"}:Array.Empty<string>();
             EditorUtility.SetDirty(material);
         }
-        GraphicsSettings.defaultRenderPipeline=AssetDatabase.LoadAssetAtPath<UniversalRenderPipelineAsset>("Assets/Resources/Render/Balanced.asset");QualitySettings.renderPipeline=GraphicsSettings.defaultRenderPipeline;
-        PlayerSettings.companyName="Motor Coast";PlayerSettings.productName="Motor Coast";PlayerSettings.bundleVersion="2.0.0";PlayerSettings.colorSpace=ColorSpace.Linear;PlayerSettings.runInBackground=false;
+        GraphicsSettings.defaultRenderPipeline=AssetDatabase.LoadAssetAtPath<UniversalRenderPipelineAsset>("Assets/Resources/Render/Standard.asset");QualitySettings.renderPipeline=GraphicsSettings.defaultRenderPipeline;
+        PlayerSettings.companyName="Motor Coast";PlayerSettings.productName="Motor Coast";PlayerSettings.bundleVersion="2.1.0";PlayerSettings.colorSpace=ColorSpace.Linear;PlayerSettings.runInBackground=false;
         PlayerSettings.SetApplicationIdentifier(NamedBuildTarget.iOS,"app.zanderrroff.motorcoast");
         PlayerSettings.SetScriptingBackend(NamedBuildTarget.iOS,ScriptingImplementation.IL2CPP);PlayerSettings.SetIl2CppCompilerConfiguration(NamedBuildTarget.iOS,Il2CppCompilerConfiguration.Release);
         PlayerSettings.SetManagedStrippingLevel(NamedBuildTarget.iOS,ManagedStrippingLevel.Minimal);
         PlayerSettings.SetUseDefaultGraphicsAPIs(BuildTarget.iOS,false);PlayerSettings.SetGraphicsAPIs(BuildTarget.iOS,new[]{GraphicsDeviceType.Metal});
         PlayerSettings.iOS.targetOSVersionString="16.0";PlayerSettings.iOS.sdkVersion=iOSSdkVersion.DeviceSDK;PlayerSettings.iOS.targetDevice=iOSTargetDevice.iPhoneOnly;
         PlayerSettings.iOS.appleDeveloperTeamID=Environment.GetEnvironmentVariable("APPLE_TEAM_ID")??"U8QHYG2G45";PlayerSettings.iOS.appleEnableAutomaticSigning=true;
-        PlayerSettings.iOS.buildNumber=Environment.GetEnvironmentVariable("BUILD_NUMBER")??"1";
+        PlayerSettings.iOS.buildNumber=Environment.GetEnvironmentVariable("BUILD_NUMBER")??"2";
         PlayerSettings.defaultInterfaceOrientation=UIOrientation.AutoRotation;PlayerSettings.allowedAutorotateToLandscapeLeft=PlayerSettings.allowedAutorotateToLandscapeRight=true;PlayerSettings.allowedAutorotateToPortrait=PlayerSettings.allowedAutorotateToPortraitUpsideDown=false;
         var icon=AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/Brand/AppIcon.png");if(icon)PlayerSettings.SetIconsForTargetGroup(BuildTargetGroup.Unknown,new[]{icon});
         var graphics=new SerializedObject(AssetDatabase.LoadAllAssetsAtPath("ProjectSettings/GraphicsSettings.asset")[0]);var shaders=graphics.FindProperty("m_AlwaysIncludedShaders");
@@ -114,8 +114,9 @@ public static class BuildIOS {
                 if(type==LogType.Error||type==LogType.Exception)throw new BuildFailedException("glTF import failed: "+file+" "+detail);
             }
         }
+        CharacterImport.Prepare();
         var catalog=JsonUtility.FromJson<VehicleCatalog>(Resources.Load<TextAsset>("Data/vehicles").text);
-        foreach(var spec in catalog.vehicles)foreach(var resource in new[]{spec.resource,spec.highResource}) {
+        foreach(var spec in catalog.vehicles.Where(c=>string.IsNullOrEmpty(c.modelUrl)))foreach(var resource in new[]{spec.resource,spec.highResource}) {
             var model=Resources.Load<GameObject>(resource);if(!model||!Nodes.Find(model.transform,"Chassis"))throw new BuildFailedException("Invalid imported car: "+resource);
             for(int i=0;i<4;i++)if(!Nodes.Find(model.transform,"Wheel_"+i))throw new BuildFailedException("Missing wheel "+i+": "+resource);
         }

@@ -13,6 +13,9 @@ public sealed class VehicleController : MonoBehaviour {
     public int Grounded {get; private set;}
     public int Gear => output.gear;
     public float Throttle => state.throttle;
+    public bool Occupied {get;private set;}=true;
+    public bool ParkForInteraction;
+    public VehicleDoor Door {get;private set;}
     public Vector3 EyeLocal => driver.EyeLocal;
     public event Action<float> Impact;
     public PlayerInput Controls;
@@ -20,15 +23,16 @@ public sealed class VehicleController : MonoBehaviour {
     readonly Transform[] visuals=new Transform[4];
     readonly Quaternion[] rest=new Quaternion[4];
     DriverRig driver; DriveState state; DriveOutput output;
-    Vector3 spawn; float flippedTime,wheelbase; bool suspended;
+    Vector3 spawn; float flippedTime,wheelbase; bool suspended;Transform steeringColumn,chassisRoot;Quaternion columnNeutral;
     public void Configure(VehicleSpec spec,GameObject model,GameObject driverPrefab,PlayerInput controls) {
+        using var resources=RuntimeResources.Begin(gameObject);
         Spec=spec;Controls=controls;wheelbase=Mathf.Abs((spec.wheelCenters[0].z+spec.wheelCenters[1].z-spec.wheelCenters[2].z-spec.wheelCenters[3].z)*.5f);spawn=new Vector3(0,spec.wheelRadius-Mathf.Min(spec.wheelCenters[0].y,spec.wheelCenters[2].y)+.008f,-80);Body=GetComponent<Rigidbody>();
         Body.mass=spec.mass;Body.centerOfMass=new Vector3(0,-.14f,-.10f);
         Body.interpolation=RigidbodyInterpolation.Interpolate;Body.collisionDetectionMode=CollisionDetectionMode.ContinuousDynamic;
         Body.solverIterations=12;Body.solverVelocityIterations=6;Body.linearDamping=.025f;Body.angularDamping=.45f;
         Body.maxAngularVelocity=6;Body.maxDepenetrationVelocity=3;
         var hull=gameObject.AddComponent<BoxCollider>();hull.size=spec.colliderSize;hull.center=new Vector3(0,-.035f,0);
-        var roof=gameObject.AddComponent<BoxCollider>();roof.size=new Vector3(spec.colliderSize.x*.70f,.33f,spec.colliderSize.z*.40f);roof.center=new Vector3(0,.30f,-.2f);
+        var roof=gameObject.AddComponent<BoxCollider>();roof.size=new Vector3(spec.colliderSize.x*.70f,.33f,spec.colliderSize.z*.40f);roof.center=new Vector3(0,Mathf.Max(.30f,spec.roofY-.15f),-.2f);
         model.transform.SetParent(transform,false);model.transform.localPosition=Vector3.zero;
         var chassis=Nodes.Find(model.transform,"Chassis");
         if(!chassis)throw new InvalidOperationException("Model has no Chassis: "+spec.id);
@@ -36,6 +40,9 @@ public sealed class VehicleController : MonoBehaviour {
             visuals[i]=Nodes.Find(model.transform,"Wheel_"+i);
             if(!visuals[i])throw new InvalidOperationException("Model has no wheel: "+i);
             rest[i]=visuals[i].localRotation;
+            // Menus and a newly selected car are paused before the first
+            // physics tick. Place all four meshes at their calibrated pivots now.
+            visuals[i].position=transform.TransformPoint(spec.wheelCenters[i]);
             var go=new GameObject("Suspension_"+i);go.transform.SetParent(transform,false);go.transform.localPosition=spec.wheelCenters[i]+Vector3.up*.11f;
             var wc=go.AddComponent<WheelCollider>();wheels[i]=wc;wc.radius=spec.wheelRadius;wc.mass=25;
             wc.suspensionDistance=.22f;wc.wheelDampingRate=1.6f;wc.forceAppPointDistance=.15f;
@@ -47,17 +54,17 @@ public sealed class VehicleController : MonoBehaviour {
         Transform steering=Nodes.Find(chassis,"SteeringWheel");
         if(!spec.hasInterior) steering=CabinBuilder.Build(chassis,spec);
         if(!steering)throw new InvalidOperationException("Steering wheel missing: "+spec.id);
-        var character=new GameObject("Driver");character.transform.SetParent(chassis,false);Instantiate(driverPrefab,character.transform,false);
-        driver=character.AddComponent<DriverRig>();driver.Configure(character.transform,steering,spec,transform);
+        steeringColumn=steering;columnNeutral=steering.localRotation;chassisRoot=chassis;ChangeDriver(driverPrefab);
         foreach(var r in model.GetComponentsInChildren<Renderer>()) {
             r.receiveShadows=true;r.shadowCastingMode=ShadowCastingMode.On;
             foreach(var m in r.sharedMaterials) if(m.renderQueue>=3000) { r.shadowCastingMode=ShadowCastingMode.Off;break; }
         }
+        Door=gameObject.AddComponent<VehicleDoor>();Door.Configure(this);
         Nodes.Layer(gameObject,VehicleLayer);DriveNative.MCReset(ref state);ResetToStart();
     }
     void FixedUpdate() {
         if(Spec==null||suspended||Time.timeScale==0)return;
-        var input=Controls.Sample(Speed);DriveNative.MCStep(ref state,ref input,Time.fixedDeltaTime,Spec.power,out output);
+        var input=Occupied&&!ParkForInteraction?Controls.Sample(Speed):new DriveInput{brake=1,handbrake=1,requestedGear=0,speed=Speed};DriveNative.MCStep(ref state,ref input,Time.fixedDeltaTime,Spec.power,out output);
         Grounded=0;Slip=0;
         float centreAngle=Mathf.Atan(Mathf.Tan(output.steerDegrees*Mathf.Deg2Rad)*wheelbase/2.7f)*Mathf.Rad2Deg;
         for(int i=0;i<4;i++) {
@@ -106,8 +113,16 @@ public sealed class VehicleController : MonoBehaviour {
         driver.Animate(output.steerDegrees);
     }
     public void SetCockpit(bool value)=>driver.Cockpit(value);
+    public void SetOccupied(bool occupied){Occupied=occupied;driver.gameObject.SetActive(occupied);Controls.Clear();}
+    public void ChangeDriver(GameObject prefab){
+        steeringColumn.localRotation=columnNeutral;
+        if(driver){driver.gameObject.SetActive(false);if(Application.isPlaying)Destroy(driver.gameObject);else DestroyImmediate(driver.gameObject);}
+        var character=new GameObject("Driver");character.transform.SetParent(chassisRoot,false);Instantiate(prefab,character.transform,false);
+        driver=character.AddComponent<DriverRig>();driver.Configure(character.transform,steeringColumn,Spec,transform);Nodes.Layer(character,VehicleLayer);character.SetActive(Occupied);
+    }
     public void Suspend(bool value) { suspended=value;Controls.Clear(); }
     public void ResetToStart() {
+        if(Door)Door.CloseImmediately();
         Controls.Clear();Controls.RequestedGear=1;DriveNative.MCReset(ref state);output=default;
         Body.linearVelocity=Vector3.zero;Body.angularVelocity=Vector3.zero;
         Body.position=spawn;Body.rotation=Quaternion.identity;
