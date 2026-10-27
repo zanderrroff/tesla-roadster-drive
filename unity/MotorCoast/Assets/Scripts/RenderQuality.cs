@@ -7,8 +7,9 @@ public sealed class RenderQuality : MonoBehaviour {
     public bool Ultra=>Level==1;
     public static int SavedLevel=>PlayerPrefs.HasKey("graphicsPreset")?PlayerPrefs.GetInt("graphicsPreset",0):(PlayerPrefs.GetInt("quality",1)==2?1:0);
     public float MeasuredFps {get;private set;}
+    public int TargetFps=>DesktopPlatform.LowPowerMac?30:60;
     public string ResolutionLabel=>pipeline?Mathf.RoundToInt(Screen.width*pipeline.renderScale)+" × "+Mathf.RoundToInt(Screen.height*pipeline.renderScale):"—";
-    UniversalRenderPipelineAsset pipeline;Volume volume;float frameTime,overload,recovery,baseScale;int observedFrames;
+    UniversalRenderPipelineAsset pipeline;Volume volume;float frameTime,overload,recovery,baseScale;int observedFrames,lastWidth,lastHeight;
     public void Apply(int level) {
         Level=Mathf.Clamp(level,0,1);PlayerPrefs.SetInt("graphicsPreset",Level);PlayerPrefs.Save();
         QualitySettings.SetQualityLevel(Level*(QualitySettings.names.Length-1),false);
@@ -17,9 +18,10 @@ public sealed class RenderQuality : MonoBehaviour {
         if(!source)throw new System.InvalidOperationException("Run Motor Coast / Prepare project before playing.");
         var previous=pipeline;pipeline=Instantiate(source);QualitySettings.renderPipeline=pipeline;GraphicsSettings.defaultRenderPipeline=pipeline;
         if(previous)Destroy(previous);
-        float pixelCap=Ultra?2560:1920;baseScale=Mathf.Clamp(pixelCap/Mathf.Max(Screen.width,Screen.height),.55f,1);pipeline.renderScale=baseScale;
+        baseScale=1;pipeline.renderScale=1;UpdateResolutionBudget();
+        if(DesktopPlatform.LowPowerMac&&!Ultra){pipeline.mainLightShadowmapResolution=1024;pipeline.shadowDistance=65;}
         QualitySettings.vSyncCount=0;QualitySettings.lodBias=Ultra?1.6f:1;QualitySettings.anisotropicFiltering=AnisotropicFiltering.ForceEnable;
-        Application.targetFrameRate=60;overload=recovery=0;observedFrames=0;frameTime=1f/60;MeasuredFps=0;
+        Application.targetFrameRate=TargetFps;overload=recovery=0;observedFrames=0;frameTime=1f/TargetFps;MeasuredFps=0;
         if(!volume){var o=new GameObject("Photographic grade",typeof(Volume));volume=o.GetComponent<Volume>();volume.isGlobal=true;volume.priority=1;volume.profile=ScriptableObject.CreateInstance<VolumeProfile>();
             var tone=volume.profile.Add<Tonemapping>(true);tone.mode.Override(TonemappingMode.ACES);
             var color=volume.profile.Add<ColorAdjustments>(true);color.postExposure.Override(-.15f);color.contrast.Override(4);color.saturation.Override(-3);
@@ -28,13 +30,20 @@ public sealed class RenderQuality : MonoBehaviour {
         if(volume.profile.TryGet<Bloom>(out var b)){b.active=Ultra;b.intensity.Override(.15f);}
     }
     void Update() {
-        if(Time.timeScale==0||!pipeline)return;
+        if(!pipeline)return;if(Screen.width!=lastWidth||Screen.height!=lastHeight)UpdateResolutionBudget();
+        if(Time.timeScale==0)return;
         frameTime=Mathf.Lerp(frameTime,Time.unscaledDeltaTime,.025f);observedFrames++;if(observedFrames>45)MeasuredFps=1/Mathf.Max(.001f,frameTime);
-        float budget=1f/60;
+        float budget=1f/TargetFps;
         overload=frameTime>budget*1.2f?overload+Time.unscaledDeltaTime:Mathf.Max(0,overload-Time.unscaledDeltaTime);
         recovery=frameTime<budget*1.04f?recovery+Time.unscaledDeltaTime:0;
         if(recovery>12){pipeline.renderScale=Mathf.Min(baseScale,pipeline.renderScale+.03f);recovery=0;}
         if(overload>3){pipeline.renderScale=Mathf.Max(baseScale*.72f,pipeline.renderScale-.06f);overload=0;}
+    }
+    void UpdateResolutionBudget(){
+        float adaptive=Mathf.Clamp(pipeline.renderScale/Mathf.Max(.001f,baseScale),.72f,1);
+        float pixelCap=DesktopPlatform.LowPowerMac?(Ultra?1920:1280):(Ultra?2560:1920);
+        baseScale=Mathf.Clamp(pixelCap/Mathf.Max(1,Mathf.Max(Screen.width,Screen.height)),.35f,1);
+        pipeline.renderScale=baseScale*adaptive;lastWidth=Screen.width;lastHeight=Screen.height;
     }
     void OnEnable(){Application.lowMemory+=OnLowMemory;}void OnDisable(){Application.lowMemory-=OnLowMemory;}
     void OnLowMemory(){if(Level>0)Apply(Level-1);Resources.UnloadUnusedAssets();}

@@ -72,7 +72,7 @@ public sealed class MotorGame : MonoBehaviour {
             Challenges.Car=Car;Challenges.ResetRun();PlayerPrefs.SetInt("vehicle",index);PlayerPrefs.Save();
         }catch(Exception e){error=e.Message;Debug.LogException(e);if(next)Destroy(next);else if(loadedModel)Destroy(loadedModel);}
         loading=false;if(error!=null){hud.Error(error);yield break;}
-        hud.Menu(!started);yield return null;yield return Resources.UnloadUnusedAssets();
+        hud.Menu(!started);Debug.Log("Motor Coast ready: "+Application.platform+"; "+Catalog.vehicles.Length+" cars; "+Characters.characters.Length+" characters; "+Car.Spec.label);yield return null;yield return Resources.UnloadUnusedAssets();
     }
     public void SelectVehicle(int index){if(!loading)StartCoroutine(LoadVehicle(index));}
     public void Resume(){if(!Car||loading)return;started=true;IsPaused=false;Time.timeScale=1;Input.Clear();Input.Blocked=interacting;Car.Suspend(false);AudioListener.pause=false;hud.Driving();Camera.Snap();}
@@ -151,7 +151,7 @@ public sealed class MotorGame : MonoBehaviour {
         if(UnityEngine.Input.GetKeyDown(KeyCode.F)&&OnFoot)hud.Emotes();if(UnityEngine.Input.GetKeyDown(KeyCode.E))Interact();if(UnityEngine.Input.GetKeyDown(KeyCode.C)&&!OnFoot)Camera.Cycle();if(UnityEngine.Input.GetKeyDown(KeyCode.R)){if(OnFoot)RecoverPerson();else ResetCar();}if(UnityEngine.Input.GetKeyDown(KeyCode.G))Pause(true);if(UnityEngine.Input.GetKeyDown(KeyCode.H)&&!OnFoot)Horn();
         if(!UnityEngine.Input.touchSupported&&UnityEngine.Input.mouseScrollDelta.y!=0)Camera.Zoom(UnityEngine.Input.mouseScrollDelta.y*16);
     }
-    void OnApplicationFocus(bool focus){if(!focus)Pause();}
+    void OnApplicationFocus(bool focus){if(!focus&&!DesktopSmokeTest.Active)Pause();}
     void OnApplicationPause(bool pause){if(pause)Pause();}
     void OnDestroy(){Time.timeScale=1;AudioListener.pause=false;Screen.sleepTimeout=SleepTimeout.SystemSetting;}
 }

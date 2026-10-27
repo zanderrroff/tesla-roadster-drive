@@ -91,9 +91,10 @@ public sealed class GameHud : MonoBehaviour {
         Button(panel.transform,"КАЧЕСТВО И ЗВУК",new Vector2(215,70),new Vector2(410,82),Settings);
         Button(panel.transform,"КАРТЫ",new Vector2(-215,-35),new Vector2(410,82),Maps);
         Button(panel.transform,"ПЕРСОНАЖ",new Vector2(215,-35),new Vector2(410,82),Characters);
-        Label(panel.transform,"ТЕЛЕФОН\nРуль слева · педали справа\nПроведите по экрану для обзора\nПешком: джойстик и кнопки действий",new Vector2(-220,-170),new Vector2(420,180),22,muted,TextAnchor.UpperLeft);
+        Label(panel.transform,touchLayout?"ТЕЛЕФОН\nРуль слева · педали справа\nПроведите по экрану для обзора\nПешком: джойстик и кнопки действий":"МЫШЬ И ТРЕКПАД\nЗажмите и тяните для обзора\nПрокрутка — приближение\nShift — бег · Ctrl — присесть",new Vector2(-220,-170),new Vector2(420,180),22,muted,TextAnchor.UpperLeft);
         Label(panel.transform,"КЛАВИАТУРА\nWASD · E — выйти / сесть\nПробел — ручник / прыжок\nR — сброс · C — камера · Esc — пауза",new Vector2(230,-170),new Vector2(440,180),22,muted,TextAnchor.UpperLeft);
-        Button(panel.transform,"ОБ ИГРЕ И АВТОРАХ",new Vector2(0,-330),new Vector2(840,68),Credits);
+        Button(panel.transform,"ОБ ИГРЕ И АВТОРАХ",new Vector2(DesktopPlatform.IsMac?-215:0,-330),new Vector2(DesktopPlatform.IsMac?410:840,68),Credits);
+        if(DesktopPlatform.IsMac)Button(panel.transform,"ВЫЙТИ ИЗ ИГРЫ",new Vector2(215,-330),new Vector2(410,68),()=>Application.Quit());
     }
     void Garage() {
         ClearPanel();Label(panel.transform,"ГАРАЖ · "+Game.Catalog.vehicles.Length+" МАШИН",new Vector2(0,365),new Vector2(920,60),36,ink,TextAnchor.MiddleCenter);
@@ -141,7 +142,8 @@ public sealed class GameHud : MonoBehaviour {
         Label(panel.transform,Game.Quality.Ultra?"Детальная модель · контактные тени · отражения · 4× MSAA":"Мягкие тени · HDR · облегчённые текстуры · 2× MSAA",new Vector2(0,169),new Vector2(880,50),22,muted,TextAnchor.MiddleCenter);
         Button(panel.transform,Game.SoundEnabled?"ЗВУК: ВКЛЮЧЁН":"ЗВУК: ВЫКЛЮЧЕН",new Vector2(-215,65),new Vector2(410,80),()=>{Game.ToggleSound();Settings();});
         bool useArrows=PlayerPrefs.GetInt("steeringArrows",0)==1;
-        Button(panel.transform,useArrows?"РУЛЬ: КНОПКИ":"РУЛЬ: ВРАЩЕНИЕ",new Vector2(215,65),new Vector2(410,80),()=>{SetArrows(!useArrows);Settings();});
+        if(DesktopPlatform.IsMac)Button(panel.transform,"ОКНО / ПОЛНЫЙ ЭКРАН",new Vector2(215,65),new Vector2(410,80),()=>{DesktopPlatform.ToggleFullscreen();});
+        else Button(panel.transform,useArrows?"РУЛЬ: КНОПКИ":"РУЛЬ: ВРАЩЕНИЕ",new Vector2(215,65),new Vector2(410,80),()=>{SetArrows(!useArrows);Settings();});
         Button(panel.transform,Game.ShowFps?"СЧЁТЧИК FPS: ВКЛ":"СЧЁТЧИК FPS: ВЫКЛ",new Vector2(-215,-40),new Vector2(410,80),()=>{Game.ToggleFps();Settings();});
         Button(panel.transform,Game.AnimationsEnabled?"АНИМАЦИИ: ВКЛ":"АНИМАЦИИ: ВЫКЛ",new Vector2(215,-40),new Vector2(410,80),()=>{Game.ToggleAnimations();Settings();});
         Label(panel.transform,"Автоматическое снижение разрешения при перегрузке.\nТекущий рендер: "+Game.Quality.ResolutionLabel+"\nСредняя частота в игре: "+Game.Quality.MeasuredFps.ToString("0.0")+" FPS",new Vector2(0,-205),new Vector2(840,110),23,muted,TextAnchor.MiddleCenter);

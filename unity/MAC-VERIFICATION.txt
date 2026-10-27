@@ -1,0 +1,45 @@
+Motor Coast 2.1.0 — local Mac verification, 2026-10-28
+
+Application: /Users/air2019/Applications/Motor Coast.app
+Architecture: Mach-O 64-bit executable x86_64
+Bundle size: 570592218 bytes
+Strict local code-signature verification: PASS
+Unity 6000.3.26f1; Mono player, C++ driving plugin, Metal rendering.
+Host: Mac OS X 14.8.7; Intel(R) Core(TM) i5-8210Y CPU @ 1.60GHz; Intel(R) UHD Graphics 617; 8 GB RAM.
+
+22/22 EditMode tests passed for StandaloneOSX (2026-10-26).
+Final built-player automated scenario: PASS (2026-10-28).
+Checked acceleration, steering, braking, reverse, reset, pause, vehicle exit,
+walking and re-entry; loaded optional Alfa Romeo Stelvio; switched to the
+alpine map and back; switched Standard -> Ultra -> Standard.
+Catalog counts: 97 vehicles, 50 characters, 10 maps.
+Counts do not mean every catalog entry was exercised in this Mac run.
+Screenshots inspected: desktop layout, downloaded car, alpine, Ultra, menu.
+
+Standard preset, original driving plaza, Tesla Roadster, 1280 x 720:
+20-second warm automated drive; 573 frames;
+mean 28.62 FPS; p95 frame time 37.07 ms.
+This is a short measurement on the actual Mac, not a guarantee for every map,
+Ultra, full-screen Retina, or a long thermal session.
+The test drives through the game's input API; physical keyboard/trackpad
+interaction has not been manually verified.
+
+Found and fixed in packaged-player testing: Ultra SSAO resources were stripped
+because the active quality entry had been overwritten with Standard in the
+Editor. BuildMac now registers both runtime profiles immediately before build.
+BuildIOS.Prepare also selects the Standard quality entry before assigning it.
+The existing published iPhone binary has not been rebuilt by this Mac task.
+
+Installed application also reached its normal Tesla main menu after relocation
+to ~/Applications. Metal logged a one-time render-pass MSAA attachment mismatch
+during this startup (three messages); loading then completed, with no recurrence
+in the observed log. The automated built-player run above completed without
+Unity errors. A longer manual play session remains outside this check.
+
+Local detailed evidence (ignored in Git):
+artifacts/mac-tests.xml
+artifacts/mac-export.log
+artifacts/mac-installed-check.json
+artifacts/mac-player/mac-player-report.json
+artifacts/mac-player/mac-native-*.png
+artifacts/mac-play.log

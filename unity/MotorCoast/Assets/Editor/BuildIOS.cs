@@ -70,6 +70,7 @@ public static class BuildIOS {
             material.shaderKeywords=i==1?new[]{"_NORMALMAP","_METALLICSPECGLOSSMAP","_OCCLUSIONMAP"}:i==2?new[]{"_EMISSION"}:i==3?new[]{"_DETAIL_SCALED"}:Array.Empty<string>();
             EditorUtility.SetDirty(material);
         }
+        QualitySettings.SetQualityLevel(0,false);
         GraphicsSettings.defaultRenderPipeline=AssetDatabase.LoadAssetAtPath<UniversalRenderPipelineAsset>("Assets/Resources/Render/Standard.asset");QualitySettings.renderPipeline=GraphicsSettings.defaultRenderPipeline;
         PlayerSettings.companyName="Motor Coast";PlayerSettings.productName="Motor Coast";PlayerSettings.bundleVersion="2.1.0";PlayerSettings.colorSpace=ColorSpace.Linear;PlayerSettings.runInBackground=false;
         PlayerSettings.SetApplicationIdentifier(NamedBuildTarget.iOS,"app.zanderrroff.motorcoast");
